@@ -1,0 +1,23 @@
+.todo-form {
+    display: flex;
+}
+
+.todo-form__add-input {
+    padding: 0;
+    height: 30px;
+    width: 100%;
+}
+
+.todo-form__add-button {
+    border: none;
+    cursor: pointer;
+    height: 34px;
+    outline: none;
+}
+
+.todo-list {
+    padding: 0;
+    margin: 20px auto;
+    text-align: left;
+    width: 500px;
+}

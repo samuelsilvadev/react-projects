@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/Todo.css';
 import TodoItem from './TodoItem'
 
 const TodoList = ({ todos }) => {
@@ -6,7 +7,7 @@ const TodoList = ({ todos }) => {
     const nodeTodos = todos.map((todo) => {
         return <TodoItem key={todo.id} value={todo.todo} />
     });
-    return (<ul className="list__todos" >{nodeTodos}</ul>);
+    return (<ol className="todo-list" >{nodeTodos}</ol>);
 }
 
 export default TodoList;

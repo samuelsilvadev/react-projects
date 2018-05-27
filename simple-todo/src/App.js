@@ -19,7 +19,7 @@ class App extends Component {
   handleAddTodo(value) {
 
     const todo = { todo: value, id: this.id++ };
-    this.state.data.push(todo);
+    this.state.data.unshift(todo);
 
     this.setState({
       data: this.state.data
@@ -27,17 +27,17 @@ class App extends Component {
   }
 
   render() {
-    
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">TodoList Today</h1>
         </header>
-
-        <TodoForm addTodo={this.handleAddTodo.bind(this)}/>
-        <TodoList todos={this.state.data} />
-
+        <div className="App-body">
+          <TodoForm addTodo={this.handleAddTodo.bind(this)} />
+          <TodoList todos={this.state.data} />
+        </div>
       </div>
     );
   }

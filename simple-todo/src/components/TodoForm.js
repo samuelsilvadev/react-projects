@@ -1,12 +1,14 @@
 import React from 'react';
+import './css/Todo.css';
 
 const TodoForm = ({ addTodo }) => {
     let input;
     return (
         <div>
-            <form>
-                <input ref={node => input = node} />
-                <button type="button" onClick={() => {
+            <form className="todo-form">
+                <input className="todo-form__add-input" ref={node => input = node} />
+                <button className="todo-form__add-button" type="button" onClick={(e) => {
+                    e.preventDefault();
                     addTodo(input.value);
                     input.value = '';
                 }}>
