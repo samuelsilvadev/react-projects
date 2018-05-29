@@ -11,6 +11,7 @@ const TodoForm = ({ addTodo }) => {
                     e.preventDefault();
                     addTodo(input.value);
                     input.value = '';
+                    input.focus();
                 }}>
                     Add
                 </button>

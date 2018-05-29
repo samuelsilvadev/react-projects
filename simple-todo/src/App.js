@@ -26,6 +26,12 @@ class App extends Component {
     });
   }
 
+  handleDeleteTodo(id) {
+    this.setState({
+      data: this.state.data.filter(todo => todo.id !== id)
+    });
+  }
+
   render() {
 
     return (
@@ -36,7 +42,7 @@ class App extends Component {
         </header>
         <div className="App-body">
           <TodoForm addTodo={this.handleAddTodo.bind(this)} />
-          <TodoList todos={this.state.data} />
+          <TodoList todos={this.state.data} handleDelete={this.handleDeleteTodo.bind(this)} />
         </div>
       </div>
     );

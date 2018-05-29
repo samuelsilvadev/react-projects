@@ -1,12 +1,15 @@
 import React from 'react';
 
-const TodoItem = ({ value }) => {
-    if (value) {
+const TodoItem = ({ todo, handleDelete }) => {
+    if (todo && todo.todo) {
         return (
-            <li>{value}</li>
+            <li onClick={() => {
+                handleDelete(todo.id)
+            }
+            }>{todo.todo}</li>
         );
     }
-    console.error('INVALID VALUE', value, this);
+    console.error('INVALID VALUE', todo, this);
     return '';
 }
 
