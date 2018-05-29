@@ -3,7 +3,7 @@ import React from 'react';
 const TodoItem = ({ todo, handleDelete }) => {
     if (todo && todo.todo) {
         return (
-            <li onClick={() => {
+            <li title='Click to remove' className='todo-list__item' onClick={() => {
                 handleDelete(todo.id)
             }
             }>{todo.todo}</li>
