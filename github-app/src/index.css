@@ -1,5 +1,68 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    background-color: #536DFE;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+
+.container {
+    margin: auto;
+    padding: 50px;
+    width: 500px;
+}
+
+.search,
+.search__input {
+    width: 100%;
+}
+
+.search__input {
+    border: none;
+    height: 40px;
+    outline: none;
+}
+
+.user {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.user__details {
+    padding-left: 30px;
+}
+
+.user__photo {
+    height: 150px;
+    width: 150px;
+}
+
+.user__name {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.user__actions {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.user__actions>button {
+    cursor: pointer;
+    height: 40px;
+    width: 49%;
 }
