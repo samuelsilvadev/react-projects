@@ -54,14 +54,14 @@ ul {
     width: 100%;
 }
 
-.user__actions {
+.actions {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
     margin-top: 30px;
 }
 
-.user__actions>button {
+.actions>button {
     cursor: pointer;
     height: 40px;
     width: 49%;
