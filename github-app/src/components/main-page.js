@@ -6,9 +6,9 @@ import Repos from './repos'
 import Search from './search'
 import UserInfo from './user-info'
 
-const MainPage = ({ userInfo, repos, starred }) => (
+const MainPage = ({ userInfo, repos, starred, handleSearch }) => (
     <div className="container">
-        <Search />
+        <Search handleSearch={handleSearch} />
         {!!userInfo && <UserInfo userInfo={userInfo} />}
         {!!userInfo && <Actions />}
         {!!repos.length && <Repos

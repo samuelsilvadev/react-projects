@@ -6,7 +6,7 @@ const UserInfo = ({ userInfo }) => (
         <img className="user__photo" src={userInfo.photo} alt={`Profile ${userInfo.userName}`} />
         <div className="user__details">
             <h1 className="user__name">
-                <a href={`https://github.com/${userInfo.userName}`}>
+                <a href={`https://github.com/${userInfo.login}`}>
                     {userInfo.userName}
                 </a>
             </h1>
