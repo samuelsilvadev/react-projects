@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import MainPage from './components/main-page';
 import axios from 'axios';
 
+const BASE_API = 'https://api.github.com'
+const END_POINT_USERS = `${BASE_API}/users/{login}`;
+const END_POINT_STARRED = `${BASE_API}/users/{login}/starred`;
+const END_POINT_REPOS = `${BASE_API}/users/{login}/repos`;
+
 class App extends Component {
 
   constructor() {
@@ -9,7 +14,7 @@ class App extends Component {
     this.state = {
       userInfo: null,
       repos: [],
-      starred: [],
+      starred: []
     };
   }
 
@@ -18,7 +23,7 @@ class App extends Component {
     const ENTER = 13;
     const nameUser = e.target.value;
     if (keyCode === ENTER) {
-      axios.get(`https://api.github.com/users/${nameUser}`)
+      axios.get(END_POINT_USERS.replace('{login}', nameUser))
         .then(({ data }) => {
           this.setState({
             userInfo: {
@@ -34,13 +39,33 @@ class App extends Component {
     }
   }
 
+  handleClickRepos() {
+    axios.get(END_POINT_REPOS.replace('{login}', this.state.userInfo.login))
+      .then(({ data }) => {
+        this.setState({
+          repos: data
+        })
+      });
+  }
+
+  handleClickStarred() {
+    axios.get(END_POINT_STARRED.replace('{login}', this.state.userInfo.login))
+      .then(({ data }) => {
+        this.setState({
+          starred: data
+        })
+      });
+  }
+
   render() {
     return (
       <MainPage
         userInfo={this.state.userInfo}
         repos={this.state.repos}
         starred={this.state.starred}
-        handleSearch={this.handleSearch.bind(this)} />
+        handleSearch={this.handleSearch.bind(this)}
+        handleClickRepos={this.handleClickRepos.bind(this)}
+        handleClickStarred={this.handleClickStarred.bind(this)} />
     );
   }
 }
