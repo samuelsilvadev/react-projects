@@ -33,7 +33,9 @@ class App extends Component {
               following: data.following,
               photo: data.avatar_url,
               login: data.login,
-            }
+            },
+            repos: [],
+            starred: []
           })
         });
     }
