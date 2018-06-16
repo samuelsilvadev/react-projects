@@ -22,7 +22,9 @@ class App extends Component {
     const keyCode = e.which || e.keyCode;
     const ENTER = 13;
     const nameUser = e.target.value;
+    const target = e.target;
     if (keyCode === ENTER) {
+      target.disabled = true;
       axios.get(END_POINT_USERS.replace('{login}', nameUser))
         .then(({ data }) => {
           this.setState({
@@ -37,6 +39,9 @@ class App extends Component {
             repos: [],
             starred: []
           })
+        })
+        .finally(() => {
+          target.disabled = false;
         });
     }
   }
