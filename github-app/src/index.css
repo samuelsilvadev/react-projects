@@ -27,6 +27,7 @@ ul {
 
 .search__input {
     border: none;
+    font-size: 1.1em;
     height: 40px;
     outline: none;
 }
@@ -62,6 +63,9 @@ ul {
 }
 
 .actions>button {
+    background: #a8afda;
+    box-shadow: 0 0 1px 0px #fff;
+    border: none;
     cursor: pointer;
     height: 40px;
     width: 49%;
