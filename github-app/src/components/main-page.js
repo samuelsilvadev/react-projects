@@ -6,34 +6,49 @@ import Repos from './repos'
 import Search from './search'
 import UserInfo from './user-info'
 
-const MainPage = ({ userInfo, repos, starred, handleSearch, handleClickRepos, handleClickStarred }) => (
-    <div className="container">
-        <Search handleSearch={handleSearch} />
+const MainPage = ({
+    showLoader,
+    userInfo,
+    repos,
+    starred,
+    handleSearch,
+    handleClickRepos,
+    handleClickStarred
+}) => (
+        <div className="container">
 
-        {!!userInfo && <UserInfo userInfo={userInfo} />}
+            <Search isDisabled={showLoader} handleSearch={handleSearch} />
 
-        {!!userInfo && <Actions
-            handleClickSeeRepos={handleClickRepos}
-            handleClickSeeStarred={handleClickStarred} />}
+            {showLoader && <div>Loading...</div>}
 
-        {!!repos.length && <Repos
-            className="repositories"
-            title="Repositories"
-            repos={repos} />
-        }
+            {!!userInfo && <UserInfo userInfo={userInfo} />}
 
-        {!!starred.length && <Repos
-            className="starreds"
-            title="Favorites"
-            repos={starred} />
-        }
-    </div>
-);
+            {!!userInfo && <Actions
+                handleClickSeeRepos={handleClickRepos}
+                handleClickSeeStarred={handleClickStarred} />}
+
+            {!!repos.length && <Repos
+                className="repositories"
+                title="Repositories"
+                repos={repos} />
+            }
+
+            {!!starred.length && <Repos
+                className="starreds"
+                title="Favorites"
+                repos={starred} />
+            }
+        </div>
+    );
 
 MainPage.propTypes = {
+    showLoader: PropTypes.bool,
     userInfo: PropTypes.object,
     repos: PropTypes.array.isRequired,
-    starred: PropTypes.array.isRequired
+    starred: PropTypes.array.isRequired,
+    handleSearch: PropTypes.func.isRequired,
+    handleClickRepos: PropTypes.func.isRequired,
+    handleClickStarred: PropTypes.func.isRequired
 };
 
 export default MainPage;

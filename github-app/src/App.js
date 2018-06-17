@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       userInfo: null,
       repos: [],
-      starred: []
+      starred: [],
+      showLoader: false,
     };
   }
 
@@ -22,9 +23,9 @@ class App extends Component {
     const keyCode = e.which || e.keyCode;
     const ENTER = 13;
     const nameUser = e.target.value;
-    const target = e.target;
+
     if (keyCode === ENTER) {
-      target.disabled = true;
+      this.setState({ showLoader: true });
       axios.get(END_POINT_USERS.replace('{login}', nameUser))
         .then(({ data }) => {
           this.setState({
@@ -41,7 +42,7 @@ class App extends Component {
           })
         })
         .finally(() => {
-          target.disabled = false;
+          this.setState({ showLoader: false });
         });
     }
   }
@@ -67,6 +68,7 @@ class App extends Component {
   render() {
     return (
       <MainPage
+        showLoader={this.state.showLoader}
         userInfo={this.state.userInfo}
         repos={this.state.repos}
         starred={this.state.starred}

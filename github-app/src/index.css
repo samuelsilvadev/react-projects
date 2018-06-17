@@ -30,6 +30,7 @@ ul {
     font-size: 1.1em;
     height: 40px;
     outline: none;
+    text-align: center;
 }
 
 .user {
