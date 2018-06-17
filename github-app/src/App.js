@@ -17,6 +17,10 @@ class App extends Component {
       starred: [],
       showLoader: false,
     };
+
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleClickRepos = this.handleClickRepos.bind(this);
+    this.handleClickStarred = this.handleClickStarred.bind(this);
   }
 
   handleSearch(e) {
@@ -68,13 +72,10 @@ class App extends Component {
   render() {
     return (
       <MainPage
-        showLoader={this.state.showLoader}
-        userInfo={this.state.userInfo}
-        repos={this.state.repos}
-        starred={this.state.starred}
-        handleSearch={this.handleSearch.bind(this)}
-        handleClickRepos={this.handleClickRepos.bind(this)}
-        handleClickStarred={this.handleClickStarred.bind(this)} />
+        {...this.state}
+        handleSearch={this.handleSearch}
+        handleClickRepos={this.handleClickRepos}
+        handleClickStarred={this.handleClickStarred} />
     );
   }
 }
