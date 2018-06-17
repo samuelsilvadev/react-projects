@@ -5,6 +5,7 @@ import Actions from './actions';
 import Repos from './repos'
 import Search from './search'
 import UserInfo from './user-info'
+import Loader from './loader/loader';
 
 const MainPage = ({
     showLoader,
@@ -19,7 +20,7 @@ const MainPage = ({
 
             <Search isDisabled={showLoader} handleSearch={handleSearch} />
 
-            {showLoader && <div>Loading...</div>}
+            {showLoader && <Loader />}
 
             {!!userInfo && <UserInfo userInfo={userInfo} />}
 
