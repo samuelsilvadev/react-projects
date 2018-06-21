@@ -2,10 +2,13 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+dotenv.config();
 const app = express();
 
 app.use(bodyParser.json());
-mongoose.connect('mongodb://localhost/bookworm');
+mongoose.connect(process.env.MONGODB_URL);
 
 const auth = require('./routes/auth');
 
