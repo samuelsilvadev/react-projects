@@ -16,7 +16,6 @@ class LoginPage extends React.Component {
                 <h1>Login Page</h1>
                 <LoginForm submit={this.submit} />
             </div>
-
         );
     }
 }
