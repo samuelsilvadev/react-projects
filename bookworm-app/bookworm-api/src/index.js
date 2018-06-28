@@ -11,8 +11,10 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGODB_URL);
 
 const auth = require('./routes/auth');
+const users = require('./routes/users');
 
 app.use('/api/auth', auth);
+app.use('/api/users', users);
 
 app.get('/*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'index.html'));
