@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.post('/', (req, resp) => {
 	const { credentials } = req.body;
-	console.log(credentials);
 	User.findOne({ email: credentials.email })
 		.then((user) => {
 			if (user && user.isValidPassword(credentials.password)) {
