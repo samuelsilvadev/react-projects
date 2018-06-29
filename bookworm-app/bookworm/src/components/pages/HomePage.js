@@ -4,10 +4,21 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/auth';
 
+const styleSpan = {
+    display: 'inline-block',
+    margin: '0 6px'
+};
+
 const HomePage = ({ isAuthenticated, logout }) => (
     <div>
         <h1>Home Page</h1>
-        {isAuthenticated ? <button onClick={() => logout()}>Logout</button> : <Link to="/login">Login</Link>}
+        {isAuthenticated ?
+            <button onClick={() => logout()}>Logout</button> :
+            <div>
+                <Link to="/login">Login</Link>
+                <span style={styleSpan}>or</span>
+                <Link to="/signup">Sign up</Link>
+            </div>}
     </div>
 );
 

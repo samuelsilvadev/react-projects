@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button, Message } from 'semantic-ui-react';
 import Validator from 'validator';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import InlineError from '../messages/InlineError'
 
 class LoginForm extends React.Component {
@@ -74,6 +75,7 @@ class LoginForm extends React.Component {
                 </Form.Field>
 
                 <Button primary>Login</Button>
+                <Link to="/">Back</Link>
             </Form>
         );
     }
