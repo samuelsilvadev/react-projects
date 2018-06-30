@@ -26,6 +26,10 @@ schema.methods.setConfirmationToken = function setConfirmationToken() {
 	this.confirmationToken = this.generateJWT();
 };
 
+schema.methods.generateConfirmationUrl = function generateConfirmationUrl() {
+	return `${process.env.HOST}/confirmation/${this.confirmationToken}`;
+};
+
 schema.methods.isValidPassword = function isValidPassword(password) {
 	return bcrypt.compareSync(password, this.passwordHash);
 };
