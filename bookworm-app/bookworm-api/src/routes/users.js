@@ -8,6 +8,7 @@ router.post('/', (req, resp) => {
 	const { email, password } = req.body.user;
 	const user = new User({ email });
 	user.setPassword(password);
+	user.setConfirmationToken();
 	user.save()
 		.then(us => resp.status(200).json({ user: us.toAuthJson() }))
 		.catch(err => resp.status(400).json({ errors: parseErrors(err.errors) }));
