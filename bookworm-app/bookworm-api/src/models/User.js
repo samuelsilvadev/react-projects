@@ -15,7 +15,7 @@ const schema = new mongoose.Schema({
 	},
 }, { timestamps: true });
 
-schema.methods.setPassword = function toAuthJson(password) {
+schema.methods.setPassword = function setPassword(password) {
 	this.passwordHash = bcrypt.hashSync(password, 10);
 };
 
