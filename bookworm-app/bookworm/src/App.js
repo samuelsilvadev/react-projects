@@ -7,10 +7,12 @@ import DashBoardPage from './components/pages/DashBoardPage';
 import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
 import SignUpPage from './components/pages/SignUpPage';
+import ConfirmationPage from './components/pages/ConfirmationPage'
 
 const App = ({ location }) => (
   <div className="ui container">
     <Route location={location} path="/" exact component={HomePage} />
+    <Route location={location} path="/confirmation/:token" component={ConfirmationPage} />
     <GuestRoute location={location} path="/login" component={LoginPage} />
     <GuestRoute location={location} path="/signup" component={SignUpPage} />
     <UserRoute location={location} path="/dashboard" component={DashBoardPage} />
