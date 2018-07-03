@@ -38,6 +38,7 @@ schema.methods.generateJWT = function generateJWT() {
 	return jwt.sign(
 		{
 			email: this.email,
+			confirmed: this.confirmed,
 		},
 		process.env.JWT_SECRET_KEY,
 	);
@@ -46,7 +47,7 @@ schema.methods.generateJWT = function generateJWT() {
 schema.methods.toAuthJson = function toAuthJson() {
 	return {
 		email: this.email,
-		confirmed: this.confirmed,
+		confirmed: this.confirmed || false,
 		token: this.generateJWT(),
 	};
 };
