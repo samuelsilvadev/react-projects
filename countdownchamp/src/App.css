@@ -1,0 +1,28 @@
+.App {
+    background-color: aliceblue;
+    min-height: 300px;
+    margin: 20% auto;
+    width: 500px; 
+}
+
+.App__header {
+    text-align: center;
+}
+
+.Clock{
+    display: flex;
+    justify-content: center;
+}
+
+.Clock > * {
+    margin-right: 10px;
+}
+
+.Add-Event {
+    margin: 10% auto;
+}
+
+.Add-Event__form {
+    display: flex;
+    justify-content: center;
+}
