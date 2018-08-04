@@ -10,15 +10,6 @@
     text-align: center;
 }
 
-.Clock{
-    display: flex;
-    justify-content: center;
-}
-
-.Clock > * {
-    margin-right: 10px;
-}
-
 .Add-Event {
     margin: 10% auto;
 }

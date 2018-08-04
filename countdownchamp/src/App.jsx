@@ -1,4 +1,6 @@
 import React from 'react';
+import Clock from './components/clock/Clock';
+
 import './App.css';
 
 class App extends React.Component {
@@ -20,15 +22,10 @@ class App extends React.Component {
                         <p>{this.state.deadline}</p>
                     </div>
                 </header>
-                <section className="Clock">
-                    <div className="Clock__days">14 days</div>
-                    <div className="Clock__hours">8 hours</div>
-                    <div className="Clock__minutes">50 minutes</div>
-                    <div className="Clock__seconds">5 seconds</div>
-                </section>
+                <Clock />
                 <section className="Add-Event">
                     <form className="Add-Event__form">
-                        <input type="text" onChange={this._handleOnChangeDeadline.bind(this)}/>
+                        <input type="text" onChange={this._handleOnChangeDeadline.bind(this)} />
                         <button onClick={this._setNewDeadLine.bind(this)}>Send</button>
                     </form>
                 </section>
@@ -38,7 +35,7 @@ class App extends React.Component {
 
     _handleOnChangeDeadline(e) {
         const valueTyped = e.target.value;
-        this.setState({
+        valueTyped && this.setState({
             newDeadline: valueTyped,
         })
     }

@@ -1,0 +1,8 @@
+.Clock{
+    display: flex;
+    justify-content: center;
+}
+
+.Clock > * {
+    margin-right: 10px;
+}
