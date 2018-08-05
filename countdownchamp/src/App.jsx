@@ -22,7 +22,7 @@ class App extends React.Component {
                         <p>{this.state.deadline}</p>
                     </div>
                 </header>
-                <Clock />
+                <Clock deadline={this.state.deadline}/>
                 <section className="Add-Event">
                     <form className="Add-Event__form">
                         <input type="text" onChange={this._handleOnChangeDeadline.bind(this)} />
@@ -37,7 +37,7 @@ class App extends React.Component {
         const valueTyped = e.target.value;
         valueTyped && this.setState({
             newDeadline: valueTyped,
-        })
+        });
     }
 
     _setNewDeadLine(e) {
