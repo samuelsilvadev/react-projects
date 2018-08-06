@@ -52,8 +52,8 @@ class Clock extends React.Component {
         }
     }
 
-    _formatTextToPlural(str, qtde) {
-        return `${qtde} ${(qtde && qtde > 1) ? str + 's' : str}`;
+    _formatTextToPlural(str = '', qtde = 0) {
+        return `${(qtde < 10 && qtde > 0 ) ? ('0' + qtde) : qtde } ${(qtde > 1) ? str + 's' : str}`;
     }
 }
 
