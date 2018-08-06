@@ -1,5 +1,6 @@
 .App {
     background-color: aliceblue;
+    box-shadow: 0 0 20px 0px #5e819c;
     min-height: 300px;
     margin: 20% auto;
     padding: 1%;
