@@ -9,6 +9,7 @@
 
 .App__header {
     text-align: center;
+    overflow: hidden;
 }
 
 .Add-Event {

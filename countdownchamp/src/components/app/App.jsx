@@ -1,5 +1,5 @@
 import React from 'react';
-import Clock from './components/clock/Clock';
+import Clock from './../clock/Clock';
 
 import './App.css';
 
@@ -11,6 +11,8 @@ class App extends React.Component {
             deadline: 'February 25, 2018',
             newDeadline: '',
         };
+        this._handleOnChangeDeadline = this._handleOnChangeDeadline.bind(this);
+        this._setNewDeadLine = this._setNewDeadLine.bind(this)
     }
 
     render() {
@@ -22,11 +24,11 @@ class App extends React.Component {
                         <p>{this.state.deadline}</p>
                     </div>
                 </header>
-                <Clock deadline={this.state.deadline}/>
+                <Clock deadline={this.state.deadline} />
                 <section className="Add-Event">
                     <form className="Add-Event__form">
-                        <input type="text" onChange={this._handleOnChangeDeadline.bind(this)} />
-                        <button onClick={this._setNewDeadLine.bind(this)}>Send</button>
+                        <input type="text" onChange={this._handleOnChangeDeadline} />
+                        <button onClick={this._setNewDeadLine}>Send</button>
                     </form>
                 </section>
             </div>
