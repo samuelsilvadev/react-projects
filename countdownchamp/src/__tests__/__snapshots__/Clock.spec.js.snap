@@ -1,0 +1,4213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Clock deadline={value}/> should mount Clock with props 1`] = `
+ReactWrapper {
+  Symbol(enzyme.__unrendered__): <Clock
+    deadline="August 12, 2020"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": Clock {
+      "_reactInternalFiber": FiberNode {
+        "_debugID": 41,
+        "_debugIsCurrentlyTiming": false,
+        "_debugOwner": FiberNode {
+          "_debugID": 40,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": [Circular],
+          "effectTag": 1,
+          "expirationTime": 0,
+          "firstEffect": [Circular],
+          "index": 0,
+          "key": null,
+          "lastEffect": [Circular],
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "deadline": "August 12, 2020",
+            },
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "deadline": "August 12, 2020",
+            },
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "deadline": "August 12, 2020",
+            },
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 38,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": FiberNode {
+              "_debugID": 38,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": [Circular],
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 1,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      731 days
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      08 hours
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      59 minutes
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      50 seconds
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "expirationTime": 1,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                                            Object {
+                                                                  "deadline": "August 12, 2020",
+                                                                }
+                      }
+/>,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                                            Object {
+                                                                  "deadline": "August 12, 2020",
+                                                                }
+                      }
+/>,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "effectTag": 32,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                                Object {
+                                                "deadline": "August 12, 2020",
+                                              }
+                }
+/>,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <section
+                                class="Clock"
+                >
+                                <div
+                                                class="Clock__days"
+                                >
+                                                731 days
+                                </div>
+                                <div
+                                                class="Clock__hours"
+                                >
+                                                08 hours
+                                </div>
+                                <div
+                                                class="Clock__minutes"
+                                >
+                                                59 minutes
+                                </div>
+                                <div
+                                                class="Clock__seconds"
+                                >
+                                                50 seconds
+                                </div>
+                </section>
+</div>,
+              "context": Object {},
+              "current": [Circular],
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "remainingExpirationTime": 0,
+            },
+            "tag": 3,
+            "treeBaseTime": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                                    Object {
+                                                      "deadline": "August 12, 2020",
+                                                    }
+                  }
+/>,
+              },
+              "expirationTime": 0,
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 2,
+          "treeBaseTime": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_debugSource": null,
+        "actualDuration": 0,
+        "actualStartTime": 0,
+        "alternate": null,
+        "child": FiberNode {
+          "_debugID": 42,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": [Circular],
+          "_debugSource": Object {
+            "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+            "lineNumber": 28,
+          },
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 43,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+              "lineNumber": 29,
+            },
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": null,
+            "effectTag": 0,
+            "expirationTime": 0,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": "731 days",
+              "className": "Clock__days",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": "731 days",
+              "className": "Clock__days",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseTime": 0,
+            "sibling": FiberNode {
+              "_debugID": 44,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                "lineNumber": 30,
+              },
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": null,
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstEffect": null,
+              "index": 1,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": "08 hours",
+                "className": "Clock__hours",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": "08 hours",
+                "className": "Clock__hours",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseTime": 0,
+              "sibling": FiberNode {
+                "_debugID": 45,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                  "lineNumber": 31,
+                },
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": null,
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstEffect": null,
+                "index": 2,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "59 minutes",
+                  "className": "Clock__minutes",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "59 minutes",
+                  "className": "Clock__minutes",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseTime": 0,
+                "sibling": FiberNode {
+                  "_debugID": 46,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                    "lineNumber": 32,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": 0,
+                  "alternate": null,
+                  "child": null,
+                  "effectTag": 0,
+                  "expirationTime": 0,
+                  "firstEffect": null,
+                  "index": 3,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "50 seconds",
+                    "className": "Clock__seconds",
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "50 seconds",
+                    "className": "Clock__seconds",
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseTime": 0,
+                  "sibling": null,
+                  "stateNode": <div
+                    class="Clock__seconds"
+>
+                    50 seconds
+</div>,
+                  "tag": 5,
+                  "treeBaseTime": 0,
+                  "type": "div",
+                  "updateQueue": null,
+                },
+                "stateNode": <div
+                  class="Clock__minutes"
+>
+                  59 minutes
+</div>,
+                "tag": 5,
+                "treeBaseTime": 0,
+                "type": "div",
+                "updateQueue": null,
+              },
+              "stateNode": <div
+                class="Clock__hours"
+>
+                08 hours
+</div>,
+              "tag": 5,
+              "treeBaseTime": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "stateNode": <div
+              class="Clock__days"
+>
+              731 days
+</div>,
+            "tag": 5,
+            "treeBaseTime": 0,
+            "type": "div",
+            "updateQueue": null,
+          },
+          "effectTag": 0,
+          "expirationTime": 0,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "children": Array [
+              <div
+                className="Clock__days"
+>
+                731 days
+</div>,
+              <div
+                className="Clock__hours"
+>
+                08 hours
+</div>,
+              <div
+                className="Clock__minutes"
+>
+                59 minutes
+</div>,
+              <div
+                className="Clock__seconds"
+>
+                50 seconds
+</div>,
+            ],
+            "className": "Clock",
+          },
+          "memoizedState": null,
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "children": Array [
+              <div
+                className="Clock__days"
+>
+                731 days
+</div>,
+              <div
+                className="Clock__hours"
+>
+                08 hours
+</div>,
+              <div
+                className="Clock__minutes"
+>
+                59 minutes
+</div>,
+              <div
+                className="Clock__seconds"
+>
+                50 seconds
+</div>,
+            ],
+            "className": "Clock",
+          },
+          "ref": null,
+          "return": [Circular],
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": <section
+            class="Clock"
+>
+            <div
+                        class="Clock__days"
+            >
+                        731 days
+            </div>
+            <div
+                        class="Clock__hours"
+            >
+                        08 hours
+            </div>
+            <div
+                        class="Clock__minutes"
+            >
+                        59 minutes
+            </div>
+            <div
+                        class="Clock__seconds"
+            >
+                        50 seconds
+            </div>
+</section>,
+          "tag": 5,
+          "treeBaseTime": 0,
+          "type": "section",
+          "updateQueue": null,
+        },
+        "effectTag": 5,
+        "expirationTime": 0,
+        "firstEffect": null,
+        "index": 0,
+        "key": null,
+        "lastEffect": null,
+        "memoizedProps": Object {
+          "deadline": "August 12, 2020",
+        },
+        "memoizedState": Object {
+          "days": 731,
+          "deadline": "",
+          "hours": 8,
+          "minutes": 59,
+          "seconds": 50,
+        },
+        "mode": 0,
+        "nextEffect": null,
+        "pendingProps": Object {
+          "deadline": "August 12, 2020",
+        },
+        "ref": null,
+        "return": FiberNode {
+          "_debugID": 40,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": [Circular],
+          "effectTag": 1,
+          "expirationTime": 0,
+          "firstEffect": [Circular],
+          "index": 0,
+          "key": null,
+          "lastEffect": [Circular],
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "deadline": "August 12, 2020",
+            },
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "deadline": "August 12, 2020",
+            },
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "deadline": "August 12, 2020",
+            },
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 38,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": FiberNode {
+              "_debugID": 38,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": [Circular],
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 1,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      731 days
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      08 hours
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      59 minutes
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      50 seconds
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "expirationTime": 1,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                                            Object {
+                                                                  "deadline": "August 12, 2020",
+                                                                }
+                      }
+/>,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                                            Object {
+                                                                  "deadline": "August 12, 2020",
+                                                                }
+                      }
+/>,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "effectTag": 32,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                                Object {
+                                                "deadline": "August 12, 2020",
+                                              }
+                }
+/>,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <section
+                                class="Clock"
+                >
+                                <div
+                                                class="Clock__days"
+                                >
+                                                731 days
+                                </div>
+                                <div
+                                                class="Clock__hours"
+                                >
+                                                08 hours
+                                </div>
+                                <div
+                                                class="Clock__minutes"
+                                >
+                                                59 minutes
+                                </div>
+                                <div
+                                                class="Clock__seconds"
+                                >
+                                                50 seconds
+                                </div>
+                </section>
+</div>,
+              "context": Object {},
+              "current": [Circular],
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "remainingExpirationTime": 0,
+            },
+            "tag": 3,
+            "treeBaseTime": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                                    Object {
+                                                      "deadline": "August 12, 2020",
+                                                    }
+                  }
+/>,
+              },
+              "expirationTime": 0,
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 2,
+          "treeBaseTime": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "selfBaseTime": 0,
+        "sibling": null,
+        "stateNode": [Circular],
+        "tag": 2,
+        "treeBaseTime": 0,
+        "type": [Function],
+        "updateQueue": Object {
+          "baseState": Object {
+            "days": 731,
+            "deadline": "",
+            "hours": 8,
+            "minutes": 59,
+            "seconds": 50,
+          },
+          "expirationTime": 0,
+          "firstCapturedEffect": null,
+          "firstCapturedUpdate": null,
+          "firstEffect": null,
+          "firstUpdate": null,
+          "lastCapturedEffect": null,
+          "lastCapturedUpdate": null,
+          "lastEffect": null,
+          "lastUpdate": null,
+        },
+      },
+      "_reactInternalInstance": Object {},
+      "context": Object {},
+      "props": Object {
+        "deadline": "August 12, 2020",
+      },
+      "refs": Object {},
+      "state": Object {
+        "days": 731,
+        "deadline": "",
+        "hours": 8,
+        "minutes": 59,
+        "seconds": 50,
+      },
+      "updater": Object {
+        "enqueueForceUpdate": [Function],
+        "enqueueReplaceState": [Function],
+        "enqueueSetState": [Function],
+        "isMounted": [Function],
+      },
+    },
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "deadline": "August 12, 2020",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <section
+        class="Clock"
+>
+        <div
+                class="Clock__days"
+        >
+                731 days
+        </div>
+        <div
+                class="Clock__hours"
+        >
+                08 hours
+        </div>
+        <div
+                class="Clock__minutes"
+        >
+                59 minutes
+        </div>
+        <div
+                class="Clock__seconds"
+        >
+                50 seconds
+        </div>
+</section>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="Clock__days"
+>
+            731 days
+</div>,
+          <div
+            className="Clock__hours"
+>
+            08 hours
+</div>,
+          <div
+            className="Clock__minutes"
+>
+            59 minutes
+</div>,
+          <div
+            className="Clock__seconds"
+>
+            50 seconds
+</div>,
+        ],
+        "className": "Clock",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <div
+            class="Clock__days"
+>
+            731 days
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "731 days",
+            "className": "Clock__days",
+          },
+          "ref": null,
+          "rendered": Array [
+            "731 days",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <div
+            class="Clock__hours"
+>
+            08 hours
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "08 hours",
+            "className": "Clock__hours",
+          },
+          "ref": null,
+          "rendered": Array [
+            "08 hours",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <div
+            class="Clock__minutes"
+>
+            59 minutes
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "59 minutes",
+            "className": "Clock__minutes",
+          },
+          "ref": null,
+          "rendered": Array [
+            "59 minutes",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <div
+            class="Clock__seconds"
+>
+            50 seconds
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "50 seconds",
+            "className": "Clock__seconds",
+          },
+          "ref": null,
+          "rendered": Array [
+            "50 seconds",
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "section",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": Clock {
+        "_reactInternalFiber": FiberNode {
+          "_debugID": 41,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": FiberNode {
+            "_debugID": 40,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": [Circular],
+            "effectTag": 1,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 38,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": FiberNode {
+                "_debugID": 38,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": [Circular],
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 1,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseTime": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <section
+                                        class="Clock"
+                    >
+                                        <div
+                                                            class="Clock__days"
+                                        >
+                                                            731 days
+                                        </div>
+                                        <div
+                                                            class="Clock__hours"
+                                        >
+                                                            08 hours
+                                        </div>
+                                        <div
+                                                            class="Clock__minutes"
+                                        >
+                                                            59 minutes
+                                        </div>
+                                        <div
+                                                            class="Clock__seconds"
+                                        >
+                                                            50 seconds
+                                        </div>
+                    </section>
+</div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "remainingExpirationTime": 0,
+                },
+                "tag": 3,
+                "treeBaseTime": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "expirationTime": 1,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                                                Object {
+                                                                        "deadline": "August 12, 2020",
+                                                                      }
+                        }
+/>,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                                                Object {
+                                                                        "deadline": "August 12, 2020",
+                                                                      }
+                        }
+/>,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "effectTag": 32,
+              "expirationTime": 0,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                                    Object {
+                                                      "deadline": "August 12, 2020",
+                                                    }
+                  }
+/>,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      731 days
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      08 hours
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      59 minutes
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      50 seconds
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                                        Object {
+                                                            "deadline": "August 12, 2020",
+                                                          }
+                    }
+/>,
+                },
+                "expirationTime": 0,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "deadline": "August 12, 2020",
+                },
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "deadline": "August 12, 2020",
+                },
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 2,
+            "treeBaseTime": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 42,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+              "lineNumber": 28,
+            },
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugID": 43,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                "lineNumber": 29,
+              },
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": null,
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": "731 days",
+                "className": "Clock__days",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": "731 days",
+                "className": "Clock__days",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseTime": 0,
+              "sibling": FiberNode {
+                "_debugID": 44,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                  "lineNumber": 30,
+                },
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": null,
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstEffect": null,
+                "index": 1,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "08 hours",
+                  "className": "Clock__hours",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "08 hours",
+                  "className": "Clock__hours",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseTime": 0,
+                "sibling": FiberNode {
+                  "_debugID": 45,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                    "lineNumber": 31,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": 0,
+                  "alternate": null,
+                  "child": null,
+                  "effectTag": 0,
+                  "expirationTime": 0,
+                  "firstEffect": null,
+                  "index": 2,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "59 minutes",
+                    "className": "Clock__minutes",
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "59 minutes",
+                    "className": "Clock__minutes",
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseTime": 0,
+                  "sibling": FiberNode {
+                    "_debugID": 46,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugOwner": [Circular],
+                    "_debugSource": Object {
+                      "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                      "lineNumber": 32,
+                    },
+                    "actualDuration": 0,
+                    "actualStartTime": 0,
+                    "alternate": null,
+                    "child": null,
+                    "effectTag": 0,
+                    "expirationTime": 0,
+                    "firstEffect": null,
+                    "index": 3,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "children": "50 seconds",
+                      "className": "Clock__seconds",
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "children": "50 seconds",
+                      "className": "Clock__seconds",
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseTime": 0,
+                    "sibling": null,
+                    "stateNode": <div
+                      class="Clock__seconds"
+>
+                      50 seconds
+</div>,
+                    "tag": 5,
+                    "treeBaseTime": 0,
+                    "type": "div",
+                    "updateQueue": null,
+                  },
+                  "stateNode": <div
+                    class="Clock__minutes"
+>
+                    59 minutes
+</div>,
+                  "tag": 5,
+                  "treeBaseTime": 0,
+                  "type": "div",
+                  "updateQueue": null,
+                },
+                "stateNode": <div
+                  class="Clock__hours"
+>
+                  08 hours
+</div>,
+                "tag": 5,
+                "treeBaseTime": 0,
+                "type": "div",
+                "updateQueue": null,
+              },
+              "stateNode": <div
+                class="Clock__days"
+>
+                731 days
+</div>,
+              "tag": 5,
+              "treeBaseTime": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "effectTag": 0,
+            "expirationTime": 0,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": Array [
+                <div
+                  className="Clock__days"
+>
+                  731 days
+</div>,
+                <div
+                  className="Clock__hours"
+>
+                  08 hours
+</div>,
+                <div
+                  className="Clock__minutes"
+>
+                  59 minutes
+</div>,
+                <div
+                  className="Clock__seconds"
+>
+                  50 seconds
+</div>,
+              ],
+              "className": "Clock",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": Array [
+                <div
+                  className="Clock__days"
+>
+                  731 days
+</div>,
+                <div
+                  className="Clock__hours"
+>
+                  08 hours
+</div>,
+                <div
+                  className="Clock__minutes"
+>
+                  59 minutes
+</div>,
+                <div
+                  className="Clock__seconds"
+>
+                  50 seconds
+</div>,
+              ],
+              "className": "Clock",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": <section
+              class="Clock"
+>
+              <div
+                            class="Clock__days"
+              >
+                            731 days
+              </div>
+              <div
+                            class="Clock__hours"
+              >
+                            08 hours
+              </div>
+              <div
+                            class="Clock__minutes"
+              >
+                            59 minutes
+              </div>
+              <div
+                            class="Clock__seconds"
+              >
+                            50 seconds
+              </div>
+</section>,
+            "tag": 5,
+            "treeBaseTime": 0,
+            "type": "section",
+            "updateQueue": null,
+          },
+          "effectTag": 5,
+          "expirationTime": 0,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "deadline": "August 12, 2020",
+          },
+          "memoizedState": Object {
+            "days": 731,
+            "deadline": "",
+            "hours": 8,
+            "minutes": 59,
+            "seconds": 50,
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "deadline": "August 12, 2020",
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 40,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": [Circular],
+            "effectTag": 1,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "deadline": "August 12, 2020",
+              },
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 38,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": FiberNode {
+                "_debugID": 38,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": [Circular],
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 1,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseTime": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <section
+                                        class="Clock"
+                    >
+                                        <div
+                                                            class="Clock__days"
+                                        >
+                                                            731 days
+                                        </div>
+                                        <div
+                                                            class="Clock__hours"
+                                        >
+                                                            08 hours
+                                        </div>
+                                        <div
+                                                            class="Clock__minutes"
+                                        >
+                                                            59 minutes
+                                        </div>
+                                        <div
+                                                            class="Clock__seconds"
+                                        >
+                                                            50 seconds
+                                        </div>
+                    </section>
+</div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "remainingExpirationTime": 0,
+                },
+                "tag": 3,
+                "treeBaseTime": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "expirationTime": 1,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                                                Object {
+                                                                        "deadline": "August 12, 2020",
+                                                                      }
+                        }
+/>,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                                                Object {
+                                                                        "deadline": "August 12, 2020",
+                                                                      }
+                        }
+/>,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "effectTag": 32,
+              "expirationTime": 0,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                                    Object {
+                                                      "deadline": "August 12, 2020",
+                                                    }
+                  }
+/>,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      731 days
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      08 hours
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      59 minutes
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      50 seconds
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                                        Object {
+                                                            "deadline": "August 12, 2020",
+                                                          }
+                    }
+/>,
+                },
+                "expirationTime": 0,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "deadline": "August 12, 2020",
+                },
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "deadline": "August 12, 2020",
+                },
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 2,
+            "treeBaseTime": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": [Circular],
+          "tag": 2,
+          "treeBaseTime": 0,
+          "type": [Function],
+          "updateQueue": Object {
+            "baseState": Object {
+              "days": 731,
+              "deadline": "",
+              "hours": 8,
+              "minutes": 59,
+              "seconds": 50,
+            },
+            "expirationTime": 0,
+            "firstCapturedEffect": null,
+            "firstCapturedUpdate": null,
+            "firstEffect": null,
+            "firstUpdate": null,
+            "lastCapturedEffect": null,
+            "lastCapturedUpdate": null,
+            "lastEffect": null,
+            "lastUpdate": null,
+          },
+        },
+        "_reactInternalInstance": Object {},
+        "context": Object {},
+        "props": Object {
+          "deadline": "August 12, 2020",
+        },
+        "refs": Object {},
+        "state": Object {
+          "days": 731,
+          "deadline": "",
+          "hours": 8,
+          "minutes": 59,
+          "seconds": 50,
+        },
+        "updater": Object {
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+        },
+      },
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "deadline": "August 12, 2020",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <section
+          class="Clock"
+>
+          <div
+                    class="Clock__days"
+          >
+                    731 days
+          </div>
+          <div
+                    class="Clock__hours"
+          >
+                    08 hours
+          </div>
+          <div
+                    class="Clock__minutes"
+          >
+                    59 minutes
+          </div>
+          <div
+                    class="Clock__seconds"
+          >
+                    50 seconds
+          </div>
+</section>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="Clock__days"
+>
+              731 days
+</div>,
+            <div
+              className="Clock__hours"
+>
+              08 hours
+</div>,
+            <div
+              className="Clock__minutes"
+>
+              59 minutes
+</div>,
+            <div
+              className="Clock__seconds"
+>
+              50 seconds
+</div>,
+          ],
+          "className": "Clock",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <div
+              class="Clock__days"
+>
+              731 days
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "731 days",
+              "className": "Clock__days",
+            },
+            "ref": null,
+            "rendered": Array [
+              "731 days",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <div
+              class="Clock__hours"
+>
+              08 hours
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "08 hours",
+              "className": "Clock__hours",
+            },
+            "ref": null,
+            "rendered": Array [
+              "08 hours",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <div
+              class="Clock__minutes"
+>
+              59 minutes
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "59 minutes",
+              "className": "Clock__minutes",
+            },
+            "ref": null,
+            "rendered": Array [
+              "59 minutes",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <div
+              class="Clock__seconds"
+>
+              50 seconds
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "50 seconds",
+              "className": "Clock__seconds",
+            },
+            "ref": null,
+            "rendered": Array [
+              "50 seconds",
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "section",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getSnapshotBeforeUpdate": true,
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`<Clock/> should mount Clock 1`] = `
+ReactWrapper {
+  Symbol(enzyme.__unrendered__): <Clock />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": Clock {
+      "_reactInternalFiber": FiberNode {
+        "_debugID": 5,
+        "_debugIsCurrentlyTiming": false,
+        "_debugOwner": FiberNode {
+          "_debugID": 4,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": [Circular],
+          "effectTag": 1,
+          "expirationTime": 0,
+          "firstEffect": [Circular],
+          "index": 0,
+          "key": null,
+          "lastEffect": [Circular],
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {},
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {},
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {},
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 1,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": FiberNode {
+              "_debugID": 1,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": [Circular],
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 1,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      0 day
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      0 hour
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      0 minute
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      0 second
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "expirationTime": 1,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={Object {}}
+/>,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={Object {}}
+/>,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "effectTag": 32,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={Object {}}
+/>,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <section
+                                class="Clock"
+                >
+                                <div
+                                                class="Clock__days"
+                                >
+                                                0 day
+                                </div>
+                                <div
+                                                class="Clock__hours"
+                                >
+                                                0 hour
+                                </div>
+                                <div
+                                                class="Clock__minutes"
+                                >
+                                                0 minute
+                                </div>
+                                <div
+                                                class="Clock__seconds"
+                                >
+                                                0 second
+                                </div>
+                </section>
+</div>,
+              "context": Object {},
+              "current": [Circular],
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "remainingExpirationTime": 0,
+            },
+            "tag": 3,
+            "treeBaseTime": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={Object {}}
+/>,
+              },
+              "expirationTime": 0,
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {},
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {},
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 2,
+          "treeBaseTime": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_debugSource": null,
+        "actualDuration": 0,
+        "actualStartTime": 0,
+        "alternate": null,
+        "child": FiberNode {
+          "_debugID": 6,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": [Circular],
+          "_debugSource": Object {
+            "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+            "lineNumber": 28,
+          },
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 7,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+              "lineNumber": 29,
+            },
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": null,
+            "effectTag": 0,
+            "expirationTime": 0,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": "0 day",
+              "className": "Clock__days",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": "0 day",
+              "className": "Clock__days",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseTime": 0,
+            "sibling": FiberNode {
+              "_debugID": 8,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                "lineNumber": 30,
+              },
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": null,
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstEffect": null,
+              "index": 1,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": "0 hour",
+                "className": "Clock__hours",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": "0 hour",
+                "className": "Clock__hours",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseTime": 0,
+              "sibling": FiberNode {
+                "_debugID": 9,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                  "lineNumber": 31,
+                },
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": null,
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstEffect": null,
+                "index": 2,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "0 minute",
+                  "className": "Clock__minutes",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "0 minute",
+                  "className": "Clock__minutes",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseTime": 0,
+                "sibling": FiberNode {
+                  "_debugID": 10,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                    "lineNumber": 32,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": 0,
+                  "alternate": null,
+                  "child": null,
+                  "effectTag": 0,
+                  "expirationTime": 0,
+                  "firstEffect": null,
+                  "index": 3,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "0 second",
+                    "className": "Clock__seconds",
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "0 second",
+                    "className": "Clock__seconds",
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseTime": 0,
+                  "sibling": null,
+                  "stateNode": <div
+                    class="Clock__seconds"
+>
+                    0 second
+</div>,
+                  "tag": 5,
+                  "treeBaseTime": 0,
+                  "type": "div",
+                  "updateQueue": null,
+                },
+                "stateNode": <div
+                  class="Clock__minutes"
+>
+                  0 minute
+</div>,
+                "tag": 5,
+                "treeBaseTime": 0,
+                "type": "div",
+                "updateQueue": null,
+              },
+              "stateNode": <div
+                class="Clock__hours"
+>
+                0 hour
+</div>,
+              "tag": 5,
+              "treeBaseTime": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "stateNode": <div
+              class="Clock__days"
+>
+              0 day
+</div>,
+            "tag": 5,
+            "treeBaseTime": 0,
+            "type": "div",
+            "updateQueue": null,
+          },
+          "effectTag": 0,
+          "expirationTime": 0,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "children": Array [
+              <div
+                className="Clock__days"
+>
+                0 day
+</div>,
+              <div
+                className="Clock__hours"
+>
+                0 hour
+</div>,
+              <div
+                className="Clock__minutes"
+>
+                0 minute
+</div>,
+              <div
+                className="Clock__seconds"
+>
+                0 second
+</div>,
+            ],
+            "className": "Clock",
+          },
+          "memoizedState": null,
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "children": Array [
+              <div
+                className="Clock__days"
+>
+                0 day
+</div>,
+              <div
+                className="Clock__hours"
+>
+                0 hour
+</div>,
+              <div
+                className="Clock__minutes"
+>
+                0 minute
+</div>,
+              <div
+                className="Clock__seconds"
+>
+                0 second
+</div>,
+            ],
+            "className": "Clock",
+          },
+          "ref": null,
+          "return": [Circular],
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": <section
+            class="Clock"
+>
+            <div
+                        class="Clock__days"
+            >
+                        0 day
+            </div>
+            <div
+                        class="Clock__hours"
+            >
+                        0 hour
+            </div>
+            <div
+                        class="Clock__minutes"
+            >
+                        0 minute
+            </div>
+            <div
+                        class="Clock__seconds"
+            >
+                        0 second
+            </div>
+</section>,
+          "tag": 5,
+          "treeBaseTime": 0,
+          "type": "section",
+          "updateQueue": null,
+        },
+        "effectTag": 5,
+        "expirationTime": 0,
+        "firstEffect": null,
+        "index": 0,
+        "key": null,
+        "lastEffect": null,
+        "memoizedProps": Object {},
+        "memoizedState": Object {
+          "days": 0,
+          "deadline": "",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+        },
+        "mode": 0,
+        "nextEffect": null,
+        "pendingProps": Object {},
+        "ref": null,
+        "return": FiberNode {
+          "_debugID": 4,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": [Circular],
+          "effectTag": 1,
+          "expirationTime": 0,
+          "firstEffect": [Circular],
+          "index": 0,
+          "key": null,
+          "lastEffect": [Circular],
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {},
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {},
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {},
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 1,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": FiberNode {
+              "_debugID": 1,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": [Circular],
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 1,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      0 day
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      0 hour
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      0 minute
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      0 second
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "expirationTime": 1,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={Object {}}
+/>,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={Object {}}
+/>,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "effectTag": 32,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={Object {}}
+/>,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <section
+                                class="Clock"
+                >
+                                <div
+                                                class="Clock__days"
+                                >
+                                                0 day
+                                </div>
+                                <div
+                                                class="Clock__hours"
+                                >
+                                                0 hour
+                                </div>
+                                <div
+                                                class="Clock__minutes"
+                                >
+                                                0 minute
+                                </div>
+                                <div
+                                                class="Clock__seconds"
+                                >
+                                                0 second
+                                </div>
+                </section>
+</div>,
+              "context": Object {},
+              "current": [Circular],
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "remainingExpirationTime": 0,
+            },
+            "tag": 3,
+            "treeBaseTime": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={Object {}}
+/>,
+              },
+              "expirationTime": 0,
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {},
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {},
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 2,
+          "treeBaseTime": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "selfBaseTime": 0,
+        "sibling": null,
+        "stateNode": [Circular],
+        "tag": 2,
+        "treeBaseTime": 0,
+        "type": [Function],
+        "updateQueue": Object {
+          "baseState": Object {
+            "days": 0,
+            "deadline": "",
+            "hours": 0,
+            "minutes": 0,
+            "seconds": 0,
+          },
+          "expirationTime": 0,
+          "firstCapturedEffect": null,
+          "firstCapturedUpdate": null,
+          "firstEffect": null,
+          "firstUpdate": null,
+          "lastCapturedEffect": null,
+          "lastCapturedUpdate": null,
+          "lastEffect": null,
+          "lastUpdate": null,
+        },
+      },
+      "_reactInternalInstance": Object {},
+      "context": Object {},
+      "props": Object {},
+      "refs": Object {},
+      "state": Object {
+        "days": 0,
+        "deadline": "",
+        "hours": 0,
+        "minutes": 0,
+        "seconds": 0,
+      },
+      "updater": Object {
+        "enqueueForceUpdate": [Function],
+        "enqueueReplaceState": [Function],
+        "enqueueSetState": [Function],
+        "isMounted": [Function],
+      },
+    },
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": Object {
+      "instance": <section
+        class="Clock"
+>
+        <div
+                class="Clock__days"
+        >
+                0 day
+        </div>
+        <div
+                class="Clock__hours"
+        >
+                0 hour
+        </div>
+        <div
+                class="Clock__minutes"
+        >
+                0 minute
+        </div>
+        <div
+                class="Clock__seconds"
+        >
+                0 second
+        </div>
+</section>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="Clock__days"
+>
+            0 day
+</div>,
+          <div
+            className="Clock__hours"
+>
+            0 hour
+</div>,
+          <div
+            className="Clock__minutes"
+>
+            0 minute
+</div>,
+          <div
+            className="Clock__seconds"
+>
+            0 second
+</div>,
+        ],
+        "className": "Clock",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <div
+            class="Clock__days"
+>
+            0 day
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "0 day",
+            "className": "Clock__days",
+          },
+          "ref": null,
+          "rendered": Array [
+            "0 day",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <div
+            class="Clock__hours"
+>
+            0 hour
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "0 hour",
+            "className": "Clock__hours",
+          },
+          "ref": null,
+          "rendered": Array [
+            "0 hour",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <div
+            class="Clock__minutes"
+>
+            0 minute
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "0 minute",
+            "className": "Clock__minutes",
+          },
+          "ref": null,
+          "rendered": Array [
+            "0 minute",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <div
+            class="Clock__seconds"
+>
+            0 second
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "0 second",
+            "className": "Clock__seconds",
+          },
+          "ref": null,
+          "rendered": Array [
+            "0 second",
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "section",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": Clock {
+        "_reactInternalFiber": FiberNode {
+          "_debugID": 5,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": FiberNode {
+            "_debugID": 4,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": [Circular],
+            "effectTag": 1,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {},
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {},
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {},
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 1,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": FiberNode {
+                "_debugID": 1,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": [Circular],
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 1,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseTime": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <section
+                                        class="Clock"
+                    >
+                                        <div
+                                                            class="Clock__days"
+                                        >
+                                                            0 day
+                                        </div>
+                                        <div
+                                                            class="Clock__hours"
+                                        >
+                                                            0 hour
+                                        </div>
+                                        <div
+                                                            class="Clock__minutes"
+                                        >
+                                                            0 minute
+                                        </div>
+                                        <div
+                                                            class="Clock__seconds"
+                                        >
+                                                            0 second
+                                        </div>
+                    </section>
+</div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "remainingExpirationTime": 0,
+                },
+                "tag": 3,
+                "treeBaseTime": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "expirationTime": 1,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={Object {}}
+/>,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={Object {}}
+/>,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "effectTag": 32,
+              "expirationTime": 0,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={Object {}}
+/>,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      0 day
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      0 hour
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      0 minute
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      0 second
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={Object {}}
+/>,
+                },
+                "expirationTime": 0,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {},
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {},
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 2,
+            "treeBaseTime": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": 0,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 6,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+              "lineNumber": 28,
+            },
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugID": 7,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                "lineNumber": 29,
+              },
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": null,
+              "child": null,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": "0 day",
+                "className": "Clock__days",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": "0 day",
+                "className": "Clock__days",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseTime": 0,
+              "sibling": FiberNode {
+                "_debugID": 8,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                  "lineNumber": 30,
+                },
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": null,
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstEffect": null,
+                "index": 1,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "0 hour",
+                  "className": "Clock__hours",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "0 hour",
+                  "className": "Clock__hours",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseTime": 0,
+                "sibling": FiberNode {
+                  "_debugID": 9,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                    "lineNumber": 31,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": 0,
+                  "alternate": null,
+                  "child": null,
+                  "effectTag": 0,
+                  "expirationTime": 0,
+                  "firstEffect": null,
+                  "index": 2,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "0 minute",
+                    "className": "Clock__minutes",
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "0 minute",
+                    "className": "Clock__minutes",
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseTime": 0,
+                  "sibling": FiberNode {
+                    "_debugID": 10,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugOwner": [Circular],
+                    "_debugSource": Object {
+                      "fileName": "/Users/samuelsilva/Documents/projects/react-projects/countdownchamp/src/components/clock/Clock.jsx",
+                      "lineNumber": 32,
+                    },
+                    "actualDuration": 0,
+                    "actualStartTime": 0,
+                    "alternate": null,
+                    "child": null,
+                    "effectTag": 0,
+                    "expirationTime": 0,
+                    "firstEffect": null,
+                    "index": 3,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "children": "0 second",
+                      "className": "Clock__seconds",
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "children": "0 second",
+                      "className": "Clock__seconds",
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseTime": 0,
+                    "sibling": null,
+                    "stateNode": <div
+                      class="Clock__seconds"
+>
+                      0 second
+</div>,
+                    "tag": 5,
+                    "treeBaseTime": 0,
+                    "type": "div",
+                    "updateQueue": null,
+                  },
+                  "stateNode": <div
+                    class="Clock__minutes"
+>
+                    0 minute
+</div>,
+                  "tag": 5,
+                  "treeBaseTime": 0,
+                  "type": "div",
+                  "updateQueue": null,
+                },
+                "stateNode": <div
+                  class="Clock__hours"
+>
+                  0 hour
+</div>,
+                "tag": 5,
+                "treeBaseTime": 0,
+                "type": "div",
+                "updateQueue": null,
+              },
+              "stateNode": <div
+                class="Clock__days"
+>
+                0 day
+</div>,
+              "tag": 5,
+              "treeBaseTime": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "effectTag": 0,
+            "expirationTime": 0,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": Array [
+                <div
+                  className="Clock__days"
+>
+                  0 day
+</div>,
+                <div
+                  className="Clock__hours"
+>
+                  0 hour
+</div>,
+                <div
+                  className="Clock__minutes"
+>
+                  0 minute
+</div>,
+                <div
+                  className="Clock__seconds"
+>
+                  0 second
+</div>,
+              ],
+              "className": "Clock",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": Array [
+                <div
+                  className="Clock__days"
+>
+                  0 day
+</div>,
+                <div
+                  className="Clock__hours"
+>
+                  0 hour
+</div>,
+                <div
+                  className="Clock__minutes"
+>
+                  0 minute
+</div>,
+                <div
+                  className="Clock__seconds"
+>
+                  0 second
+</div>,
+              ],
+              "className": "Clock",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": <section
+              class="Clock"
+>
+              <div
+                            class="Clock__days"
+              >
+                            0 day
+              </div>
+              <div
+                            class="Clock__hours"
+              >
+                            0 hour
+              </div>
+              <div
+                            class="Clock__minutes"
+              >
+                            0 minute
+              </div>
+              <div
+                            class="Clock__seconds"
+              >
+                            0 second
+              </div>
+</section>,
+            "tag": 5,
+            "treeBaseTime": 0,
+            "type": "section",
+            "updateQueue": null,
+          },
+          "effectTag": 5,
+          "expirationTime": 0,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {},
+          "memoizedState": Object {
+            "days": 0,
+            "deadline": "",
+            "hours": 0,
+            "minutes": 0,
+            "seconds": 0,
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {},
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 4,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": 0,
+            "alternate": null,
+            "child": [Circular],
+            "effectTag": 1,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {},
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {},
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {},
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 1,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": 0,
+              "alternate": FiberNode {
+                "_debugID": 1,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": 0,
+                "alternate": [Circular],
+                "child": null,
+                "effectTag": 0,
+                "expirationTime": 1,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseTime": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <section
+                                        class="Clock"
+                    >
+                                        <div
+                                                            class="Clock__days"
+                                        >
+                                                            0 day
+                                        </div>
+                                        <div
+                                                            class="Clock__hours"
+                                        >
+                                                            0 hour
+                                        </div>
+                                        <div
+                                                            class="Clock__minutes"
+                                        >
+                                                            0 minute
+                                        </div>
+                                        <div
+                                                            class="Clock__seconds"
+                                        >
+                                                            0 second
+                                        </div>
+                    </section>
+</div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "remainingExpirationTime": 0,
+                },
+                "tag": 3,
+                "treeBaseTime": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "expirationTime": 1,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={Object {}}
+/>,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={Object {}}
+/>,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "effectTag": 32,
+              "expirationTime": 0,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={Object {}}
+/>,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseTime": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <section
+                                    class="Clock"
+                  >
+                                    <div
+                                                      class="Clock__days"
+                                    >
+                                                      0 day
+                                    </div>
+                                    <div
+                                                      class="Clock__hours"
+                                    >
+                                                      0 hour
+                                    </div>
+                                    <div
+                                                      class="Clock__minutes"
+                                    >
+                                                      0 minute
+                                    </div>
+                                    <div
+                                                      class="Clock__seconds"
+                                    >
+                                                      0 second
+                                    </div>
+                  </section>
+</div>,
+                "context": Object {},
+                "current": [Circular],
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "remainingExpirationTime": 0,
+              },
+              "tag": 3,
+              "treeBaseTime": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={Object {}}
+/>,
+                },
+                "expirationTime": 0,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseTime": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {},
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {},
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 2,
+            "treeBaseTime": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "selfBaseTime": 0,
+          "sibling": null,
+          "stateNode": [Circular],
+          "tag": 2,
+          "treeBaseTime": 0,
+          "type": [Function],
+          "updateQueue": Object {
+            "baseState": Object {
+              "days": 0,
+              "deadline": "",
+              "hours": 0,
+              "minutes": 0,
+              "seconds": 0,
+            },
+            "expirationTime": 0,
+            "firstCapturedEffect": null,
+            "firstCapturedUpdate": null,
+            "firstEffect": null,
+            "firstUpdate": null,
+            "lastCapturedEffect": null,
+            "lastCapturedUpdate": null,
+            "lastEffect": null,
+            "lastUpdate": null,
+          },
+        },
+        "_reactInternalInstance": Object {},
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": Object {
+          "days": 0,
+          "deadline": "",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+        },
+        "updater": Object {
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+        },
+      },
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": Object {
+        "instance": <section
+          class="Clock"
+>
+          <div
+                    class="Clock__days"
+          >
+                    0 day
+          </div>
+          <div
+                    class="Clock__hours"
+          >
+                    0 hour
+          </div>
+          <div
+                    class="Clock__minutes"
+          >
+                    0 minute
+          </div>
+          <div
+                    class="Clock__seconds"
+          >
+                    0 second
+          </div>
+</section>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="Clock__days"
+>
+              0 day
+</div>,
+            <div
+              className="Clock__hours"
+>
+              0 hour
+</div>,
+            <div
+              className="Clock__minutes"
+>
+              0 minute
+</div>,
+            <div
+              className="Clock__seconds"
+>
+              0 second
+</div>,
+          ],
+          "className": "Clock",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <div
+              class="Clock__days"
+>
+              0 day
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "0 day",
+              "className": "Clock__days",
+            },
+            "ref": null,
+            "rendered": Array [
+              "0 day",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <div
+              class="Clock__hours"
+>
+              0 hour
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "0 hour",
+              "className": "Clock__hours",
+            },
+            "ref": null,
+            "rendered": Array [
+              "0 hour",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <div
+              class="Clock__minutes"
+>
+              0 minute
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "0 minute",
+              "className": "Clock__minutes",
+            },
+            "ref": null,
+            "rendered": Array [
+              "0 minute",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <div
+              class="Clock__seconds"
+>
+              0 second
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "0 second",
+              "className": "Clock__seconds",
+            },
+            "ref": null,
+            "rendered": Array [
+              "0 second",
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "section",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getSnapshotBeforeUpdate": true,
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
