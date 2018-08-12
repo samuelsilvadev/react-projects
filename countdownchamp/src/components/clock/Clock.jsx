@@ -13,14 +13,15 @@ class Clock extends React.Component {
             minutes: 0,
             seconds: 0
         };
-    }
-
-    componentWillMount() {
-        this.setState(this._getTimeUntil(this.props.deadline));
+        this.intervalId = null;
     }
 
     componentDidMount() {
-        setInterval(() => this.setState(this._getTimeUntil(this.props.deadline)), 1000);
+        this.intervalId = setInterval(() => this.setState(this._getTimeUntil(this.props.deadline)), 1000);
+    }
+
+    componentWillUnmount() {
+        window.clearInterval(this.intervalId);
     }
 
     render() {
@@ -53,7 +54,7 @@ class Clock extends React.Component {
     }
 
     _formatTextToPlural(str = '', qtde = 0) {
-        return `${(qtde < 10 && qtde > 0 ) ? ('0' + qtde) : qtde } ${(qtde > 1) ? str + 's' : str}`;
+        return `${(qtde < 10 && qtde > 0) ? ('0' + qtde) : qtde} ${(qtde > 1) ? str + 's' : str}`;
     }
 }
 
