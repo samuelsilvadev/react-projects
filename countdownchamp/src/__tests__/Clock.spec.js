@@ -51,4 +51,26 @@ describe('<Clock deadline={value}/>', () => {
     it('should receive prop deadline', () => {
         expect(wrapper.props().deadline).toBe('August 12, 2020');
     });
+
+    it('should function _getTimeUntil return an object with properties days, hours, minutes and seconds', () => {
+        const _methodCall = wrapper.instance()._getTimeUntil(wrapper.props().deadline);
+        expect(_methodCall).toHaveProperty('days');
+        expect(_methodCall).toHaveProperty('hours');
+        expect(_methodCall).toHaveProperty('minutes');
+        expect(_methodCall).toHaveProperty('seconds');
+    });
+
+    it('should function _getTimeUntil return undefined with empty parameter', () => {
+        const _methodCall = wrapper.instance()._getTimeUntil();
+        expect(_methodCall).toBeUndefined();
+    });
+
+    it('should function _formatTextToPlural return formated time', () => {
+        const _methodCallOne = wrapper.instance()._formatTextToPlural('hour', 10);
+        const _methodCallTwo = wrapper.instance()._formatTextToPlural('second', 2);
+        const _methodCallThree = wrapper.instance()._formatTextToPlural('minute', 1);
+        expect(_methodCallOne).toEqual('10 hours');
+        expect(_methodCallTwo).toEqual('02 seconds');
+        expect(_methodCallThree).toEqual('01 minute');
+    });
 });
