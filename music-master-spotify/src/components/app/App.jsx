@@ -11,10 +11,12 @@ class App extends React.Component {
         super(props);
         this.state = {
             query: '',
+            artist: null,
         };
         this._changeValueField = this._changeValueField.bind(this);
         this._search = this._search.bind(this);
         this._handleEnterKeyPessed = this._handleEnterKeyPessed.bind(this);
+        this._convertJsonToCorretObjectOnState = this._convertJsonToCorretObjectOnState.bind(this);
     }
 
     _changeValueField(e) {
@@ -32,7 +34,7 @@ class App extends React.Component {
             }
         })
         .then(this._handleResponseSearch)
-        .then(console.log)
+        .then(this._convertJsonToCorretObjectOnState)
         .catch(this._handleErrorResponseSearch);
     }
 
@@ -40,6 +42,13 @@ class App extends React.Component {
         if (e.key === 'Enter') {
             this._search();
         }
+    }
+
+    _convertJsonToCorretObjectOnState(bigJSON) {
+        const [artist] = bigJSON.artists.items;
+        this.setState({
+            artist
+        });
     }
 
     _handleResponseSearch(resp) {
@@ -68,7 +77,7 @@ class App extends React.Component {
                         </InputGroup.Addon>
                     </InputGroup>
                 </FormGroup>
-                <Profile />
+                <Profile artist={this.state.artist} />
                 <Gallery />
             </div>
         );

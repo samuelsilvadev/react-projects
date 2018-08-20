@@ -1,11 +1,13 @@
 :root {
     --black: #000;
     --white: #fff;
+    --font-size-base: 16px; 
 }
 
 body {
     background-color: var(--black);
     color: var(--white); 
+    font-size: var(--font-size-base);
 }
 
 .App {
