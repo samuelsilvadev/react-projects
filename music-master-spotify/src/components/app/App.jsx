@@ -24,18 +24,20 @@ class App extends React.Component {
     }
 
     _search() {
-        const BASE_URL = 'https://api.spotify.com/v1/search?';
-        const FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
-        window.fetch(FETCH_URL, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': process.env.REACT_APP_SPOTIFY_TOKEN,
-            }
-        })
-        .then(this._handleResponseSearch)
-        .then(this._convertJsonToCorretObjectOnState)
-        .catch(this._handleErrorResponseSearch);
+        if(this.state.query) {
+            const BASE_URL = 'https://api.spotify.com/v1/search?';
+            const FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
+            window.fetch(FETCH_URL, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': process.env.REACT_APP_SPOTIFY_TOKEN,
+                }
+            })
+            .then(this._handleResponseSearch)
+            .then(this._convertJsonToCorretObjectOnState)
+            .catch(this._handleErrorResponseSearch);
+        }
     }
 
     _handleEnterKeyPessed(e) {
@@ -77,7 +79,7 @@ class App extends React.Component {
                         </InputGroup.Addon>
                     </InputGroup>
                 </FormGroup>
-                <Profile artist={this.state.artist} />
+                { this.state.artist && <Profile artist={this.state.artist} /> }
                 <Gallery />
             </div>
         );

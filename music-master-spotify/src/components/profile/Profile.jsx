@@ -4,40 +4,25 @@ import PropTypes from 'prop-types';
 import './Profile.css';
 
 class Profile extends React.Component {
-
-    _renderGenres(genres) {
-        return genres.map((genre, index) => (
-          <li key={index}>{ ` ${genre} ${ (genres[index + 1]) ? '& ' : ''} ` }</li>
-        ));
-    }
+	
+	_renderGenres(genres) {
+		return genres.map((genre, index) => <li key={index}>{` ${genre} ${genres[index + 1] ? '& ' : ''} `}</li>);
+	}
 
 	render() {
+		const { artist } = this.props;
 
-        const { artist } = this.props;
-
-        if(artist) {
-            const [ lgImage, mdImage, sImage, xsImage ] = artist.images;
-    
-            console.log(artist);
-    
-            return (
-                <section className="profile">
-                    <img className="profile__image" src={ lgImage.url } alt={ artist.name } />
-                    <div className="profile__details">
-                        <h2 className="profiles__name">{ artist.name }</h2>
-                        <h3 className="profiles__followers">{ artist.followers.total } followers</h3>
-                        <ul className="profile__genres">
-                            { this._renderGenres(artist.genres) }
-                        </ul>
-                    </div>
-                </section>
-            );
-        }
-
-        return (
-            <section className="Profile">
-            </section>
-        );
+		const [ lgImage, mdImage, sImage, xsImage ] = artist.images;
+		return (
+			<section className="profile">
+				<img className="profile__image" src={lgImage.url} alt={artist.name} />
+				<div className="profile__details">
+					<h2 className="profiles__name">{artist.name}</h2>
+					<h3 className="profiles__followers">{artist.followers.total} followers</h3>
+					<ul className="profile__genres">{this._renderGenres(artist.genres)}</ul>
+				</div>
+			</section>
+		);
 	}
 }
 
