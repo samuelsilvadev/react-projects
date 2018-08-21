@@ -62,7 +62,7 @@ class App extends React.Component {
 						Authorization: process.env.REACT_APP_SPOTIFY_TOKEN
 					}
 				})
-				.then((resp) => resp.json())
+				.then(resp => resp.json())
 				.then(this._convertJsonToCorretObjectOnState)
 				.catch(this._handleErrorResponseSearch);
 		}
@@ -75,10 +75,10 @@ class App extends React.Component {
 	}
 
 	_convertJsonToCorretObjectOnState(bigJSON) {
-		if (bigJSON.artist) {
-			const [ artist ] = bigJSON.artists.items;
+		if (bigJSON.artists) {
+			const [ artists ] = bigJSON.artists.items;
 			this.setState({
-				artist
+				artist: artists
 			});
 		}
 	}
