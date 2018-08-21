@@ -21,7 +21,7 @@
     padding-left: 0;
 }
 
-.profile__genres > li {
+.profile__genres>li {
     display: inline-block;
     padding-right: .3rem;
 }
