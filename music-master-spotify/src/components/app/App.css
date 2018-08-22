@@ -14,3 +14,7 @@ body {
     text-align: center;
     padding: 5%;
 }
+
+.App__title {
+    text-transform: capitalize;
+}

@@ -2,8 +2,10 @@ import React from 'react';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 
 import './App.css';
-import Profile from '../profile/Profile';
-import Gallery from '../gallery/Gallery';
+import Profile from './../profile/Profile';
+import Gallery from './../gallery/Gallery';
+
+import texts from './../../translate';
 
 class App extends React.Component {
 	constructor(props) {
@@ -21,14 +23,14 @@ class App extends React.Component {
 	render() {
 		return (
 			<main role="main" className="App">
-				<h1 className="App__title">Music Master</h1>
-				<FormGroup role="search">
+				<h1 className="App__title">{ texts["music-master"] }</h1>
+				<FormGroup role="search" className="App__search-form">
 					<InputGroup>
 						<FormControl
 							role="textbox"
 							type="text"
-							placeholder="Search for an Artist"
-							aria-label="Search for an Artist"
+							placeholder={ texts["search-artist"] }
+							aria-label={ texts["search-artist"] }
 							query={this.state.query}
 							onChange={this._changeValueField}
 							onKeyPress={this._handleEnterKeyPressed}

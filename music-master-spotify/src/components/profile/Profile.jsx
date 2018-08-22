@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import './Profile.css';
 
+import texts from './../../translate';
+
 class Profile extends React.Component {
 	
 	_renderGenres(genres) {
@@ -18,7 +20,7 @@ class Profile extends React.Component {
 				<img className="profile__image" src={lgImage.url} alt={artist.name} />
 				<div className="profile__details">
 					<h2 className="profiles__name">{artist.name}</h2>
-					<h3 className="profiles__followers">{artist.followers.total} followers</h3>
+					<h3 className="profiles__followers">{artist.followers.total} { texts.followers }</h3>
 					<ul className="profile__genres">{this._renderGenres(artist.genres)}</ul>
 				</div>
 			</section>
