@@ -6,31 +6,38 @@ import Profile from './../profile/Profile';
 import Gallery from './../gallery/Gallery';
 
 import texts from './../../translate';
+import spotifyService from './../services/spotifyService';
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			query: '',
-			artist: null
+			artist: null,
+			tracks: null
 		};
 		this._changeValueField = this._changeValueField.bind(this);
 		this._search = this._search.bind(this);
 		this._handleEnterKeyPressed = this._handleEnterKeyPressed.bind(this);
-		this._convertJsonToCorretObjectOnState = this._convertJsonToCorretObjectOnState.bind(this);
+		this._convertJsonToArtistOnState = this._convertJsonToArtistOnState.bind(this);
+		this._convertJsonToTracksOnState = this._convertJsonToTracksOnState.bind(this);
+	}
+
+	componentDidUpdate() {
+		this._getTopTracks();
 	}
 
 	render() {
 		return (
 			<main role="main" className="App">
-				<h1 className="App__title">{ texts["music-master"] }</h1>
+				<h1 className="App__title">{texts['music-master']}</h1>
 				<FormGroup role="search" className="App__search-form">
 					<InputGroup>
 						<FormControl
 							role="textbox"
 							type="text"
-							placeholder={ texts["search-artist"] }
-							aria-label={ texts["search-artist"] }
+							placeholder={texts['search-artist']}
+							aria-label={texts['search-artist']}
 							query={this.state.query}
 							onChange={this._changeValueField}
 							onKeyPress={this._handleEnterKeyPressed}
@@ -54,19 +61,13 @@ class App extends React.Component {
 
 	_search() {
 		if (this.state.query) {
-			const BASE_URL = 'https://api.spotify.com/v1/search?';
-			const FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
-			window
-				.fetch(FETCH_URL, {
-					method: 'GET',
-					headers: {
-						'Content-Type': 'application/json',
-						Authorization: process.env.REACT_APP_SPOTIFY_TOKEN
-					}
-				})
-				.then(resp => resp.json())
-				.then(this._convertJsonToCorretObjectOnState)
-				.catch(this._handleErrorResponseSearch);
+			spotifyService.getArtist(undefined, this.state.query).then(this._convertJsonToArtistOnState);
+		}
+	}
+
+	_getTopTracks() {
+		if (this.state.artist && !this.state.tracks) {
+			spotifyService.getTopTracks(undefined, this.state.artist.id).then(console.log);
 		}
 	}
 
@@ -76,7 +77,7 @@ class App extends React.Component {
 		}
 	}
 
-	_convertJsonToCorretObjectOnState(bigJSON) {
+	_convertJsonToArtistOnState(bigJSON) {
 		if (bigJSON.artists) {
 			const [ artists ] = bigJSON.artists.items;
 			this.setState({
@@ -85,8 +86,13 @@ class App extends React.Component {
 		}
 	}
 
-	_handleErrorResponseSearch(error) {
-		console.error(error);
+	_convertJsonToTracksOnState(bigJSON) {
+		if (bigJSON.tracks) {
+			const { tracks } = bigJSON;
+			this.setState({
+				tracks
+			});
+		}
 	}
 }
 
