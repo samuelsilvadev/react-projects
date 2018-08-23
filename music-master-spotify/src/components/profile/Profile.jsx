@@ -48,7 +48,7 @@ Profile.propTypes = {
 	})
 };
 
-PropTypes.defaultProps = {
+Profile.defaultProps = {
 	artist: {
 		external_urls: '',
 		followers: {
