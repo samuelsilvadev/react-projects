@@ -8,7 +8,7 @@ import texts from './../../translate';
 class Profile extends React.Component {
 	
 	_renderGenres(genres) {
-		return genres.map((genre, index) => <li key={index}>{` ${genre} ${genres[index + 1] ? '& ' : ''} `}</li>);
+		return genres && genres.map((genre, index) => <li key={index}>{` ${genre} ${genres[index + 1] ? '& ' : ''} `}</li>);
 	}
 
 	render() {
