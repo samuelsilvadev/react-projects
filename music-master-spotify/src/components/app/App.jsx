@@ -23,8 +23,12 @@ class App extends React.Component {
 		this._convertJsonToTracksOnState = this._convertJsonToTracksOnState.bind(this);
 	}
 
-	componentDidUpdate() {
-		this._getTopTracks();
+	componentDidUpdate(prevProps, prevState) {
+		if (
+			(!prevState.artist) ||
+			(prevState.artist && (prevState.artist.name !== this.state.artist.name))) {
+			this._getTopTracks();
+		}
 	}
 
 	render() {
@@ -50,7 +54,7 @@ class App extends React.Component {
 					</InputGroup>
 				</FormGroup>
 				{this.state.artist && <Profile artist={this.state.artist} />}
-				<Gallery />
+				{this.state.tracks && <Gallery tracks={this.state.tracks} />}
 			</main>
 		);
 	}
@@ -66,8 +70,8 @@ class App extends React.Component {
 	}
 
 	_getTopTracks() {
-		if (this.state.artist && !this.state.tracks) {
-			spotifyService.getTopTracks(undefined, this.state.artist.id).then(console.log);
+		if (this.state.artist) {
+			spotifyService.getTopTracks(undefined, this.state.artist.id).then(this._convertJsonToTracksOnState);
 		}
 	}
 

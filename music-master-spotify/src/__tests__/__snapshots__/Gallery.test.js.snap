@@ -3,7 +3,9 @@
 exports[`<Gallery /> should render correctly component 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Gallery />,
+  Symbol(enzyme.__unrendered__): <Gallery
+    tracks={Array []}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -16,10 +18,28 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "Gallery",
+      "children": Array [
+        <h3>
+          Gallery
+</h3>,
+        Array [],
+      ],
+      "className": "gallery",
     },
     "ref": null,
-    "rendered": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Gallery",
+        },
+        "ref": null,
+        "rendered": "Gallery",
+        "type": "h3",
+      },
+    ],
     "type": "section",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -28,10 +48,28 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "Gallery",
+        "children": Array [
+          <h3>
+            Gallery
+</h3>,
+          Array [],
+        ],
+        "className": "gallery",
       },
       "ref": null,
-      "rendered": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Gallery",
+          },
+          "ref": null,
+          "rendered": "Gallery",
+          "type": "h3",
+        },
+      ],
       "type": "section",
     },
   ],

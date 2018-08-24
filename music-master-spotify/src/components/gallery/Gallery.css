@@ -1,0 +1,31 @@
+.gallery {
+    margin-top: 5rem;
+}
+
+.gallery__album {
+    border: .1rem solid var(--white);
+    cursor: pointer;
+    display: inline-block;
+    max-height: 220px;
+    margin: .5rem;
+    position: relative;
+    text-align: center;
+    width: 220px;
+}
+
+.gallery__album__image {
+    object-fit: cover; 
+    max-width: 100%; 
+    width: 100%;
+    height: inherit;
+}
+
+.gallery__album__title {
+    background-color: var(--black);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding: 1rem;
+    opacity: 0.75;
+    width: 100%;
+}
