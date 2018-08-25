@@ -14,8 +14,8 @@
 }
 
 .gallery__album__image {
-    object-fit: cover; 
-    max-width: 100%; 
+    object-fit: cover;
+    max-width: 100%;
     width: 100%;
     height: inherit;
 }
@@ -28,4 +28,23 @@
     padding: 1rem;
     opacity: 0.75;
     width: 100%;
+}
+
+.gallery__album__play-button {
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--black);
+    display: inline-flex;
+    height: 50px;
+    justify-content: center;
+    left: calc(50% - 25px);
+    opacity: 0;
+    position: absolute;
+    top: calc(50% - 25px);
+    transition: opacity 1s;
+    width: 50px;
+}
+
+.gallery__album:hover .gallery__album__play-button {
+    opacity: 1;
 }

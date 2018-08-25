@@ -45,6 +45,9 @@ class Gallery extends React.Component {
 							title={album.name}
 						/>
 						<span className="gallery__album__title">{album.name}</span>
+						<span className="gallery__album__play-button">
+							{ this.state.previewUrl !== track.preview_url ? <span>&#9654;</span> : <span> &#9646;&#9646;</span>}
+						</span>
 					</div>
 				);
 			})
