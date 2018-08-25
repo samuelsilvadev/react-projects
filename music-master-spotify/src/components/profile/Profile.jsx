@@ -14,8 +14,8 @@ class Profile extends React.Component {
 	render() {
 		const { artist } = this.props;
 
-		const [ lgImage, mdImage, sImage, xsImage ] = artist.images;
-		return (
+		const [ lgImage ] = artist.images;
+		return lgImage ? (
 			<section className="profile">
 				<img className="profile__image" src={lgImage.url} alt={artist.name} />
 				<div className="profile__details">
@@ -24,6 +24,8 @@ class Profile extends React.Component {
 					<ul className="profile__genres">{this._renderGenres(artist.genres)}</ul>
 				</div>
 			</section>
+		) : (
+			<section className="profile">Not Found</section>
 		);
 	}
 }

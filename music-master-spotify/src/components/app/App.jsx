@@ -25,8 +25,9 @@ class App extends React.Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		if (
-			(!prevState.artist) ||
-			(prevState.artist && (prevState.artist.name !== this.state.artist.name))) {
+			!prevState.artist ||
+			(prevState.artist && this.state.artist && prevState.artist.name !== this.state.artist.name)
+		) {
 			this._getTopTracks();
 		}
 	}
