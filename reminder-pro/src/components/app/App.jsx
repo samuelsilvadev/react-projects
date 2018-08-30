@@ -5,7 +5,6 @@ import { addReminder } from '../../state/actions/index';
 
 import './App.css';
 
-
 class App extends React.Component {
 
     state = {
@@ -44,9 +43,9 @@ class App extends React.Component {
     }
 
     _addReminder = () => {
-        const { addReminder: _ } = this.props;
+        const { addReminder: addAction } = this.props;
         const { text } = this.state;
-        _(text);
+        addAction(text);
     }
 
     _handleOnChangeButton = (e) => {
@@ -56,4 +55,10 @@ class App extends React.Component {
     }
 }
 
-export default connect(null, { addReminder })(App);
+function mapStateToProps(state) {
+    return {
+        reminders: state,
+    };
+}
+
+export default connect(mapStateToProps, { addReminder })(App);
