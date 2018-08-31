@@ -19,23 +19,26 @@ class App extends React.Component {
                 </h1>
                 <form>
                     <div className="row">
-                        <div className="form-group col-md-10">
+                        <div className="form-group col-md-10 no--padding ">
                             <label className="sr-only" htmlFor="i-have-to">I have to...</label>
                             <input
                                 id="i-have-to"
                                 type="text"
                                 placeholder="I have to..."
                                 className="form-control"
-                                onChange={ this._handleOnChangeButton }/>
+                                onChange={this._handleOnChangeButton} />
                         </div>
-                        <div className="form-group col-md-2">
+                        <div className="form-group col-md-2 no--padding ">
                             <button
                                 type="button"
                                 className="btn btn-success btn-block"
-                                onClick={ this._addReminder }>
+                                onClick={this._addReminder}>
                                 Save
-                        </button>
+                            </button>
                         </div>
+                    </div>
+                    <div className="row">
+                        {this._renderListReminders()}
                     </div>
                 </form>
             </div>
@@ -52,6 +55,19 @@ class App extends React.Component {
         this.setState({
             text: e.target.value,
         });
+    }
+
+    _renderListReminders = () => {
+        const { reminders } = this.props;
+        return (
+            <ul className="list-group">
+            {
+                reminders.map(reminder => {
+                    return <li className="list-group-item" key={reminder.id}>{reminder.text}</li>
+                })
+            }
+            </ul>
+        );
     }
 }
 
