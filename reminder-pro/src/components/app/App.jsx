@@ -63,7 +63,12 @@ class App extends React.Component {
             <ul className="list-group">
             {
                 reminders.map(reminder => {
-                    return <li className="list-group-item" key={reminder.id}>{reminder.text}</li>
+                    return (
+                        <li className="list-group-item list-group-item--flex" key={reminder.id}>
+                            <span className="list-item">{reminder.text}</span>
+                            <span className="list-item list-item--delete">&#x2715;</span>
+                        </li>
+                    )
                 })
             }
             </ul>

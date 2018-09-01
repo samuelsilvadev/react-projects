@@ -9,3 +9,12 @@
 .no--padding {
     padding: 0;
 }
+
+.list-group-item--flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item--delete {
+    cursor: pointer;
+}
