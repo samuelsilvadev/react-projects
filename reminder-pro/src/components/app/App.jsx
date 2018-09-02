@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addReminder } from '../../state/actions/index';
+import { addReminder, deleteReminder } from '../../state/actions/index';
 
 import './App.css';
 
@@ -17,7 +17,7 @@ class App extends React.Component {
                 <h1 className="App__title">
                     Reminder Pro
                 </h1>
-                <form>
+                <form autoComplete="off">
                     <div className="row">
                         <div className="form-group col-md-10 no--padding ">
                             <label className="sr-only" htmlFor="i-have-to">I have to...</label>
@@ -51,6 +51,11 @@ class App extends React.Component {
         addAction(text);
     }
 
+    _deleteReminder = (id) => () => {
+        const { deleteReminder: deleteAction } = this.props;
+        deleteAction(id);
+    }
+
     _handleOnChangeButton = (e) => {
         this.setState({
             text: e.target.value,
@@ -61,16 +66,16 @@ class App extends React.Component {
         const { reminders } = this.props;
         return (
             <ul className="list-group">
-            {
-                reminders.map(reminder => {
-                    return (
-                        <li className="list-group-item list-group-item--flex" key={reminder.id}>
-                            <span className="list-item">{reminder.text}</span>
-                            <span className="list-item list-item--delete">&#x2715;</span>
-                        </li>
-                    )
-                })
-            }
+                {
+                    reminders.map(reminder => {
+                        return (
+                            <li className="list-group-item list-group-item--flex" key={reminder.id}>
+                                <span className="list-item">{reminder.text}</span>
+                                <span className="list-item list-item--delete" onClick={this._deleteReminder(reminder.id)}>&#x2715;</span>
+                            </li>
+                        )
+                    })
+                }
             </ul>
         );
     }
@@ -82,4 +87,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, { addReminder })(App);
+export default connect(mapStateToProps, { addReminder, deleteReminder })(App);

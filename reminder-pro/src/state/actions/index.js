@@ -1,9 +1,14 @@
- import { ADD_REMINDER } from './../actionsTypes';
+import { ADD_REMINDER, DELETE_REMINDER } from './../actionsTypes';
 
- export const addReminder = (data) => {
-     console.log('passing at action creator');
-     return {
-         type: ADD_REMINDER,
-         payload: data,
-     }
- }
+const _createAction = (type, payload) => {
+    return { type, payload };
+}
+
+export const addReminder = (data) => {
+    console.log('passing at action creator');
+    return _createAction(ADD_REMINDER, data);
+};
+
+export const deleteReminder = (id) => {
+    return _createAction(DELETE_REMINDER, id);
+};
