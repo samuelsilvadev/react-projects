@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app/App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 
-import reminders from './state/reducers';
-
+import store from './state/startStore.js';
+import App from './components/app/App';
 import './index.css';
 
-const store = createStore(reminders);
 const $rootElement = document.querySelector('#root');
 
 ReactDOM.render(

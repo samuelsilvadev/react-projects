@@ -14,8 +14,9 @@ const reminders = (state = [], action = {}) => {
         ];
         case DELETE_REMINDER:
         console.log(DELETE_REMINDER);
+        const { payload: id } = action;
         return state
-            .filter(reminder => reminder.id !== action.payload);
+            .filter(reminder => reminder.id !== id);
         default:
             return state;
     }
