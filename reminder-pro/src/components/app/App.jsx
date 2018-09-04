@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { addReminder, deleteReminder } from '../../state/actions/index';
 
 import './App.css';
+import ListItems from '../list-items/ListItems';
 
 class App extends React.Component {
 
@@ -12,6 +13,9 @@ class App extends React.Component {
     };
 
     render() {
+        const { reminders } = this.props;
+
+
         return (
             <div className="App container">
                 <h1 className="App__title">
@@ -38,7 +42,9 @@ class App extends React.Component {
                         </div>
                     </div>
                     <div className="row">
-                        {this._renderListReminders()}
+                        <ListItems
+                            reminders={reminders}
+                            deleteReminder={this._deleteReminder} />
                     </div>
                 </form>
             </div>
@@ -60,24 +66,6 @@ class App extends React.Component {
         this.setState({
             text: e.target.value,
         });
-    }
-
-    _renderListReminders = () => {
-        const { reminders } = this.props;
-        return (
-            <ul className="list-group">
-                {
-                    reminders.map(reminder => {
-                        return (
-                            <li className="list-group-item list-group-item--flex" key={reminder.id}>
-                                <span className="list-item">{reminder.text}</span>
-                                <span className="list-item list-item--delete" onClick={this._deleteReminder(reminder.id)}>&#x2715;</span>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-        );
     }
 }
 
