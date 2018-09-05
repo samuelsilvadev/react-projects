@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const ListItems = ({ reminders, deleteReminder }) => {
     return (
@@ -8,6 +9,7 @@ const ListItems = ({ reminders, deleteReminder }) => {
                 reminders.map(reminder => (
                     <li className="list-group-item list-group-item--flex" key={reminder.id}>
                         <span className="list-item">{reminder.text}</span>
+                        <span className="list-item"><em>{moment(new Date(reminder.dueDate)).fromNow()}</em></span>
                         <span className="list-item list-item--delete" onClick={deleteReminder(reminder.id)} onKeyPress={() => undefined} role="button" tabIndex="0">&#x2715;</span>
                     </li>
                 ))
