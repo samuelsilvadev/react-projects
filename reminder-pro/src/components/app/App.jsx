@@ -10,11 +10,11 @@ class App extends React.Component {
 
     state = {
         text: '',
+        dueDate: '',
     };
 
     render() {
         const { reminders } = this.props;
-
 
         return (
             <div className="App container">
@@ -23,14 +23,24 @@ class App extends React.Component {
                 </h1>
                 <form autoComplete="off">
                     <div className="row">
-                        <div className="form-group col-md-10 no--padding ">
+                        <div className="form-group col-md-5 no--padding ">
                             <label className="sr-only" htmlFor="i-have-to">I have to...</label>
                             <input
                                 id="i-have-to"
                                 type="text"
+                                name="text"
                                 placeholder="I have to..."
                                 className="form-control"
-                                onChange={this._handleOnChangeButton} />
+                                onChange={this._handleOnChange} />
+                        </div>
+                        <div className="form-group col-md-5 no--padding ">
+                            <label className="sr-only" htmlFor="due-date">Due date</label>
+                            <input
+                                id="due-date"
+                                type="datetime-local"
+                                name="dueDate"
+                                className="form-control"
+                                onChange={this._handleOnChange} />
                         </div>
                         <div className="form-group col-md-2 no--padding ">
                             <button
@@ -62,9 +72,9 @@ class App extends React.Component {
         deleteAction(id);
     }
 
-    _handleOnChangeButton = (e) => {
+    _handleOnChange = (e) => {
         this.setState({
-            text: e.target.value,
+            [e.target.name]: e.target.value
         });
     }
 }
