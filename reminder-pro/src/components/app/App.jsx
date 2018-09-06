@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import Notifications, { notify } from 'react-notify-toast';
+
 import { addReminder, deleteReminder, clearAllReminders } from '../../state/actions/index';
 
 import './App.css';
@@ -20,6 +22,11 @@ class App extends React.Component {
     _addReminder = () => {
         const { addReminder: addAction } = this.props;
         const { text, dueDate } = this.state;
+
+        if (!text && !dueDate) {
+            notify.show('Invalid Fields!', 'error');
+            return;
+        }
         addAction({ text, dueDate });
     }
 
@@ -34,6 +41,10 @@ class App extends React.Component {
         });
     }
 
+    _handleOnSubmit = () => {
+        this._addReminder();
+    }
+
     _clearAllReminders = () => {
         const { clearAllReminders: clearAllRemindersAction } = this.props;
         clearAllRemindersAction();
@@ -44,10 +55,11 @@ class App extends React.Component {
 
         return (
             <div className="App container">
+                <Notifications />
                 <h1 className="App__title">
                     Reminder Pro
                 </h1>
-                <form autoComplete="off">
+                <form autoComplete="off" onSubmit={this._handleOnSubmit}>
                     <div className="row container-flex--column ">
                         <div className="form-group no--padding ">
                             <label className="sr-only" htmlFor="i-have-to">I have to...</label>
@@ -55,6 +67,7 @@ class App extends React.Component {
                                 id="i-have-to"
                                 type="text"
                                 name="text"
+                                required
                                 placeholder="I have to..."
                                 className="form-control"
                                 onChange={this._handleOnChange}
@@ -66,6 +79,7 @@ class App extends React.Component {
                                 id="due-date"
                                 type="datetime-local"
                                 name="dueDate"
+                                required
                                 className="form-control"
                                 onChange={this._handleOnChange}
                             />
