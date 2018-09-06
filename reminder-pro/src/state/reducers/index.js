@@ -1,6 +1,8 @@
-import { ADD_REMINDER, DELETE_REMINDER } from '../actionsTypes';
+import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from '../actionsTypes';
 
-const reminders = (state = [], action = {}) => {
+const INITIAL_STATE = [];
+
+const reminders = (state = INITIAL_STATE, action = {}) => {
     console.log('passing at reducer');
     switch (action.type) {
     case ADD_REMINDER:
@@ -17,6 +19,8 @@ const reminders = (state = [], action = {}) => {
         console.log(DELETE_REMINDER);
         return state
             .filter(reminder => reminder.id !== action.payload);
+    case CLEAR_REMINDERS:
+        return INITIAL_STATE;
     default:
         return state;
     }

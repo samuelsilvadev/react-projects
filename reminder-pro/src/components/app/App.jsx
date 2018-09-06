@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { addReminder, deleteReminder } from '../../state/actions/index';
+import { addReminder, deleteReminder, clearAllReminders } from '../../state/actions/index';
 
 import './App.css';
 import ListItems from '../list-items/ListItems';
@@ -34,6 +34,11 @@ class App extends React.Component {
         });
     }
 
+    _clearAllReminders = () => {
+        const { clearAllReminders: clearAllRemindersAction } = this.props;
+        clearAllRemindersAction();
+    }
+
     render() {
         const { reminders } = this.props;
 
@@ -43,8 +48,8 @@ class App extends React.Component {
                     Reminder Pro
                 </h1>
                 <form autoComplete="off">
-                    <div className="row">
-                        <div className="form-group col-md-5 no--padding ">
+                    <div className="row container-flex--column ">
+                        <div className="form-group no--padding ">
                             <label className="sr-only" htmlFor="i-have-to">I have to...</label>
                             <input
                                 id="i-have-to"
@@ -55,7 +60,7 @@ class App extends React.Component {
                                 onChange={this._handleOnChange}
                             />
                         </div>
-                        <div className="form-group col-md-5 no--padding ">
+                        <div className="form-group no--padding ">
                             <label className="sr-only" htmlFor="due-date">Due date</label>
                             <input
                                 id="due-date"
@@ -65,7 +70,7 @@ class App extends React.Component {
                                 onChange={this._handleOnChange}
                             />
                         </div>
-                        <div className="form-group col-md-2 no--padding ">
+                        <div className="form-group no--padding ">
                             <button
                                 type="button"
                                 className="btn btn-success btn-block"
@@ -75,9 +80,14 @@ class App extends React.Component {
                             </button>
                         </div>
                     </div>
-                    <div className="row">
-                        <ListItems reminders={reminders} deleteReminder={this._deleteReminder} />
-                    </div>
+                    <section className="container-flex--column">
+                        <div className="row no--margin">
+                            <ListItems reminders={reminders} deleteReminder={this._deleteReminder} />
+                        </div>
+                        <div>
+                            {!!reminders.length && <button type="button" className="btn btn-danger btn-block" onClick={this._clearAllReminders}>Clear all Reminders</button>}
+                        </div>
+                    </section>
                 </form>
             </div>
         );
@@ -88,7 +98,7 @@ App.propTypes = {
     reminders: PropTypes.arrayOf(PropTypes.object).isRequired,
     addReminder: PropTypes.func.isRequired,
     deleteReminder: PropTypes.func.isRequired,
-
+    clearAllReminders: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -97,4 +107,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, { addReminder, deleteReminder })(App);
+export default connect(mapStateToProps, { addReminder, deleteReminder, clearAllReminders })(App);

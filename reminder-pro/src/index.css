@@ -10,6 +10,10 @@
     padding: 0;
 }
 
+.no--margin {
+    margin: 0;
+}
+
 .list-group-item--flex {
     display: flex;
     justify-content: space-between;

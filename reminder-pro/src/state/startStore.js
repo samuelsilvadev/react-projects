@@ -2,10 +2,10 @@ import { createStore } from 'redux';
 
 import { loadState, saveState } from '../localStorage';
 
-import reminders from './reducers';
+import rootReducer from './reducers';
 
 const store = createStore(
-    reminders,
+    rootReducer,
     loadState(),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
