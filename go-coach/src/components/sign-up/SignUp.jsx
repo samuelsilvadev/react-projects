@@ -3,36 +3,71 @@ import React from 'react';
 import { createUser } from './signUp.service';
 
 import './SignUp.css';
+
+const GENERAL_SUCCESS_MESSAGE = 'Welcome! Your user was created correctly.'
 class SignUp extends React.Component {
     state = {
         email: '',
         password: '',
+        success: {
+            message: '',
+        },
+        error: {
+            message: '',
+        },
     };
 
     render() {
+
+        const { 
+            error: { message: errorMsg }, 
+            success: { message: successMsg } 
+        } = this.state;
+
         return (
-            <form
-                className="signUpForm"
-                autoComplete="off"
-                onSubmit={ this._onHandleSubmit }>
-                <input 
-                    className="form-control"
-                    name="email"
-                    type="email" 
-                    placeholder="Email"
-                    required
-                    onChange={ this._onHandleChange }/>
-                <input
-                    className="form-control" 
-                    name="password" 
-                    type="password" 
-                    placeholder="Password"
-                    required
-                    onChange={ this._onHandleChange }/>
-                <button 
-                    className="btn btn-primary btn-block">Save</button>
-            </form>
+            <section className="wrapperSignUpForm">
+                <h2>Sign Up</h2>
+                <form
+                    className="signUpForm"
+                    autoComplete="off"
+                    onSubmit={this._onHandleSubmit}>
+                    <input
+                        className="form-control"
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        required
+                        onChange={this._onHandleChange} />
+                    <input
+                        className="form-control"
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        required
+                        onChange={this._onHandleChange} />
+                    <button
+                        className="btn btn-primary btn-block">Save</button>
+                </form>
+                { errorMsg && this._renderErrorMessage(errorMsg) }
+                { successMsg && this._renderSuccessMessage(successMsg) }
+            </section>
         );
+    }
+
+    _renderErrorMessage(message) {
+        return (
+            <div className="alert alert-danger">
+                { message }
+            </div>
+        )
+    }
+
+    _renderSuccessMessage(message) {
+        return (
+            <div className="alert alert-success">
+                { message }
+            </div>
+        )
     }
 
     _onHandleChange = (e) => {
@@ -45,7 +80,18 @@ class SignUp extends React.Component {
         e.preventDefault();
         const { email, password } = this.state;
 
-        createUser({ email, password }); 
+        createUser({ email, password })
+            .then((data) => {
+                if(data) {
+                    this.setState({ 
+                        error: { message: '' },
+                        success: { message: GENERAL_SUCCESS_MESSAGE },
+                    })
+                }
+            })
+            .catch((error) => {
+                this.setState({ error })
+            });
     }
 }
 
