@@ -15,13 +15,15 @@ class SignUp extends React.Component {
         error: {
             message: '',
         },
+        disabledSubmitButton: false,
     };
 
     render() {
 
-        const { 
-            error: { message: errorMsg }, 
-            success: { message: successMsg } 
+        const {
+            error: { message: errorMsg },
+            success: { message: successMsg },
+            disabledSubmitButton
         } = this.state;
 
         return (
@@ -46,10 +48,11 @@ class SignUp extends React.Component {
                         required
                         onChange={this._onHandleChange} />
                     <button
-                        className="btn btn-primary btn-block">Save</button>
+                        className="btn btn-primary btn-block"
+                        disabled={disabledSubmitButton}>Save</button>
                 </form>
-                { errorMsg && this._renderErrorMessage(errorMsg) }
-                { successMsg && this._renderSuccessMessage(successMsg) }
+                {errorMsg && this._renderErrorMessage(errorMsg)}
+                {successMsg && this._renderSuccessMessage(successMsg)}
             </section>
         );
     }
@@ -57,7 +60,7 @@ class SignUp extends React.Component {
     _renderErrorMessage(message) {
         return (
             <div className="alert alert-danger">
-                { message }
+                {message}
             </div>
         )
     }
@@ -65,7 +68,7 @@ class SignUp extends React.Component {
     _renderSuccessMessage(message) {
         return (
             <div className="alert alert-success">
-                { message }
+                {message}
             </div>
         )
     }
@@ -78,19 +81,30 @@ class SignUp extends React.Component {
 
     _onHandleSubmit = (e) => {
         e.preventDefault();
-        const { email, password } = this.state;
 
+        this.setState({
+            disabledSubmitButton: true,
+            error: { message: '' },
+            success: { message: '' },
+        }, this._saveUser);
+    }
+
+    _saveUser() {
+        const { email, password } = this.state;
         createUser({ email, password })
             .then((data) => {
-                if(data) {
-                    this.setState({ 
-                        error: { message: '' },
+                if (data) {
+                    this.setState({
                         success: { message: GENERAL_SUCCESS_MESSAGE },
+                        disabledSubmitButton: false,
                     })
                 }
             })
             .catch((error) => {
-                this.setState({ error })
+                this.setState({
+                    error,
+                    disabledSubmitButton: false,
+                })
             });
     }
 }
