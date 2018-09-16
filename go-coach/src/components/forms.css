@@ -1,16 +1,16 @@
-.wrapperSignUpForm {
+.wrapperForm {
     margin-left: 2%;
     margin-right: 2%;
     margin-top: 40vh;
     width: 96%;
 }
 
-.signUpForm {
+.form {
     margin-bottom: 2rem;
 }
 
 @media all and (min-width: 767px) {
-    .wrapperSignUpForm {
+    .wrapperForm {
         margin-left: auto;
         margin-right: auto;
         max-width: 300px;

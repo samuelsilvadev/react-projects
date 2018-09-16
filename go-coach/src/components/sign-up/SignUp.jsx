@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import { createUser } from './signUp.service';
 
-import './SignUp.css';
+import './../forms.css';
 
+const ROUTE_SIGNIN = '/signin';
 const GENERAL_SUCCESS_MESSAGE = 'Welcome! Your user was created correctly.'
 class SignUp extends React.Component {
     state = {
@@ -27,10 +29,10 @@ class SignUp extends React.Component {
         } = this.state;
 
         return (
-            <section className="wrapperSignUpForm">
+            <section className="wrapperForm">
                 <h2>Sign Up</h2>
                 <form
-                    className="signUpForm"
+                    className="form"
                     autoComplete="off"
                     onSubmit={this._onHandleSubmit}>
                     <input
@@ -53,6 +55,7 @@ class SignUp extends React.Component {
                 </form>
                 {errorMsg && this._renderErrorMessage(errorMsg)}
                 {successMsg && this._renderSuccessMessage(successMsg)}
+                <Link to={ROUTE_SIGNIN}>Already an user? Sing in instead.</Link>
             </section>
         );
     }
