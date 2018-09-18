@@ -10,3 +10,21 @@ const config = {
 };
 
 export const firebaseApp = firebase.initializeApp(config);
+
+export function createUser({ email, password }) {
+    return firebaseApp
+        .auth()
+        .createUserWithEmailAndPassword(email, password);
+}
+
+export function signIn({ email, password }) {
+    return firebaseApp
+        .auth()
+        .signInWithEmailAndPassword(email, password);
+}
+
+export function signOut() {
+    return firebaseApp
+        .auth()
+        .signOut();
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import { createUser } from './signUp.service';
+import { createUser } from './../../firebase';
 
 import './../forms.css';
 

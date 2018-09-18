@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import { signIn } from './signIn.service';
+import { signIn } from './../../firebase';
 
 const ROUTE_SIGNUP = '/signup';
 const GENERAL_SUCCESS_MESSAGE = 'Welcome back!'
