@@ -9,7 +9,12 @@ const config = {
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
 };
 
+const REFS_NAMES = {
+    GOALS: 'goals',
+};
+
 export const firebaseApp = firebase.initializeApp(config);
+export const goalRef = firebase.database().ref(REFS_NAMES.GOALS);
 
 export function createUser({ email, password }) {
     return firebaseApp
