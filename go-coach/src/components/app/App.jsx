@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 
 import { signOut } from './../../firebase';
 
-import AddGoal from './../goal';
+import { AddGoal, GoalList } from './../goal';
 
 class App extends React.Component {
     render() {
         return (
             <main className="container">
                 <AddGoal />
+                <GoalList />
                 <button
                     className="btn btn-danger"
                     onClick={this._handleClickSignOut}>

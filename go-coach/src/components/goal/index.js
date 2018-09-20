@@ -1,3 +1,2 @@
-import AddGoal from './AddGoal';
-
-export default AddGoal;
+export { default as AddGoal} from './AddGoal';
+export { default as GoalList } from './GoalList';
