@@ -1,8 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import { signOut } from './../../firebase';
-
 import { AddGoal, GoalList } from './../goal';
 
 class App extends React.Component {
@@ -25,11 +23,4 @@ class App extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
-    const { email } = state;
-    return {
-        email,
-    };
-}
-
-export default connect(mapStateToProps, null)(App);
+export default App;

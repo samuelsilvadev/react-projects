@@ -1,19 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { setGoals } from './../../state/actions';
 import { goalRef } from './../../firebase';
 
 class GoalList extends React.Component {
-    state = {
-        goals: [],
-    };
 
     componentDidMount() {
-        goalRef.on('value', this._getGoalsFromUser)
+        goalRef.on('value', this._getGoals)
     };
 
     render() {
-        const { goals } = this.state;
+        const { goals } = this.props;
         return (
             <ul className="list-group">
                 {
@@ -25,32 +23,28 @@ class GoalList extends React.Component {
 
     _renderGoalItem(goal, index) {
         return (
-            <li className="list-group-item" key={index} >{goal.goalItem}</li>
+            <li className="list-group-item" key={index} >{goal.goalItem} <em>Submitted by {goal.email}</em></li>
         );
     };
 
-    _getGoalsFromUser = (data) => {
-        const { email } = this.props;
+    _getGoals = (data) => {
+        const { setGoals } = this.props;
         const goals = [];
 
         data.forEach(element => {
             const obj = element.val();
-            if (obj.email && obj.email === email) {
-                goals.push(obj);
-            }
+            goals.push(obj);
         });
 
-        this.setState({
-            goals
-        });
+        setGoals(goals);
     };
 };
 
 function mapStateToProps(state) {
-    const { email } = state;
+    const { goals } = state;
     return {
-        email,
+        goals,
     }
 }
 
-export default connect(mapStateToProps, null)(GoalList);
+export default connect(mapStateToProps, { setGoals })(GoalList);

@@ -1,19 +1,11 @@
-import { SIGNED_IN } from './../actionsTypes';
+import { combineReducers } from 'redux';
 
-const INITIAL_STATE = {
-    email: null,
-};
+import user from './reducer-user';
+import goals from './reducer-goals';
 
-export default (state = INITIAL_STATE, action = {}) => {
-    switch (action.type) {
-        case SIGNED_IN:
-            const { payload: email } = action;
+const rootReducer = combineReducers({
+    user,
+    goals,
+});
 
-            return {
-                ...state,
-                email,
-            };
-        default:
-            return INITIAL_STATE;
-    }
-}
+export default rootReducer;

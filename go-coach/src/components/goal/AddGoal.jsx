@@ -72,7 +72,7 @@ class AddGoal extends React.Component {
 
     _saveGoalItem() {
         const { goalItem } = this.state;
-        const { email } = this.props;
+        const { user: { email } } = this.props;
 
         goalRef.push({
             email,
@@ -113,9 +113,9 @@ class AddGoal extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { email } = state;
+    const { user } = state;
     return {
-        email,
+        user,
     }
 }
 
