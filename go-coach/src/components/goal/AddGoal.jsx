@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { goalRef } from './../../firebase';
 
 import './../forms.css';
-import './AddGoal.css';
+import './Goal.css';
 
 const GENERAL_SUCCESS_MESSAGE = 'Item saved succesfully.'
 

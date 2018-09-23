@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { setGoals } from './../../state/actions';
-import { goalRef } from './../../firebase';
+import { goalRef, completeGoalsRef } from './../../firebase';
+
+import './Goal.css';
 
 class GoalList extends React.Component {
 
@@ -15,7 +17,7 @@ class GoalList extends React.Component {
         return (
             <ul className="list-group">
                 {
-                    goals.map(this._renderGoalItem)
+                    goals.map(this._renderGoalItem, this)
                 }
             </ul>
         );
@@ -23,7 +25,17 @@ class GoalList extends React.Component {
 
     _renderGoalItem(goal, index) {
         return (
-            <li className="list-group-item" key={index} >{goal.goalItem} <em>Submitted by {goal.email}</em></li>
+            <li className="list-group-item" key={index} >
+                <span>
+                    {goal.goalItem} <em>Submitted by {goal.email}</em>
+                </span>
+                <button
+                    type="button"
+                    className="btn btn-sm btn-primary"
+                    onClick={this._completeGoal(goal)}>
+                    Complete goal
+                </button>
+            </li>
         );
     };
 
@@ -33,16 +45,30 @@ class GoalList extends React.Component {
 
         data.forEach(element => {
             const obj = element.val();
-            goals.push(obj);
+            const key = element.key;
+            goals.push(Object.assign({}, obj, { key }));
         });
 
         setGoals(goals);
     };
+
+    _completeGoal = (goal) => () => {
+        const { user: { email } = {} } = this.props;
+        const { key, goalItem } = goal;
+
+        completeGoalsRef.push({
+            email,
+            title: goalItem
+        });
+
+        goalRef.child(key).remove();
+    };
 };
 
 function mapStateToProps(state) {
-    const { goals } = state;
+    const { goals, user } = state;
     return {
+        user,
         goals,
     }
 }

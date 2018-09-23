@@ -11,10 +11,12 @@ const config = {
 
 const REFS_NAMES = {
     GOALS: 'goals',
+    COMPLETE_GOALS: 'completeGoals',
 };
 
 export const firebaseApp = firebase.initializeApp(config);
 export const goalRef = firebase.database().ref(REFS_NAMES.GOALS);
+export const completeGoalsRef = firebase.database().ref(REFS_NAMES.COMPLETE_GOALS);
 
 export function createUser({ email, password }) {
     return firebaseApp
