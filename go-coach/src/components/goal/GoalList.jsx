@@ -58,7 +58,7 @@ class GoalList extends React.Component {
 
         completeGoalsRef.push({
             email,
-            title: goalItem
+            goalItem
         });
 
         goalRef.child(key).remove();
