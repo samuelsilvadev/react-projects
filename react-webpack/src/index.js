@@ -2,10 +2,24 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
-import Title from './Title';
+import App from './App';
 
-ReactDOM.render(
-    <Title />,
-    document.querySelector('[data-js="root"]')
-);
+const render = (Component) => {
+	ReactDOM.render(
+		<AppContainer>
+			<Component />
+		</AppContainer>,
+		document.querySelector('[data-js="root"]')
+	);
+};
+
+render(App);
+
+if (module.hot) {
+	module.hot.accept('./App', () => {
+		const NextApp = require('./App').default;
+		render(NextApp);
+	});
+}
