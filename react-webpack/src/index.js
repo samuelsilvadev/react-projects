@@ -11,7 +11,7 @@ const render = (Component) => {
 		<AppContainer>
 			<Component />
 		</AppContainer>,
-		document.querySelector('[data-js="root"]')
+		document.querySelector('[data-js="root"]'),
 	);
 };
 

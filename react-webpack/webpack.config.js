@@ -1,34 +1,41 @@
-'use strict'
+'use strict';
 
 const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    devtool: 'source-map',
+	devtool: 'source-map',
 
-    entry: [
-        'react-hot-loader/patch',
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
-        path.join(__dirname, 'src', 'index')
-    ],
+	entry: [
+		'react-hot-loader/patch',
+		'webpack-dev-server/client?http://localhost:3000',
+		'webpack/hot/only-dev-server',
+		path.join(__dirname, 'src', 'index'),
+	],
 
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
-    },
+	output: {
+		path: path.join(__dirname, 'dist'),
+		filename: 'bundle.js',
+		publicPath: '/static/',
+	},
 
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+	],
 
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            include: /src/,
-            loader: 'babel'
-        }]
-    }
+	module: {
+		loaders: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				include: /src/,
+				loader: 'babel',
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'eslint-loader',
+			},
+		],
+	},
 };
