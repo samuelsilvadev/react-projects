@@ -17,22 +17,78 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
-         Starting the project... 
-      </h1>,
+      "children": Array [
+        <h1
+          className="shoppingCart__title"
+        >
+          Shopping Cart
+        </h1>,
+        <Counter
+          className="shoppingCart__counter"
+          value={2}
+        />,
+        <Counter
+          className="shoppingCart__counter"
+          value={0}
+        />,
+        <Counter
+          className="shoppingCart__counter"
+          value={0}
+        />,
+      ],
+      "className": "shoppingCart",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": " Starting the project... ",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Shopping Cart",
+          "className": "shoppingCart__title",
+        },
+        "ref": null,
+        "rendered": "Shopping Cart",
+        "type": "h1",
       },
-      "ref": null,
-      "rendered": " Starting the project... ",
-      "type": "h1",
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "shoppingCart__counter",
+          "value": 2,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "shoppingCart__counter",
+          "value": 0,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "shoppingCart__counter",
+          "value": 0,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": "section",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -41,22 +97,78 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1>
-           Starting the project... 
-        </h1>,
+        "children": Array [
+          <h1
+            className="shoppingCart__title"
+          >
+            Shopping Cart
+          </h1>,
+          <Counter
+            className="shoppingCart__counter"
+            value={2}
+          />,
+          <Counter
+            className="shoppingCart__counter"
+            value={0}
+          />,
+          <Counter
+            className="shoppingCart__counter"
+            value={0}
+          />,
+        ],
+        "className": "shoppingCart",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": " Starting the project... ",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Shopping Cart",
+            "className": "shoppingCart__title",
+          },
+          "ref": null,
+          "rendered": "Shopping Cart",
+          "type": "h1",
         },
-        "ref": null,
-        "rendered": " Starting the project... ",
-        "type": "h1",
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "shoppingCart__counter",
+            "value": 2,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "shoppingCart__counter",
+            "value": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "shoppingCart__counter",
+            "value": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "section",
     },
   ],

@@ -25,9 +25,9 @@ class Counter extends React.Component {
     }
 
     _handleClickIncrementBtn = () => {
-        let { value } = this.state;
+        const { value } = this.state;
         this.setState({
-            value: ++value,
+            value: value + 1,
         });
     }
 
@@ -48,6 +48,6 @@ Counter.propTypes = {
 
 Counter.defaultProps = {
     value: 0,
-}
+};
 
 export default Counter;
