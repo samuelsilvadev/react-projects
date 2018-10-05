@@ -1,14 +1,25 @@
 import React from 'react';
-import Counter from './../counter/Counter';
+import CounterContainer from '../counter/CounterContainer';
 
 import './App.css';
+
+const counters = [
+    {
+        value: 2,
+        className: "shoppingCart__counter",
+    },
+    {
+        className: "shoppingCart__counter",
+    },
+    {
+        className: "shoppingCart__counter",
+    }
+];
 
 const App = () => (
     <section className="shoppingCart">
         <h1 className="shoppingCart__title">Shopping Cart</h1>
-        <Counter className="shoppingCart__counter" value={2}/>
-        <Counter className="shoppingCart__counter" />
-        <Counter className="shoppingCart__counter" />
+        <CounterContainer counters={counters} />
     </section>
 );
 

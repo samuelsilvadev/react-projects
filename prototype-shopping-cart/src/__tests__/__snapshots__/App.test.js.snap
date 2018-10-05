@@ -23,17 +23,21 @@ ShallowWrapper {
         >
           Shopping Cart
         </h1>,
-        <Counter
-          className="shoppingCart__counter"
-          value={2}
-        />,
-        <Counter
-          className="shoppingCart__counter"
-          value={0}
-        />,
-        <Counter
-          className="shoppingCart__counter"
-          value={0}
+        <CounterContainer
+          counters={
+            Array [
+              Object {
+                "className": "shoppingCart__counter",
+                "value": 2,
+              },
+              Object {
+                "className": "shoppingCart__counter",
+              },
+              Object {
+                "className": "shoppingCart__counter",
+              },
+            ]
+          }
         />,
       ],
       "className": "shoppingCart",
@@ -57,32 +61,18 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "className": "shoppingCart__counter",
-          "value": 2,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "className": "shoppingCart__counter",
-          "value": 0,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "className": "shoppingCart__counter",
-          "value": 0,
+          "counters": Array [
+            Object {
+              "className": "shoppingCart__counter",
+              "value": 2,
+            },
+            Object {
+              "className": "shoppingCart__counter",
+            },
+            Object {
+              "className": "shoppingCart__counter",
+            },
+          ],
         },
         "ref": null,
         "rendered": null,
@@ -103,17 +93,21 @@ ShallowWrapper {
           >
             Shopping Cart
           </h1>,
-          <Counter
-            className="shoppingCart__counter"
-            value={2}
-          />,
-          <Counter
-            className="shoppingCart__counter"
-            value={0}
-          />,
-          <Counter
-            className="shoppingCart__counter"
-            value={0}
+          <CounterContainer
+            counters={
+              Array [
+                Object {
+                  "className": "shoppingCart__counter",
+                  "value": 2,
+                },
+                Object {
+                  "className": "shoppingCart__counter",
+                },
+                Object {
+                  "className": "shoppingCart__counter",
+                },
+              ]
+            }
           />,
         ],
         "className": "shoppingCart",
@@ -137,32 +131,18 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "className": "shoppingCart__counter",
-            "value": 2,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "className": "shoppingCart__counter",
-            "value": 0,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "className": "shoppingCart__counter",
-            "value": 0,
+            "counters": Array [
+              Object {
+                "className": "shoppingCart__counter",
+                "value": 2,
+              },
+              Object {
+                "className": "shoppingCart__counter",
+              },
+              Object {
+                "className": "shoppingCart__counter",
+              },
+            ],
           },
           "ref": null,
           "rendered": null,
