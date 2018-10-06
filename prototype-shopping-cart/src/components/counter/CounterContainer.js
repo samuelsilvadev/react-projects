@@ -1,36 +1,93 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Counter from './Counter';
+
+const mockCounters = [
+	{
+		id: 1,
+		value: 2,
+	},
+	{
+		id: 2,
+	},
+	{
+		id: 3,
+	}
+];
 
 class CounterContainer extends React.Component {
 
+	state = {
+		counters: mockCounters,
+	}
+
 	render() {
-		const { counters } = this.props;
+		const { counters } = this.state;
 		return (
-			counters.map(this._renderCounter, this)
+			<React.Fragment>
+				<button
+					className="btn btn-primary btn-sm"
+					onClick={this._handleClickResetBtn}>
+					Reset
+				</button>
+				{counters.map(this._renderCounter, this)}
+			</React.Fragment>
 		);
 	}
 
 	_renderCounter(data) {
 		const { id, value } = data;
-		const { onDelete } = this.props;
-		return <Counter key={id} id={id} value={value} onDelete={onDelete}/>;
+		const { _removeCounter, _handleClickIncrementBtn } = this;
+		return <Counter
+					key={id}
+					id={id}
+					value={value}
+					onIncrement={_handleClickIncrementBtn}
+					onDelete={_removeCounter} />;
 	}
-};
 
-CounterContainer.propTypes = {
-	onDelete: PropTypes.func,
-	counters: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.number.isRequired,
-			value: PropTypes.number,
-		})
-	),
-};
+	_handleClickResetBtn = () => {
+		const { _resetAllCounters } = this;
+		_resetAllCounters();
+	}
 
-CounterContainer.defaultProps = {
-	counters: [],
-	onDelete: () => { },
+	_handleClickIncrementBtn = (id) => {
+		const { counters } = this.state;
+		const newCounters = counters.map(counter => {
+			if(counter.id === id) {
+				if(counter.value) {
+					counter.value++;
+				} else {
+					counter.value = 1;
+				}
+			}
+			return counter;
+		});
+
+		this.setState({
+			counters: newCounters,
+		});
+	}
+
+	_removeCounter = (id) => {
+		const { counters } = this.state;
+		const newCounters = counters.filter(counter => counter.id !== id);
+
+		this.setState({
+			counters: newCounters,
+		});
+	}
+
+	_resetAllCounters = () => {
+		const { counters } = this.state;
+		const newCounters = counters.map(counter => {
+			counter.value = 0;
+			return counter;
+		});
+
+		this.setState({
+			counters: newCounters,
+		});
+	}
 };
 
 export default CounterContainer;

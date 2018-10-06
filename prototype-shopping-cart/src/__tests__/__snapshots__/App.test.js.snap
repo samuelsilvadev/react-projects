@@ -23,23 +23,7 @@ ShallowWrapper {
         >
           Shopping Cart
         </h1>,
-        <CounterContainer
-          counters={
-            Array [
-              Object {
-                "id": 1,
-                "value": 2,
-              },
-              Object {
-                "id": 2,
-              },
-              Object {
-                "id": 3,
-              },
-            ]
-          }
-          onDelete={[Function]}
-        />,
+        <CounterContainer />,
       ],
       "className": "shoppingCart",
     },
@@ -61,21 +45,7 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {
-          "counters": Array [
-            Object {
-              "id": 1,
-              "value": 2,
-            },
-            Object {
-              "id": 2,
-            },
-            Object {
-              "id": 3,
-            },
-          ],
-          "onDelete": [Function],
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -95,23 +65,7 @@ ShallowWrapper {
           >
             Shopping Cart
           </h1>,
-          <CounterContainer
-            counters={
-              Array [
-                Object {
-                  "id": 1,
-                  "value": 2,
-                },
-                Object {
-                  "id": 2,
-                },
-                Object {
-                  "id": 3,
-                },
-              ]
-            }
-            onDelete={[Function]}
-          />,
+          <CounterContainer />,
         ],
         "className": "shoppingCart",
       },
@@ -133,21 +87,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "counters": Array [
-              Object {
-                "id": 1,
-                "value": 2,
-              },
-              Object {
-                "id": 2,
-              },
-              Object {
-                "id": 3,
-              },
-            ],
-            "onDelete": [Function],
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],

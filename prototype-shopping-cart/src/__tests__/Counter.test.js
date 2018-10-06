@@ -9,7 +9,6 @@ describe('<Counter />', () => {
         const instance = CounterComponent.instance();
         
         expect(instance.props.value).toBe(0);
-        expect(instance.state.value).toBe(0);
         expect(CounterComponent).toMatchSnapshot();
     });
 
@@ -18,11 +17,6 @@ describe('<Counter />', () => {
         const instance = CounterComponent.instance();
         
         expect(instance.props.value).toBe(1);
-        expect(instance.state.value).toBe(1);
-
-        instance._handleClickIncrementBtn();
-
-        expect(instance.state.value).toBe(2);
     });
 
     it('should return correct value after `_formatCount` be called', () => {
@@ -30,9 +24,5 @@ describe('<Counter />', () => {
         const instance = CounterComponent.instance();
         
         expect(instance._formatCount()).toBe('Zero');
-
-        instance._handleClickIncrementBtn();
-
-        expect(instance._formatCount()).toBe(1);
     });
 });

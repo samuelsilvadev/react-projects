@@ -4,9 +4,6 @@ import PropTypes from 'prop-types';
 import './Counter.css';
 
 class Counter extends React.Component {
-	state = {
-		value: this.props.value,
-	}
 
 	render() {
 		return (
@@ -30,10 +27,8 @@ class Counter extends React.Component {
 	}
 
 	_handleClickIncrementBtn = () => {
-		const { value } = this.state;
-		this.setState({
-			value: value + 1,
-		});
+		const { onIncrement, id } = this.props;
+		onIncrement(id);
 	}
 
 	_handleClickDeleteBtn = () => {
@@ -42,12 +37,12 @@ class Counter extends React.Component {
 	}
 
 	_formatCount() {
-		const { value } = this.state;
+		const { value } = this.props;
 		return (value === 0 ? 'Zero' : value);
 	}
 
 	_getBadgeClasses() {
-		const { value } = this.state;
+		const { value } = this.props;
 		return `counter__quantity m-2 badge badge-${value === 0 ? 'warning' : 'success'}`;
 	}
 }
@@ -56,11 +51,13 @@ Counter.propTypes = {
 	id: PropTypes.number.isRequired,
 	value: PropTypes.number,
 	onDelete: PropTypes.func,
+	onIncrement: PropTypes.func,
 };
 
 Counter.defaultProps = {
 	value: 0,
 	onDelete: () => { },
+	onIncrement: () => { },
 };
 
 export default Counter;

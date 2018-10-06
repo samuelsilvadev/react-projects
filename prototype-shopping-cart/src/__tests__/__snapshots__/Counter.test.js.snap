@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Counter
     id={1}
     onDelete={[Function]}
+    onIncrement={[Function]}
     value={0}
   />,
   Symbol(enzyme.__renderer__): Object {

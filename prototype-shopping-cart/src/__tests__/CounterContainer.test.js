@@ -24,10 +24,11 @@ describe('<CounterContainer />', () => {
 				id: 3,
 			}
 		];
-        const CounterContainerComponent = shallow(<CounterContainer counters={counters} />);
+		const CounterContainerComponent = shallow(<CounterContainer />);
+		CounterContainerComponent.setState({ counters });
 		const instance = CounterContainerComponent.instance();
 
-		expect(instance.props.counters.length).toBe(counters.length);
+		expect(instance.state.counters.length).toBe(counters.length);
         expect(CounterContainerComponent).toMatchSnapshot();
     });
 });
