@@ -27,17 +27,18 @@ ShallowWrapper {
           counters={
             Array [
               Object {
-                "className": "shoppingCart__counter",
+                "id": 1,
                 "value": 2,
               },
               Object {
-                "className": "shoppingCart__counter",
+                "id": 2,
               },
               Object {
-                "className": "shoppingCart__counter",
+                "id": 3,
               },
             ]
           }
+          onDelete={[Function]}
         />,
       ],
       "className": "shoppingCart",
@@ -63,16 +64,17 @@ ShallowWrapper {
         "props": Object {
           "counters": Array [
             Object {
-              "className": "shoppingCart__counter",
+              "id": 1,
               "value": 2,
             },
             Object {
-              "className": "shoppingCart__counter",
+              "id": 2,
             },
             Object {
-              "className": "shoppingCart__counter",
+              "id": 3,
             },
           ],
+          "onDelete": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -97,17 +99,18 @@ ShallowWrapper {
             counters={
               Array [
                 Object {
-                  "className": "shoppingCart__counter",
+                  "id": 1,
                   "value": 2,
                 },
                 Object {
-                  "className": "shoppingCart__counter",
+                  "id": 2,
                 },
                 Object {
-                  "className": "shoppingCart__counter",
+                  "id": 3,
                 },
               ]
             }
+            onDelete={[Function]}
           />,
         ],
         "className": "shoppingCart",
@@ -133,16 +136,17 @@ ShallowWrapper {
           "props": Object {
             "counters": Array [
               Object {
-                "className": "shoppingCart__counter",
+                "id": 1,
                 "value": 2,
               },
               Object {
-                "className": "shoppingCart__counter",
+                "id": 2,
               },
               Object {
-                "className": "shoppingCart__counter",
+                "id": 3,
               },
             ],
+            "onDelete": [Function],
           },
           "ref": null,
           "rendered": null,

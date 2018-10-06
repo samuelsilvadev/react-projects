@@ -4,6 +4,8 @@ exports[`<Counter /> should render correctly and match snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Counter
+    id={1}
+    onDelete={[Function]}
     value={0}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -26,10 +28,16 @@ ShallowWrapper {
           Zero
         </span>,
         <button
-          className="btn btn-primary btn-sm"
+          className="btn btn-primary btn-sm counter__btn-increment"
           onClick={[Function]}
         >
           Increment
+        </button>,
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={[Function]}
+        >
+          Delete
         </button>,
       ],
       "className": "counter",
@@ -54,11 +62,24 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Increment",
-          "className": "btn btn-primary btn-sm",
+          "className": "btn btn-primary btn-sm counter__btn-increment",
           "onClick": [Function],
         },
         "ref": null,
         "rendered": "Increment",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Delete",
+          "className": "btn btn-danger btn-sm",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Delete",
         "type": "button",
       },
     ],
@@ -77,10 +98,16 @@ ShallowWrapper {
             Zero
           </span>,
           <button
-            className="btn btn-primary btn-sm"
+            className="btn btn-primary btn-sm counter__btn-increment"
             onClick={[Function]}
           >
             Increment
+          </button>,
+          <button
+            className="btn btn-danger btn-sm"
+            onClick={[Function]}
+          >
+            Delete
           </button>,
         ],
         "className": "counter",
@@ -105,11 +132,24 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Increment",
-            "className": "btn btn-primary btn-sm",
+            "className": "btn btn-primary btn-sm counter__btn-increment",
             "onClick": [Function],
           },
           "ref": null,
           "rendered": "Increment",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Delete",
+            "className": "btn btn-danger btn-sm",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Delete",
           "type": "button",
         },
       ],

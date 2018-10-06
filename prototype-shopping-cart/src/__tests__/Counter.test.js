@@ -5,7 +5,7 @@ import Counter from './../components/counter/Counter';
 
 describe('<Counter />', () => {
     it('should render correctly and match snapshot', () => {
-        const CounterComponent = shallow(<Counter value={0} />);
+        const CounterComponent = shallow(<Counter id={1} value={0} />);
         const instance = CounterComponent.instance();
         
         expect(instance.props.value).toBe(0);
@@ -14,7 +14,7 @@ describe('<Counter />', () => {
     });
 
     it('should update state after `_handleClickIncrementBtn` be called', () => {
-        const CounterComponent = shallow(<Counter value={1} />);
+        const CounterComponent = shallow(<Counter id={1} value={1} />);
         const instance = CounterComponent.instance();
         
         expect(instance.props.value).toBe(1);
@@ -26,7 +26,7 @@ describe('<Counter />', () => {
     });
 
     it('should return correct value after `_formatCount` be called', () => {
-        const CounterComponent = shallow(<Counter />);
+        const CounterComponent = shallow(<Counter id={1} />);
         const instance = CounterComponent.instance();
         
         expect(instance._formatCount()).toBe('Zero');

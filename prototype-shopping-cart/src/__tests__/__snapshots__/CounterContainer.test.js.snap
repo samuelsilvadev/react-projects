@@ -7,14 +7,19 @@ ShallowWrapper {
     counters={
       Array [
         Object {
+          "id": 1,
           "value": 2,
         },
         Object {
+          "id": 2,
           "value": 0,
         },
-        Object {},
+        Object {
+          "id": 3,
+        },
       ]
     }
+    onDelete={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -26,10 +31,11 @@ ShallowWrapper {
   },
   Symbol(enzyme.__node__): Object {
     "instance": null,
-    "key": "0",
+    "key": "1",
     "nodeType": "class",
     "props": Object {
-      "className": undefined,
+      "id": 1,
+      "onDelete": [Function],
       "value": 2,
     },
     "ref": null,
@@ -39,23 +45,12 @@ ShallowWrapper {
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
-      "key": "0",
-      "nodeType": "class",
-      "props": Object {
-        "className": undefined,
-        "value": 2,
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    Object {
-      "instance": null,
       "key": "1",
       "nodeType": "class",
       "props": Object {
-        "className": undefined,
-        "value": 0,
+        "id": 1,
+        "onDelete": [Function],
+        "value": 2,
       },
       "ref": null,
       "rendered": null,
@@ -66,7 +61,21 @@ ShallowWrapper {
       "key": "2",
       "nodeType": "class",
       "props": Object {
-        "className": undefined,
+        "id": 2,
+        "onDelete": [Function],
+        "value": 0,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    Object {
+      "instance": null,
+      "key": "3",
+      "nodeType": "class",
+      "props": Object {
+        "id": 3,
+        "onDelete": [Function],
         "value": 0,
       },
       "ref": null,
@@ -101,6 +110,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CounterContainer
     counters={Array []}
+    onDelete={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

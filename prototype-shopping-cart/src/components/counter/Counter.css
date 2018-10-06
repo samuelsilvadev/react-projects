@@ -7,3 +7,7 @@
 .counter__quantity {
     min-width: 40px;
 }
+
+.counter__btn-increment {
+	margin-right: 0.5rem;
+}

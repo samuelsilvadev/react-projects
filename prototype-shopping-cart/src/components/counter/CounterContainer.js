@@ -3,30 +3,34 @@ import PropTypes from 'prop-types';
 import Counter from './Counter';
 
 class CounterContainer extends React.Component {
-    render() { 
-        const { counters } = this.props;
-        return ( 
-            counters.map(this._renderCounter)
-        );
-    }
 
-    _renderCounter(data, key) {
-        const { value, className } = data;
-        return <Counter key={key} value={value} className={className} />;
-    }
+	render() {
+		const { counters } = this.props;
+		return (
+			counters.map(this._renderCounter, this)
+		);
+	}
+
+	_renderCounter(data) {
+		const { id, value } = data;
+		const { onDelete } = this.props;
+		return <Counter key={id} id={id} value={value} onDelete={onDelete}/>;
+	}
 };
 
 CounterContainer.propTypes = {
-    counters: PropTypes.arrayOf(
-        PropTypes.shape({
-            value: PropTypes.number,
-            className: PropTypes.string,
-        })
-    ),
+	onDelete: PropTypes.func,
+	counters: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			value: PropTypes.number,
+		})
+	),
 };
 
 CounterContainer.defaultProps = {
-    counters: [],
+	counters: [],
+	onDelete: () => { },
 };
- 
+
 export default CounterContainer;

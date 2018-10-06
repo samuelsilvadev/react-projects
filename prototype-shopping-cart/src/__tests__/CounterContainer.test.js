@@ -13,12 +13,16 @@ describe('<CounterContainer />', () => {
 	it('should render correctly with props', () => {
 		const counters = [
 			{
+				id: 1,
 				value: 2,
 			},
 			{
+				id: 2,
 				value: 0,
 			},
-			{}
+			{
+				id: 3,
+			}
 		];
         const CounterContainerComponent = shallow(<CounterContainer counters={counters} />);
 		const instance = CounterContainerComponent.instance();
