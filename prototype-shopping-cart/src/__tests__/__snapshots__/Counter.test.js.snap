@@ -29,13 +29,15 @@ ShallowWrapper {
           Zero
         </span>,
         <button
-          className="btn btn-primary btn-sm counter__btn-increment"
+          className="btn btn-secondary btn-sm counter__btn-increment"
+          data-test="counter-btn-increment"
           onClick={[Function]}
         >
           Increment
         </button>,
         <button
           className="btn btn-danger btn-sm"
+          data-test="counter-btn-delete"
           onClick={[Function]}
         >
           Delete
@@ -63,7 +65,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Increment",
-          "className": "btn btn-primary btn-sm counter__btn-increment",
+          "className": "btn btn-secondary btn-sm counter__btn-increment",
+          "data-test": "counter-btn-increment",
           "onClick": [Function],
         },
         "ref": null,
@@ -77,6 +80,7 @@ ShallowWrapper {
         "props": Object {
           "children": "Delete",
           "className": "btn btn-danger btn-sm",
+          "data-test": "counter-btn-delete",
           "onClick": [Function],
         },
         "ref": null,
@@ -99,13 +103,15 @@ ShallowWrapper {
             Zero
           </span>,
           <button
-            className="btn btn-primary btn-sm counter__btn-increment"
+            className="btn btn-secondary btn-sm counter__btn-increment"
+            data-test="counter-btn-increment"
             onClick={[Function]}
           >
             Increment
           </button>,
           <button
             className="btn btn-danger btn-sm"
+            data-test="counter-btn-delete"
             onClick={[Function]}
           >
             Delete
@@ -133,7 +139,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Increment",
-            "className": "btn btn-primary btn-sm counter__btn-increment",
+            "className": "btn btn-secondary btn-sm counter__btn-increment",
+            "data-test": "counter-btn-increment",
             "onClick": [Function],
           },
           "ref": null,
@@ -147,6 +154,7 @@ ShallowWrapper {
           "props": Object {
             "children": "Delete",
             "className": "btn btn-danger btn-sm",
+            "data-test": "counter-btn-delete",
             "onClick": [Function],
           },
           "ref": null,

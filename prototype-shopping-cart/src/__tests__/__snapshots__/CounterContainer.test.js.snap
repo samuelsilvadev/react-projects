@@ -19,7 +19,9 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
-          className="btn btn-primary btn-sm"
+          className="btn btn-primary btn-sm btn-reset"
+          data-test="counter-container-btn-reset"
+          disabled={false}
           onClick={[Function]}
         >
           Reset
@@ -54,7 +56,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Reset",
-          "className": "btn btn-primary btn-sm",
+          "className": "btn btn-primary btn-sm btn-reset",
+          "data-test": "counter-container-btn-reset",
+          "disabled": false,
           "onClick": [Function],
         },
         "ref": null,
@@ -114,7 +118,9 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
-            className="btn btn-primary btn-sm"
+            className="btn btn-primary btn-sm btn-reset"
+            data-test="counter-container-btn-reset"
+            disabled={false}
             onClick={[Function]}
           >
             Reset
@@ -149,7 +155,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Reset",
-            "className": "btn btn-primary btn-sm",
+            "className": "btn btn-primary btn-sm btn-reset",
+            "data-test": "counter-container-btn-reset",
+            "disabled": false,
             "onClick": [Function],
           },
           "ref": null,
@@ -243,7 +251,9 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
-          className="btn btn-primary btn-sm"
+          className="btn btn-primary btn-sm btn-reset"
+          data-test="counter-container-btn-reset"
+          disabled={false}
           onClick={[Function]}
         >
           Reset
@@ -278,7 +288,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Reset",
-          "className": "btn btn-primary btn-sm",
+          "className": "btn btn-primary btn-sm btn-reset",
+          "data-test": "counter-container-btn-reset",
+          "disabled": false,
           "onClick": [Function],
         },
         "ref": null,
@@ -338,7 +350,9 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
-            className="btn btn-primary btn-sm"
+            className="btn btn-primary btn-sm btn-reset"
+            data-test="counter-container-btn-reset"
+            disabled={false}
             onClick={[Function]}
           >
             Reset
@@ -373,7 +387,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Reset",
-            "className": "btn btn-primary btn-sm",
+            "className": "btn btn-primary btn-sm btn-reset",
+            "data-test": "counter-container-btn-reset",
+            "disabled": false,
             "onClick": [Function],
           },
           "ref": null,
