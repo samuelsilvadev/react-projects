@@ -1,6 +1,8 @@
 import React from 'react';
 import Counter from './Counter';
 
+import './Counter.css';
+
 const mockCounters = [
 	{
 		id: 1,
@@ -25,7 +27,9 @@ class CounterContainer extends React.Component {
 		return (
 			<React.Fragment>
 				<button
-					className="btn btn-primary btn-sm"
+					data-test="counter-container-btn-reset"
+					className="btn btn-primary btn-sm btn-reset"
+					disabled={!counters.length}
 					onClick={this._handleClickResetBtn}>
 					Reset
 				</button>
@@ -38,11 +42,11 @@ class CounterContainer extends React.Component {
 		const { id, value } = data;
 		const { _removeCounter, _handleClickIncrementBtn } = this;
 		return <Counter
-					key={id}
-					id={id}
-					value={value}
-					onIncrement={_handleClickIncrementBtn}
-					onDelete={_removeCounter} />;
+			key={id}
+			id={id}
+			value={value}
+			onIncrement={_handleClickIncrementBtn}
+			onDelete={_removeCounter} />;
 	}
 
 	_handleClickResetBtn = () => {
@@ -53,8 +57,8 @@ class CounterContainer extends React.Component {
 	_handleClickIncrementBtn = (id) => {
 		const { counters } = this.state;
 		const newCounters = counters.map(counter => {
-			if(counter.id === id) {
-				if(counter.value) {
+			if (counter.id === id) {
+				if (counter.value) {
 					counter.value++;
 				} else {
 					counter.value = 1;

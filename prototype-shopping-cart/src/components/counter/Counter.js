@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Counter.css';
-
 class Counter extends React.Component {
 
 	render() {
@@ -13,11 +11,13 @@ class Counter extends React.Component {
 					{this._formatCount()}
 				</span>
 				<button
-					className="btn btn-primary btn-sm counter__btn-increment"
+					data-test="counter-btn-increment"
+					className="btn btn-secondary btn-sm counter__btn-increment"
 					onClick={this._handleClickIncrementBtn}>
 					Increment
 				</button>
 				<button
+					data-test="counter-btn-delete"
 					className="btn btn-danger btn-sm"
 					onClick={this._handleClickDeleteBtn}>
 					Delete

@@ -11,3 +11,9 @@
 .counter__btn-increment {
 	margin-right: 0.5rem;
 }
+
+.btn-reset {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
