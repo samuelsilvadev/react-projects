@@ -1,0 +1,9 @@
+.verticalText {
+	color: #754ef9;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	position: absolute;
+    right: 0;
+	writing-mode: vertical-lr;
+}
