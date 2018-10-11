@@ -1,0 +1,22 @@
+.profileImageWrapper {
+	border-radius: 50%;
+	border: 15px solid #754ef9;
+	box-sizing: border-box;
+	height: 514px;
+	position: relative;
+	text-align: center;
+	width: 514px;
+}
+
+.profileImage {
+	border-radius: 50%;
+	border: 15px solid #754ef9;
+	box-sizing: border-box;
+	left: 50%;
+	max-height: 350px;
+	max-width: 350px;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
