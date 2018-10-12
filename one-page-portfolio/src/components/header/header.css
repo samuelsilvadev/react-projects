@@ -1,0 +1,25 @@
+.main-header {
+	text-align: justify;
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header__title {
+	display: inline-block;
+	font-weight: 400;
+	margin: 0;
+}
+
+.main-nav {
+	display: inline-block;
+}
+
+.main-nav__link {
+	color: #101010;
+	font-size: 15px;
+	margin-right: 42px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
