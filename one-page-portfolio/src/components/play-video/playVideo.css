@@ -1,0 +1,20 @@
+.playVideo {
+	border-radius: 50%;
+	box-shadow: 0 5px 15px 0 rgba(117, 78, 249, 0.16);
+	display: inline-block;
+	height: 78px;
+	text-indent: -9999px;
+	text-decoration: none;
+	width: 78px;
+}
+
+.playVideo::after {
+	color: rebeccapurple;
+	display: block;
+	content: "▶";
+	height: 12px;
+	line-height: 2.2;
+	margin: auto;
+	text-indent: 0;
+	width: 12px;
+}
