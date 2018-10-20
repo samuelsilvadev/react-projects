@@ -1,4 +1,5 @@
 .profileImageWrapper {
+	background-color: #fff;
 	border-radius: 50%;
 	border: 15px solid #754ef9;
 	box-sizing: border-box;
@@ -6,7 +7,7 @@
 	position: relative;
 	text-align: center;
 	max-width: 514px;
-	width: 100%;
+	width: 514px;
 }
 
 .profileImage {
