@@ -19,42 +19,42 @@ ShallowWrapper {
       "children": Array [
         <h1
           className="App__title"
->
+        >
           music master
-</h1>,
+        </h1>,
         <FormGroup
           bsClass="form-group"
           className="App__search-form"
           role="search"
->
+        >
           <InputGroup
-                    bsClass="input-group"
+            bsClass="input-group"
           >
-                    <FormControl
-                              aria-label="search for an artist"
-                              aria-required="true"
-                              bsClass="form-control"
-                              componentClass="input"
-                              onChange={[Function]}
-                              onKeyPress={[Function]}
-                              placeholder="search for an artist"
-                              query=""
-                              required={true}
-                              role="textbox"
-                              type="text"
-                    />
-                    <InputGroupAddon
-                              bsClass="input-group-addon"
-                              onClick={[Function]}
-                              role="button"
-                    >
-                              <Glyphicon
-                                        bsClass="glyphicon"
-                                        glyph="search"
-                              />
-                    </InputGroupAddon>
+            <FormControl
+              aria-label="search for an artist"
+              aria-required="true"
+              bsClass="form-control"
+              componentClass="input"
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              placeholder="search for an artist"
+              query=""
+              required={true}
+              role="textbox"
+              type="text"
+            />
+            <InputGroupAddon
+              bsClass="input-group-addon"
+              onClick={[Function]}
+              role="button"
+            >
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="search"
+              />
+            </InputGroupAddon>
           </InputGroup>
-</FormGroup>,
+        </FormGroup>,
         null,
         null,
       ],
@@ -83,31 +83,31 @@ ShallowWrapper {
           "bsClass": "form-group",
           "children": <InputGroup
             bsClass="input-group"
->
+          >
             <FormControl
-                        aria-label="search for an artist"
-                        aria-required="true"
-                        bsClass="form-control"
-                        componentClass="input"
-                        onChange={[Function]}
-                        onKeyPress={[Function]}
-                        placeholder="search for an artist"
-                        query=""
-                        required={true}
-                        role="textbox"
-                        type="text"
+              aria-label="search for an artist"
+              aria-required="true"
+              bsClass="form-control"
+              componentClass="input"
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              placeholder="search for an artist"
+              query=""
+              required={true}
+              role="textbox"
+              type="text"
             />
             <InputGroupAddon
-                        bsClass="input-group-addon"
-                        onClick={[Function]}
-                        role="button"
+              bsClass="input-group-addon"
+              onClick={[Function]}
+              role="button"
             >
-                        <Glyphicon
-                                    bsClass="glyphicon"
-                                    glyph="search"
-                        />
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="search"
+              />
             </InputGroupAddon>
-</InputGroup>,
+          </InputGroup>,
           "className": "App__search-form",
           "role": "search",
         },
@@ -131,17 +131,17 @@ ShallowWrapper {
                 required={true}
                 role="textbox"
                 type="text"
-/>,
+              />,
               <InputGroupAddon
                 bsClass="input-group-addon"
                 onClick={[Function]}
                 role="button"
->
+              >
                 <Glyphicon
-                                bsClass="glyphicon"
-                                glyph="search"
+                  bsClass="glyphicon"
+                  glyph="search"
                 />
-</InputGroupAddon>,
+              </InputGroupAddon>,
             ],
           },
           "ref": null,
@@ -176,7 +176,7 @@ ShallowWrapper {
                 "children": <Glyphicon
                   bsClass="glyphicon"
                   glyph="search"
-/>,
+                />,
                 "onClick": [Function],
                 "role": "button",
               },
@@ -214,42 +214,42 @@ ShallowWrapper {
         "children": Array [
           <h1
             className="App__title"
->
+          >
             music master
-</h1>,
+          </h1>,
           <FormGroup
             bsClass="form-group"
             className="App__search-form"
             role="search"
->
+          >
             <InputGroup
-                        bsClass="input-group"
+              bsClass="input-group"
             >
-                        <FormControl
-                                    aria-label="search for an artist"
-                                    aria-required="true"
-                                    bsClass="form-control"
-                                    componentClass="input"
-                                    onChange={[Function]}
-                                    onKeyPress={[Function]}
-                                    placeholder="search for an artist"
-                                    query=""
-                                    required={true}
-                                    role="textbox"
-                                    type="text"
-                        />
-                        <InputGroupAddon
-                                    bsClass="input-group-addon"
-                                    onClick={[Function]}
-                                    role="button"
-                        >
-                                    <Glyphicon
-                                                bsClass="glyphicon"
-                                                glyph="search"
-                                    />
-                        </InputGroupAddon>
+              <FormControl
+                aria-label="search for an artist"
+                aria-required="true"
+                bsClass="form-control"
+                componentClass="input"
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="search for an artist"
+                query=""
+                required={true}
+                role="textbox"
+                type="text"
+              />
+              <InputGroupAddon
+                bsClass="input-group-addon"
+                onClick={[Function]}
+                role="button"
+              >
+                <Glyphicon
+                  bsClass="glyphicon"
+                  glyph="search"
+                />
+              </InputGroupAddon>
             </InputGroup>
-</FormGroup>,
+          </FormGroup>,
           null,
           null,
         ],
@@ -278,31 +278,31 @@ ShallowWrapper {
             "bsClass": "form-group",
             "children": <InputGroup
               bsClass="input-group"
->
+            >
               <FormControl
-                            aria-label="search for an artist"
-                            aria-required="true"
-                            bsClass="form-control"
-                            componentClass="input"
-                            onChange={[Function]}
-                            onKeyPress={[Function]}
-                            placeholder="search for an artist"
-                            query=""
-                            required={true}
-                            role="textbox"
-                            type="text"
+                aria-label="search for an artist"
+                aria-required="true"
+                bsClass="form-control"
+                componentClass="input"
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="search for an artist"
+                query=""
+                required={true}
+                role="textbox"
+                type="text"
               />
               <InputGroupAddon
-                            bsClass="input-group-addon"
-                            onClick={[Function]}
-                            role="button"
+                bsClass="input-group-addon"
+                onClick={[Function]}
+                role="button"
               >
-                            <Glyphicon
-                                          bsClass="glyphicon"
-                                          glyph="search"
-                            />
+                <Glyphicon
+                  bsClass="glyphicon"
+                  glyph="search"
+                />
               </InputGroupAddon>
-</InputGroup>,
+            </InputGroup>,
             "className": "App__search-form",
             "role": "search",
           },
@@ -326,17 +326,17 @@ ShallowWrapper {
                   required={true}
                   role="textbox"
                   type="text"
-/>,
+                />,
                 <InputGroupAddon
                   bsClass="input-group-addon"
                   onClick={[Function]}
                   role="button"
->
+                >
                   <Glyphicon
-                                    bsClass="glyphicon"
-                                    glyph="search"
+                    bsClass="glyphicon"
+                    glyph="search"
                   />
-</InputGroupAddon>,
+                </InputGroupAddon>,
               ],
             },
             "ref": null,
@@ -371,7 +371,7 @@ ShallowWrapper {
                   "children": <Glyphicon
                     bsClass="glyphicon"
                     glyph="search"
-/>,
+                  />,
                   "onClick": [Function],
                   "role": "button",
                 },

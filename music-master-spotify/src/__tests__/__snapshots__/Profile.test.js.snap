@@ -5,19 +5,19 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Profile
     artist={
-        Object {
-            "followers": Object {
-              "total": 10,
-            },
-            "images": Array [
-              Object {
-                "name": "Test",
-                "url": "https://google.com",
-              },
-            ],
-          }
+      Object {
+        "followers": Object {
+          "total": 10,
+        },
+        "images": Array [
+          Object {
+            "name": "Test",
+            "url": "https://google.com",
+          },
+        ],
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -32,27 +32,26 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <img
-          alt={undefined}
           className="profile__image"
           src="https://google.com"
-/>,
+        />,
         <div
           className="profile__details"
->
+        >
           <h2
-                    className="profiles__name"
+            className="profiles__name"
           />
           <h3
-                    className="profiles__followers"
+            className="profiles__followers"
           >
-                    10
-                     
-                    followers
+            10
+             
+            followers
           </h3>
           <ul
-                    className="profile__genres"
+            className="profile__genres"
           />
-</div>,
+        </div>,
       ],
       "className": "profile",
     },
@@ -79,17 +78,17 @@ ShallowWrapper {
           "children": Array [
             <h2
               className="profiles__name"
-/>,
+            />,
             <h3
               className="profiles__followers"
->
+            >
               10
                
               followers
-</h3>,
+            </h3>,
             <ul
               className="profile__genres"
-/>,
+            />,
           ],
           "className": "profile__details",
         },
@@ -153,27 +152,26 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
-            alt={undefined}
             className="profile__image"
             src="https://google.com"
-/>,
+          />,
           <div
             className="profile__details"
->
+          >
             <h2
-                        className="profiles__name"
+              className="profiles__name"
             />
             <h3
-                        className="profiles__followers"
+              className="profiles__followers"
             >
-                        10
-                         
-                        followers
+              10
+               
+              followers
             </h3>
             <ul
-                        className="profile__genres"
+              className="profile__genres"
             />
-</div>,
+          </div>,
         ],
         "className": "profile",
       },
@@ -200,17 +198,17 @@ ShallowWrapper {
             "children": Array [
               <h2
                 className="profiles__name"
-/>,
+              />,
               <h3
                 className="profiles__followers"
->
+              >
                 10
                  
                 followers
-</h3>,
+              </h3>,
               <ul
                 className="profile__genres"
-/>,
+              />,
             ],
             "className": "profile__details",
           },
