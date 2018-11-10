@@ -19,9 +19,7 @@ module.exports = {
 		publicPath: '/static/',
 	},
 
-	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-	],
+	plugins: [new webpack.HotModuleReplacementPlugin()],
 
 	module: {
 		loaders: [
@@ -35,6 +33,10 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'eslint-loader',
+			},
+			{
+				test: /\.css$/,
+				loader: ['style-loader', 'css-loader'],
 			},
 		],
 	},
