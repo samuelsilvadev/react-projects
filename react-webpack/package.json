@@ -11,6 +11,10 @@
   },
   "author": "Samuel Silva",
   "license": "MIT",
+  "repository": {
+	"type": "git",
+	"url": "git@github.com:samuelsilvadev/react-projects.git"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
@@ -24,9 +28,8 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "webpack": "^1.15.0",
-    "webpack-dev-server": "^1.16.5",
-    "webpack-validator": "^3.0.1"
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
     "react": "^15.4.2",
