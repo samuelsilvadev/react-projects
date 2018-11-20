@@ -4,6 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	devtool: 'source-map',
@@ -23,6 +24,7 @@ module.exports = {
 
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
+		new ExtractTextPlugin('[name]-[hash].css'),
 		new HtmlPlugin({
 			template: path.join(__dirname, '', 'index.html'),
 		}),
@@ -43,7 +45,11 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				loader: ['style-loader', 'css-loader'],
+				exclude: /node_modules/,
+				loader: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: 'css-loader',
+				}),
 			},
 		],
 	},
