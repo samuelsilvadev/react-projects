@@ -5,6 +5,8 @@ const webpack = require('webpack');
 
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+
 
 module.exports = {
 	devtool: 'source-map',
@@ -24,6 +26,7 @@ module.exports = {
 
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
+		new DashboardPlugin(),
 		new ExtractTextPlugin('[name]-[hash].css'),
 		new HtmlPlugin({
 			template: path.join(__dirname, '', 'index.html'),
