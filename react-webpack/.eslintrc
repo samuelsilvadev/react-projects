@@ -16,6 +16,7 @@
 		"react"
 	],
 	"rules": {
+		"import/no-extraneous-dependencies": "off",
 		"indent": [2, "tab"],
 		"react/jsx-indent": [2, "tab"],
 		"global-require": "off",
