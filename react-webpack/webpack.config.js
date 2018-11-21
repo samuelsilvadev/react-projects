@@ -53,4 +53,11 @@ module.exports = {
 			},
 		],
 	},
+
+	resolve: {
+		alias: {
+			src: path(__dirname, 'src'),
+			'@components': path(__dirname, 'src', '@components'),
+		},
+	},
 };
