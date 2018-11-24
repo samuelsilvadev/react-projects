@@ -9,6 +9,8 @@ const controller = {
 	store: async function store(req, res) {
 		const tweet = await Tweet.create(req.body);
 
+		req.io.emit('tweet', tweet);
+
 		return res.json(tweet);
 	},
 };
