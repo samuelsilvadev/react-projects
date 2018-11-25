@@ -9,10 +9,10 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-console.log(process.env.DB_USER);
+const { app: { port: serverPort }, db: { host, port, name } } = require('./config');
 
 mongoose.connect(
-	`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@ds111078.mlab.com:11078/${process.env.DB_NAME}`,
+	`mongodb://${host}:${port}/${name}`,
 	{
 		useNewUrlParser: true,
 	},
@@ -28,6 +28,9 @@ app.use(cors());
 app.use(express.json());
 app.use(require('./routes'));
 
-server.listen(3000, () => {
-	console.log('Server started..', 3000);
+server.listen(serverPort, () => {
+	console.log('Server started..', serverPort);
 });
+
+
+module.exports = server;
