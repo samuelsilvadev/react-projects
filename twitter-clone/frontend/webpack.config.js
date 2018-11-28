@@ -7,7 +7,6 @@ const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
-
 module.exports = {
 	devtool: 'source-map',
 
@@ -50,6 +49,10 @@ module.exports = {
 				test: /\.css$/,
 				exclude: /node_modules/,
 				loader: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(png|svg|jpg|gif)$/,
+				loader: 'file-loader',
 			},
 		],
 	},
