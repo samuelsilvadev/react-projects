@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import CONSTANTS from '../constants';
+import CONSTANTS from '../../constants';
 
-import logoSrc from '../../assets/logo-twitter.svg';
+import { Logo } from '../../components';
 
 import './Login.css';
 
@@ -17,11 +17,7 @@ const Login = React.createClass({
 	render: function render() {
 		return (
 			<div className='signin-wrapper'>
-				<img
-					className='signin-logo'
-					src={logoSrc}
-					alt='Twitter Brand'
-				/>
+				<Logo className='signin-logo'/>
 				<form onSubmit={this._handleFormSubmit} className='signin-form'>
 					<input
 						className='signin-form__input'

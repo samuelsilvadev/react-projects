@@ -1,3 +1,5 @@
+'use strict';
+
 const globalValues = {
 	storage: {
 		username: '@twitter:username',
