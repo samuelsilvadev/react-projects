@@ -2,10 +2,19 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const dotenv = require('dotenv');
 
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+
+const env = dotenv.config().parsed;
+
+// reduce it to a nice object, the same as before
+const envKeys = Object.keys(env).reduce((prev, next) => {
+	prev[`process.env.${next}`] = JSON.stringify(env[next]);
+	return prev;
+}, {});
 
 module.exports = {
 	devtool: 'source-map',
@@ -24,6 +33,7 @@ module.exports = {
 	},
 
 	plugins: [
+		new webpack.DefinePlugin(envKeys),
 		new webpack.HotModuleReplacementPlugin(),
 		new DashboardPlugin(),
 		new ExtractTextPlugin('[name]-[hash].css'),
