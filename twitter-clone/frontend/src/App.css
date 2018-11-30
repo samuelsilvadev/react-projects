@@ -5,8 +5,11 @@
 	box-sizing: border-box;
 	--main-blue: #4bb0ee;
 	--second-blue: #42a1db;
+	--light-blue: #e9f1f6;
 	--white: #fff;
 	--gray: #ddd;
+	--dark-gray: #697882;
+	--shark: #1c2022;
 }
 
 body {
