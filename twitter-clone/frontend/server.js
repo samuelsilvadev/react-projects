@@ -11,6 +11,7 @@ new WebpackDevServer(webpack(config), {
 	hot: true,
 	historyApiFallback: true,
 	stats: { colors: true },
+	disableHostCheck: true,
 }).listen(PORT, (err) => {
 	if (err) {
 		return console.log(err);
