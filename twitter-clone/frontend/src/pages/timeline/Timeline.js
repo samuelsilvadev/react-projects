@@ -45,7 +45,7 @@ const Timeline = React.createClass({
 		);
 	},
 	_renderTweet: function _renderTweet(tweet) {
-		return <Tweet key={ tweet._id } tweet={ tweet } />;
+		return <Tweet key={ tweet._id } tweet={ tweet } handleError={ this._handleError }/>;
 	},
 	_handleTextareaChange: function _handleTextareaChange(event) {
 		this.setState({
