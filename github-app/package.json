@@ -15,7 +15,10 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "prop-types": "^15.6.1"
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "prop-types": "^15.6.1",
+    "react-test-renderer": "^16.6.3"
   },
   "browserslist": [
     ">0.2%",
