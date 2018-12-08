@@ -6,6 +6,7 @@ const BASE_API = 'https://api.github.com'
 const END_POINT_USERS = `${BASE_API}/users/{login}`;
 const END_POINT_STARRED = `${BASE_API}/users/{login}/starred`;
 const END_POINT_REPOS = `${BASE_API}/users/{login}/repos`;
+const ENTER = 13;
 
 class App extends Component {
 
@@ -25,7 +26,6 @@ class App extends Component {
 
   handleSearch(e) {
     const keyCode = e.which || e.keyCode;
-    const ENTER = 13;
     const nameUser = e.target.value;
 
     if (keyCode === ENTER) {
