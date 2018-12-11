@@ -17,13 +17,14 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^4.1.1",
+    "@storybook/addon-knobs": "^4.1.1",
+    "@storybook/addon-links": "^4.1.1",
+    "@storybook/react": "^4.1.1",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "prop-types": "^15.6.1",
-    "react-test-renderer": "^16.6.3",
-    "@storybook/react": "^4.1.1",
-    "@storybook/addon-actions": "^4.1.1",
-    "@storybook/addon-links": "^4.1.1"
+    "react-test-renderer": "^16.6.3"
   },
   "browserslist": [
     ">0.2%",
