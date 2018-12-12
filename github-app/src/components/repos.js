@@ -1,12 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+function _renderListItem(repository) {
+    return (
+        <li className="repos__item" key={repository.name} >
+            <a target="_blank" rel="noopener noreferrer" href={repository.html_url}>
+                {repository.name}
+            </a>
+        </li>
+    );
+}
+
 const Repos = ({ className, title, repos }) => (
     <div className={className}>
         <h2>{title}</h2>
         <ul className="repos">
             {
-                repos.map((repo, index) => <li className="repos__item" key={index} ><a target="_blank" rel="noopener noreferrer" href={repo.html_url}>{repo.name}</a></li>)
+                repos.map(_renderListItem)
             }
         </ul>
     </div>
@@ -14,7 +24,7 @@ const Repos = ({ className, title, repos }) => (
 
 Repos.defaultProps = {
     className: '',
-    title: 'CHANGE THIS TITLE'
+	repos: [],
 };
 
 Repos.propTypes = {
