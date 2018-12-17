@@ -67,4 +67,41 @@ describe('Pagination utility', () => {
 
 		expect(pagination(params)).toEqual(result);
 	});
+
+	it('should return [1, 2, 3, "...", 15] when be passed pagination({ total: 15 })', () => {
+		const params = { total: 15 };
+		const result = [1, 2, 3, '...', 15];
+
+		expect(pagination(params)).toEqual(result);
+	});
+
+	it('should return [1] when be passed pagination({})', () => {
+		const params = {};
+		const result = [1];
+
+		expect(pagination(params)).toEqual(result);
+	});
+
+	it('should return [1] when be passed pagination()', () => {
+		const params = undefined;
+		const result = [1];
+
+		expect(pagination(params)).toEqual(result);
+	});
+
+	it('should throw an error when be passed pagination({ total: "not a number", active: 5 })', () => {
+		const params = { total: "not a number", active: 5 };
+		const withError = () => pagination(params);
+
+		expect(withError).toThrow(TypeError);
+		expect(withError).toThrowError('total should be a number');
+	});
+
+	it('should throw an error when be passed pagination({ total: 10, active: "not a number" })', () => {
+		const params = { total: 10, active: "not a number" };
+		const withError = () => pagination(params);
+
+		expect(withError).toThrow(TypeError);
+		expect(withError).toThrowError('active should be a number');
+	});
 });
