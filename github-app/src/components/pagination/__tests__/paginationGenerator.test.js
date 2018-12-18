@@ -1,4 +1,4 @@
-import pagination from './../pagination';
+import { default as pagination } from '../paginationGenerator';
 
 describe('Pagination utility', () => {
 	it('should be a function', () => {
