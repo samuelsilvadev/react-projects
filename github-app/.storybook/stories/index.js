@@ -8,6 +8,7 @@ import withPadding from './../decorators/withPadding';
 import {
 	Actions,
 	Loader,
+	Pagination,
 	Repos,
 	Search,
 	UserInfo
@@ -28,6 +29,19 @@ storiesOf('Components', module)
 	})
 	.add('Loader', () => {
 		return <Loader />;
+	})
+	.add('Pagination',  () => {
+		const _handleClick = function (page) {
+			console.log("​_handleClick -> page", page);
+		}
+
+		return (
+			<Pagination
+				total={10}
+				active={5}
+				pageLink="http://mypage/page/%page%"
+				onClick={_handleClick} />
+		);
 	})
 	.add('Repositories', () => {
 		const props = {
