@@ -1,0 +1,21 @@
+.pagination__item {
+	background-color: #fff;
+	box-sizing: border-box;
+	border: 1px solid #000;
+	color: #000;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 20px;
+	padding: 10px;
+	height: 40px;
+	min-width: 40px;
+	text-align: center;
+}
+
+.pagination__item--active {
+	background-color: #000;
+}
+
+.pagination__item--active > a {
+	color: #fff;
+}

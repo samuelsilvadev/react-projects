@@ -21,6 +21,7 @@
     "@storybook/addon-knobs": "^4.1.1",
     "@storybook/addon-links": "^4.1.1",
     "@storybook/react": "^4.1.1",
+    "classnames": "^2.2.6",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "prop-types": "^15.6.1",
