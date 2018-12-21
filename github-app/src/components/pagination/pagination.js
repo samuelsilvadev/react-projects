@@ -18,25 +18,32 @@ class Pagination extends React.Component {
 				{ paginationGenerator({ total, active }).map(this._renderPage, this) }
 			</ul>
 		);
-	}
+	};
 
 	_renderPage(page, index) {
-		const { pageLink, onClick, active } = this.props;
+		const { pageLink, active } = this.props;
 		const isActive = page === active;
 
 		return (
 			<li key={index} className={ classnames('pagination__item', {'pagination__item--active': isActive }) }>
 				<Page
 					page={page}
-					link={ pageLink.replace(PAGE_REGEX, page) }
-					onClick={ onClick } />
+					link={pageLink.replace(PAGE_REGEX, page)}
+					onClick={this._handleClick} />
 			</li>
 		);
+	};
+
+	_handleClick = (page) => {
+		const { onClick } = this.props;
+
+		onClick && onClick(page)
 	};
 }
 
 Pagination.defaultProps = {
 	pageLink: '',
+	active: 1,
 };
 
 Pagination.propTypes = {

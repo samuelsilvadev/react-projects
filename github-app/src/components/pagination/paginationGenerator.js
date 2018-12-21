@@ -23,11 +23,11 @@ function _removeDuplicates(array) {
 }
 
 function paginationGenerator({ total = 1, active = 1 } = {}) {
-	if(typeof total !== 'number') {
+	if (typeof total !== 'number') {
 		throw new TypeError('total should be a number');
 	}
 
-	if(typeof active !== 'number') {
+	if (typeof active !== 'number') {
 		throw new TypeError('active should be a number');
 	}
 
@@ -45,7 +45,7 @@ function paginationGenerator({ total = 1, active = 1 } = {}) {
 	];
 
 	pages = _removeDuplicates(pages);
-	
+
 	let firstPage = pages[0];
 	let secondPage = pages[1];
 
