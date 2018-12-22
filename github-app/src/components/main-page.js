@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import Actions from './actions';
@@ -21,16 +21,18 @@ const MainPage = ({
 
 		{showLoader && <Loader />}
 
-		{!!userInfo && <UserInfo userInfo={userInfo} />}
-
 		{!!userInfo && (
-			<Actions
-				handleClickSeeRepos={handleClickRepos}
-				handleClickSeeStarred={handleClickStarred}
-			/>
-		)}
+			<Fragment>
+				<UserInfo userInfo={userInfo} />
+				<Actions
+					handleClickSeeRepos={handleClickRepos}
+					handleClickSeeStarred={handleClickStarred}
+				/>
+			</Fragment>
+			)
+		}
 
-		{!!repos.length && (
+		{!!repos.repos.length && (
 			<Repos
 				className='repositories'
 				title='Repositories'
@@ -39,7 +41,7 @@ const MainPage = ({
 			/>
 		)}
 
-		{!!starred.length && (
+		{!!starred.repos.length && (
 			<Repos
 				className='starreds'
 				title='Favorites'
@@ -53,8 +55,8 @@ const MainPage = ({
 MainPage.propTypes = {
 	showLoader: PropTypes.bool,
 	userInfo: PropTypes.object,
-	repos: PropTypes.array.isRequired,
-	starred: PropTypes.array.isRequired,
+	repos: PropTypes.object.isRequired,
+	starred: PropTypes.object.isRequired,
 	handleSearch: PropTypes.func.isRequired,
 	handleClickRepos: PropTypes.func.isRequired,
 	handleClickStarred: PropTypes.func.isRequired

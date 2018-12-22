@@ -6,14 +6,20 @@ const BASE_API = 'https://api.github.com';
 const END_POINT_USERS = `${BASE_API}/users/{login}`;
 const END_POINT_REPOS = `${BASE_API}/users/{login}/{type}?per_page=3&page={page}`;
 const ENTER = 13;
+const INITIAL_STATE_REPOS = {
+	repos: [],
+	activePage: 1,
+	totalPages: 1,
+};
+const REGEX_PAGE_SIZE = /&page=(\d+)>; rel="last"/
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
 			userInfo: null,
-			repos: [],
-			starred: [],
+			repos: INITIAL_STATE_REPOS,
+			starred: INITIAL_STATE_REPOS,
 			showLoader: false,
 		};
 
@@ -24,16 +30,33 @@ class App extends Component {
 
 	getRepos(type, page = 1) {
 		const { userInfo: { login } } = this.state;
-
+		
+		if (typeof page !== 'number') {
+			page = 1;
+		}
+		
 		axios
 			.get(END_POINT_REPOS
 				.replace('{login}', login)
 				.replace('{type}', type)
 				.replace('{page}', page)
 			)
-			.then(({ data }) => {
+			.then(({ headers, data }) => {
+
+				let totalPages = this.state[type].totalPages;
+
+				if(totalPages <= 1) {
+					const headerLink = headers.link;
+					const totalPagesMatch = headerLink ? headerLink.match(REGEX_PAGE_SIZE) : null;
+					totalPages = totalPagesMatch ? totalPagesMatch[1] : totalPages;
+				}
+				
 				this.setState({
-					[type]: data,
+					[type]: {
+						repos: data,
+						activePage: page,
+						totalPages: +totalPages, 
+					},
 				});
 			});
 	}
@@ -56,8 +79,8 @@ class App extends Component {
 							photo: data.avatar_url,
 							login: data.login,
 						},
-						repos: [],
-						starred: []
+						repos: INITIAL_STATE_REPOS,
+						starred: INITIAL_STATE_REPOS,
 					});
 				})
 				.finally(() => {

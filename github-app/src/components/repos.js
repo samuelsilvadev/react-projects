@@ -14,31 +14,31 @@ function _renderListItem(repository) {
 }
 
 const Repos = ({ className, title, repos, handlePagination }) => {
-	const reposLength = repos.length;
+	const reposLength = repos.repos.length;
 
     return (
 		<div className={className}>
 			<h2>{title}</h2>
 			<ul className="repos">
 				{
-					repos.map(_renderListItem)
+					repos.repos.map(_renderListItem)
 				}
 			</ul>
-			{ reposLength && reposLength > 1 &&
-				<Pagination total={ reposLength } onClick={handlePagination} />}
+			{ reposLength &&
+				<Pagination active={ repos.activePage } total={ repos.totalPages } onClick={handlePagination} />}
 		</div>
 	);
 };
 
 Repos.defaultProps = {
     className: '',
-	repos: [],
+	repos: {},
 };
 
 Repos.propTypes = {
     className: PropTypes.string,
     title: PropTypes.string.isRequired,
-    repos: PropTypes.array,
+    repos: PropTypes.object,
     handlePagination: PropTypes.func
 };
 
