@@ -1,0 +1,46 @@
+{
+	"extends": [
+		"react-app"
+	],
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"plugins": [
+		"react"
+	],
+	"rules": {
+		"import/no-extraneous-dependencies": "off",
+		"indent": [2, "tab"],
+		"react/jsx-indent": [2, "tab"],
+		"global-require": "off",
+		"no-unused-vars": "off",
+		"no-tabs": "off",
+		"strict": "off",
+		"arrow-body-style": "off",
+		"react/jsx-indent-props": [
+			2,
+			4
+		],
+		"no-underscore-dangle": "off",
+		"arrow-parens": "off",
+		"no-console": "off",
+		"jsx-a11y/label-has-associated-control": "off",
+		"jsx-a11y/label-has-for": "off",
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [
+					".js",
+					".jsx"
+				]
+			}
+		]
+	}
+}
