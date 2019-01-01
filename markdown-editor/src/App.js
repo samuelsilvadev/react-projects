@@ -1,11 +1,26 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
+
+import MarkdownEditor from './components/markdown/markdown-editor';
+
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
+	state = {
+		value: '',
+	};
+
 	render() {
+		const { value } = this.state;
+
 		return (
-			<Fragment />
+			<MarkdownEditor value={ value } handleOnChange={ this._handleOnChange } />
 		);
+	}
+
+	_handleOnChange = (event) => {
+		this.setState({
+			value: event.target.value
+		})
 	}
 }
 
