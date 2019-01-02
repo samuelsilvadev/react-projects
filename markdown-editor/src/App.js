@@ -10,18 +10,20 @@ class App extends React.Component {
 	};
 
 	render() {
-		const { value } = this.state;
-
 		return (
-			<MarkdownEditor value={ value } handleOnChange={ this._handleOnChange } />
+			<MarkdownEditor value={ this._getValue } handleOnChange={ this._handleOnChange } />
 		);
-	}
+	};
+
+	_getValue = () => ({
+		__html: this.state.value
+	});
 
 	_handleOnChange = (event) => {
 		this.setState({
 			value: event.target.value
 		})
-	}
+	};
 }
 
 export default App;

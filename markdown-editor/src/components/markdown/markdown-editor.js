@@ -9,15 +9,13 @@ const MardownEditor = ({ value, handleOnChange }) => {
 			<form className="editor">
 				<textarea onChange={ handleOnChange } />
 			</form>
-			<div className="preview">
-				{ value }
-			</div>
+			<div className="preview" dangerouslySetInnerHTML={ value() } />
 		</div>
 	)
 };
 
 MardownEditor.propTypes = {
-	value: PropTypes.string.isRequired,
+	value: PropTypes.func.isRequired,
 	handleOnChange: PropTypes.func.isRequired,
 };
 
