@@ -1,4 +1,5 @@
 import React from 'react';
+import marked from 'marked';
 
 import MarkdownEditor from './components/markdown/markdown-editor';
 
@@ -16,7 +17,7 @@ class App extends React.Component {
 	};
 
 	_getValue = () => ({
-		__html: this.state.value
+		__html: marked(this.state.value)
 	});
 
 	_handleOnChange = (event) => {
