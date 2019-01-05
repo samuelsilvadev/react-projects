@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "highlight.js": "^9.13.1",
     "marked": "^0.6.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
