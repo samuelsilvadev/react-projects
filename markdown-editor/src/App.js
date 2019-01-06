@@ -1,15 +1,20 @@
 import React from 'react';
 import marked from 'marked';
-import highlight from 'highlight.js';
 
 import MarkdownEditor from './components/markdown/markdown-editor';
 
 import './App.css';
 
-marked.setOptions({
-	highlight: function(code) {
-	  return highlight.highlightAuto(code).value;
-	},
+
+import('highlight.js').then((highlight) => {
+	marked.setOptions({
+		highlight: function(code, lang) {
+			if(lang && highlight.getLanguage(lang)) {
+				return highlight.highlight(lang, code).value;
+			}
+		  	return highlight.highlightAuto(code).value;
+		},
+	});
 });
 
 class App extends React.Component {
