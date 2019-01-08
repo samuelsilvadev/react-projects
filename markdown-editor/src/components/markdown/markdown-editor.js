@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 import './markdown-editor.css';
 
-const MardownEditor = ({ value, handleOnChange }) => {
+const MardownEditor = ({ getValue, handleOnChange }) => {
 	return (
-		<div className="wrapper">
-			<form className="editor">
-				<textarea onChange={ handleOnChange } />
+		<main className="markdown">
+			<form className="markdown__editor">
+				<textarea autoFocus onChange={ handleOnChange } />
 			</form>
-			<div className="preview" dangerouslySetInnerHTML={ value() } />
-		</div>
+			<article className="markdown__preview" dangerouslySetInnerHTML={ getValue() } />
+		</main>
 	)
 };
 
 MardownEditor.propTypes = {
-	value: PropTypes.func.isRequired,
+	getValue: PropTypes.func.isRequired,
 	handleOnChange: PropTypes.func.isRequired,
 };
 

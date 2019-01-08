@@ -24,7 +24,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<MarkdownEditor value={ this._getValue } handleOnChange={ this._handleOnChange } />
+			<MarkdownEditor getValue={ this._getValue } handleOnChange={ this._handleOnChange } />
 		);
 	};
 
