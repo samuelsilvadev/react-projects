@@ -8,6 +8,7 @@ import { loadData, persistData } from './locaStorage';
 import './App.css';
 
 const LOCAL_STORAGE_KEY = 'md';
+const TIME_TO_SAVE = 1500;
 
 import('highlight.js').then((highlight) => {
 	marked.setOptions({
@@ -32,9 +33,12 @@ class App extends React.Component {
 	}
 
 	componentDidUpdate() {
-		const { value } = this.state;
+		clearTimeout(this.timer);
+		this.timer = setTimeout(this._saveData, TIME_TO_SAVE);
+	}
 
-		persistData({ key: LOCAL_STORAGE_KEY, value });
+	componentWillUnmount() {
+		clearTimeout(this.timer);
 	}
 
 	render() {
@@ -43,6 +47,12 @@ class App extends React.Component {
 		return (
 			<MarkdownEditor value={ value } getValue={ this._getValue } handleOnChange={ this._handleOnChange } />
 		);
+	}
+
+	_saveData = () => {
+		const { value } = this.state;
+
+		persistData({ key: LOCAL_STORAGE_KEY, value });
 	}
 
 	_getValue = () => ({
