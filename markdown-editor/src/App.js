@@ -45,7 +45,11 @@ class App extends React.Component {
 		const { value } = this.state;
 
 		return (
-			<MarkdownEditor value={ value } getValue={ this._getValue } handleOnChange={ this._handleOnChange } />
+			<MarkdownEditor
+				value={ value }
+				getValue={ this._getValue }
+				handleOnChange={ this._handleOnChange }
+				handleOnClick={ this._saveData } />
 		);
 	}
 

@@ -24,10 +24,7 @@
 		"no-tabs": "off",
 		"strict": "off",
 		"arrow-body-style": "off",
-		"react/jsx-indent-props": [
-			2,
-			4
-		],
+		"react/jsx-indent-props": [2, "tab"],
 		"no-underscore-dangle": "off",
 		"arrow-parens": "off",
 		"no-console": "off",
