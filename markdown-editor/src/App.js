@@ -24,6 +24,7 @@ import('highlight.js').then((highlight) => {
 class App extends React.Component {
 	state = {
 		value: '',
+		isSaving: false,
 	};
 
 	componentDidMount() {
@@ -42,11 +43,12 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { value } = this.state;
+		const { value, isSaving } = this.state;
 
 		return (
 			<MarkdownEditor
 				value={ value }
+				isSaving={ isSaving }
 				getValue={ this._getValue }
 				handleOnChange={ this._handleOnChange }
 				handleOnClick={ this._saveData } />
@@ -57,6 +59,10 @@ class App extends React.Component {
 		const { value } = this.state;
 
 		persistData({ key: LOCAL_STORAGE_KEY, value });
+
+		this.setState({
+			isSaving: false,
+		});
 	}
 
 	_getValue = () => ({
@@ -65,7 +71,8 @@ class App extends React.Component {
 
 	_handleOnChange = (event) => {
 		this.setState({
-			value: event.target.value
+			value: event.target.value,
+			isSaving: true,
 		});
 	};
 }

@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 import './markdown-editor.css';
 
-const MardownEditor = ({ value, getValue, handleOnClick, handleOnChange }) => {
+const MardownEditor = ({ value, isSaving, getValue, handleOnClick, handleOnChange }) => {
 	return (
 		<main className="markdown">
 			<header className="markdown__header">
+				<p className="markdown__header__feedback">
+					{ isSaving ? 'Saving...' : 'Saved' }
+				</p>
 				<button className="markdown__header__save-button" onClick={ handleOnClick }>
 					Save
 				</button>
@@ -21,6 +24,7 @@ const MardownEditor = ({ value, getValue, handleOnClick, handleOnChange }) => {
 
 MardownEditor.propTypes = {
 	value: PropTypes.string,
+	isSaving: PropTypes.bool.isRequired,
 	getValue: PropTypes.func.isRequired,
 	handleOnChange: PropTypes.func.isRequired,
 	handleOnClick: PropTypes.func.isRequired,
