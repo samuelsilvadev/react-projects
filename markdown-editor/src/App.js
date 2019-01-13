@@ -56,13 +56,15 @@ class App extends React.Component {
 	}
 
 	_saveData = () => {
-		const { value } = this.state;
+		const { value, isSaving } = this.state;
+		
+		if (isSaving) {
+			persistData({ key: LOCAL_STORAGE_KEY, value });
 
-		persistData({ key: LOCAL_STORAGE_KEY, value });
-
-		this.setState({
-			isSaving: false,
-		});
+			this.setState({
+				isSaving: false,
+			});
+		}
 	}
 
 	_getValue = () => ({
