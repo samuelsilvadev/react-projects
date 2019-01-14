@@ -8,6 +8,8 @@ export const loadData = (key) => {
 
 		return JSON.parse(serializedData);
 	} catch (err) {
+		console.error(err);
+
 		return undefined;
 	}
 };
@@ -17,6 +19,14 @@ export const persistData = ({ key, value }) => {
 		const serializedData = JSON.stringify(value);
 
 		localStorage.setItem(key, serializedData);
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+export const removeData = (key) => {
+	try {
+		localStorage.removeItem(key);
 	} catch (err) {
 		console.error(err);
 	}
