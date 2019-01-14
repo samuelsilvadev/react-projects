@@ -3,7 +3,7 @@ import marked from 'marked';
 
 import MarkdownEditor from './components/markdown/markdown-editor';
 
-import { loadData, persistData } from './locaStorage';
+import { loadData, persistData, removeData } from './locaStorage';
 
 import './App.css';
 
@@ -51,7 +51,8 @@ class App extends React.Component {
 				isSaving={ isSaving }
 				getValue={ this._getValue }
 				handleOnChange={ this._handleOnChange }
-				handleOnClick={ this._saveData } />
+				handleOnSave={ this._saveData }
+				handleOnDelete={ this._removeData } />
 		);
 	}
 
@@ -67,8 +68,16 @@ class App extends React.Component {
 		}
 	}
 
+	_removeData = () => {
+		removeData(LOCAL_STORAGE_KEY);
+
+		this.setState({
+			value: '',
+		});
+	}
+
 	_getValue = () => ({
-		__html: marked(this.state.value)
+		__html: marked(this.state.value || '')
 	});
 
 	_handleOnChange = (event) => {

@@ -18,20 +18,29 @@
 	margin-left: 20px;
 }
 
-.markdown__header__save-button {
-    background-color: #006400;
+.markdown__header__save-button,
+.markdown__header__remove-button {
 	border: none;
 	color: #fff;
-	display: block;
-    height: 100%;
-	margin-left: auto;
-	margin-right: 0;
-    width: 100px;
+	height: 100%;
+	text-transform: uppercase;
+	min-width: 100px;
 }
 
-.markdown__header__save-button:hover {
+.markdown__header__save-button {
+    background-color: #006400;   
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.markdown__header__save-button:hover,
+.markdown__header__remove-button:hover {
 	cursor: pointer;
 	outline: none;
+}
+
+.markdown__header__remove-button {
+	background-color: #ff0000;
 }
 
 .markdown__editor,
