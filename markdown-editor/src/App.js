@@ -1,7 +1,7 @@
 import React from 'react';
 import marked from 'marked';
 
-import MarkdownEditor from './components/markdown/markdown-editor';
+import MarkdownEditor from './pages/markdown/markdown-editor';
 
 import { loadData, persistData, removeData } from './locaStorage';
 

@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import SaveMessage from '../../components/save-message';
+
 import './markdown-editor.css';
 
 const MardownEditor = ({ value, isSaving, getValue, handleOnSave, handleOnDelete, handleOnChange }) => {
 	return (
 		<main className="markdown">
 			<header className="markdown__header">
-				{	isSaving !== null &&
-					<p className="markdown__header__feedback">
-						{ isSaving ? 'Saving...' : 'Saved' }
-					</p>
-				}
+				<SaveMessage className="markdown__header__feedback" isSaving={ isSaving } />
 				<button className="markdown__header__save-button" onClick={ handleOnSave }>
 					Save
 				</button>
@@ -29,7 +27,6 @@ const MardownEditor = ({ value, isSaving, getValue, handleOnSave, handleOnDelete
 
 MardownEditor.propTypes = {
 	value: PropTypes.string,
-	isSaving: PropTypes.bool,
 	getValue: PropTypes.func.isRequired,
 	handleOnChange: PropTypes.func.isRequired,
 	handleOnSave: PropTypes.func.isRequired,
