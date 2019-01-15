@@ -5,3 +5,11 @@
 	margin: 0;
 	padding: 0;
 }
+
+:root {
+	--white: #fff;
+	--black: #000;
+	--gray: #404040;
+	--green: #006400;
+	--red: #ff0000;
+}
