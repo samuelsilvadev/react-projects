@@ -7,9 +7,11 @@ const MardownEditor = ({ value, isSaving, getValue, handleOnSave, handleOnDelete
 	return (
 		<main className="markdown">
 			<header className="markdown__header">
-				<p className="markdown__header__feedback">
-					{ isSaving ? 'Saving...' : 'Saved' }
-				</p>
+				{	isSaving !== null &&
+					<p className="markdown__header__feedback">
+						{ isSaving ? 'Saving...' : 'Saved' }
+					</p>
+				}
 				<button className="markdown__header__save-button" onClick={ handleOnSave }>
 					Save
 				</button>
@@ -27,7 +29,7 @@ const MardownEditor = ({ value, isSaving, getValue, handleOnSave, handleOnDelete
 
 MardownEditor.propTypes = {
 	value: PropTypes.string,
-	isSaving: PropTypes.bool.isRequired,
+	isSaving: PropTypes.bool,
 	getValue: PropTypes.func.isRequired,
 	handleOnChange: PropTypes.func.isRequired,
 	handleOnSave: PropTypes.func.isRequired,

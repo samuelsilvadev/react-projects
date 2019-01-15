@@ -24,7 +24,7 @@ import('highlight.js').then((highlight) => {
 class App extends React.Component {
 	state = {
 		value: '',
-		isSaving: false,
+		isSaving: null,
 	};
 
 	componentDidMount() {
@@ -73,6 +73,7 @@ class App extends React.Component {
 
 		this.setState({
 			value: '',
+			isSaving: null,
 		});
 	}
 
