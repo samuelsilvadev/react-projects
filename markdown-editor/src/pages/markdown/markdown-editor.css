@@ -18,8 +18,7 @@
 	margin-left: 20px;
 }
 
-.markdown__header__save-button,
-.markdown__header__remove-button {
+.button {
 	border: none;
 	color: var(--white);
 	height: 100%;
@@ -27,16 +26,19 @@
 	min-width: 100px;
 }
 
+.button:hover {
+	cursor: pointer;
+	outline: none;
+}
+
 .markdown__header__save-button {
-    background-color: var(--green);   
+	background-color: var(--green);
 	margin-left: auto;
 	margin-right: 0;
 }
 
-.markdown__header__save-button:hover,
-.markdown__header__remove-button:hover {
-	cursor: pointer;
-	outline: none;
+.markdown__header__new-button {
+	color: var(--black);
 }
 
 .markdown__header__remove-button {
