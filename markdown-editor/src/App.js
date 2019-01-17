@@ -1,14 +1,18 @@
 import React from 'react';
 import marked from 'marked';
+import { v4 } from 'node-uuid';
 
 import MarkdownEditor from './pages/markdown/markdown-editor';
 
-import { loadData, persistData, removeData } from './locaStorage';
+import { persistData, removeData } from './locaStorage';
 
 import './App.css';
 
-const LOCAL_STORAGE_KEY = 'md';
 const TIME_TO_SAVE = 1500;
+const GET_INITIAL_STATE = () => ({
+	id: v4(),
+	value: '',
+});
 
 import('highlight.js').then((highlight) => {
 	marked.setOptions({
@@ -23,15 +27,9 @@ import('highlight.js').then((highlight) => {
 
 class App extends React.Component {
 	state = {
-		value: '',
+		...GET_INITIAL_STATE(),
 		isSaving: null,
 	};
-
-	componentDidMount() {
-		this.setState({
-			value: loadData(LOCAL_STORAGE_KEY),
-		});
-	}
 
 	componentDidUpdate() {
 		clearTimeout(this.timer);
@@ -57,15 +55,21 @@ class App extends React.Component {
 		);
 	}
 
-	_createNewFile = () => {
+	_getValue = () => ({
+		__html: marked(this.state.value || '')
+	});
 
+	_createNewFile = () => {
+		this.setState({
+			...GET_INITIAL_STATE(),
+		});
 	}
 
 	_saveData = () => {
-		const { value, isSaving } = this.state;
+		const { id, isSaving, value } = this.state;
 		
 		if (isSaving) {
-			persistData({ key: LOCAL_STORAGE_KEY, value });
+			persistData({ key: id, value });
 
 			this.setState({
 				isSaving: false,
@@ -74,23 +78,24 @@ class App extends React.Component {
 	}
 
 	_removeData = () => {
-		removeData(LOCAL_STORAGE_KEY);
+		const { id } = this.state;
+
+		removeData(id);
 
 		this.setState({
-			value: '',
+			...GET_INITIAL_STATE(),
 			isSaving: null,
 		});
 	}
 
-	_getValue = () => ({
-		__html: marked(this.state.value || '')
-	});
-
 	_handleOnChange = (event) => {
-		this.setState({
-			value: event.target.value,
+		const value = event.target.value;
+
+		this.setState((prevState) => ({
+			id: prevState.id,
 			isSaving: true,
-		});
+			value,
+		}));
 	};
 }
 
