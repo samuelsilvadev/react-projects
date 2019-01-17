@@ -1,15 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import FilesList from '../../components/files-list';
 import SaveMessage from '../../components/save-message';
 
 import './markdown-editor.css';
 
-const MardownEditor = ({ value, isSaving, getValue, handleOnSave, handleOnCreate, handleOnDelete, handleOnChange }) => {
+const MardownEditor = (props) => {
+	const { 
+		value,
+		isSaving,
+		getValue,
+		handleOnSave,
+		handleOnCreate,
+		handleOnDelete,
+		handleOnChange
+	} = props;
+
 	return (
 		<main className="markdown">
 			<header className="markdown__header">
 				<SaveMessage className="markdown__header__feedback" isSaving={ isSaving } />
+				<FilesList className="markdown__header__files-list" />
 				<button className="button markdown__header__save-button" onClick={ handleOnSave }>
 					Save
 				</button>
