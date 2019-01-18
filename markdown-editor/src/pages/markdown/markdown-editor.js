@@ -14,14 +14,15 @@ const MardownEditor = (props) => {
 		handleOnSave,
 		handleOnCreate,
 		handleOnDelete,
-		handleOnChange
+		handleOnChange,
+		...remainingProps
 	} = props;
 
 	return (
 		<main className="markdown">
 			<header className="markdown__header">
 				<SaveMessage className="markdown__header__feedback" isSaving={ isSaving } />
-				<FilesList className="markdown__header__files-list" />
+				<FilesList className="markdown__header__files-list" { ...remainingProps } />
 				<button className="button markdown__header__save-button" onClick={ handleOnSave }>
 					Save
 				</button>

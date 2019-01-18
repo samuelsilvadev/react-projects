@@ -18,6 +18,23 @@
 	margin-left: 20px;
 }
 
+.markdown__header__files-list {
+	border: none;
+    border-radius: unset;
+	height: 100%;
+	margin-left: auto;
+	margin-right: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	-webkit-appearance: none;
+    -webkit-border-radius: 0px;
+}
+
+.markdown__header__files-list:hover {
+	cursor: pointer;
+}
+
 .button {
 	border: none;
 	color: var(--white);
@@ -33,8 +50,6 @@
 
 .markdown__header__save-button {
 	background-color: var(--green);
-	margin-left: auto;
-	margin-right: 0;
 }
 
 .markdown__header__new-button {
