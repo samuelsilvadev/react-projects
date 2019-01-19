@@ -80,15 +80,28 @@ class App extends React.Component {
 	}
 
 	_saveData = () => {
-		const { id, isSaving, value } = this.state;
+		const { id, isSaving, value, files } = this.state;
 		
 		if (isSaving) {
 			persistData({ key: id, value });
 
+			const isIdSaved = this._hasIdOnState(id)
+
 			this.setState({
 				isSaving: false,
+				files: isIdSaved ?
+					[ ...files ] :
+					[
+						id,
+						...files,
+					]
+				,
 			});
 		}
+	}
+
+	_hasIdOnState(id) {
+		return this.state.files.find((fileId) => fileId === id);
 	}
 
 	_removeData = () => {
