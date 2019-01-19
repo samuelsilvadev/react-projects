@@ -105,13 +105,16 @@ class App extends React.Component {
 	}
 
 	_removeData = () => {
-		const { id } = this.state;
+		const { id, files } = this.state;
 
 		removeData(id);
 
 		this.setState({
-			...GET_INITIAL_STATE(),
 			isSaving: null,
+			...GET_INITIAL_STATE(),
+			files: [
+				...files.filter((fileId) => fileId !== id)
+			],
 		});
 	}
 
@@ -119,8 +122,8 @@ class App extends React.Component {
 		const value = event.target.value;
 
 		this.setState((prevState) => ({
-			id: prevState.id,
 			isSaving: true,
+			id: prevState.id,
 			value,
 		}));
 	};
@@ -138,8 +141,8 @@ class App extends React.Component {
 		}
 
 		this.setState({
-			...GET_INITIAL_STATE(),
 			isSaving: null,
+			...GET_INITIAL_STATE(),
 		});
 	};
 }
