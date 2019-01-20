@@ -23,9 +23,6 @@ const MardownEditor = (props) => {
 			<header className="markdown__header">
 				<SaveMessage className="markdown__header__feedback" isSaving={ isSaving } />
 				<FilesList className="markdown__header__files-list" { ...remainingProps } />
-				<button className="button markdown__header__save-button" onClick={ handleOnSave }>
-					Save
-				</button>
 				<button className="button markdown__header__new-button" onClick={ handleOnCreate }>
 					New
 				</button>
@@ -45,7 +42,6 @@ MardownEditor.propTypes = {
 	value: PropTypes.string,
 	getValue: PropTypes.func.isRequired,
 	handleOnChange: PropTypes.func.isRequired,
-	handleOnSave: PropTypes.func.isRequired,
 	handleOnCreate: PropTypes.func.isRequired,
 	handleOnDelete: PropTypes.func.isRequired,
 };

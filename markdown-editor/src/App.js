@@ -57,7 +57,6 @@ class App extends React.Component {
 				getValue={ this._getValue }
 				handleOnChange={ this._handleOnChange }
 				handleOnCreate={ this._createNewFile }
-				handleOnSave={ this._saveData }
 				handleOnDelete={ this._removeData }
 				handleOpenFile={ this._handleOpenFile }
 				files={ files } />
