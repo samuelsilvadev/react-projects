@@ -15,14 +15,19 @@ export const FilesList = ({ className, files, handleOpenFile }) => {
 	return (
 		<select className={ className } onChange={ handleOpenFile }>
 			<option value="">Select a file to open</option>
-			{ files.map(_renderOption) }
+			{ Object.keys(files).map(_renderOption) }
 		</select>
 	);
 };
 
 FilesList.propTypes = {
 	className: PropTypes.string,
-	files: PropTypes.arrayOf(PropTypes.string),
+	files: PropTypes.shape({
+		key: PropTypes.shape({
+			title: PropTypes.string,
+			content: PropTypes.string,
+		}),
+	}),
 	handleOpenFile: PropTypes.func,
 };
 

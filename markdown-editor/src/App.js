@@ -12,6 +12,7 @@ const KEY_STORAGE_REGEX = /.{8}-.{4}-.{4}-.{4}-.{12}/gi;
 const TIME_TO_SAVE = 1500;
 const GET_INITIAL_STATE = () => ({
 	id: v4(),
+	title: '',
 	value: '',
 });
 
@@ -29,7 +30,7 @@ import('highlight.js').then((highlight) => {
 class App extends React.Component {
 	state = {
 		...GET_INITIAL_STATE(),
-		files: [],
+		files: {},
 		isSaving: null,
 	};
 
@@ -64,9 +65,22 @@ class App extends React.Component {
 	}
 
 	_getFilesFromStorage() {
-		const filesIds = Object.keys(localStorage).filter(key => key.match(KEY_STORAGE_REGEX));
+		const files = Object.keys(localStorage).reduce((acc, key) => {
+			const hasMatched = key.match(KEY_STORAGE_REGEX);
 
-		this.setState({ files: filesIds });
+			if (hasMatched) {
+				return {
+					...acc,
+					[key]: loadData(key),
+				}
+			}
+
+			return {
+				...acc,
+			}
+		}, {})
+		
+		this.setState({ files });
 	};
 
 	_getValue = () => ({
@@ -80,41 +94,32 @@ class App extends React.Component {
 	}
 
 	_saveData = () => {
-		const { id, isSaving, value, files } = this.state;
+		const { id: key, isSaving, title, value, files } = this.state;
 		
 		if (isSaving) {
-			persistData({ key: id, value });
-
-			const isIdSaved = this._hasIdOnState(id)
+			persistData({ key, value: { title, content: value } });
 
 			this.setState({
 				isSaving: false,
-				files: isIdSaved ?
-					[ ...files ] :
-					[
-						id,
-						...files,
-					]
-				,
+				files: {
+					...files,
+					[key]: { title, content: value },
+				},
 			});
 		}
 	}
 
-	_hasIdOnState(id) {
-		return this.state.files.find((fileId) => fileId === id);
-	}
-
 	_removeData = () => {
-		const { id, files } = this.state;
-
+		const { id, files: { [id]: idToRemove, ...remainingFiles } } = this.state;
+		
 		removeData(id);
 
 		this.setState({
 			isSaving: null,
 			...GET_INITIAL_STATE(),
-			files: [
-				...files.filter((fileId) => fileId !== id)
-			],
+			files: {
+				...remainingFiles,
+			},
 		});
 	}
 
@@ -130,11 +135,13 @@ class App extends React.Component {
 
 	_handleOpenFile = (event) => {
 		const key = event.target.value;
+		const { files } = this.state;
 		
 		if (key) {
 			this.setState({
 				id: key,
-				value: loadData(key),
+				title: files[key].title,
+				value: files[key].content,
 			});
 
 			return;
