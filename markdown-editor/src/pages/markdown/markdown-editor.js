@@ -23,6 +23,7 @@ const MardownEditor = (props) => {
 			<header className="markdown__header">
 				<SaveMessage className="markdown__header__feedback" isSaving={ isSaving } />
 				<FilesList className="markdown__header__files-list" { ...remainingProps } />
+				<input className="markdown__header__title-field" type="text" name="title" placeholder="No totle..." autoComplete="off" onChange={ handleOnChange } />
 				<button className="button markdown__header__new-button" onClick={ handleOnCreate }>
 					New
 				</button>
@@ -31,7 +32,7 @@ const MardownEditor = (props) => {
 				</button>
 			</header>
 			<form className="markdown__editor">
-				<textarea autoFocus value={ value } onChange={ handleOnChange } />
+				<textarea autoFocus name="value" value={ value } onChange={ handleOnChange } />
 			</form>
 			<article className="markdown__preview" dangerouslySetInnerHTML={ getValue() } />
 		</main>

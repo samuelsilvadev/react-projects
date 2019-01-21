@@ -123,12 +123,14 @@ class App extends React.Component {
 	}
 
 	_handleOnChange = (event) => {
-		const value = event.target.value;
+		const target = event.target;
+		const value = target.value;
+		const name = target.name;
 
 		this.setState((prevState) => ({
 			isSaving: true,
 			id: prevState.id,
-			value,
+			[name]: value,
 		}));
 	};
 

@@ -18,6 +18,11 @@
 	margin-left: 20px;
 }
 
+.markdown__header__title-field {
+	height: 100%;
+	min-width: 300px;
+}
+
 .markdown__header__files-list {
 	border: none;
     border-radius: unset;
