@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const _renderOption = (value, index) => {
+const _renderOption = (arr, index) => {
 	return (
-		<option key={ index }>{ value }</option>
+		<option key={ index } value={ arr[0] } >{ arr[1].title }</option>
 	);
 };
 
@@ -15,7 +15,7 @@ export const FilesList = ({ className, files, handleOpenFile }) => {
 	return (
 		<select className={ className } onChange={ handleOpenFile }>
 			<option value="">Select a file to open</option>
-			{ Object.keys(files).map(_renderOption) }
+			{ Object.entries(files).map(_renderOption) }
 		</select>
 	);
 };

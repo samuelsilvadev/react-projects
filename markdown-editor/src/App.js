@@ -48,7 +48,7 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { value, isSaving, files } = this.state;
+		const { value, isSaving, files, title } = this.state;
 
 		return (
 			<MarkdownEditor
@@ -59,7 +59,8 @@ class App extends React.Component {
 				handleOnCreate={ this._createNewFile }
 				handleOnDelete={ this._removeData }
 				handleOpenFile={ this._handleOpenFile }
-				files={ files } />
+				files={ files }
+				title={ title } />
 		);
 	}
 
