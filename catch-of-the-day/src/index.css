@@ -1,14 +1,36 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+	font-family: sans-serif;
+	font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	background: #d4d4d4;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2rem;
+}
+
+h1 {
+	font-family: 'blanchcaps_inline', sans-serif;
+	text-align: center;
+	font-weight: normal;
+	margin: 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	font-family: 'haymakerregular', sans-serif;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 2rem;
+}
+
+h3 {
+	font-size: 3rem;
 }
