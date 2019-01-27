@@ -1,0 +1,18 @@
+.store-selector {
+	background: #fff;
+	max-width: 50rem;
+	margin: 5rem auto;
+	padding: 2rem;
+	border: 0.2rem solid #000;
+}
+
+.store-name,
+.store-button {
+	width: 100%;
+}
+
+.store-name {
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
