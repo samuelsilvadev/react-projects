@@ -1,0 +1,60 @@
+.header {
+	text-align: center;
+}
+
+.header__title {
+	display: flex;
+	font-size: 14.4rem;
+	line-height: 0.7;
+	justify-content: center;
+}
+
+.ofThe {
+	align-items: center;
+	background: url('../../images/anchor.svg') center no-repeat;
+	background-size: cover;
+	color: #f5a623;
+	display: flex;
+	font-size: 3rem;
+	padding: 0 2rem;
+}
+
+.of,
+.the {
+	position: relative;
+}
+
+.of {
+	right: -0.5rem;
+	padding-right: 2rem;
+}
+
+.header__subtitle {
+	align-items: center;
+	color: #f5a623;
+	display: inline-flex;
+	font-size: 2rem;
+	position: relative;
+	justify-content: center;
+}
+
+.header__subtitle > span {
+	background: #fff;
+	position: relative;
+	padding: 0 1rem;
+	z-index: 2;
+}
+
+.header__subtitle::before,
+.header__subtitle::after {
+    background: #000;
+	content: '';
+    display: inline-block;
+    height: 0.3rem;
+    position: absolute;
+    width: 120%;
+}
+
+.header__subtitle::after {
+	bottom: 0;
+}
