@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
+import { SubmitButton } from './../button';
+
 import './StorePicker.css';
 
 class StorePicker extends React.PureComponent {
@@ -25,7 +27,7 @@ class StorePicker extends React.PureComponent {
 					required
 					placeholder="Store Name"
 				/>
-				<button className="store-button" type="submit">Visit Store →</button>
+				<SubmitButton text="Visit Store →" />
 			</form>
 		);
 	}
