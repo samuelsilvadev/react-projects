@@ -1,10 +1,15 @@
 import React from 'react';
 
+import AddFishForm from '../add-fish-form/AddFishForm';
+
 import './Inventory.css';
 
-const Inventory = ({ className }) => {
+const Inventory = ({ className, onAddFish }) => {
 	return (
-		<p className={ className }>Inventory</p>
+		<section className={ className }>
+			<h2>Inventory</h2>
+			<AddFishForm onAddFish={ onAddFish } />
+		</section>
 	);
 }
 

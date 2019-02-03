@@ -38,13 +38,13 @@ class StorePicker extends React.PureComponent {
 		if (this.inputRef && this.inputRef.current && this.inputRef.current.value) {
 			this.props.history.push(`/store/${this.inputRef.current.value}`)
 		}
-	}
+	};
 }
 
 StorePicker.propTypes = {
 	history: PropTypes.shape({
 		push: PropTypes.func.isRequired,
 	}),
-}
+};
 
 export default withRouter(StorePicker);

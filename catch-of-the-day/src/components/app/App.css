@@ -8,7 +8,7 @@
 .header,
 .order,
 .inventory {
-	flex: 1 1 auto;
+	flex: 1 1 33.33%;
 	padding: 2rem;
 	border: 1rem double #1a1a1a;
 	position: relative;
