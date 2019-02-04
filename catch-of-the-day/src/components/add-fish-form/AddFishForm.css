@@ -25,7 +25,7 @@
 	outline: 0;
 }
 
-.add-fish-form .add-fish-form__state,
+.add-fish-form .add-fish-form__status,
 .add-fish-form .add-fish-form__description,
 .add-fish-form .add-fish-form__image {
 	border-right: none;
@@ -33,7 +33,7 @@
 
 .add-fish-form__name,
 .add-fish-form__price,
-.add-fish-form__state {
+.add-fish-form__status {
 	width: calc(100% / 3);
 }
 

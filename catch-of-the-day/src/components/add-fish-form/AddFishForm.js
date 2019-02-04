@@ -28,8 +28,8 @@ class AddFishForm extends React.PureComponent {
 					onChange={this._handleChange}
 				/>
 				<select
-					className="add-fish-form__state"
-					name='state'
+					className="add-fish-form__status"
+					name='status'
 					onChange={this._handleChange}
 					required>
 					<option value=''>Choose one</option>
