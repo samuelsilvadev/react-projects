@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../header/Header';
 import Order from '../order/Order';
 import Inventory from '../inventory/Inventory';
+import Fish from '../fish/Fish';
 
 import fishes from './../../data/fishes-mock';
 
@@ -14,15 +15,34 @@ class App extends Component {
 	};
 
 	render() {
+		const { fishes } = this.state;
+
 		return (
 			<main className="main">
-				<Header className="header" />
+				<section className="header">
+					<Header />
+					<ul className="list-of-fishes">
+						{
+							Object
+								.keys(fishes)
+								.map(this._renderFish, this)
+						}
+					</ul>
+				</section>
 				<Order className="order" />
 				<Inventory
 					className="inventory"
 					onAddFish={ this._onAddFish }
 					loadFishes={ this._loadFishesData }/>
 			</main>
+		);
+	}
+
+	_renderFish(key) {
+		const fishDetails = this.state.fishes[key];
+		
+		return (
+			<Fish key={ key } tag="li" details={ fishDetails } />
 		);
 	}
 
