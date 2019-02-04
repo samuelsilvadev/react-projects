@@ -9,10 +9,10 @@ const Fish = ({ tag: Tag, details: { image, name, price, desc } }) => {
 	return (
 		<Tag className="fish">
 			<img className="fish__image" src={ image } alt={ name }/>
-			<p className="fish__name">
-				{ name }
+			<h2 className="fish__name">
+				<span>{ name }</span>
 				<span>{ price }</span>
-			</p>
+			</h2>
 			<p className="fish__desc">
 				{ desc }
 			</p>

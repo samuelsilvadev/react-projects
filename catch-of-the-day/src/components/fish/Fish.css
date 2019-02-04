@@ -18,6 +18,14 @@
 	margin-bottom: 10px;
 }
 
+.fish__name span:nth-child(1) {
+	display: inline-block;
+	max-width: 70%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 .fish__desc {
 	font-size: 1.8rem;
 	margin: 0;
