@@ -4,6 +4,8 @@ import Header from '../header/Header';
 import Order from '../order/Order';
 import Inventory from '../inventory/Inventory';
 
+import fishes from './../../data/fishes-mock';
+
 import './App.css';
 
 class App extends Component {
@@ -15,8 +17,11 @@ class App extends Component {
 		return (
 			<main className="main">
 				<Header className="header" />
-				<Order  className="order" />
-				<Inventory  className="inventory" onAddFish={ this._onAddFish } />
+				<Order className="order" />
+				<Inventory
+					className="inventory"
+					onAddFish={ this._onAddFish }
+					loadFishes={ this._loadFishesData }/>
 			</main>
 		);
 	}
@@ -31,6 +36,15 @@ class App extends Component {
 			}
 		}));
 	};
+
+	_loadFishesData = () => {
+		this.setState((prevState) => ({
+			fishes: {
+				...prevState.fishes,
+				...fishes,
+			}
+		}));
+	}
 }
 
 export default App;
