@@ -11,7 +11,8 @@ import './App.css';
 
 class App extends Component {
 	state = {
-		fishes: {}
+		fishes: {},
+		orders: {}
 	};
 
 	render() {
@@ -42,7 +43,12 @@ class App extends Component {
 		const fishDetails = this.state.fishes[key];
 		
 		return (
-			<Fish key={ key } tag="li" details={ fishDetails } />
+			<Fish
+				key={ key }
+				index={ key }
+				tag="li"
+				details={ fishDetails }
+				onAddOrder={ this._onAddNewOrder } />
 		);
 	}
 
@@ -62,6 +68,15 @@ class App extends Component {
 			fishes: {
 				...prevState.fishes,
 				...fishes,
+			}
+		}));
+	}
+
+	_onAddNewOrder = (key) => {
+		this.setState((prevState) => ({
+			orders: {
+				...prevState.orders,
+				[key]: prevState.orders[key] + 1 || 1
 			}
 		}));
 	}

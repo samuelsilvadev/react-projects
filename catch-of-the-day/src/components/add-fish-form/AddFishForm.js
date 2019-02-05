@@ -38,7 +38,7 @@ class AddFishForm extends React.PureComponent {
 				</select>
 				<textarea
 					className="add-fish-form__description"
-					name='description'
+					name='desc'
 					placeholder='Fish Description'
 					required
 					onChange={this._handleChange}
