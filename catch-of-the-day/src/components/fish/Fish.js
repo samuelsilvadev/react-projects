@@ -5,7 +5,12 @@ import { Button } from './../button';
 
 import './Fish.css';
 
-const Fish = ({ tag: Tag, details: { image, name, price, desc } }) => {
+const Fish = ({ tag: Tag, details: { image, name, price, desc, status } }) => {
+
+	const isAvailable = status === 'available';
+	const buttonText = isAvailable ? 'Add To Order' : 'Sould out!'
+	const buttonClassNames = isAvailable ? 'fish__btn-add-to-order' : 'fish__btn-add-to-order fish__btn-add-to-order--disabled'
+
 	return (
 		<Tag className="fish">
 			<img className="fish__image" src={ image } alt={ name }/>
@@ -16,7 +21,10 @@ const Fish = ({ tag: Tag, details: { image, name, price, desc } }) => {
 			<p className="fish__desc">
 				{ desc }
 			</p>
-			<Button className="fish__btn-add-to-order" text="Add To Order"/>
+			<Button
+				className={ buttonClassNames }
+				text={ buttonText }
+				disabled={ !isAvailable } />
 		</Tag>
 	);
 };
@@ -26,8 +34,9 @@ Fish.propTypes = {
 	details: PropTypes.shape({
 		name: PropTypes.string,
 		image: PropTypes.string,
-		price: PropTypes.string,
+		price: PropTypes.number,
 		desc: PropTypes.string,
+		status: PropTypes.string,
 	}),
 };
 
