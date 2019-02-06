@@ -5,6 +5,8 @@ import Order from '../order/Order';
 import Inventory from '../inventory/Inventory';
 import Fish from '../fish/Fish';
 
+import base from '../../base';
+
 import fishes from './../../data/fishes-mock';
 
 import './App.css';
@@ -14,6 +16,19 @@ class App extends Component {
 		fishes: {},
 		orders: {}
 	};
+
+	componentWillMount() {
+		const { match: { params: { id } } = {} } = this.props;
+
+		this.ref = base.syncState(`${id}/fishes`, {
+			context: this,
+			state: 'fishes',
+		});
+	}
+
+	componentWillUnmount() {
+		base.removeBinding(this.ref);
+	}
 
 	render() {
 		const { fishes, orders } = this.state;
