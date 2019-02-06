@@ -5,25 +5,45 @@ import Order from '../order/Order';
 import Inventory from '../inventory/Inventory';
 import Fish from '../fish/Fish';
 
-import base from '../../base';
+import base from '../../services/base';
+import { saveState, loadState } from '../../services/localStorage';
 
 import fishes from './../../data/fishes-mock';
 
 import './App.css';
 
 class App extends Component {
-	state = {
-		fishes: {},
-		orders: {}
-	};
+	constructor(props) {
+		super(props);
 
-	componentWillMount() {
-		const { match: { params: { id } } = {} } = this.props;
+		this.state = {
+			fishes: {},
+			orders: {}
+		};
 
-		this.ref = base.syncState(`${id}/fishes`, {
+		const { match: { params: { id } } = {} } = props;
+
+		this.storeId = id;
+		this.keyStorage =  `orders-${id}`;
+	}
+
+	componentDidMount() {
+		const { storeId } = this;
+		
+		this.ref = base.syncState(`${storeId}/fishes`, {
 			context: this,
 			state: 'fishes',
+			then: this._afterSync,
 		});
+	}
+
+	componentDidUpdate() {
+		const { orders } = this.state;
+		const isEmpty = !Object.keys(orders).length;
+		
+		if (!isEmpty) {
+			saveState(this.keyStorage, orders)
+		}
 	}
 
 	componentWillUnmount() {
@@ -88,7 +108,7 @@ class App extends Component {
 				...fishes,
 			}
 		}));
-	}
+	};
 
 	_onAddNewOrder = (key) => {
 		this.setState((prevState) => ({
@@ -97,7 +117,17 @@ class App extends Component {
 				[key]: prevState.orders[key] + 1 || 1
 			}
 		}));
-	}
+	};
+
+	_afterSync = () => {
+		const ordersStorage = loadState(this.keyStorage);
+		
+		if (ordersStorage) {
+			this.setState({
+				orders: ordersStorage,
+			});
+		}
+	};
 }
 
 export default App;
