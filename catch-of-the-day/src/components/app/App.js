@@ -16,7 +16,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { fishes } = this.state;
+		const { fishes, orders } = this.state;
 
 		return (
 			<main className="main">
@@ -30,7 +30,10 @@ class App extends Component {
 						}
 					</ul>
 				</section>
-				<Order className="order" />
+				<Order
+					className="order"
+					orders={ orders }
+					fishes={ fishes } />
 				<Inventory
 					className="inventory"
 					onAddFish={ this._onAddFish }

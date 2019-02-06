@@ -1,0 +1,20 @@
+.orders-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.orders-list__item {
+	align-items: center;
+	border-bottom: 1px solid #000;
+	display: flex;
+	font-size: 1.4rem;
+	justify-content: space-between;
+	padding: 2rem 0;
+}
+
+.orders-list__item--total {
+	border-bottom: 3px solid #000;
+	border-top: 3px double #000;
+	font-weight: 600;
+}
