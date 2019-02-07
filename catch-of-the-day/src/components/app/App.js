@@ -72,7 +72,9 @@ class App extends Component {
 				<Inventory
 					className="inventory"
 					onAddFish={ this._onAddFish }
-					loadFishes={ this._loadFishesData }/>
+					onUpdateFish={ this._onUpdateFish }
+					loadFishes={ this._loadFishesData }
+					fishes={ fishes } />
 			</main>
 		);
 	}
@@ -97,6 +99,15 @@ class App extends Component {
 			fishes: {
 				...prevState.fishes,
 				[`fish-${timestamp}`]: fish
+			}
+		}));
+	};
+
+	_onUpdateFish = (key, fish) => {
+		this.setState((prevState) => ({
+			fishes: {
+				...prevState.fishes,
+				[key]: fish,
 			}
 		}));
 	};

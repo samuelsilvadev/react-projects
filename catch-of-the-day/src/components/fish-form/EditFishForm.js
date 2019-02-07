@@ -1,82 +1,81 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { SubmitButton } from './../button';
+import './FishForm.css';
 
-import './AddFishForm.css';
-
-class AddFishForm extends React.PureComponent {
-	state = {};
-
+class EditFishForm extends React.PureComponent {	
 	render() {
+		const { fish: { name, price, status, desc, image } } = this.props;
+
 		return (
-			<form className='add-fish-form' onSubmit={this._handleSubmit}>
+			<form className='fish-form'>
 				<input
-					className="add-fish-form__name"
+					className="fish-form__name"
 					name='name'
 					type='text'
 					placeholder='Fish Name'
 					required
+					value={name}
 					onChange={this._handleChange}
 				/>
 				<input
-					className="add-fish-form__price"
+					className="fish-form__price"
 					name='price'
 					type='text'
 					placeholder='Fish Price'
 					required
+					value={price}
 					onChange={this._handleChange}
 				/>
 				<select
-					className="add-fish-form__status"
+					className="fish-form__status"
 					name='status'
 					onChange={this._handleChange}
-					required>
+					required
+					value={status}>
 					<option value=''>Choose one</option>
 					<option value='available'>Fresh!</option>
 					<option value='unavailable'>Sold Out!</option>
 				</select>
 				<textarea
-					className="add-fish-form__description"
+					className="fish-form__description"
 					name='desc'
 					placeholder='Fish Description'
 					required
+					value={desc}
 					onChange={this._handleChange}
 				/>
 				<input
-					className="add-fish-form__image"
+					className="fish-form__image"
 					name='image'
 					type='text'
 					placeholder='Fish Image'
 					required
+					value={image}
 					onChange={this._handleChange}
 				/>
-				<SubmitButton text='+ Add Item' />
 			</form>
 		);
 	}
 
 	_handleChange = ({ target }) => {
-		this.setState({
-			[target.name]: target.value
-		});
-	};
+		const { fishKey, fish, onUpdateFish } = this.props;
 
-	_handleSubmit = (event) => {
-		event.preventDefault();
+		const updatedFish =  {
+			...fish,
+			[target.name]: target.value,
+		};
 
-		this.props.onAddFish(this.state);
-
-		event.target.reset();
+		onUpdateFish(fishKey, updatedFish);
 	};
 }
 
-AddFishForm.propTypes = {
-	onAddFish: PropTypes.func,
+EditFishForm.propTypes = {
+	onUpdateFish: PropTypes.func,
 };
 
-AddFishForm.defaultProps = {
-	onAddFish: () => {}
+EditFishForm.defaultProps = {
+	onUpdateFish: () => {}
 };
 
-export default AddFishForm;
+export default EditFishForm;

@@ -1,0 +1,44 @@
+.fish-form {
+	border: 2px solid #000;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.fish-form input,
+.fish-form select,
+.fish-form textarea {
+	appearance: none;
+	background: #fff;
+	border: 0;
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+	border-radius: 0;
+	font-size: 1.2rem;
+	line-height: 1;
+	padding: 10px;
+}
+
+.fish-form input:focus,
+.fish-form textarea:focus,
+.fish-form select:focus {
+	background: #fef2de;
+	outline: 0;
+}
+
+.fish-form .fish-form__status,
+.fish-form .fish-form__description,
+.fish-form .fish-form__image {
+	border-right: none;
+}
+
+.fish-form__name,
+.fish-form__price,
+.fish-form__status {
+	width: calc(100% / 3);
+}
+
+.fish-form__description,
+.fish-form__image {
+	width: 100%;
+}
