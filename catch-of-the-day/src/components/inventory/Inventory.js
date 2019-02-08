@@ -26,7 +26,7 @@ class Inventory extends React.PureComponent {
 	}
 
 	_renderEditForm(key) {
-		const { fishes, onUpdateFish } = this.props;
+		const { fishes, onUpdateFish, onRemoveFish } = this.props;
 		const fish = fishes[key];
 
 		return (
@@ -35,6 +35,7 @@ class Inventory extends React.PureComponent {
 				fishKey={ key }
 				fish={ fish }
 				onUpdateFish={ onUpdateFish }
+				onRemoveFish={ onRemoveFish }
 			/>
 		);
 	}

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Button } from './../button';
+
 import './FishForm.css';
 
 class EditFishForm extends React.PureComponent {	
@@ -54,6 +56,11 @@ class EditFishForm extends React.PureComponent {
 					value={image}
 					onChange={this._handleChange}
 				/>
+				<Button
+					className="fish-form__remove-button"
+					type="button"
+					text="- Remove Item"
+					onClick={ this._handleRemoveFish } />
 			</form>
 		);
 	}
@@ -68,14 +75,22 @@ class EditFishForm extends React.PureComponent {
 
 		onUpdateFish(fishKey, updatedFish);
 	};
+
+	_handleRemoveFish = () => {
+		const { fishKey, onRemoveFish } = this.props;
+		
+		onRemoveFish(fishKey);
+	}
 }
 
 EditFishForm.propTypes = {
 	onUpdateFish: PropTypes.func,
+	onRemoveFish: PropTypes.func,
 };
 
 EditFishForm.defaultProps = {
-	onUpdateFish: () => {}
+	onUpdateFish: () => {},
+	onRemoveFish: () => {},
 };
 
 export default EditFishForm;

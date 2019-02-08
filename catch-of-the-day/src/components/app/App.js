@@ -73,6 +73,7 @@ class App extends Component {
 					className="inventory"
 					onAddFish={ this._onAddFish }
 					onUpdateFish={ this._onUpdateFish }
+					onRemoveFish={ this._onRemoveFish }
 					loadFishes={ this._loadFishesData }
 					fishes={ fishes } />
 			</main>
@@ -110,6 +111,14 @@ class App extends Component {
 				[key]: fish,
 			}
 		}));
+	};
+
+	_onRemoveFish = (key) => {
+		const fishes = { ...this.state.fishes };
+		
+		fishes[key] = null;
+
+		this.setState({ fishes });
 	};
 
 	_loadFishesData = () => {
