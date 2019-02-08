@@ -18,3 +18,7 @@
 	border-top: 3px double #000;
 	font-weight: 600;
 }
+
+.orders-list__item__remove-button {
+	padding: 0 5px;
+}

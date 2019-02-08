@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+import { Button } from './../button';
+
 import './Order.css';
 
 class Order extends React.Component {
@@ -31,12 +33,19 @@ class Order extends React.Component {
 		const fish = fishes[key];
 		const count = orders[key];
 		const isAvailable = fish && fish.status === 'available';
-
+		const button = <Button className="orders-list__item__remove-button" text="&times;" type="button" onClick={ this._handleRemoveOrder(key) } />;
+		
 		const content = !isAvailable ?
-			<p>Sorry, Fish is no longer available</p> :
+			<Fragment>
+				<p>
+					Sorry, Fish is no longer available
+				</p>
+				{ button }
+			</Fragment> :
 			<Fragment>
 				<p>{ count }lbs { fish.name }</p>
 				<p>{ count * fish.price }</p>
+				{ button }
 			</Fragment>;
 
 		return (
@@ -65,11 +74,18 @@ class Order extends React.Component {
 
 		return total;
 	}
+
+	_handleRemoveOrder = (key) => () => {
+		const { onRemoveOrder } = this.props;
+
+		onRemoveOrder && onRemoveOrder(key);
+	}
 }
 
 Order.propTypes = {
 	orders: PropTypes.object,
 	fishes: PropTypes.object,
+	onRemoveOrder: PropTypes.func,
 };
 
 export default Order;

@@ -68,7 +68,8 @@ class App extends Component {
 				<Order
 					className="order"
 					orders={ orders }
-					fishes={ fishes } />
+					fishes={ fishes }
+					onRemoveOrder={ this._onRemoveOrder } />
 				<Inventory
 					className="inventory"
 					onAddFish={ this._onAddFish }
@@ -137,6 +138,14 @@ class App extends Component {
 				[key]: prevState.orders[key] + 1 || 1
 			}
 		}));
+	};
+
+	_onRemoveOrder = (key) => {
+		const orders = { ...this.state.orders };
+		
+		delete orders[key];
+		
+		this.setState({ orders });
 	};
 
 	_afterSync = () => {
