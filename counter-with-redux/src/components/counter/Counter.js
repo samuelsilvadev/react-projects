@@ -6,44 +6,31 @@ import './Counter.css';
 const INCREMENT_TYPE = { type: 'INCREMENT' };
 const DECREMENT_TYPE = { type: 'DECREMENT' };
 
-class Counter extends React.PureComponent {
-    render() { 
-        const { counter } = this.props;
+const Counter = ({ counter, increment, decrement }) => {
+    return (
+        <div className="counter card">
+            <p className="counter__number">{ counter }</p>
+            <button
+                className="counter__button btn waves-effect waves-light"
+                onClick={ decrement }>
+                -
+            </button>
+            <button
+                className="counter__button btn waves-effect waves-light"
+                onClick={ increment }>
+                +
+            </button>
+        </div>
+    ); 
+};
 
-        return (
-            <div className="counter card">
-                <p className="counter__number">{ counter }</p>
-                <button
-                    className="counter__button btn waves-effect waves-light"
-                    onClick={ this._handleDecrement }>
-                    -
-                </button>
-                <button
-                    className="counter__button btn waves-effect waves-light"
-                    onClick={ this._handleIncrement }>
-                    +
-                </button>
-            </div>
-        );
-    }
+const mapStateToProps = (state) => ({
+    counter: state,
+});
 
-    _handleIncrement = () => {
-        const { dispatch } = this.props; 
+const mapDispatchToProps = (dispatch) => ({
+    increment: () => dispatch(INCREMENT_TYPE),
+    decrement: () => dispatch(DECREMENT_TYPE),
+});
 
-        dispatch(INCREMENT_TYPE);
-    }
-
-    _handleDecrement = () => {
-        const { dispatch } = this.props; 
-
-        dispatch(DECREMENT_TYPE);
-    }
-}
-
-const mapStateToProps = (state) => {
-    return {
-        counter: state,
-    };
-}
-
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
