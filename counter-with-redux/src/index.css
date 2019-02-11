@@ -1,4 +1,11 @@
+html, body {
+  height: 100vh;
+}
+
 body {
+  background-color: #1976d2;
+  font-size: 16px;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
