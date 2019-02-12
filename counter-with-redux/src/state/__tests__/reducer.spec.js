@@ -1,3 +1,4 @@
+import { INCREMENT, DECREMENT } from './../types';
 import reducer from './../reducer';
 
 describe('Counter Reducer', () => {
@@ -26,7 +27,7 @@ describe('Counter Reducer', () => {
     });
 
     it(' `reducer` should return a new state if `INCREMENT` be passed', () => {
-        const actionType = { type: 'INCREMENT' };
+        const actionType = { type: INCREMENT };
         const initialState = 0;
         const result = reducer(initialState, actionType);
 
@@ -34,7 +35,7 @@ describe('Counter Reducer', () => {
     });
 
     it(' `reducer` should return a new state if `DECREMENT` be passed', () => {
-        const actionType = { type: 'DECREMENT' };
+        const actionType = { type: DECREMENT };
         const initialState = 0;
         const result = reducer(initialState, actionType);
 

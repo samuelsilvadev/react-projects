@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './Counter.css';
+import { INCREMENT, DECREMENT } from './../../state/types';
 
-const INCREMENT_TYPE = { type: 'INCREMENT' };
-const DECREMENT_TYPE = { type: 'DECREMENT' };
+import './Counter.css';
 
 const Counter = ({ counter, increment, decrement }) => {
     return (
@@ -29,8 +28,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    increment: () => dispatch(INCREMENT_TYPE),
-    decrement: () => dispatch(DECREMENT_TYPE),
+    increment: () => dispatch({ type: INCREMENT }),
+    decrement: () => dispatch({ type: DECREMENT }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
