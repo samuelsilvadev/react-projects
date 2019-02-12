@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Counter /> Unconnected counter should render component correctly with props 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Counter
+    counter={1}
+    decrement={[Function]}
+    increment={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="counter__number"
+          data-enzyme-id="counter"
+        >
+          1
+        </p>,
+        <button
+          className="counter__button btn waves-effect waves-light"
+          data-enzyme-id="counter-decrement-button"
+          onClick={[Function]}
+        >
+          -
+        </button>,
+        <button
+          className="counter__button btn waves-effect waves-light"
+          data-enzyme-id="counter-increment-button"
+          onClick={[Function]}
+        >
+          +
+        </button>,
+      ],
+      "className": "counter card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": 1,
+          "className": "counter__number",
+          "data-enzyme-id": "counter",
+        },
+        "ref": null,
+        "rendered": 1,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "-",
+          "className": "counter__button btn waves-effect waves-light",
+          "data-enzyme-id": "counter-decrement-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "-",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "+",
+          "className": "counter__button btn waves-effect waves-light",
+          "data-enzyme-id": "counter-increment-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "+",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="counter__number"
+            data-enzyme-id="counter"
+          >
+            1
+          </p>,
+          <button
+            className="counter__button btn waves-effect waves-light"
+            data-enzyme-id="counter-decrement-button"
+            onClick={[Function]}
+          >
+            -
+          </button>,
+          <button
+            className="counter__button btn waves-effect waves-light"
+            data-enzyme-id="counter-increment-button"
+            onClick={[Function]}
+          >
+            +
+          </button>,
+        ],
+        "className": "counter card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": 1,
+            "className": "counter__number",
+            "data-enzyme-id": "counter",
+          },
+          "ref": null,
+          "rendered": 1,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "-",
+            "className": "counter__button btn waves-effect waves-light",
+            "data-enzyme-id": "counter-decrement-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "-",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "+",
+            "className": "counter__button btn waves-effect waves-light",
+            "data-enzyme-id": "counter-increment-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "+",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`<Counter /> Unconnected counter should render component correctly without props 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Counter />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="counter__number"
+          data-enzyme-id="counter"
+        />,
+        <button
+          className="counter__button btn waves-effect waves-light"
+          data-enzyme-id="counter-decrement-button"
+        >
+          -
+        </button>,
+        <button
+          className="counter__button btn waves-effect waves-light"
+          data-enzyme-id="counter-increment-button"
+        >
+          +
+        </button>,
+      ],
+      "className": "counter card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "counter__number",
+          "data-enzyme-id": "counter",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "-",
+          "className": "counter__button btn waves-effect waves-light",
+          "data-enzyme-id": "counter-decrement-button",
+          "onClick": undefined,
+        },
+        "ref": null,
+        "rendered": "-",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "+",
+          "className": "counter__button btn waves-effect waves-light",
+          "data-enzyme-id": "counter-increment-button",
+          "onClick": undefined,
+        },
+        "ref": null,
+        "rendered": "+",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="counter__number"
+            data-enzyme-id="counter"
+          />,
+          <button
+            className="counter__button btn waves-effect waves-light"
+            data-enzyme-id="counter-decrement-button"
+          >
+            -
+          </button>,
+          <button
+            className="counter__button btn waves-effect waves-light"
+            data-enzyme-id="counter-increment-button"
+          >
+            +
+          </button>,
+        ],
+        "className": "counter card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "counter__number",
+            "data-enzyme-id": "counter",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "-",
+            "className": "counter__button btn waves-effect waves-light",
+            "data-enzyme-id": "counter-decrement-button",
+            "onClick": undefined,
+          },
+          "ref": null,
+          "rendered": "-",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "+",
+            "className": "counter__button btn waves-effect waves-light",
+            "data-enzyme-id": "counter-increment-button",
+            "onClick": undefined,
+          },
+          "ref": null,
+          "rendered": "+",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

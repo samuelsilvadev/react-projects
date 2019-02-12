@@ -5,16 +5,18 @@ import { INCREMENT, DECREMENT } from './../../state/types';
 
 import './Counter.css';
 
-const Counter = ({ counter, increment, decrement }) => {
+export const Counter = ({ counter, increment, decrement }) => {
     return (
         <div className="counter card">
-            <p className="counter__number">{ counter }</p>
+            <p data-enzyme-id="counter" className="counter__number">{ counter }</p>
             <button
+                data-enzyme-id="counter-decrement-button"
                 className="counter__button btn waves-effect waves-light"
                 onClick={ decrement }>
                 -
             </button>
             <button
+                data-enzyme-id="counter-increment-button"
                 className="counter__button btn waves-effect waves-light"
                 onClick={ increment }>
                 +
