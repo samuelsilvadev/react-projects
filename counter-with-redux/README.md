@@ -1,4 +1,4 @@
-# bookworm
+# Counter with Redux
 
 > Simple counter using react-redux.
 
