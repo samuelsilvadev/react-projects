@@ -16,7 +16,7 @@ const todos = (state = INITIAL_STATE, action  = {}) => {
 			if (todo.id === action.payload.id) {
 				return {
 					...todo,
-					completed: true,
+					completed: !todo.completed,
 				}
 			}
 
