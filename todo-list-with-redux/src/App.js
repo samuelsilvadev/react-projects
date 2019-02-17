@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addTodo } from './state/actions-creators';
+import { addTodo, toggleTodo } from './state/actions-creators';
 
 class App extends Component {
 	render() {
@@ -29,10 +29,12 @@ class App extends Component {
 	}
 
 	_renderTodoItem(todo) {
-		const { id, text } = todo;
+		const { id, text, completed: isCompleted } = todo;
+
+		const classNames = isCompleted ? 'completed-todo' : '';
 
 		return (
-			<li className="collection-item" key={ id }>
+			<li className={ `collection-item todo-item ${classNames}` } key={ id } onClick={ this._handleToggleTodo(id) }>
 				{ text }
 			</li>
 		);
@@ -48,6 +50,12 @@ class App extends Component {
 
 		event.target.reset();
 	}
+
+	_handleToggleTodo = (id) => () => {
+		const { toggleTodo } = this.props;
+
+		toggleTodo(id);
+	}
 }
 
 const mapStateToProps = (state) => ({
@@ -56,6 +64,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
 	addTodo: (text) =>  dispatch(addTodo(text)),
+	toggleTodo: (id) =>  dispatch(toggleTodo(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

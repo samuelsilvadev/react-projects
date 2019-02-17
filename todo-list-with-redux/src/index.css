@@ -6,3 +6,11 @@ body {
 .todo-form {
 	margin-bottom: 50px;
 }
+
+.todo-item {
+	cursor: pointer;
+}
+
+.completed-todo {
+	text-decoration: line-through;
+}
