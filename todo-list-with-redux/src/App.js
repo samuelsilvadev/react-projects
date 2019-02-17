@@ -8,18 +8,22 @@ class App extends Component {
 		const { todos } = this.props;
 
 		return (
-			<main>
-				<form onSubmit={ this._handleSubmit }>
+			<main className="container">
+				<h1>Todo Today</h1>
+				<form className="todo-form" onSubmit={ this._handleSubmit }>
 					<input
 						type="text"
 						name="todo"
+						required
 						autoComplete="off"
 						autoCapitalize="off" />
-					<button type="submit">Save</button>
+					<button className="btn" type="submit">Save</button>
 				</form>
-				<ul>
-					{ todos.map(this._renderTodoItem, this) }
-				</ul>
+				{	todos.length > 0 &&
+					<ul className="collection">
+						{ todos.map(this._renderTodoItem, this) }
+					</ul>
+				}
 			</main>
 		);
 	}
@@ -28,7 +32,7 @@ class App extends Component {
 		const { id, text } = todo;
 
 		return (
-			<li key={ id }>
+			<li className="collection-item" key={ id }>
 				{ text }
 			</li>
 		);
