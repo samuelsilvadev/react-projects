@@ -59,7 +59,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	todos: state,
+	todos: state.todos,
 });
 
 const mapDispatchToProps = (dispatch) => ({

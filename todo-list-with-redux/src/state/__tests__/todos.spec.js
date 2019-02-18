@@ -1,5 +1,5 @@
-import todos from './../reducer';
-import { ADD_TODO, TOGGLE_TODO } from './../types';
+import todos from './../reducers/todos';
+import { ADD_TODO, TOGGLE_TODO } from '../types';
 
 describe('Todos', () => {
 	it('`todos` should be a function', () => {

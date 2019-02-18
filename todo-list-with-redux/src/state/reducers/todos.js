@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from './types';
+import { ADD_TODO, TOGGLE_TODO } from './../types';
 
 const INITIAL_STATE = [];
 
