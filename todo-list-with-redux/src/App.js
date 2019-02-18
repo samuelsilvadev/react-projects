@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addTodo, toggleTodo } from './state/actions-creators';
+import { toggleTodo } from './state/actions-creators';
+
+import Form from './components/form';
 
 class App extends Component {
 	render() {
@@ -10,15 +12,7 @@ class App extends Component {
 		return (
 			<main className="container">
 				<h1>Todo Today</h1>
-				<form className="todo-form" onSubmit={ this._handleSubmit }>
-					<input
-						type="text"
-						name="todo"
-						required
-						autoComplete="off"
-						autoCapitalize="off" />
-					<button className="btn" type="submit">Save</button>
-				</form>
+				<Form />
 				{	todos.length > 0 &&
 					<ul className="collection">
 						{ todos.map(this._renderTodoItem, this) }
@@ -40,17 +34,6 @@ class App extends Component {
 		);
 	}
 
-	_handleSubmit = (event) => {
-		event.preventDefault();
-
-		const { addTodo } = this.props;
-		const text = event.target.todo.value;
-
-		addTodo(text);
-
-		event.target.reset();
-	}
-
 	_handleToggleTodo = (id) => () => {
 		const { toggleTodo } = this.props;
 
@@ -63,7 +46,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	addTodo: (text) =>  dispatch(addTodo(text)),
 	toggleTodo: (id) =>  dispatch(toggleTodo(id)),
 });
 
