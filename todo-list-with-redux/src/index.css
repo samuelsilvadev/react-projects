@@ -2,11 +2,3 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
-.todo-item {
-	cursor: pointer;
-}
-
-.completed-todo {
-	text-decoration: line-through;
-}
