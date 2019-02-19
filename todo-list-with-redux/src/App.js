@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Form from './components/form';
 import TodoList from './components/todo-list';
+import Filter from './components/filter';
 
 class App extends Component {
 	render() {
@@ -10,6 +11,7 @@ class App extends Component {
 				<h1>Todo Today</h1>
 				<Form />
 				<TodoList />
+				<Filter />
 			</main>
 		);
 	}
