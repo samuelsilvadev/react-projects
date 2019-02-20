@@ -1,5 +1,5 @@
 import { v4 } from 'uuid';
-import { ADD_TODO, TOGGLE_TODO } from './types';
+import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from './types';
 
 export const addTodo = (text) => {
 	return ({
@@ -18,4 +18,13 @@ export const toggleTodo = (id) => {
 			id,
 		},
 	});
+};
+
+export const setVisibilityFilter = (filter) => {
+	return ({
+		type: SET_VISIBILITY_FILTER,
+		payload: {
+			filter
+		},
+	})
 };
