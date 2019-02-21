@@ -2,10 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { toggleTodo } from './../../state/actions-creators';
+import { SHOW_ACTIVE, SHOW_ALL, SHOW_COMPLETED } from './../../state/types';
 
 import './TodoList.css';
 
-export const TodoList = ({ todos, toggleTodo }) => {
+const getFilteredTodos = (todos, activeFilter) => {
+	return {
+		[SHOW_ALL]: todos,
+		[SHOW_ACTIVE]: todos.filter((todo) => !todo.completed),
+		[SHOW_COMPLETED]: todos.filter((todo) => todo.completed),
+	}[activeFilter];
+};
+
+export const TodoList = ({ todos, toggleTodo, activeFilter }) => {
 
 	if (todos.length === 0) {
 		return null;
@@ -29,13 +38,14 @@ export const TodoList = ({ todos, toggleTodo }) => {
 
 	return (
 		<ul className="collection">
-			{ todos.map(_renderTodoItem) }
+			{ getFilteredTodos(todos, activeFilter).map(_renderTodoItem) }
 		</ul>
 	);
 }
 
 const mapStateToProps = (state) => ({
 	todos: state.todos,
+	activeFilter: state.visibilityFilters,
 });
 
 const mapDispatchToProps = (dispatch) => ({
