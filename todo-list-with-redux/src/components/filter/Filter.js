@@ -6,7 +6,7 @@ import { setVisibilityFilter } from './../../state/actions-creators';
 
 import './Filter.css';
 
-const FILTERS =  [
+export const FILTERS =  [
 	{ label: 'All', action: SHOW_ALL },
 	{ label: 'Completed', action: SHOW_COMPLETED },
 	{ label: 'Todo', action: SHOW_ACTIVE },
@@ -23,6 +23,7 @@ export const Filter = ({ activeFilter, updateFilter }) => {
 		return (
 			<button
 				key={ filter.action }
+				data-enzyme-id={ `filter-button-${filter.label}` }
 				className='btn'
 				disabled={ isDisabled }
 				onClick={ !isDisabled ? _handleClick(filter.action) : undefined }>{ filter.label }</button>
@@ -30,8 +31,8 @@ export const Filter = ({ activeFilter, updateFilter }) => {
 	};
 
 	return (
-		<section>
-			<h2>Filter by:</h2>
+		<section data-enzyme-id="filter">
+			<h2 data-enzyme-id="filter-title">Filter by:</h2>
 			{ FILTERS.map(_renderFilterItem) }
 		</section>
 	);
