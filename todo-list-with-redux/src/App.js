@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import Form from './components/form';
-import TodoList from './components/todo-list';
-import Filter from './components/filter';
+import { Form, Filter, TodoList  } from './components';
 
 class App extends Component {
 	render() {
