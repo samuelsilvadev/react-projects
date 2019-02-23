@@ -6,7 +6,6 @@ import { addTodo } from './../../state/actions-creators';
 import './Form.css';
 
 export const Form = ({ addTodo }) => {
-
 	const _handleSubmit = (event) => {
 		event.preventDefault();
 	
@@ -18,7 +17,10 @@ export const Form = ({ addTodo }) => {
 	};
 
 	return (
-		<form className='todo-form' onSubmit={_handleSubmit}>
+		<form
+			data-enzyme-id="todo-form"
+			className='todo-form'
+			onSubmit={_handleSubmit}>
 			<input
 				type='text'
 				name='todo'
@@ -26,7 +28,10 @@ export const Form = ({ addTodo }) => {
 				autoComplete='off'
 				autoCapitalize='off'
 			/>
-			<button className='btn' type='submit'>
+			<button
+				data-enzyme-id="todo-form-button"
+				className='btn'
+				type='submit'>
 				Save
 			</button>
 		</form>

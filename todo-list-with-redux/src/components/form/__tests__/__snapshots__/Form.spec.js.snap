@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Form />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          autoCapitalize="off"
+          autoComplete="off"
+          name="todo"
+          required={true}
+          type="text"
+        />,
+        <button
+          className="btn"
+          data-enzyme-id="todo-form-button"
+          type="submit"
+        >
+          Save
+        </button>,
+      ],
+      "className": "todo-form",
+      "data-enzyme-id": "todo-form",
+      "onSubmit": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "autoCapitalize": "off",
+          "autoComplete": "off",
+          "name": "todo",
+          "required": true,
+          "type": "text",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Save",
+          "className": "btn",
+          "data-enzyme-id": "todo-form-button",
+          "type": "submit",
+        },
+        "ref": null,
+        "rendered": "Save",
+        "type": "button",
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            autoCapitalize="off"
+            autoComplete="off"
+            name="todo"
+            required={true}
+            type="text"
+          />,
+          <button
+            className="btn"
+            data-enzyme-id="todo-form-button"
+            type="submit"
+          >
+            Save
+          </button>,
+        ],
+        "className": "todo-form",
+        "data-enzyme-id": "todo-form",
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "autoCapitalize": "off",
+            "autoComplete": "off",
+            "name": "todo",
+            "required": true,
+            "type": "text",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Save",
+            "className": "btn",
+            "data-enzyme-id": "todo-form-button",
+            "type": "submit",
+          },
+          "ref": null,
+          "rendered": "Save",
+          "type": "button",
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
