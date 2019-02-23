@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoList /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TodoList
+    activeFilter="visibilityFilter:SHOW_ALL"
+    todos={
+      Array [
+        Object {
+          "completed": false,
+          "id": 1,
+          "text": "Go to supermarket",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <li
+          className="collection-item todo-item "
+          data-enzyme-id="todo-1"
+          onClick={[Function]}
+        >
+          Go to supermarket
+        </li>,
+      ],
+      "className": "collection",
+      "data-enzyme-id": "todo-wrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "host",
+        "props": Object {
+          "children": "Go to supermarket",
+          "className": "collection-item todo-item ",
+          "data-enzyme-id": "todo-1",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Go to supermarket",
+        "type": "li",
+      },
+    ],
+    "type": "ul",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <li
+            className="collection-item todo-item "
+            data-enzyme-id="todo-1"
+            onClick={[Function]}
+          >
+            Go to supermarket
+          </li>,
+        ],
+        "className": "collection",
+        "data-enzyme-id": "todo-wrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Go to supermarket",
+            "className": "collection-item todo-item ",
+            "data-enzyme-id": "todo-1",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Go to supermarket",
+          "type": "li",
+        },
+      ],
+      "type": "ul",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

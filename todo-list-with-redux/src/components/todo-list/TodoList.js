@@ -11,7 +11,7 @@ const getFilteredTodos = (todos, activeFilter) => {
 		[SHOW_ALL]: todos,
 		[SHOW_ACTIVE]: todos.filter((todo) => !todo.completed),
 		[SHOW_COMPLETED]: todos.filter((todo) => todo.completed),
-	}[activeFilter];
+	}[activeFilter] || [];
 };
 
 export const TodoList = ({ todos, toggleTodo, activeFilter }) => {
@@ -30,18 +30,27 @@ export const TodoList = ({ todos, toggleTodo, activeFilter }) => {
 		const classNames = isCompleted ? 'completed-todo' : '';
 
 		return (
-			<li className={ `collection-item todo-item ${classNames}` } key={ id } onClick={ _handleToggleTodo(id) }>
+			<li
+				data-enzyme-id={ `todo-${id}` }
+				className={ `collection-item todo-item ${classNames}` } key={ id } onClick={ _handleToggleTodo(id) }>
 				{ text }
 			</li>
 		);
 	};
 
 	return (
-		<ul className="collection">
+		<ul
+			data-enzyme-id="todo-wrapper"
+			className="collection">
 			{ getFilteredTodos(todos, activeFilter).map(_renderTodoItem) }
 		</ul>
 	);
 }
+
+TodoList.defaultProps = {
+	todos: [],
+	activeFilter: SHOW_ALL,
+};
 
 const mapStateToProps = (state) => ({
 	todos: state.todos,
