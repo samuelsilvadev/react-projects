@@ -1,0 +1,21 @@
+.wrapper {
+	background-color: #f4f5f6;
+	padding: 0 10vw;
+	height: 100vh;
+	overflow: hidden;
+	width: 100%;
+}
+
+.wrapper__title {
+	font-size: 1.5rem;
+	margin: 0;
+	padding-top: 2rem;
+}
+
+.search-form {
+	margin-bottom: 5vh;
+}
+
+.search-results td {
+	text-align: center;
+}
