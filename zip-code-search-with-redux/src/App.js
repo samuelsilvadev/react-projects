@@ -11,7 +11,8 @@ const INITIAL_STATE = {
 	code: '',
 	district: '',
 	state: '',
-	status: 0
+	status: 0,
+	message: null,
 };
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
 		setIsLoading(false);
 	}, [zipInformation]);
 
-	const { address, city, code, district, state, status } = zipInformation;
+	const { address, city, code, district, state, status, message } = zipInformation;
 
 	function _handleSubmit(event) {
 		event.preventDefault();
@@ -38,6 +39,8 @@ const App = () => {
 	
 		try {
 			const response = await axios.get(apiWithZipCode);
+			
+			console.log('TCL: fetchZipCode -> response', response);
 			
 			setZipInformation(response.data);
 		} catch (error) {
@@ -55,9 +58,15 @@ const App = () => {
 				<button
 					className='btn'
 					disabled={ isLoading }>
-					Search
+					{ isLoading ? 'Searching...' : 'Search' }
 				</button>
 			</form>
+			{
+				!!message && 
+				<p className="search-error">
+					Informations not found.
+				</p>
+			}
 			<table className='search-results'>
 				<thead>
 					<tr>
@@ -68,7 +77,7 @@ const App = () => {
 						<td>State</td>
 					</tr>
 				</thead>
-				{ !!status &&
+				{ !!status && !message &&
 					<tbody>
 						<tr>
 							<td>{ code }</td>

@@ -19,3 +19,12 @@
 .search-results td {
 	text-align: center;
 }
+
+.search-error {
+	background-color: #f44336;
+	color: #fff;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 5vh;
+	text-align: center;
+}
