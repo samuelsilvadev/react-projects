@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
+
+import { updateAddress } from './state/actions-creator';
 
 import './App.css';
 
 const API = process.env.REACT_APP_ZIP_CODE_ENDPOINT;
 const ZIP_CODE_REGEX = /{ZIP_CODE}/;
-const INITIAL_STATE = {
-	address: '',
-	city: '',
-	code: '',
-	district: '',
-	state: '',
-	status: 0,
-	message: null,
-};
 
-const App = () => {
-	const [zipInformation, setZipInformation] = useState(INITIAL_STATE);
+const App = ({
+	updateAddress,
+	address: addressData,
+	address: { address, city, code, district, state, status, message },
+}) => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		setIsLoading(false);
-	}, [zipInformation]);
-
-	const { address, city, code, district, state, status, message } = zipInformation;
+	}, [addressData]);
 
 	function _handleSubmit(event) {
 		event.preventDefault();
@@ -31,22 +26,20 @@ const App = () => {
 		const zipCode = event.target['zip-code'].value;
 
 		setIsLoading(true);
-		fetchZipCode(zipCode);	
+		fetchZipCode(zipCode);
 	};
 
 	async function fetchZipCode(zipCode) {
 		const apiWithZipCode = API.replace(ZIP_CODE_REGEX, zipCode);
-	
+
 		try {
 			const response = await axios.get(apiWithZipCode);
-			
-			console.log('TCL: fetchZipCode -> response', response);
-			
-			setZipInformation(response.data);
+
+			updateAddress(response.data);
 		} catch (error) {
 			console.error('Something wen wrong...', error);
 		}
-	}
+	};
 
 	return (
 		<main className='wrapper'>
@@ -93,4 +86,12 @@ const App = () => {
 	);
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+	address: state.address
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	updateAddress: (data) => dispatch(updateAddress(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
