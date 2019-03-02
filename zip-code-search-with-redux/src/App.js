@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchAddress } from './state/actions-creator';
@@ -7,21 +7,13 @@ import './App.css';
 
 const App = ({
 	fetchAddress,
-	address: addressData,
-	address: { address, city, code, district, state, status, message },
+	address, city, code, district, state, status, message, isLoading,
 }) => {
-	const [isLoading, setIsLoading] = useState(false);
-
-	useEffect(() => {
-		setIsLoading(false);
-	}, [addressData]);
-
 	function _handleSubmit(event) {
 		event.preventDefault();
 
 		const zipCode = event.target['zip-code'].value;
 
-		setIsLoading(true);
 		fetchAddress(zipCode);
 	};
 
@@ -31,7 +23,7 @@ const App = ({
 				Search informations about your zip code
 			</h1>
 			<form onSubmit={ _handleSubmit } className='search-form'>
-				<input type='search' name="zip-code" />
+				<input type='search' name="zip-code" required />
 				<button
 					className='btn'
 					disabled={ isLoading }>
@@ -70,9 +62,7 @@ const App = ({
 	);
 };
 
-const mapStateToProps = (state) => ({
-	address: state.address
-});
+const mapStateToProps = (state) => state.address;
 
 const mapDispatchToProps = { fetchAddress };
 
