@@ -1,7 +1,9 @@
 export function logger({ dispatch, getState }) {
 	return function(next) {
 		return function(action) {
-			console.group(`LOGGER->${action.type}`);
+			const loggerName = isFunction(action) ? action.name : action.type;
+
+			console.group(`LOGGER->${loggerName}`);
 
 			console.log('will dipatch:', action);
 			console.log('state:', getState());
@@ -9,9 +11,13 @@ export function logger({ dispatch, getState }) {
 			const nextAction = next(action);
 
 			console.log('next state:', getState());
-			console.groupEnd(`LOGGER->${action.type}`);
+			console.groupEnd(`LOGGER->${loggerName}`);
 
 			return nextAction;
 		};
 	};
+}
+
+function isFunction(something) {
+	return typeof something === 'function';
 }

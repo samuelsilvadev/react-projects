@@ -12,7 +12,7 @@ export function updateAddress(payload) {
 }
 
 export function fetchAddress(zipCode) {
-	return async function(dispatch, getState) {
+	return async function fetchAddressActionCreator(dispatch, getState) {
 		const apiWithZipCode = API.replace(ZIP_CODE_REGEX, zipCode);
 
 		try {
