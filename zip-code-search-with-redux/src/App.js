@@ -78,7 +78,7 @@ const App = ({
 							<td>{ district }</td>
 							<td>{ city }</td>
 							<td>{ state }</td>
-						</tr>
+						</tr> 
 					</tbody>
 				}
 			</table>
