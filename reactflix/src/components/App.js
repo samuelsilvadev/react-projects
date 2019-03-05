@@ -4,7 +4,7 @@ import Title from './App.style';
 
 const App = () => (
 	<main>
-		<Title>React Flix</Title>
+		<Title data-enzyme-id="app-title">React Flix</Title>
 	</main>
 );
 
