@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Title from './App.style';
+
 const App = () => (
 	<main>
-		<h1>React Flix</h1>
+		<Title>React Flix</Title>
 	</main>
 );
 
