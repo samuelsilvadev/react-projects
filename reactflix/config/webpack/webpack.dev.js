@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 
 import paths from './paths';
-import rules from './rules';
 
 module.exports = {
 	mode: 'development',
@@ -9,9 +8,6 @@ module.exports = {
 		filename: '[name].js',
 		path: paths.outputPath,
 		chunkFilename: '[name].js'
-	},
-	module: {
-		rules
 	},
 	performance: {
 		hints: 'warning',
