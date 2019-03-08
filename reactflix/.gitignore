@@ -90,9 +90,6 @@ typings/
 *.sass.map
 *.scss.map
 
-### Stylus ###
-*.css
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
