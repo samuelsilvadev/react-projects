@@ -1,17 +1,21 @@
 import React, { Fragment } from 'react';
 
-import { Title, Header, Main, Footer } from './App.style';
+import  VideosList from './videos-list/VideosList';
+
+import { Title, Header, Main, Footer, P } from './App.style';
 
 const App = () => (
 	<Fragment>
 		<Header>
 			<Title data-enzyme-id="app-title">React Flix</Title>
 		</Header>
-		<Main />
+		<Main>
+			<VideosList />
+		</Main>
 		<Footer>
-			<p>
+			<P>
 				{ new Date().getFullYear() }
-			</p>
+			</P>
 		</Footer>
 	</Fragment>
 );
