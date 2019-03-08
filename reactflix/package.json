@@ -29,6 +29,7 @@
 		"babel-loader": "^8.0.5",
 		"babel-plugin-emotion": "^10.0.7",
 		"clean-webpack-plugin": "^2.0.0",
+		"css-loader": "^2.1.1",
 		"enzyme": "^3.9.0",
 		"enzyme-adapter-react-16": "^1.10.0",
 		"eslint": "^5.15.1",
@@ -45,6 +46,7 @@
 		"img-loader": "^3.0.1",
 		"jest": "^24.3.1",
 		"prettier": "^1.16.4",
+		"style-loader": "^0.23.1",
 		"url-loader": "^1.1.2",
 		"webpack": "^4.29.6",
 		"webpack-cli": "^3.2.3",
@@ -55,6 +57,7 @@
 		"@emotion/core": "^10.0.7",
 		"@emotion/styled": "^10.0.7",
 		"cross-env": "^5.2.0",
+		"normalize.css": "^8.0.1",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4"
 	}
