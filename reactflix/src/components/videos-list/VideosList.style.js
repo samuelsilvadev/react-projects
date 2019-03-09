@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import Play from '../icons/Play';
 
-import { BACKGROUND_COLOR } from '../style';
+import { BACKGROUND_COLOR, GENERAL } from '../style';
 
 export const Video = styled.section`
 	text-align: center;
@@ -37,7 +37,8 @@ export const PlayStyled = styled(Play)`
 	fill: ${BACKGROUND_COLOR};
 	height: 50px;
 	transition: transform 0.15s ease-in-out;
-	width: 50px;	
+	width: 50px;
+	z-index: ${GENERAL};
 
 	&:hover {
 		transform: scale(1.2);
