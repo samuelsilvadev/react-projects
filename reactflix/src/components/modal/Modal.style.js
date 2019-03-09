@@ -4,6 +4,14 @@ import Close from '../icons/Close';
 
 import { WHITE , MODAL, TRANSPARENT_BLACK } from '../style';
 
+export const Button = styled.button`
+	background: none;
+	border: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+`;
+
 export const Container = styled.div`
 	background-color: ${TRANSPARENT_BLACK};
 	position: fixed;
@@ -17,9 +25,6 @@ export const Container = styled.div`
 export const CloseStyled = styled(Close)`
 	cursor: pointer;
 	fill: ${WHITE};
-	position: absolute;
-	top: 10px;
-	right: 10px;
 `;
 
 export default Container;

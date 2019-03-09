@@ -6,6 +6,7 @@ import { Container, Video, VideoThumb, VideoTitle, PlayStyled } from './VideosLi
 
 const VideosList = () => {
 	const [isModalOpen, setModalOpen] = useState(false);
+	const modalTitle = 'Video';
 	
 	const _handleToggleModal = () => {
 		setModalOpen(!isModalOpen);
@@ -13,7 +14,7 @@ const VideosList = () => {
 
 	return  (
 		<Container>
-			{ isModalOpen && <Modal onClose={ _handleToggleModal } /> }
+			{ isModalOpen && <Modal onClose={ _handleToggleModal } title={ modalTitle } /> }
 			{Array.from({ length: 10 }).map((_, index) => {
 				return (
 					<Video onClick={ _handleToggleModal } key={index}>
