@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 import paths from './paths';
 import rules from './rules';
@@ -25,6 +26,7 @@ module.exports = {
 				removeComments: true,
 				removeAttributeQuotes: true
 			}
-		})
+		}),
+		new Dotenv(),
 	]
 };
