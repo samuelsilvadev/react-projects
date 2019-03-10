@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-import Modal from '../modal/Modal';
-
-import { Container, Video, VideoThumb, VideoTitle, PlayStyled } from './VideosList.style';
+import { Container, Video, VideoThumb, VideoTitle, PlayStyled, ModalStyled } from './VideosList.style';
 
 const VideosList = () => {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -14,7 +12,19 @@ const VideosList = () => {
 
 	return  (
 		<Container>
-			{ isModalOpen && <Modal onClose={ _handleToggleModal } title={ modalTitle } /> }
+			{
+				isModalOpen &&
+				<ModalStyled onClose={ _handleToggleModal } title={ modalTitle }>
+					<iframe
+						title="Youtube Video"
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/mM40-gC0xOI?controls=0"
+						frameBorder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen />
+				</ModalStyled>
+			}
 			{Array.from({ length: 10 }).map((_, index) => {
 				return (
 					<Video onClick={ _handleToggleModal } key={index}>

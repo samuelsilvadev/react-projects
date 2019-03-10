@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Button, Container, CloseStyled } from './Modal.style';
 
-const Modal = ({ onClose, title, description }) => {
+const Modal = ({ children, className, description, onClose, title,  }) => {
 	const containerRef = useRef(null);
 
 	const _handleKeyPress = (event) => {
@@ -34,21 +34,26 @@ const Modal = ({ onClose, title, description }) => {
 			ref={ containerRef }
 			role="dialog"
 			aria-labelledby={ title }
-			aria-describedby={ description }>
+			aria-describedby={ description }
+			className={ className }>
 			<Button type="button" onClick={ onClose }>
 				<CloseStyled aria-label="Close Modal" />
 			</Button>
+			{ children }
 		</Container>
 	);
 };
 
 Modal.propTypes = {
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
+	description: PropTypes.string,
 	onClose: PropTypes.func.isRequired,
 	title: PropTypes.string.isRequired,
-	description: PropTypes.string,
 };
 
 Modal.defaultProps = {
+	className: '',
 	description: '',
 };
 

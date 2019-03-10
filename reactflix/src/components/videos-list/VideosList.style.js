@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 
+import Modal from '../modal/Modal';
 import Play from '../icons/Play';
 
-import { BACKGROUND_COLOR, GENERAL } from '../style';
+import { BACKGROUND_COLOR, BLACK, GENERAL } from '../style';
 
 export const Video = styled.section`
 	text-align: center;
@@ -43,4 +44,11 @@ export const PlayStyled = styled(Play)`
 	&:hover {
 		transform: scale(1.2);
 	}
+`;
+
+export const ModalStyled = styled(Modal)`
+	align-items: center;
+	background-color: ${BLACK};
+	display: flex;
+	justify-content: center;
 `;
