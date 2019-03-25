@@ -11,6 +11,7 @@ const config = {
 	messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
 };
 
-const firebaseApp = app.initializeApp(config);
+export const firebaseApp = app.initializeApp(config);
+export const db = firebaseApp.database();
 
 export default firebaseApp;
