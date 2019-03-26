@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 
 import { Form, Button, Input } from './RegisterVideo.style';
 
-import { addVideo as addVideoActionCreator } from '../../state/actions-creators';
+import { registerVideo as registerVideoActionCreator } from '../../state/actions-creators';
 
-const RegisterVideo = ({ addVideo }) => {
+const RegisterVideo = ({ registerVideo }) => {
 	const _handleSubmit = (event) => {
 		event.preventDefault();
 	
 		const id = event.target.videoId.value;
 		const title = event.target.videoTitle.value;
 	
-		addVideo({ id, title });
+		registerVideo({ id, title });
 	
 		event.target.reset();
 	};
@@ -34,11 +34,11 @@ const RegisterVideo = ({ addVideo }) => {
 };
 
 RegisterVideo.propTypes = {
-	addVideo: PropTypes.func.isRequired,
+	registerVideo: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
-	addVideo: ({ id, title }) => dispatch(addVideoActionCreator({ id, title })),
+	registerVideo: ({ id, title }) => dispatch(registerVideoActionCreator({ id, title })),
 });
 
 export default connect(null, mapDispatchToProps)(RegisterVideo);
