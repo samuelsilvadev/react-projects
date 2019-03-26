@@ -1,3 +1,4 @@
+import { videosRef } from '../firebase/init';
 import { ADD_VIDEO } from './types';
 
 export const addVideo = ({ id, title }) => ({
@@ -7,5 +8,11 @@ export const addVideo = ({ id, title }) => ({
 		title
 	}
 });
+
+export const registerVideo = ({ id, title }) => async (dispatch) => {
+	await videosRef.child(id).update({ id, title });
+	
+	dispatch(addVideo({ id, title }));
+};
 
 export default addVideo;

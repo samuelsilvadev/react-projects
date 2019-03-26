@@ -13,5 +13,6 @@ const config = {
 
 export const firebaseApp = app.initializeApp(config);
 export const db = firebaseApp.database();
+export const videosRef = db.ref('videos');
 
 export default firebaseApp;
