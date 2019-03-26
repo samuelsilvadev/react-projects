@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> should render correctly with button, close icon and correct children 1`] = `ShallowWrapper {}`;

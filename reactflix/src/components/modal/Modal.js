@@ -26,7 +26,7 @@ const Modal = ({ children, className, description, onClose, title,  }) => {
 		return () => {
 			focusedElBeforeOpen.focus();
 			document.removeEventListener('keydown', _handleKeyPress);
-		} ;
+		};
 	}, []);
 
 	return (
@@ -35,9 +35,15 @@ const Modal = ({ children, className, description, onClose, title,  }) => {
 			role="dialog"
 			aria-labelledby={ title }
 			aria-describedby={ description }
-			className={ className }>
-			<Button type="button" onClick={ onClose }>
-				<CloseStyled aria-label="Close Modal" />
+			className={ className }
+			data-enzyme-id="modal">
+			<Button
+				type="button"
+				onClick={ onClose }
+				data-enzyme-id="modal-close-button">
+				<CloseStyled
+					aria-label="Close Modal"
+					data-enzyme-id="modal-close-icon" />
 			</Button>
 			{ children }
 		</Container>
