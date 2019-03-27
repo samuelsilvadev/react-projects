@@ -6,7 +6,7 @@ import { Form, Button, Input } from './RegisterVideo.style';
 
 import { registerVideo as registerVideoActionCreator } from '../../state/actions-creators';
 
-const RegisterVideo = ({ registerVideo }) => {
+const RegisterVideo = ({ className, registerVideo, ...restProps }) => {
 	const _handleSubmit = async (event) => {
 		event.preventDefault();
 		event.persist();
@@ -21,7 +21,7 @@ const RegisterVideo = ({ registerVideo }) => {
 	};
 
 	return (
-		<Form onSubmit={ _handleSubmit }>
+		<Form className={ className } onSubmit={ _handleSubmit } { ...restProps }>
 			<h2>Video Register</h2>
 
 			<label htmlFor="videoId">Video ID</label>
@@ -35,7 +35,12 @@ const RegisterVideo = ({ registerVideo }) => {
 	);
 };
 
+RegisterVideo.defaultProps = {
+	className: '',
+};
+
 RegisterVideo.propTypes = {
+	className: PropTypes.string,
 	registerVideo: PropTypes.func.isRequired,
 };
 
