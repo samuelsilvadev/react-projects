@@ -1,19 +1,29 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import VideosList from './videos-list/VideosList';
 
 import { Title, Header, Main, Footer, P, RegisterVideoButton, RegisterVideoStyled } from './App.style';
 
-const App = () => (
+import { openRegisterVideoForm, closeRegisterVideoForm } from '../state/actions-creators';
+
+const App = ({
+	isRegisterFormOpened,
+	onOpenRegisterVideoForm,
+	onCloseRegisterVideoForm,
+}) => (
 	<Fragment>
 		<Header>
 			<Title data-enzyme-id="app-title">React Flix</Title>
-			<RegisterVideoButton type="button">
-				Register a video
+			<RegisterVideoButton type="button" onClick={ isRegisterFormOpened ? onCloseRegisterVideoForm : onOpenRegisterVideoForm }>
+				{ isRegisterFormOpened ? 'Close Form' : 'Register a video' }
 			</RegisterVideoButton>
 		</Header>
 		<Main>
-			<RegisterVideoStyled />
+			{
+				isRegisterFormOpened && <RegisterVideoStyled />
+			}
 			<VideosList />
 		</Main>
 		<Footer>
@@ -24,4 +34,25 @@ const App = () => (
 	</Fragment>
 );
 
-export default App;
+App.defaultProps = {
+	isRegisterFormOpened: false,
+	onOpenRegisterVideoForm: () => {},
+	onCloseRegisterVideoForm: () => {},
+};
+
+App.propTypes = {
+	isRegisterFormOpened: PropTypes.bool,
+	onOpenRegisterVideoForm: PropTypes.func,
+	onCloseRegisterVideoForm: PropTypes.func,
+};
+
+const mapStateToProps = (state) => ({
+	isRegisterFormOpened: state.ui.isRegisterFormOpened,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	onOpenRegisterVideoForm: () => dispatch(openRegisterVideoForm()),
+	onCloseRegisterVideoForm: () => dispatch(closeRegisterVideoForm()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
