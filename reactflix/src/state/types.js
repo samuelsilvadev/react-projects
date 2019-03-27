@@ -1,3 +1,5 @@
-// eslint-disable-next-line import/prefer-default-export
 export const ADD_VIDEO = 'video:ADD_VIDEO';
+
+export const OPEN_REGISTER_VIDEO_FORM = 'ui:OPEN_REGISTER_VIDEO_FORM';
+export const CLOSE_REGISTER_VIDEO_FORM = 'ui:CLOSE_REGISTER_VIDEO_FORM';
 

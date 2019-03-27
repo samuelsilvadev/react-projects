@@ -1,5 +1,5 @@
 import { videosRef } from '../firebase/init';
-import { ADD_VIDEO } from './types';
+import { ADD_VIDEO, OPEN_REGISTER_VIDEO_FORM, CLOSE_REGISTER_VIDEO_FORM } from './types';
 
 export const addVideo = ({ id, title }) => ({
 	type: ADD_VIDEO,
@@ -15,4 +15,10 @@ export const registerVideo = ({ id, title }) => async (dispatch) => {
 	dispatch(addVideo({ id, title }));
 };
 
-export default addVideo;
+export const openRegisterVideoForm = () => ({
+	type: OPEN_REGISTER_VIDEO_FORM,
+});
+
+export const closeRegisterVideoForm = () => ({
+	type: CLOSE_REGISTER_VIDEO_FORM,
+});
