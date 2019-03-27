@@ -7,15 +7,17 @@ import { Form, Button, Input } from './RegisterVideo.style';
 import { registerVideo as registerVideoActionCreator } from '../../state/actions-creators';
 
 const RegisterVideo = ({ registerVideo }) => {
-	const _handleSubmit = (event) => {
+	const _handleSubmit = async (event) => {
 		event.preventDefault();
-	
+		event.persist();
+
 		const id = event.target.videoId.value;
 		const title = event.target.videoTitle.value;
 	
-		registerVideo({ id, title });
+		await registerVideo({ id, title });
 	
 		event.target.reset();
+		event.target[0].focus();
 	};
 
 	return (
