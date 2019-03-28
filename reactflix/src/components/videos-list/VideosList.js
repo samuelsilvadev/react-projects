@@ -6,15 +6,21 @@ import { Container, Video, VideoThumb, VideoTitle, PlayStyled, ModalStyled } fro
 
 const VideosList = ({ videos }) => {
 	const [isModalOpen, setModalOpen] = useState(false);
+	const [currentId, setCurrentId] = useState(false);
 	const modalTitle = 'Video';
 	
 	const _handleToggleModal = () => {
 		setModalOpen(!isModalOpen);
 	};
 
+	const _handleVideoClick = (id) => () => {
+		setCurrentId(id);
+		_handleToggleModal();
+	};
+
 	const _renderVideoItem = (id) => {
 		return (
-			<Video onClick={ _handleToggleModal } key={id}>
+			<Video onClick={ _handleVideoClick(id) } key={id}>
 				<VideoThumb>
 					<PlayStyled />
 				</VideoThumb>
@@ -34,7 +40,7 @@ const VideosList = ({ videos }) => {
 						title="Youtube Video"
 						width="560"
 						height="315"
-						src="https://www.youtube.com/embed/mM40-gC0xOI?controls=0"
+						src={ `https://www.youtube.com/embed/${currentId}?controls=0` }
 						frameBorder="0"
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen />
