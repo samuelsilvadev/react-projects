@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { Container, Video, VideoThumb, VideoTitle, PlayStyled, ModalStyled } from './VideosList.style';
 
-const VideosList = () => {
+const VideosList = ({ videos }) => {
 	const [isModalOpen, setModalOpen] = useState(false);
 	const modalTitle = 'Video';
 	
 	const _handleToggleModal = () => {
 		setModalOpen(!isModalOpen);
+	};
+
+	const _renderVideoItem = (id) => {
+		return (
+			<Video onClick={ _handleToggleModal } key={id}>
+				<VideoThumb>
+					<PlayStyled />
+				</VideoThumb>
+				<VideoTitle>
+					{ videos[id].title }
+				</VideoTitle>
+			</Video>
+		);
 	};
 
 	return  (
@@ -25,20 +40,28 @@ const VideosList = () => {
 						allowFullScreen />
 				</ModalStyled>
 			}
-			{Array.from({ length: 10 }).map((_, index) => {
-				return (
-					<Video onClick={ _handleToggleModal } key={index}>
-						<VideoThumb>
-							<PlayStyled />
-						</VideoThumb>
-						<VideoTitle>
-							Video { index }
-						</VideoTitle>
-					</Video>
-				);
-			})}
+			{
+				Object.keys(videos).map(_renderVideoItem)
+			}
 		</Container>
 	);
 };
 
-export default VideosList;
+VideosList.propTypes = {
+	videos: PropTypes.shape({	
+		id: PropTypes.shape({
+			id: PropTypes.string,
+			title: PropTypes.string,
+		}),
+	}),
+};
+
+VideosList.defaultProps = {
+	videos: {},
+};
+
+const mapStateToProps = ({ videos }) => ({
+	videos,
+});
+
+export default connect(mapStateToProps)(VideosList);
