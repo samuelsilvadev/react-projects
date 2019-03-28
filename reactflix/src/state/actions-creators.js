@@ -15,6 +15,14 @@ export const registerVideo = ({ id, title }) => async (dispatch) => {
 	dispatch(addVideo({ id, title }));
 };
 
+export const fetchVideos = () => (dispatch) => {
+	videosRef.on('value', (snapshot) => {
+		snapshot.forEach((video) => {
+			dispatch(addVideo(video.val()));
+		});
+	});	
+};
+
 export const openRegisterVideoForm = () => ({
 	type: OPEN_REGISTER_VIDEO_FORM,
 });
