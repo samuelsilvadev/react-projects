@@ -12,11 +12,13 @@ export const Video = styled.section`
 export const Container = styled.div`
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	padding: 10px;
 
 	& ${Video} {
 		flex: 1 1 200px;
-		margin: 1px;
+		margin: 10px;
+		max-width: 300px;
 	}
 `;
 
@@ -25,7 +27,7 @@ export const VideoThumb = styled.div`
 	border: 2px solid ${BACKGROUND_COLOR};
 	display: flex;
 	justify-content: center;
-	height: 100px;
+	height: 150px;
 `;
 
 export const VideoTitle = styled.h2`
