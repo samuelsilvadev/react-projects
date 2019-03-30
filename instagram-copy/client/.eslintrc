@@ -1,0 +1,61 @@
+{
+	"parser": "babel-eslint",
+	"extends": ["airbnb", "prettier", "prettier/react"],
+	"plugins": ["prettier"],
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"mocha": true,
+		"es6": true,
+		"jest": true
+	},
+	"rules": {
+		"indent": ["error", "tab"],
+		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": ["error", "tab"],
+		"space-before-function-paren": "off",
+		"arrow-parens": "off",
+		"react/prefer-stateless-function": "warn",
+		"react/jsx-one-expression-per-line": "off",
+		"import/no-extraneous-dependencies": [
+			"error",
+			{ "devDependencies": true }
+		],
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"linebreak-style": "off",
+		"global-require": "off",
+		"semi": "warn",
+		"arrow-body-style": "off",
+		"no-multiple-empty-lines": ["warn", { "max": 1 }],
+		"no-unused-expressions": [
+			"error",
+			{
+				"allowTaggedTemplates": true
+			}
+		],
+		"no-underscore-dangle": "off",
+		"import/no-dynamic-require": "off",
+		"jsx-a11y/label-has-associated-control": [
+			"error",
+			{
+				"required": {
+					"some": ["nesting", "id"]
+				}
+			}
+		],
+		"jsx-a11y/label-has-for": [
+			"error",
+			{
+				"required": {
+					"some": ["nesting", "id"]
+				}
+			}
+		]
+	}
+}
