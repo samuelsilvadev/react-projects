@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
 	Avatar,
@@ -9,25 +10,32 @@ import {
 	PostImageCaption
 } from './Post.style';
 
-const Post = () => (
+const Post = ({ avatar, nickname, image, caption  }) => (
 	<PostArticle>
 		<PostHeader>
 			<Avatar>
 				<img
-					src="https://avatars1.githubusercontent.com/u/13966565?s=460&v=4"
-					alt="Samuel Profile"
+					src={ avatar }
+					alt={ nickname }
 				/>
 			</Avatar>
-			<PostHeaderTitle>Samuel Silva</PostHeaderTitle>
+			<PostHeaderTitle>{ nickname }</PostHeaderTitle>
 		</PostHeader>
 		<PostImage>
 			<img
-				src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-				alt="Something..."
+				src={ image }
+				alt={ caption }
 			/>
-			<PostImageCaption>Beautiful colors :D!</PostImageCaption>
+			<PostImageCaption>{ caption }</PostImageCaption>
 		</PostImage>
 	</PostArticle>
 );
+
+Post.propTypes = {
+	avatar: PropTypes.string.isRequired,
+	nickname: PropTypes.string.isRequired,
+	image: PropTypes.string.isRequired,
+	caption: PropTypes.string.isRequired,
+};
 
 export default Post;
