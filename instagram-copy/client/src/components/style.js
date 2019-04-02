@@ -2,6 +2,7 @@
  * Colors
  */
 export const WHITE = '#fff';
+export const MERCURY = '#e6e6e6';
 /**
  * Configuration
  */
