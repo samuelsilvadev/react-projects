@@ -2,6 +2,9 @@ import React, { Fragment } from 'react';
 import { Query } from 'react-apollo';
 
 import Post from '../post';
+
+import { Message } from './Posts.style';
+
 import { getPostsQuery } from './queries';
 
 const _renderPost = (postData) => (
@@ -18,11 +21,11 @@ export const Posts = () => {
 			{
 				({ loading, error, data }) => {
 					if (loading) {
-						return <p>Loading Posts...</p>;
+						return <Message>Loading Posts...</Message>;
 					}
 
 					if (error) {
-						return <p>Error Fetching Posts...</p>;
+						return <Message>Error Fetching Posts...</Message>;
 					}
 
 					const { posts } = data;
