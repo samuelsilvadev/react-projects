@@ -1,36 +1,23 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { ApolloProvider } from 'react-apollo';
+import ApolloClient from 'apollo-boost';
 
 import { Main } from './App.style';
 
 import Header from './header';
-import Post from './post';
+import Posts from './posts';
 
-const POST_MOCK = [
-	{
-		avatar: 'https://avatars1.githubusercontent.com/u/13966565?s=460&v=4',
-		nickname: 'Samuel Silva',
-		image: 'https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-		caption: 'Something...',
-	},
-	{
-		avatar: 'https://avatars1.githubusercontent.com/u/13966565?s=460&v=4',
-		nickname: 'Samuel Silva',
-		image: 'https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-		caption: 'Something...',
-	},
-];
-
-const _renderPost = (postData, index) => (
-	<Post key={ index }  { ...postData } />
-);
+const client = new ApolloClient({
+	uri: `${process.env.SERVER_URI}graphql`,
+});
 
 const App = () => (
-	<Fragment>
+	<ApolloProvider client={client}>
 		<Header />
 		<Main>
-			{ POST_MOCK.map(_renderPost) }
+			<Posts />
 		</Main>
-	</Fragment>
+	</ApolloProvider>
 );
 
 export default App;
