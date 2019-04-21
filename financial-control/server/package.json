@@ -2,8 +2,9 @@
 	"name": "financial-control-api",
 	"version": "0.0.1",
 	"description": "",
-	"main": "index.js",
+	"main": "src/server.js",
 	"scripts": {
+		"start": "nodemon",
 		"dev": "nodemon",
 		"build": "pm2 start src/server.js --name financial-control-api"
 	},
