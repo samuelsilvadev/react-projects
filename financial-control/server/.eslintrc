@@ -1,0 +1,15 @@
+{
+	"extends": "airbnb-base",
+	"rules": {
+		"import/newline-after-import": 0,
+		"no-tabs": 0,
+		"translate_tabs_to_spaces": true,
+		"indent": [
+			2,
+			"tab"
+		],
+		"no-console": 0,
+		"prefer-promise-reject-errors": 0,
+		"no-underscore-dangle": 0
+	}
+}
