@@ -7,8 +7,11 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const server = express();
 
+const cors = require('./middlewares/cors');
+
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
+server.use(cors);
 
 require('./routes')(server);
 
