@@ -1,7 +1,10 @@
 const BillingCycle = require('./../models/billingCycle');
+const errorHandler = require('./../middlewares/errorHandler');
 
 BillingCycle.methods(['get', 'post', 'put', 'delete']);
 BillingCycle.updateOptions({ new: true, runValidators: true });
+
+BillingCycle.after('post', errorHandler).after('put', errorHandler);
 
 // eslint-disable-next-line no-unused-vars
 BillingCycle.route('count', (req, res, _next) => {
