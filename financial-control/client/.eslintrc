@@ -6,7 +6,8 @@
 		"prettier/react"
 	],
 	"plugins": [
-		"prettier"
+		"prettier",
+		"eslint-import-resolver-webpack"
 	],
 	"parserOptions": {
 		"ecmaVersion": 6,
