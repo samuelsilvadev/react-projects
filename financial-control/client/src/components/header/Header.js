@@ -5,11 +5,11 @@ import noop from 'lodash/noop';
 import { StyledHeader, Button, Link, StyledBurgerIcon } from './Header.style';
 
 export function Header(props) {
-	const { handleClick } = props;
+	const { onClick } = props;
 
 	return (
 		<StyledHeader>
-			<Button type="button" onClick={ handleClick }>
+			<Button type="button" onClick={ onClick }>
 				<StyledBurgerIcon />
 			</Button>
 			<Link href="#">My Money</Link>
@@ -18,11 +18,11 @@ export function Header(props) {
 }
 
 Header.propTypes = {
-	handleClick: PropTypes.func,
+	onClick: PropTypes.func,
 };
 
 Header.defaultProps = {
-	handleClick: noop,
+	onClick: noop,
 };
 
 export default Header;

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Header from '@components/header';
+import Sidebar from '@components/sidebar';
 
 export function App() {
+	const [isOpen, setOpen] = useState(true);
+
+	const toggleOpen = () => {
+		setOpen(open => !open);
+	};
+
 	return (
 		<div>
-			<h1>App</h1>
+			<Header onClick={ toggleOpen } />
+			{ isOpen && <Sidebar /> }
 		</div>
 	);
 }
