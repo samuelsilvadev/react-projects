@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState, useCallback } from 'react';
 
 import Header from '@components/header';
-import Sidebar from '@components/sidebar';
+
+import { Main, StyledSidebar, StyledFooter } from './App.style';
 
 export function App() {
 	const [isOpen, setOpen] = useState(true);
 
-	const toggleOpen = () => {
+	const toggleOpen = useCallback(() => {
 		setOpen(open => !open);
-	};
+	}, []);
 
 	return (
-		<div>
+		<Fragment>
 			<Header onClick={ toggleOpen } />
-			{ isOpen && <Sidebar /> }
-		</div>
+			{ isOpen && <StyledSidebar /> }
+			<Main isSidebarOpen={ isOpen }>
+				Content
+			</Main>
+			<StyledFooter isSidebarOpen={ isOpen } />
+		</Fragment>
 	);
 }
 
