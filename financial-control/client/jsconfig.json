@@ -5,6 +5,7 @@
 	"baseUrl": "./",
 	"paths": {
 			"@components/*": ["src/components/*"],
+			"@shared/*": ["src/shared/*"],
 		}
 	},
 	"exclude": ["node_modules", "dist"],

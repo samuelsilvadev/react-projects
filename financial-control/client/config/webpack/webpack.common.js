@@ -15,6 +15,7 @@ module.exports = {
 		extensions: ['*', '.js', '.scss', '.css'],
 		alias: {
 			'@components': paths.components,
+			'@shared': paths.shared,
 		},
 	},
 	plugins: [
