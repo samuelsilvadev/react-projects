@@ -10,7 +10,8 @@ export const StyledSidebar = styled(Sidebar)`
 `;
 
 export const Main = styled.main`
-	margin-left: ${(props) => props.isSidebarOpen ? `calc(${SIDEBAR_WIDTH})` : ''};
+	margin-left: ${(props) => props.isSidebarOpen ? `${SIDEBAR_WIDTH}` : ''};
+	padding: 20px;
 `;
 
 export const StyledFooter = Main.withComponent(Footer);
