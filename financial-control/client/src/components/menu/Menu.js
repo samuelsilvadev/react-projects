@@ -3,20 +3,16 @@ import React from 'react';
 import { Ul, StyledMenuItem } from './Menu.style';
 import MenuTree from './MenuTree';
 
-export function Menu(props) {
+export function Menu() {
 	return (
 		<Ul>
-			<StyledMenuItem path="#" label="Dashboard" />
-			<StyledMenuItem path="#" label="Profile" />
+			<StyledMenuItem path="/" label="Dashboard" />
 			<MenuTree label="Billing Cycles">
-				<StyledMenuItem path="#" label="Register" />
+				<StyledMenuItem path="/billing-cycles" label="Register" />
 				<StyledMenuItem path="#" label="List" />
 			</MenuTree>
 		</Ul>
 	);
 }
-
-Menu.propTypes = {};
-Menu.defaultProps = {};
 
 export default Menu;
