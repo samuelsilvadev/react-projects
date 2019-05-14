@@ -7,6 +7,7 @@
 		"start": "cross-env NODE_ENV=development webpack-dev-server --open",
 		"lint": "eslint ./src/**/**.js",
 		"lint:fix": "eslint ./src/**/**.js --fix",
+		"storybook": "start-storybook",
 		"test": "",
 		"test:watch": "",
 		"test:coverage": ""
@@ -24,6 +25,7 @@
 		"@babel/runtime": "^7.3.4",
 		"@emotion/core": "^10.0.10",
 		"@emotion/styled": "^10.0.10",
+		"@storybook/react": "^5.0.11",
 		"babel-core": "^7.0.0-bridge.0",
 		"babel-eslint": "^10.0.1",
 		"babel-loader": "^8.0.5",
