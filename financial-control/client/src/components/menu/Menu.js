@@ -9,7 +9,7 @@ export function Menu() {
 			<StyledMenuItem path="/" label="Dashboard" />
 			<MenuTree label="Billing Cycles">
 				<StyledMenuItem path="/billing-cycles" label="Register" />
-				<StyledMenuItem path="#" label="List" />
+				<StyledMenuItem path="/billing-cycles-list" label="List" />
 			</MenuTree>
 		</Ul>
 	);
