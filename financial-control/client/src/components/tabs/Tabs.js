@@ -1,10 +1,10 @@
 import React from 'react';
 
 function Tabs(props) {
-	const { children } = props;
+	const { children, ...remainingProps } = props;
 
 	return (
-		<div>
+		<div { ...remainingProps }>
 			{ children }
 		</div>
 	)

@@ -6,10 +6,10 @@ const WrapperDiv = styled.div`
 `;
 
 function TabContent(props) {
-	const { children, id } = props;
+	const { children, id, ...remainingProps } = props;
 
 	return (
-		<WrapperDiv role="tabpanel" aria-labelledby={ id }>
+		<WrapperDiv role="tabpanel" aria-labelledby={ id } { ...remainingProps }>
 			{ children }
 		</WrapperDiv>
 	);

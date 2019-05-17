@@ -9,10 +9,10 @@ const Ul = styled.ul`
 `;
 
 function TabHeader(props) {
-	const { children } = props;
+	const { children, ...remainingProps } = props;
 
 	return (
-		<Ul role="tablist">
+		<Ul role="tablist" { ...remainingProps }>
 			{ children }
 		</Ul>
 	)

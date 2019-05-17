@@ -4,7 +4,9 @@ import styled from '@emotion/styled';
 import { useTabs } from '@shared/context';
 
 const Li = styled.li`
-	margin-left: 3px;
+	&:not(:first-child) {
+		margin-left: 3px;
+	}
 `;
 
 const Button = styled.button`
@@ -18,12 +20,12 @@ const Button = styled.button`
 `;
 
 function TabTitle(props) {
-	const { id, label } = props;
+	const { id, label, ...remainingProps } = props;
 	const { selected, setSelected } = useTabs();
 	const isSelected = id === selected;
 
 	return (
-		<Li role="presentation">
+		<Li role="presentation" { ...remainingProps }>
 			<Button
 				role="tab"
 				aria-selected={ isSelected }
