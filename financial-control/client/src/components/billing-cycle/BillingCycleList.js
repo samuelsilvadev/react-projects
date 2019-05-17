@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { actions } from '@shared/state/billing-cycle';
 
+import { Table, Thead, Th, Td, Tr } from './BillingCycleList.style';
+
 export function BillingCycleList(props) {
 	const { list = [], getList } = props;
 
@@ -12,26 +14,26 @@ export function BillingCycleList(props) {
 	}, []);
 
 	const _renderTableRow = (data) => (
-		<tr key={ data.id }>
-			<td>{ data.name }</td>
-			<td>{ data.month }</td>
-			<td>{ data.year }</td>
-		</tr>
+		<Tr key={ data._id }>
+			<Td>{ data.name }</Td>
+			<Td>{ data.month }</Td>
+			<Td>{ data.year }</Td>
+		</Tr>
 	);
 
 	return (
-		<table>
-			<thead>
+		<Table>
+			<Thead>
 				<tr>
-					<th>Name</th>
-					<th>Month</th>
-					<th>Year</th>
+					<Th>Name</Th>
+					<Th>Month</Th>
+					<Th>Year</Th>
 				</tr>
-			</thead>
+			</Thead>
 			<tbody>
 				{ list.map(_renderTableRow) }
 			</tbody>
-		</table>
+		</Table>
 	)
 }
 
