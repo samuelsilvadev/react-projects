@@ -1,4 +1,5 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import styled from '@emotion/styled';
 
 import { useTabs } from '@shared/context';
@@ -25,8 +26,11 @@ function TabTitle(props) {
 	const isSelected = id === selected;
 
 	return (
-		<Li role="presentation" { ...remainingProps }>
+		<Li
+			role="presentation"
+			{ ...remainingProps }>
 			<Button
+				css={(theme) => ({ ...theme.tabHeader.tabTitle.button })}
 				role="tab"
 				aria-selected={ isSelected }
 				onClick={ () => setSelected(id) }>{ label }</Button>
