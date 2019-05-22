@@ -1,27 +1,47 @@
 import axios from 'axios';
 
-import { BILLING_CYCLE_LOADING, BILLING_CYCLE_SUCCESS, BILLING_CYCLE_ERROR } from './actionsTypes';
+import * as actionTypes from './actionsTypes';
+
+const END_POINT = `${process.env.SERVER_BASE_URL}/billing-cycle`;
+
+function getError(actionType, error) {
+	return {
+		type: actionType,
+		payload: {
+			error: {
+				error,
+				message: error.message
+			}
+		}
+	}
+}
+
+export function create(values = {}) {
+	return async function (dispatch) {
+
+		dispatch({ type: actionTypes.BILLING_CYCLE_SAVE_LOADING })
+
+		try {
+			const { data } = await axios.post(END_POINT, values);
+
+			dispatch({ type: actionTypes.BILLING_CYCLE_SAVE_SUCCESS, payload: { data } });
+		} catch (error) {
+			dispatch(getError(actionTypes.BILLING_CYCLE_SAVE_ERROR, error));
+		}
+	}
+}
 
 export function getList() {
-	return async function(dispatch) {
-		const END_POINT = `${process.env.SERVER_BASE_URL}/billing-cycle`;
-		
-		dispatch({ type: BILLING_CYCLE_LOADING })
-	
+	return async function (dispatch) {
+
+		dispatch({ type: actionTypes.BILLING_CYCLE_LOADING })
+
 		try {
 			const { data } = await axios.get(END_POINT);
-	
-			dispatch({ type: BILLING_CYCLE_SUCCESS, payload: { data } });
+
+			dispatch({ type: actionTypes.BILLING_CYCLE_SUCCESS, payload: { data } });
 		} catch (error) {
-			dispatch({
-				type: BILLING_CYCLE_ERROR,
-				payload: {
-					error: { 
-						error,
-						message: error.message
-					}
-				}
-			});
+			dispatch(getError(actionTypes.BILLING_CYCLE_ERROR, error));
 		}
 	}
 }
