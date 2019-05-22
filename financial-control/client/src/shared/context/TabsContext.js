@@ -3,7 +3,7 @@ import React, { useState, useMemo, useContext } from 'react';
 const TabsContext = React.createContext();
 
 export function TabsProvider(props) {
-	const [selected, setSelected] = useState();
+	const [selected, setSelected] = useState(props.selected);
 
 	const context = useMemo(() => ({
 		selected,
