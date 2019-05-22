@@ -20,6 +20,14 @@ const Button = styled.button`
 	}
 `;
 
+function getButtonTheme(theme = {}) {
+	if (theme.tabHeader && theme.tabHeader.tabTitle && theme.tabHeader.tabTitle.button) {
+		return {
+			...theme.tabHeader.tabTitle.button,
+		}
+	}
+}
+
 function TabTitle(props) {
 	const { id, label, ...remainingProps } = props;
 	const { selected, setSelected } = useTabs();
@@ -30,7 +38,7 @@ function TabTitle(props) {
 			role="presentation"
 			{ ...remainingProps }>
 			<Button
-				css={(theme) => ({ ...theme.tabHeader.tabTitle.button })}
+				css={getButtonTheme}
 				role="tab"
 				aria-selected={ isSelected }
 				onClick={ () => setSelected(id) }>{ label }</Button>
