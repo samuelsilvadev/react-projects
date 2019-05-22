@@ -1,17 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { ThemeProvider } from 'emotion-theming';
 
 import { TabsProvider } from '@shared/context';
+import { actions } from '@shared/state/billing-cycle';
 import { Tabs, TabHeader, TabTitle, TabBody, TabContent } from '@components/tabs';
 
+import Form from './BillingCycleForm';
 import List from './BillingCycleList';
 
 import { TABS_THEME } from './BillingCycle.style';
 
-export function BillingCycle() {
+export function BillingCycle(props) {
+	const { save } = props;
+
 	return (
 		<ThemeProvider theme={ TABS_THEME }>
-			<TabsProvider>
+			<TabsProvider selected="register">
 				<Tabs>
 					<TabHeader>
 						<TabTitle label="Register" id="register" />
@@ -19,8 +24,8 @@ export function BillingCycle() {
 					</TabHeader>
 					<TabBody>
 						<TabContent id="register">
-							Register Content
-					</TabContent>
+							<Form onSubmit={ save } />
+						</TabContent>
 						<TabContent id="list">
 							<List />
 						</TabContent>
@@ -31,4 +36,8 @@ export function BillingCycle() {
 	)
 }
 
-export default BillingCycle;
+const mapDispatchToProps = {
+	save: actions.create
+};
+
+export default connect(null, mapDispatchToProps)(BillingCycle);
