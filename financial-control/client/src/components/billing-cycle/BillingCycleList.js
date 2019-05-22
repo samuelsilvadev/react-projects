@@ -4,14 +4,30 @@ import { connect } from 'react-redux';
 
 import { actions } from '@shared/state/billing-cycle';
 
-import { Table, Thead, Th, Td, Tr } from './BillingCycleList.style';
+import { Table, Thead, Th, Td, Tr, ErrorP, LoadingP } from './BillingCycleList.style';
 
 export function BillingCycleList(props) {
-	const { list = [], getList } = props;
+	const { list = [], getList, isLoading, error } = props;
 
 	useEffect(() => {
 		getList();
 	}, []);
+
+	if (isLoading) {
+		return (
+			<LoadingP>
+				Loading...
+			</LoadingP>
+		);
+	}
+
+	if (error) {
+		return (
+			<ErrorP>
+				Something went wrong
+			</ErrorP>
+		);
+	}
 
 	const _renderTableRow = (data) => (
 		<Tr key={ data._id }>
@@ -40,11 +56,17 @@ export function BillingCycleList(props) {
 BillingCycleList.propTypes = {
 	list: PropTypes.array,
 	getList: PropTypes.func.isRequired,
+	isLoading: PropTypes.bool,
+	error: PropTypes.any,
 };
 
 function mapStateToProps(state) {
+	const { list, isLoading, error } = state.billingCycle;
+	
 	return {
-		list: state.billingCycle.list
+		list,
+		isLoading,
+		error,
 	}
 }
 

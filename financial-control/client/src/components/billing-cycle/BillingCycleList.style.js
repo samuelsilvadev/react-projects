@@ -22,4 +22,16 @@ export const Tr = styled.tr`
 	&:nth-child(even) {
 		background-color: #ebebeb;
 	}
-`
+`;
+
+export const ErrorP = styled.p`
+	background-color: #ea6565;
+	border: 1px solid red;
+	color: #fff;
+	padding: 10px;
+`;
+
+export const LoadingP = styled.p`
+	padding: 10px;
+	text-align: center;
+`;
