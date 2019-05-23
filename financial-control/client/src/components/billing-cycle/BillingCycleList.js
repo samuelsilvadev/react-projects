@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { useTabs } from '@shared/context';
 import { actions } from '@shared/state/billing-cycle';
 
 import { Table, Thead, Th, Td, Tr, ErrorP, LoadingP } from './BillingCycleList.style';
 
 export function BillingCycleList(props) {
-	const { list = [], getList, isLoading, error } = props;
+	const { list = [], getList, isLoading, error, onEdit, showEdit = false } = props;
 
 	useEffect(() => {
 		getList();
@@ -29,11 +30,20 @@ export function BillingCycleList(props) {
 		);
 	}
 
+	const _handleClickEdit = (data) => () => {
+		onEdit(data)
+	};
+
 	const _renderTableRow = (data) => (
 		<Tr key={ data._id }>
 			<Td>{ data.name }</Td>
 			<Td>{ data.month }</Td>
 			<Td>{ data.year }</Td>
+			{ showEdit &&
+				<Td>
+					<button onClick={ _handleClickEdit(data) }>Edit</button>
+				</Td>
+			}
 		</Tr>
 	);
 
@@ -44,6 +54,9 @@ export function BillingCycleList(props) {
 					<Th>Name</Th>
 					<Th>Month</Th>
 					<Th>Year</Th>
+					{ showEdit &&
+						<Th>actions</Th>
+					}
 				</tr>
 			</Thead>
 			<tbody>
@@ -56,8 +69,10 @@ export function BillingCycleList(props) {
 BillingCycleList.propTypes = {
 	list: PropTypes.array,
 	getList: PropTypes.func.isRequired,
+	onEdit: PropTypes.func,
 	isLoading: PropTypes.bool,
 	error: PropTypes.any,
+	showEdit: PropTypes.bool,
 };
 
 function mapStateToProps(state) {
