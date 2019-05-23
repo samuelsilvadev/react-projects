@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { useTabs } from '@shared/context';
 import { actions } from '@shared/state/billing-cycle';
 
-import { Table, Thead, Th, Td, Tr, ErrorP, LoadingP } from './BillingCycleList.style';
+import { Table, Thead, Th, Td, Tr, ErrorP, LoadingP, Button } from './BillingCycleList.style';
 
 export function BillingCycleList(props) {
 	const { list = [], getList, isLoading, error, onEdit, showEdit = false } = props;
@@ -41,7 +40,7 @@ export function BillingCycleList(props) {
 			<Td>{ data.year }</Td>
 			{ showEdit &&
 				<Td>
-					<button onClick={ _handleClickEdit(data) }>Edit</button>
+					<Button onClick={ _handleClickEdit(data) }>Edit</Button>
 				</Td>
 			}
 		</Tr>

@@ -35,3 +35,11 @@ export const LoadingP = styled.p`
 	padding: 10px;
 	text-align: center;
 `;
+
+export const Button = styled.button`
+	background-color: #1c2025;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	padding: 5px;
+`;
