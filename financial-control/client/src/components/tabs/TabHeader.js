@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 const Ul = styled.ul`
@@ -9,13 +10,25 @@ const Ul = styled.ul`
 `;
 
 function TabHeader(props) {
-	const { children, ...remainingProps } = props;
+	const { children, titlesToHide = [], ...remainingProps } = props;
+
+	const _renderChild = (child) => {
+		const isToRender = titlesToHide.indexOf(child.props.id) === -1;
+
+		return isToRender ? child : null;
+	}
 
 	return (
 		<Ul role="tablist" { ...remainingProps }>
-			{ children }
+			{
+				React.Children.map(children, _renderChild)
+			}
 		</Ul>
 	)
 }
+
+TabHeader.propTypes = {
+	titlesToHide: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default TabHeader;
