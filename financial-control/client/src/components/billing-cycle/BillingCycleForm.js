@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 import { Form, Label, StyledField, Button } from './BillingCycleForm.style';
 
+import { FORMS_NAMES } from './constants';
+
 export function BillingCycleForm(props) {
 	const { handleSubmit, reset, isLoading, error } = props;
 
@@ -52,7 +54,7 @@ function mapStateToProps(state) {
 }
 
 const enhance = compose(
-	reduxForm({ form: 'billingCycleForm' }),
+	reduxForm({ form: FORMS_NAMES.BILLING_CYCLE_FORM }),
 	connect(mapStateToProps),
 );
 

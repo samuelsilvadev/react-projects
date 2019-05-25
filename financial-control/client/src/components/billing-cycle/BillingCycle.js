@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { initialize } from 'redux-form';
 import { ThemeProvider } from 'emotion-theming';
 
 import { TabsProvider, TabsContext } from '@shared/context';
@@ -11,6 +12,8 @@ import List from './BillingCycleList';
 
 import { TABS_THEME } from './BillingCycle.style';
 
+import { FORMS_NAMES } from './constants';
+
 const TABS_IDS = {
 	REGISTER: 'register',
 	LIST: 'list',
@@ -18,7 +21,7 @@ const TABS_IDS = {
 };
 
 export function BillingCycle(props) {
-	const { save } = props;
+	const { save, initializeEditForm } = props;
 	const [tabsTitlesToHide, setTabsToHide] = useState([TABS_IDS.EDIT]);
 
 	return (
@@ -43,6 +46,7 @@ export function BillingCycle(props) {
 											onEdit={ (data) => {
 												setTabsToHide([TABS_IDS.REGISTER, TABS_IDS.LIST]);
 												setSelected(TABS_IDS.EDIT);
+												initializeEditForm(FORMS_NAMES.BILLING_CYCLE_FORM, data);
 											} } />
 									</TabContent>
 									<TabContent id={ TABS_IDS.EDIT }>
@@ -59,7 +63,8 @@ export function BillingCycle(props) {
 }
 
 const mapDispatchToProps = {
-	save: actions.create
+	save: actions.create,
+	initializeEditForm: initialize,
 };
 
 export default connect(null, mapDispatchToProps)(BillingCycle);
