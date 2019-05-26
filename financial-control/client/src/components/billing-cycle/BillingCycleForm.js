@@ -1,21 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import { Form, Label, StyledField, Button } from './BillingCycleForm.style';
+import { Form, Label, StyledField, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
 
 import { FORMS_NAMES } from './constants';
 
 export function BillingCycleForm(props) {
-	const { handleSubmit, reset, isLoading, error } = props;
+	const { handleSubmit, onCancel, reset, isLoading, error } = props;
 
 	useEffect(() => {
 		if(typeof isLoading !== 'undefined' && !isLoading && !error) {
 			reset();
 		}
 	}, [isLoading, error]);
+
+	const _handleCancel = useCallback(() => {
+		reset();
+		onCancel && onCancel();
+	}, [onCancel]);
 	
 	return (
 		<Form onSubmit={ handleSubmit }>
@@ -31,15 +36,21 @@ export function BillingCycleForm(props) {
 				<Label htmlFor="year">Year</Label>
 				<StyledField id="year" name="year" component="input" required />
 			</div>
-			<Button type="submit">
-				Save
-			</Button>
+			<ButtonWrapperDiv>
+				<Button type="submit">
+					Save
+				</Button>
+				<Button type="button" isCancel onClick={ _handleCancel }>
+					Cancel
+				</Button>
+			</ButtonWrapperDiv>
 		</Form>
 	)
 }
 
 BillingCycleForm.propTypes = {
 	onSubmit: PropTypes.func,
+	onCancel: PropTypes.func,
 	isLoading: PropTypes.bool,
 	error: PropTypes.any,
 };

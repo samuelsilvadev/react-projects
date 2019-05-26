@@ -38,7 +38,9 @@ export function BillingCycle(props) {
 							({ setSelected }) => (
 								<TabBody>
 									<TabContent id={ TABS_IDS.REGISTER }>
-										<Form onSubmit={ save } />
+										<Form onSubmit={ save } onCancel={ () => {
+											setSelected(TABS_IDS.LIST);
+										} } />
 									</TabContent>
 									<TabContent id={ TABS_IDS.LIST }>
 										<List
@@ -50,7 +52,10 @@ export function BillingCycle(props) {
 											} } />
 									</TabContent>
 									<TabContent id={ TABS_IDS.EDIT }>
-										<Form />
+										<Form onCancel={ () => {
+											setTabsToHide([TABS_IDS.EDIT]);
+											setSelected(TABS_IDS.LIST);
+										} } />
 									</TabContent>
 								</TabBody>
 								)

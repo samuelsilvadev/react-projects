@@ -24,4 +24,9 @@ export const Button = styled.button`
 	cursor: pointer;
 	padding: 8px;
 	width: 100px;
+	margin-left: ${({ isCancel }) => isCancel ? '10px' : 0};
+`;
+
+export const ButtonWrapperDiv = styled.div`
+	display: flex;
 `;
