@@ -75,10 +75,10 @@ BillingCycleList.propTypes = {
 };
 
 function mapStateToProps(state) {
-	const { list, isLoading, error } = state.billingCycle;
+	const { data, isLoading, error } = state.billingCycle.list;
 	
 	return {
-		list,
+		list: data,
 		isLoading,
 		error,
 	}
