@@ -31,6 +31,21 @@ export function create(values = {}) {
 	}
 }
 
+export function update(values = {}) {
+	return async function (dispatch) {
+
+		dispatch({ type: actionTypes.BILLING_CYCLE_EDIT_LOADING })
+
+		try {
+			const { data } = await axios.put(`${END_POINT}/${values._id}`, values);
+
+			dispatch({ type: actionTypes.BILLING_CYCLE_EDIT_SUCCESS, payload: { data } });
+		} catch (error) {
+			dispatch(getError(actionTypes.BILLING_CYCLE_EDIT_ERROR, error));
+		}
+	}
+}
+
 export function getList() {
 	return async function (dispatch) {
 
