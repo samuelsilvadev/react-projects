@@ -2,17 +2,16 @@ import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm } from 'redux-form';
 import { compose } from 'redux';
-import { connect } from 'react-redux';
 
 import { Form, Label, StyledField, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
 
 import { FORMS_NAMES } from './constants';
 
 export function BillingCycleForm(props) {
-	const { handleSubmit, onCancel, reset, isLoading, error } = props;
+	const { handleSubmit, submitSucceeded, onCancel, reset, isLoading, error } = props;
 
 	useEffect(() => {
-		if(typeof isLoading !== 'undefined' && !isLoading && !error) {
+		if(typeof isLoading !== 'undefined' && !isLoading && !error && submitSucceeded) {
 			reset();
 		}
 	}, [isLoading, error]);
@@ -51,22 +50,14 @@ export function BillingCycleForm(props) {
 BillingCycleForm.propTypes = {
 	onSubmit: PropTypes.func,
 	onCancel: PropTypes.func,
+	handleSubmit: PropTypes.func,
 	isLoading: PropTypes.bool,
+	submitSucceeded: PropTypes.bool,
 	error: PropTypes.any,
 };
 
-function mapStateToProps(state) {
-	const { isLoading, error } = state.billingCycle.register;
-	
-	return {
-		isLoading,
-		error,
-	}
-}
-
 const enhance = compose(
 	reduxForm({ form: FORMS_NAMES.BILLING_CYCLE_FORM }),
-	connect(mapStateToProps),
 );
 
 export default enhance(BillingCycleForm);

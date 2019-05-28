@@ -21,7 +21,14 @@ const TABS_IDS = {
 };
 
 export function BillingCycle(props) {
-	const { save, initializeEditForm } = props;
+	const {
+		save,
+		update,
+		initializeEditForm,
+		registerData,
+		updateData,
+	} = props;
+
 	const [tabsTitlesToHide, setTabsToHide] = useState([TABS_IDS.EDIT]);
 
 	return (
@@ -38,9 +45,10 @@ export function BillingCycle(props) {
 							({ setSelected }) => (
 								<TabBody>
 									<TabContent id={ TABS_IDS.REGISTER }>
-										<Form onSubmit={ save } onCancel={ () => {
-											setSelected(TABS_IDS.LIST);
-										} } />
+										<Form
+											onSubmit={ save }
+											onCancel={ () => { setSelected(TABS_IDS.LIST); } }
+											{ ...registerData } />
 									</TabContent>
 									<TabContent id={ TABS_IDS.LIST }>
 										<List
@@ -52,10 +60,13 @@ export function BillingCycle(props) {
 											} } />
 									</TabContent>
 									<TabContent id={ TABS_IDS.EDIT }>
-										<Form onCancel={ () => {
-											setTabsToHide([TABS_IDS.EDIT]);
-											setSelected(TABS_IDS.LIST);
-										} } />
+										<Form
+											onSubmit={ update }
+											onCancel={ () => {
+												setTabsToHide([TABS_IDS.EDIT]);
+												setSelected(TABS_IDS.LIST);
+											} }
+											{ ...updateData } />
 									</TabContent>
 								</TabBody>
 								)
@@ -67,9 +78,19 @@ export function BillingCycle(props) {
 	)
 }
 
+function mapStateToProps(state) {
+	const { register, update } = state.billingCycle;
+
+	return {
+		registerData: register,
+		updateData: update, 
+	}
+}
+
 const mapDispatchToProps = {
 	save: actions.create,
+	update: actions.update,
 	initializeEditForm: initialize,
 };
 
-export default connect(null, mapDispatchToProps)(BillingCycle);
+export default connect(mapStateToProps, mapDispatchToProps)(BillingCycle);
