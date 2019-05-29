@@ -79,6 +79,7 @@ export function BillingCycle(props) {
 									</TabContent>
 									<TabContent id={ TABS_IDS.REMOVE }>
 										<Form
+											submitLabel="Remove"
 											readOnly
 											onSubmit={ remove }
 											onCancel={ () => {

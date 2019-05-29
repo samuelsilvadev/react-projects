@@ -8,7 +8,7 @@ import { Form, Label, StyledField, Button, ButtonWrapperDiv } from './BillingCyc
 import { FORMS_NAMES } from './constants';
 
 export function BillingCycleForm(props) {
-	const { handleSubmit, submitSucceeded, onCancel, reset, isLoading, error, readOnly } = props;
+	const { handleSubmit, submitSucceeded, onCancel, reset, isLoading, error, readOnly, submitLabel = 'Save' } = props;
 
 	useEffect(() => {
 		if(typeof isLoading !== 'undefined' && !isLoading && !error && submitSucceeded) {
@@ -37,7 +37,7 @@ export function BillingCycleForm(props) {
 			</div>
 			<ButtonWrapperDiv>
 				<Button type="submit">
-					Save
+					{ submitLabel }
 				</Button>
 				<Button type="button" isCancel onClick={ _handleCancel }>
 					Cancel
@@ -55,6 +55,7 @@ BillingCycleForm.propTypes = {
 	isLoading: PropTypes.bool,
 	submitSucceeded: PropTypes.bool,
 	error: PropTypes.any,
+	submitLabel: PropTypes.string,
 };
 
 const enhance = compose(
