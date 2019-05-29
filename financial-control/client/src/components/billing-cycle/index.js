@@ -1,2 +1,2 @@
 export { default } from './BillingCycle';
-export { default as BillingCycleList } from './BillingCycleList';
+export { default as BillingCycleList } from './list/BillingCycleList';

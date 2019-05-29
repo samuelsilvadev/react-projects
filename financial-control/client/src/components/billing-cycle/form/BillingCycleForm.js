@@ -5,7 +5,7 @@ import { compose } from 'redux';
 
 import { Form, Label, StyledField, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
 
-import { FORMS_NAMES } from './constants';
+import { FORMS_NAMES } from '../constants';
 
 export function BillingCycleForm(props) {
 	const { handleSubmit, submitSucceeded, onCancel, reset, isLoading, error, readOnly, submitLabel = 'Save' } = props;

@@ -7,8 +7,8 @@ import { TabsProvider, TabsContext } from '@shared/context';
 import { actions } from '@shared/state/billing-cycle';
 import { Tabs, TabHeader, TabTitle, TabBody, TabContent } from '@components/tabs';
 
-import Form from './BillingCycleForm';
-import List from './BillingCycleList';
+import Form from './form/BillingCycleForm';
+import List from './list/BillingCycleList';
 
 import { TABS_THEME } from './BillingCycle.style';
 
