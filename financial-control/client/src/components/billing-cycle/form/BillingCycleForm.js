@@ -8,13 +8,24 @@ import { Form, Label, StyledField, Button, ButtonWrapperDiv } from './BillingCyc
 import { FORMS_NAMES } from '../constants';
 
 export function BillingCycleForm(props) {
-	const { handleSubmit, submitSucceeded, onCancel, reset, isLoading, error, readOnly, submitLabel = 'Save' } = props;
+	const {
+		handleSubmit,
+		submitSucceeded,
+		onCancel,
+		redirect,
+		reset,
+		isLoading,
+		error,
+		readOnly,
+		submitLabel = 'Save'
+	} = props;
 
 	useEffect(() => {
 		if(typeof isLoading !== 'undefined' && !isLoading && !error && submitSucceeded) {
 			reset();
+			redirect && redirect();
 		}
-	}, [isLoading, error]);
+	}, [isLoading, error, submitSucceeded]);
 
 	const _handleCancel = useCallback(() => {
 		reset();
@@ -51,6 +62,7 @@ BillingCycleForm.propTypes = {
 	onSubmit: PropTypes.func,
 	onCancel: PropTypes.func,
 	handleSubmit: PropTypes.func,
+	redirect: PropTypes.func,
 	readOnly: PropTypes.bool,
 	isLoading: PropTypes.bool,
 	submitSucceeded: PropTypes.bool,
