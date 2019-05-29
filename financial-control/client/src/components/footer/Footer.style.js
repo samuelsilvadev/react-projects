@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
 
+import { FOOTER_HEIGHT } from '../config.styles';
+
 export const StyledFooter = styled.footer`
 	background-color: #eeeeef;
 	bottom: 0;
 	font-size: 14px;
+	height: ${FOOTER_HEIGHT};
 	position: fixed;
 	padding: 20px;
 	width: 100%;

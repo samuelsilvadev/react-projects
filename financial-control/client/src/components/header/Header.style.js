@@ -2,11 +2,13 @@ import styled from '@emotion/styled';
 
 import { BurgerMenu } from '@components/icons';
 
+import { HEADER_HEIGHT } from '../config.styles';
+
 export const StyledHeader = styled.header`
 	align-items: center;
 	background-color: #000;
 	display: flex;
-	height: 50px;
+	height: ${HEADER_HEIGHT};
 	width: 100%;
 `;
 
