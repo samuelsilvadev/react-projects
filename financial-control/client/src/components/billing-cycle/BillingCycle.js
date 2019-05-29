@@ -18,18 +18,20 @@ const TABS_IDS = {
 	REGISTER: 'register',
 	LIST: 'list',
 	EDIT: 'edit',
+	REMOVE: 'remove',
 };
 
 export function BillingCycle(props) {
 	const {
 		save,
 		update,
-		initializeEditForm,
+		remove,
+		initializeForm,
 		registerData,
 		updateData,
 	} = props;
 
-	const [tabsTitlesToHide, setTabsToHide] = useState([TABS_IDS.EDIT]);
+	const [tabsTitlesToHide, setTabsToHide] = useState([TABS_IDS.EDIT, TABS_IDS.REMOVE]);
 
 	return (
 		<ThemeProvider theme={ TABS_THEME }>
@@ -39,6 +41,7 @@ export function BillingCycle(props) {
 						<TabTitle label="Register" id={ TABS_IDS.REGISTER } />
 						<TabTitle label="List" id={ TABS_IDS.LIST } />
 						<TabTitle label="Edit" id={ TABS_IDS.EDIT } />
+						<TabTitle label="Remove" id={ TABS_IDS.REMOVE } />
 					</TabHeader>
 					<TabsContext.Consumer>
 						{
@@ -53,20 +56,35 @@ export function BillingCycle(props) {
 									<TabContent id={ TABS_IDS.LIST }>
 										<List
 											showEdit
+											showRemove
 											onEdit={ (data) => {
-												setTabsToHide([TABS_IDS.REGISTER, TABS_IDS.LIST]);
+												setTabsToHide([TABS_IDS.REGISTER, TABS_IDS.LIST, TABS_IDS.REMOVE]);
 												setSelected(TABS_IDS.EDIT);
-												initializeEditForm(FORMS_NAMES.BILLING_CYCLE_FORM, data);
+												initializeForm(FORMS_NAMES.BILLING_CYCLE_FORM, data);
+											} }
+											onRemove={ (data) => {
+												setTabsToHide([TABS_IDS.REGISTER, TABS_IDS.EDIT, TABS_IDS.LIST]);
+												setSelected(TABS_IDS.REMOVE);
+												initializeForm(FORMS_NAMES.BILLING_CYCLE_FORM, data);
 											} } />
 									</TabContent>
 									<TabContent id={ TABS_IDS.EDIT }>
 										<Form
 											onSubmit={ update }
 											onCancel={ () => {
-												setTabsToHide([TABS_IDS.EDIT]);
+												setTabsToHide([TABS_IDS.EDIT, TABS_IDS.REMOVE]);
 												setSelected(TABS_IDS.LIST);
 											} }
 											{ ...updateData } />
+									</TabContent>
+									<TabContent id={ TABS_IDS.REMOVE }>
+										<Form
+											readOnly
+											onSubmit={ remove }
+											onCancel={ () => {
+												setTabsToHide([TABS_IDS.EDIT, TABS_IDS.REMOVE]);
+												setSelected(TABS_IDS.LIST);
+											} } />
 									</TabContent>
 								</TabBody>
 								)
@@ -90,7 +108,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
 	save: actions.create,
 	update: actions.update,
-	initializeEditForm: initialize,
+	remove: actions.remove,
+	initializeForm: initialize,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BillingCycle);

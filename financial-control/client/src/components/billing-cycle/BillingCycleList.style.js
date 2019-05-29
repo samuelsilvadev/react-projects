@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 export const Table = styled.table`
 	text-align: center;
@@ -12,10 +13,16 @@ export const Thead = styled.thead`
 
 export const Th = styled.th`
 	padding: 10px;
+	width: ${({ isActions }) => isActions ? '140px' : 'auto' };
 `;
 
 export const Td = styled.td`
 	padding: 10px;
+
+	${({ isActions }) => isActions && css`
+		display: flex;
+		justify-content: space-evenly;
+	`}
 `;
 
 export const Tr = styled.tr`

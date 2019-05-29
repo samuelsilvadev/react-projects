@@ -7,7 +7,16 @@ import { actions } from '@shared/state/billing-cycle';
 import { Table, Thead, Th, Td, Tr, ErrorP, LoadingP, Button } from './BillingCycleList.style';
 
 export function BillingCycleList(props) {
-	const { list = [], getList, isLoading, error, onEdit, showEdit = false } = props;
+	const {
+		list = [],
+		getList,
+		isLoading,
+		error,
+		onEdit,
+		onRemove,
+		showEdit = false,
+		showRemove = false,
+	} = props;
 
 	useEffect(() => {
 		getList();
@@ -29,8 +38,14 @@ export function BillingCycleList(props) {
 		);
 	}
 
+	const shouldRenderActionsTag = showEdit || showRemove;
+
 	const _handleClickEdit = (data) => () => {
 		onEdit(data)
+	};
+	
+	const _handleClickRemove = (data) => () => {
+		onRemove(data)
 	};
 
 	const _renderTableRow = (data) => (
@@ -38,9 +53,10 @@ export function BillingCycleList(props) {
 			<Td>{ data.name }</Td>
 			<Td>{ data.month }</Td>
 			<Td>{ data.year }</Td>
-			{ showEdit &&
-				<Td>
-					<Button onClick={ _handleClickEdit(data) }>Edit</Button>
+			{ shouldRenderActionsTag &&
+				<Td isActions>
+					{ showEdit && <Button onClick={ _handleClickEdit(data) }>Edit</Button> }
+					{ showRemove && <Button onClick={ _handleClickRemove(data) }>Remove</Button> }
 				</Td>
 			}
 		</Tr>
@@ -53,8 +69,8 @@ export function BillingCycleList(props) {
 					<Th>Name</Th>
 					<Th>Month</Th>
 					<Th>Year</Th>
-					{ showEdit &&
-						<Th>actions</Th>
+					{ shouldRenderActionsTag &&
+						<Th isActions>Actions</Th>
 					}
 				</tr>
 			</Thead>
@@ -69,9 +85,11 @@ BillingCycleList.propTypes = {
 	list: PropTypes.array,
 	getList: PropTypes.func.isRequired,
 	onEdit: PropTypes.func,
+	onRemove: PropTypes.func,
 	isLoading: PropTypes.bool,
 	error: PropTypes.any,
 	showEdit: PropTypes.bool,
+	showRemove: PropTypes.bool,
 };
 
 function mapStateToProps(state) {

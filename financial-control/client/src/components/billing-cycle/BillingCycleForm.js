@@ -8,7 +8,7 @@ import { Form, Label, StyledField, Button, ButtonWrapperDiv } from './BillingCyc
 import { FORMS_NAMES } from './constants';
 
 export function BillingCycleForm(props) {
-	const { handleSubmit, submitSucceeded, onCancel, reset, isLoading, error } = props;
+	const { handleSubmit, submitSucceeded, onCancel, reset, isLoading, error, readOnly } = props;
 
 	useEffect(() => {
 		if(typeof isLoading !== 'undefined' && !isLoading && !error && submitSucceeded) {
@@ -25,15 +25,15 @@ export function BillingCycleForm(props) {
 		<Form onSubmit={ handleSubmit }>
 			<div>
 				<Label htmlFor="name">Name</Label>
-				<StyledField id="name" name="name" component="input" required />
+				<StyledField id="name" name="name" component="input" readOnly={ readOnly } required />
 			</div>
 			<div>
 				<Label htmlFor="month">Month</Label>
-				<StyledField id="month" name="month" component="input" required />
+				<StyledField id="month" name="month" component="input" readOnly={ readOnly } required />
 			</div>
 			<div>
 				<Label htmlFor="year">Year</Label>
-				<StyledField id="year" name="year" component="input" required />
+				<StyledField id="year" name="year" component="input" readOnly={ readOnly } required />
 			</div>
 			<ButtonWrapperDiv>
 				<Button type="submit">
@@ -51,6 +51,7 @@ BillingCycleForm.propTypes = {
 	onSubmit: PropTypes.func,
 	onCancel: PropTypes.func,
 	handleSubmit: PropTypes.func,
+	readOnly: PropTypes.bool,
 	isLoading: PropTypes.bool,
 	submitSucceeded: PropTypes.bool,
 	error: PropTypes.any,
