@@ -9,6 +9,9 @@ import {
 	BILLING_CYCLE_EDIT_LOADING,
 	BILLING_CYCLE_EDIT_SUCCESS,
 	BILLING_CYCLE_EDIT_ERROR,
+	BILLING_CYCLE_REMOVE_LOADING,
+	BILLING_CYCLE_REMOVE_SUCCESS,
+	BILLING_CYCLE_REMOVE_ERROR,
 } from './actionsTypes';
 
 const LIST_INITIAL_STATE = {
@@ -41,6 +44,7 @@ function generateReducer({ loading, success, error }) {
 			case success:
 				return {
 					...state,
+					...action.payload,
 					isLoading: false,
 				}
 			case error:
@@ -92,5 +96,10 @@ export default combineReducers({
 		loading: BILLING_CYCLE_EDIT_LOADING,
 		success: BILLING_CYCLE_EDIT_SUCCESS,
 		error: BILLING_CYCLE_EDIT_ERROR
+	}),
+	remove: generateReducer({
+		loading: BILLING_CYCLE_REMOVE_LOADING,
+		success: BILLING_CYCLE_REMOVE_SUCCESS,
+		error: BILLING_CYCLE_REMOVE_ERROR
 	}),
 });

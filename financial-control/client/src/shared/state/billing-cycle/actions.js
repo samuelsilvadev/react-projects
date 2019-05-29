@@ -46,6 +46,21 @@ export function update(values = {}) {
 	}
 }
 
+export function remove(values = {}) {
+	return async function (dispatch) {
+
+		dispatch({ type: actionTypes.BILLING_CYCLE_REMOVE_LOADING })
+
+		try {
+			await axios.delete(`${END_POINT}/${values._id}`);
+
+			dispatch({ type: actionTypes.BILLING_CYCLE_REMOVE_SUCCESS });
+		} catch (error) {
+			dispatch(getError(actionTypes.BILLING_CYCLE_REMOVE_ERROR, error));
+		}
+	}
+}
+
 export function getList() {
 	return async function (dispatch) {
 
