@@ -8,3 +8,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	overflow: hidden;
 }
+
+input:read-only {
+	background-color: #ebebeb;
+}

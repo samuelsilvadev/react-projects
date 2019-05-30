@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Field } from 'redux-form';
 
+import CreditList from '@components/credit-list';
+
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
@@ -29,4 +31,8 @@ export const Button = styled.button`
 
 export const ButtonWrapperDiv = styled.div`
 	display: flex;
+`;
+
+export const StyledCreditList = styled(CreditList)`
+	margin-bottom: 20px;
 `;

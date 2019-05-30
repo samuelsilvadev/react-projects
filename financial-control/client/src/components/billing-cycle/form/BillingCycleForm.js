@@ -1,9 +1,9 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { Fragment, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm } from 'redux-form';
 import { compose } from 'redux';
 
-import { Form, Label, StyledField, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
+import { Form, Label, StyledField, StyledCreditList, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
 
 import { FORMS_NAMES } from '../constants';
 
@@ -21,7 +21,7 @@ export function BillingCycleForm(props) {
 	} = props;
 
 	useEffect(() => {
-		if(typeof isLoading !== 'undefined' && !isLoading && !error && submitSucceeded) {
+		if (typeof isLoading !== 'undefined' && !isLoading && !error && submitSucceeded) {
 			reset();
 			redirect && redirect();
 		}
@@ -31,30 +31,33 @@ export function BillingCycleForm(props) {
 		reset();
 		onCancel && onCancel();
 	}, [onCancel]);
-	
+
 	return (
-		<Form onSubmit={ handleSubmit }>
-			<div>
-				<Label htmlFor="name">Name</Label>
-				<StyledField id="name" name="name" component="input" readOnly={ readOnly } required />
-			</div>
-			<div>
-				<Label htmlFor="month">Month</Label>
-				<StyledField id="month" name="month" component="input" readOnly={ readOnly } required />
-			</div>
-			<div>
-				<Label htmlFor="year">Year</Label>
-				<StyledField id="year" name="year" component="input" readOnly={ readOnly } required />
-			</div>
-			<ButtonWrapperDiv>
-				<Button type="submit">
-					{ submitLabel }
+		<Fragment>
+			<Form onSubmit={handleSubmit}>
+				<div>
+					<Label htmlFor="name">Name</Label>
+					<StyledField id="name" name="name" component="input" readOnly={readOnly} required />
+				</div>
+				<div>
+					<Label htmlFor="month">Month</Label>
+					<StyledField id="month" name="month" component="input" readOnly={readOnly} required />
+				</div>
+				<div>
+					<Label htmlFor="year">Year</Label>
+					<StyledField id="year" name="year" component="input" readOnly={readOnly} required />
+				</div>
+				<StyledCreditList readOnly={ readOnly } />
+				<ButtonWrapperDiv>
+					<Button type="submit">
+						{submitLabel}
+					</Button>
+					<Button type="button" isCancel onClick={_handleCancel}>
+						Cancel
 				</Button>
-				<Button type="button" isCancel onClick={ _handleCancel }>
-					Cancel
-				</Button>
-			</ButtonWrapperDiv>
-		</Form>
+				</ButtonWrapperDiv>
+			</Form>
+		</Fragment>
 	)
 }
 
