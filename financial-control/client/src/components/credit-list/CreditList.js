@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { Button, Fieldset, Table, Th, Td, StyledField } from './CreditList.style';
 
 export function CreditList(props) {
-	const { className, readOnly } = props;
+	const { className, readOnly, list = [], canRenderIfHasNoData = true } = props;
+	const [_list, setList] = useState(list);
 
-	const _renderRows = () => {
+	useEffect(() => {
+		if (canRenderIfHasNoData && _list.length === 0) {
+			setList([{}])
+		}
+	}, [_list, canRenderIfHasNoData]);
+
+	if (_list.length === 0) {
+		return null;
+	}
+
+	const _renderRows = (item, index) => {
 		return (
-			<tr>
+			<tr key={item._id || index}>
 				<Td>
-					<StyledField name="credits[0].name" component="input" readOnly={ readOnly } />
+					<StyledField name={`credits[${index}].name`} component="input" readOnly={readOnly} />
 				</Td>
 				<Td>
-					<StyledField name="credits[0].value" component="input" readOnly={ readOnly } />
+					<StyledField name={`credits[${index}].value`} component="input" readOnly={readOnly} />
 				</Td>
 				<Td hasButtons>
 					<Button disabled>1</Button>
@@ -24,7 +36,7 @@ export function CreditList(props) {
 	};
 
 	return (
-		<Fieldset className={ className }>
+		<Fieldset className={className}>
 			<legend>Credits</legend>
 			<Table>
 				<thead>
@@ -35,11 +47,22 @@ export function CreditList(props) {
 					</tr>
 				</thead>
 				<tbody>
-					{_renderRows()}
+					{_list.map(_renderRows)}
 				</tbody>
 			</Table>
 		</Fieldset>
 	)
 }
+
+CreditList.propTypes = {
+	className: PropTypes.string,
+	readOnly: PropTypes.bool,
+	list: PropTypes.array,
+	/**
+	 * This prop is to be used when you wanna change the component's default
+	 * behaviour that add a empty line in its initilization.
+	*/
+	canRenderIfHasNoData: PropTypes.bool,
+};
 
 export default CreditList;

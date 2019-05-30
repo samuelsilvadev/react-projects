@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { reduxForm } from 'redux-form';
+import { reduxForm, formValueSelector } from 'redux-form';
 import { compose } from 'redux';
+import { connect } from 'react-redux';
 
 import { Form, Label, StyledField, StyledCreditList, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
 
@@ -17,7 +18,9 @@ export function BillingCycleForm(props) {
 		isLoading,
 		error,
 		readOnly,
-		submitLabel = 'Save'
+		submitLabel = 'Save',
+		credits,
+		canRenderListIfHasNoData,
 	} = props;
 
 	useEffect(() => {
@@ -47,7 +50,10 @@ export function BillingCycleForm(props) {
 					<Label htmlFor="year">Year</Label>
 					<StyledField id="year" name="year" component="input" readOnly={readOnly} required />
 				</div>
-				<StyledCreditList readOnly={ readOnly } />
+				<StyledCreditList
+					list={credits}
+					readOnly={readOnly}
+					canRenderIfHasNoData={ canRenderListIfHasNoData } />
 				<ButtonWrapperDiv>
 					<Button type="submit">
 						{submitLabel}
@@ -71,9 +77,19 @@ BillingCycleForm.propTypes = {
 	submitSucceeded: PropTypes.bool,
 	error: PropTypes.any,
 	submitLabel: PropTypes.string,
+	canRenderList: PropTypes.bool,
 };
 
+const selector = formValueSelector(FORMS_NAMES.BILLING_CYCLE_FORM);
+
+function mapStateToProps(state) {
+	return {
+		credits: selector(state, 'credits'),
+	}
+}
+
 const enhance = compose(
+	connect(mapStateToProps),
 	reduxForm({ form: FORMS_NAMES.BILLING_CYCLE_FORM }),
 );
 

@@ -97,6 +97,7 @@ function TabBodyContainer(props) {
 					onSubmit={remove}
 					redirect={_onSuccess}
 					onCancel={_onSuccess}
+					canRenderListIfHasNoData={ false }
 					{...removeData} />
 			</TabContent>
 		</TabBody>
