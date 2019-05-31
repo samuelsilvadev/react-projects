@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { reduxForm, formValueSelector, arrayInsert } from 'redux-form';
+import { reduxForm, formValueSelector, arrayInsert, arrayRemove } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
@@ -22,6 +22,7 @@ export function BillingCycleForm(props) {
 		credits,
 		canRenderListIfHasNoData,
 		add,
+		remove,
 	} = props;
 
 	useEffect(() => {
@@ -43,7 +44,15 @@ export function BillingCycleForm(props) {
 			index,
 			item,
 		);
-	}, [add])
+	}, [add]);
+	
+	const onRemoveCredits = useCallback((index) => {
+		remove(
+			FORMS_NAMES.BILLING_CYCLE_FORM,
+			'credits',
+			index,
+		);
+	}, [remove]);
 
 	return (
 		<Fragment>
@@ -64,7 +73,8 @@ export function BillingCycleForm(props) {
 					list={credits}
 					readOnly={readOnly}
 					canRenderIfHasNoData={ canRenderListIfHasNoData }
-					onAdd={ onAddCredits } />
+					onAdd={ onAddCredits }
+					onRemove={ onRemoveCredits } />
 				<ButtonWrapperDiv>
 					<Button type="submit">
 						{submitLabel}
@@ -101,6 +111,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
 	add: arrayInsert,
+	remove: arrayRemove,
 };
 
 const enhance = compose(

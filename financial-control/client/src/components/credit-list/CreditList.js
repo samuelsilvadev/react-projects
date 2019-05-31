@@ -12,6 +12,7 @@ export function CreditList(props) {
 		list = [],
 		canRenderIfHasNoData = true, 
 		onAdd,
+		onRemove,
 	} = props;
 	const [internalList, setInternalList] = useState(list);
 
@@ -32,6 +33,12 @@ export function CreditList(props) {
 	const _add = (index, item = {}) => () => {
 		if(!readOnly) {
 			onAdd(index + 1, item);
+		}
+	};
+	
+	const _remove = (index) => () => {
+		if(!readOnly) {
+			onRemove(index);
 		}
 	};
 
@@ -60,6 +67,7 @@ export function CreditList(props) {
 					<Button
 						type="button"
 						disabled={ readOnly }
+						onClick={ _remove(index) }
 						title="Remove this Item">-</Button>
 				</Td>
 			</tr>
@@ -95,6 +103,7 @@ CreditList.propTypes = {
 	*/
 	canRenderIfHasNoData: PropTypes.bool,
 	onAdd: PropTypes.func,
+	onRemove: PropTypes.func,
 };
 
 export default CreditList;
