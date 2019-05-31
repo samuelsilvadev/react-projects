@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { reduxForm, formValueSelector } from 'redux-form';
+import { reduxForm, formValueSelector, arrayInsert } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
@@ -21,6 +21,7 @@ export function BillingCycleForm(props) {
 		submitLabel = 'Save',
 		credits,
 		canRenderListIfHasNoData,
+		add,
 	} = props;
 
 	useEffect(() => {
@@ -34,6 +35,15 @@ export function BillingCycleForm(props) {
 		reset();
 		onCancel && onCancel();
 	}, [onCancel]);
+
+	const onAddCredits = useCallback((index, item) => {
+		add(
+			FORMS_NAMES.BILLING_CYCLE_FORM,
+			'credits',
+			index,
+			item,
+		);
+	}, [add])
 
 	return (
 		<Fragment>
@@ -53,7 +63,8 @@ export function BillingCycleForm(props) {
 				<StyledCreditList
 					list={credits}
 					readOnly={readOnly}
-					canRenderIfHasNoData={ canRenderListIfHasNoData } />
+					canRenderIfHasNoData={ canRenderListIfHasNoData }
+					onAdd={ onAddCredits } />
 				<ButtonWrapperDiv>
 					<Button type="submit">
 						{submitLabel}
@@ -88,8 +99,12 @@ function mapStateToProps(state) {
 	}
 }
 
+const mapDispatchToProps = {
+	add: arrayInsert,
+};
+
 const enhance = compose(
-	connect(mapStateToProps),
+	connect(mapStateToProps, mapDispatchToProps),
 	reduxForm({ form: FORMS_NAMES.BILLING_CYCLE_FORM }),
 );
 

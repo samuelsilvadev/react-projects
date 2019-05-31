@@ -1,23 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import { Copy } from '@components/icons';
+
 import { Button, Fieldset, Table, Th, Td, StyledField } from './CreditList.style';
 
 export function CreditList(props) {
-	const { className, readOnly, list = [], canRenderIfHasNoData = true } = props;
-	const [_list, setList] = useState(list);
+	const {
+		className,
+		readOnly,
+		list = [],
+		canRenderIfHasNoData = true, 
+		onAdd,
+	} = props;
+	const [internalList, setInternalList] = useState(list);
 
 	useEffect(() => {
-		if (canRenderIfHasNoData && _list.length === 0) {
-			setList([{}])
+		if (canRenderIfHasNoData && list.length === 0) {
+			onAdd(0, {});
 		}
-	}, [_list, canRenderIfHasNoData]);
+	}, [])
+	
+	useEffect(() => {
+		setInternalList(list);
+	}, [list])
 
-	if (_list.length === 0) {
+	if (internalList.length === 0) {
 		return null;
 	}
 
-	const _renderRows = (item, index) => {
+	const _add = (index, item = {}) => () => {
+		if(!readOnly) {
+			onAdd(index + 1, item);
+		}
+	};
+
+	const _renderRows = (item = {}, index) => {
 		return (
 			<tr key={item._id || index}>
 				<Td>
@@ -27,9 +45,22 @@ export function CreditList(props) {
 					<StyledField name={`credits[${index}].value`} component="input" readOnly={readOnly} />
 				</Td>
 				<Td hasButtons>
-					<Button disabled>1</Button>
-					<Button disabled>2</Button>
-					<Button disabled>3</Button>
+					<Button
+						type="button"
+						disabled={ readOnly }
+						onClick={ _add(index) }
+						title="Add new Item">+</Button>
+					<Button
+						type="button"
+						disabled={ readOnly }
+						onClick={ _add(index, item) }
+						title="Clone this Item">
+						<Copy />
+					</Button>
+					<Button
+						type="button"
+						disabled={ readOnly }
+						title="Remove this Item">-</Button>
 				</Td>
 			</tr>
 		);
@@ -47,7 +78,7 @@ export function CreditList(props) {
 					</tr>
 				</thead>
 				<tbody>
-					{_list.map(_renderRows)}
+					{internalList.map(_renderRows)}
 				</tbody>
 			</Table>
 		</Fieldset>
@@ -63,6 +94,7 @@ CreditList.propTypes = {
 	 * behaviour that add a empty line in its initilization.
 	*/
 	canRenderIfHasNoData: PropTypes.bool,
+	onAdd: PropTypes.func,
 };
 
 export default CreditList;
