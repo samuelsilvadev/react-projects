@@ -84,6 +84,7 @@ export function BillingCycleForm(props) {
 					list={debts}
 					readOnly={readOnly}
 					canRenderIfHasNoData={ canRenderListIfHasNoData }
+					isToShowStatus
 					onAdd={ onAddCredits('debts') }
 					onRemove={ onRemoveCredits('debts') } />
 				<ButtonWrapperDiv>

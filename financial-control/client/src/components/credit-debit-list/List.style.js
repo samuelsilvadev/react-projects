@@ -10,15 +10,25 @@ export const Table = styled.table`
 	width: 100%;
 `;
 
-export const Th = styled.th`
-	width: calc(100% / 3);
-`;
+export const Th = styled.th();
 
 export const Td = styled.td`
-	width: calc(100% / 3);
-
 	${({ hasButtons }) => hasButtons && css`
 		text-align: center;
+	`}
+`;
+
+export const Tr = styled.tr`
+	& ${Td},
+	& ${Th}  {
+		width: calc(100% / 3);
+	}
+
+	${({ divideByFour }) => divideByFour && css`
+		& ${Td},
+		& ${Th} {
+			width: 25%;
+		}
 	`}
 `;
 
