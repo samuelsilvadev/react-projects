@@ -4,7 +4,7 @@ import { reduxForm, formValueSelector, arrayInsert, arrayRemove } from 'redux-fo
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import { Form, Label, StyledField, StyledList, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
+import { Form, Label, StyledField, StyledList, StyledSummary, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
 
 import { FORMS_NAMES } from '../constants';
 
@@ -46,7 +46,7 @@ export function BillingCycleForm(props) {
 			item,
 		);
 	};
-	
+
 	const onRemoveCredits = (field) => (index) => {
 		remove(
 			FORMS_NAMES.BILLING_CYCLE_FORM,
@@ -68,25 +68,26 @@ export function BillingCycleForm(props) {
 				</div>
 				<div>
 					<Label htmlFor="year">Year</Label>
-					<StyledField id="year" name="year" component="input" readOnly={readOnly} required />
+					<StyledField id="year" name="year" component="input" readOnly={readOnly} required removeMargin />
 				</div>
+				<StyledSummary credit={1000} debt={300} />
 				<StyledList
 					legend="Credits"
 					field="credits"
 					list={credits}
 					readOnly={readOnly}
-					canRenderIfHasNoData={ canRenderListIfHasNoData }
-					onAdd={ onAddCredits('credits') }
-					onRemove={ onRemoveCredits('credits') } />
+					canRenderIfHasNoData={canRenderListIfHasNoData}
+					onAdd={onAddCredits('credits')}
+					onRemove={onRemoveCredits('credits')} />
 				<StyledList
 					legend="Debts"
 					field="debts"
 					list={debts}
 					readOnly={readOnly}
-					canRenderIfHasNoData={ canRenderListIfHasNoData }
+					canRenderIfHasNoData={canRenderListIfHasNoData}
 					isToShowStatus
-					onAdd={ onAddCredits('debts') }
-					onRemove={ onRemoveCredits('debts') } />
+					onAdd={onAddCredits('debts')}
+					onRemove={onRemoveCredits('debts')} />
 				<ButtonWrapperDiv>
 					<Button type="submit">
 						{submitLabel}

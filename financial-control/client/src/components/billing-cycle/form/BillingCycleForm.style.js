@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import { Field } from 'redux-form';
 
 import List from '@components/credit-debit-list';
+import Summary from '@components/summary';
 
 export const Form = styled.form`
 	display: flex;
@@ -12,11 +14,15 @@ export const Label = styled.label`
 	display: block;
 `;
 
-export const StyledField = styled(Field)`
+export const StyledField = styled(Field, { shouldForwardProp: (prop) => prop !== 'removeMargin' })`
 	font-size: 16px;
 	margin-bottom: 20px;
 	padding: 8px;
 	width: 100%;
+
+	${({ removeMargin }) => removeMargin && css`
+		margin-bottom: 0;
+	`}
 `;
 
 export const Button = styled.button`
@@ -35,4 +41,8 @@ export const ButtonWrapperDiv = styled.div`
 
 export const StyledList = styled(List)`
 	margin-bottom: 20px;
+`;
+
+export const StyledSummary = styled(Summary)`
+	margin: 50px 0;
 `;
