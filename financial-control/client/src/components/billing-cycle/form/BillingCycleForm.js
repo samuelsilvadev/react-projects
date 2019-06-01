@@ -8,6 +8,12 @@ import { Form, Label, StyledField, StyledList, StyledSummary, Button, ButtonWrap
 
 import { FORMS_NAMES } from '../constants';
 
+function getTotal(arrayOfValues = []) {
+	return arrayOfValues.reduce((total, current) => {
+		return total + (+current.value || 0);
+	}, 0);
+}
+
 export function BillingCycleForm(props) {
 	const {
 		handleSubmit,
@@ -70,7 +76,9 @@ export function BillingCycleForm(props) {
 					<Label htmlFor="year">Year</Label>
 					<StyledField id="year" name="year" component="input" readOnly={readOnly} required removeMargin />
 				</div>
-				<StyledSummary credit={1000} debt={300} />
+				<StyledSummary
+					credit={ getTotal(credits) }
+					debt={ getTotal(debts) } />
 				<StyledList
 					legend="Credits"
 					field="credits"
