@@ -2,7 +2,9 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { H1, GridDiv, StyledValueBox } from './Dashboard.style';
+import { H1 } from './Dashboard.style';
+
+import Summary from '@components/summary';
 
 import { loadSummary } from '@shared/state/dashboard/actions';
 
@@ -18,11 +20,7 @@ export function Dashboard(props) {
 	return (
 		<Fragment>
 			<H1>Dashboard</H1>
-			<GridDiv>
-				<StyledValueBox type="credit" title={ `$ ${credit}` } text="Credits Total"/>
-				<StyledValueBox type="debit" title={ `$ ${debt}` } text="Debts Total"/>
-				<StyledValueBox type="consolidated" title={ `$ ${credit - debt}` } text="Consolidated Value"/>
-			</GridDiv>
+			<Summary credit={ credit } debt={ debt } />
 		</Fragment>
 	)
 }
