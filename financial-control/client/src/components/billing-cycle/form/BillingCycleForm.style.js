@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Field } from 'redux-form';
 
-import CreditList from '@components/credit-list';
+import List from '@components/credit-debit-list';
 
 export const Form = styled.form`
 	display: flex;
@@ -33,6 +33,6 @@ export const ButtonWrapperDiv = styled.div`
 	display: flex;
 `;
 
-export const StyledCreditList = styled(CreditList)`
+export const StyledList = styled(List)`
 	margin-bottom: 20px;
 `;

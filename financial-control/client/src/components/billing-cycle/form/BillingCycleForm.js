@@ -4,7 +4,7 @@ import { reduxForm, formValueSelector, arrayInsert, arrayRemove } from 'redux-fo
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import { Form, Label, StyledField, StyledCreditList, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
+import { Form, Label, StyledField, StyledList, Button, ButtonWrapperDiv } from './BillingCycleForm.style';
 
 import { FORMS_NAMES } from '../constants';
 
@@ -20,6 +20,7 @@ export function BillingCycleForm(props) {
 		readOnly,
 		submitLabel = 'Save',
 		credits,
+		debts,
 		canRenderListIfHasNoData,
 		add,
 		remove,
@@ -37,22 +38,22 @@ export function BillingCycleForm(props) {
 		onCancel && onCancel();
 	}, [onCancel]);
 
-	const onAddCredits = useCallback((index, item) => {
+	const onAddCredits = (field) => (index, item) => {
 		add(
 			FORMS_NAMES.BILLING_CYCLE_FORM,
-			'credits',
+			field,
 			index,
 			item,
 		);
-	}, [add]);
+	};
 	
-	const onRemoveCredits = useCallback((index) => {
+	const onRemoveCredits = (field) => (index) => {
 		remove(
 			FORMS_NAMES.BILLING_CYCLE_FORM,
-			'credits',
+			field,
 			index,
 		);
-	}, [remove]);
+	};
 
 	return (
 		<Fragment>
@@ -69,12 +70,22 @@ export function BillingCycleForm(props) {
 					<Label htmlFor="year">Year</Label>
 					<StyledField id="year" name="year" component="input" readOnly={readOnly} required />
 				</div>
-				<StyledCreditList
+				<StyledList
+					legend="Credits"
+					field="credits"
 					list={credits}
 					readOnly={readOnly}
 					canRenderIfHasNoData={ canRenderListIfHasNoData }
-					onAdd={ onAddCredits }
-					onRemove={ onRemoveCredits } />
+					onAdd={ onAddCredits('credits') }
+					onRemove={ onRemoveCredits('credits') } />
+				<StyledList
+					legend="Debts"
+					field="debts"
+					list={debts}
+					readOnly={readOnly}
+					canRenderIfHasNoData={ canRenderListIfHasNoData }
+					onAdd={ onAddCredits('debts') }
+					onRemove={ onRemoveCredits('debts') } />
 				<ButtonWrapperDiv>
 					<Button type="submit">
 						{submitLabel}
@@ -106,6 +117,7 @@ const selector = formValueSelector(FORMS_NAMES.BILLING_CYCLE_FORM);
 function mapStateToProps(state) {
 	return {
 		credits: selector(state, 'credits'),
+		debts: selector(state, 'debts'),
 	}
 }
 

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Copy } from '@components/icons';
 
-import { Button, Fieldset, Table, Th, Td, StyledField } from './CreditList.style';
+import { Button, Fieldset, Table, Th, Td, StyledField } from './List.style';
 
-export function CreditList(props) {
+export function List(props) {
 	const {
 		className,
 		readOnly,
@@ -13,18 +13,20 @@ export function CreditList(props) {
 		canRenderIfHasNoData = true, 
 		onAdd,
 		onRemove,
+		legend,
+		field,
 	} = props;
 	const [internalList, setInternalList] = useState(list);
 
 	useEffect(() => {
 		if (canRenderIfHasNoData && list.length === 0) {
-			onAdd(0, {});
+			onAdd && onAdd(0, {});
 		}
 	}, [])
 	
 	useEffect(() => {
 		setInternalList(list);
-	}, [list])
+	}, [list.length])
 
 	if (internalList.length === 0) {
 		return null;
@@ -46,10 +48,10 @@ export function CreditList(props) {
 		return (
 			<tr key={item._id || index}>
 				<Td>
-					<StyledField name={`credits[${index}].name`} component="input" readOnly={readOnly} />
+					<StyledField name={`${field}[${index}].name`} component="input" readOnly={readOnly} />
 				</Td>
 				<Td>
-					<StyledField name={`credits[${index}].value`} component="input" readOnly={readOnly} />
+					<StyledField name={`${field}[${index}].value`} component="input" readOnly={readOnly} />
 				</Td>
 				<Td hasButtons>
 					<Button
@@ -76,7 +78,7 @@ export function CreditList(props) {
 
 	return (
 		<Fieldset className={className}>
-			<legend>Credits</legend>
+			<legend>{ legend }</legend>
 			<Table>
 				<thead>
 					<tr>
@@ -93,8 +95,10 @@ export function CreditList(props) {
 	)
 }
 
-CreditList.propTypes = {
+List.propTypes = {
 	className: PropTypes.string,
+	legend: PropTypes.string,
+	field: PropTypes.string.isRequired,
 	readOnly: PropTypes.bool,
 	list: PropTypes.array,
 	/**
@@ -106,4 +110,4 @@ CreditList.propTypes = {
 	onRemove: PropTypes.func,
 };
 
-export default CreditList;
+export default List;
