@@ -14,9 +14,14 @@ export const H1 = styled.h1`
 
 export const GridDiv = styled.div`
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 100px;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, 100px);
 	grid-gap: 30px;
+
+	@media(min-width: 768px) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 100px;
+	}
 `;
 
 export const StyledValueBox = styled(ValueBox)`

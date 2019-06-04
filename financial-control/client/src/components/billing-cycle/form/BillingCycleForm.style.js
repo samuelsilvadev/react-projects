@@ -15,6 +15,7 @@ export const Label = styled.label`
 `;
 
 export const StyledField = styled(Field, { shouldForwardProp: (prop) => prop !== 'removeMargin' })`
+	border: 1px solid #000;
 	font-size: 16px;
 	margin-bottom: 20px;
 	padding: 8px;

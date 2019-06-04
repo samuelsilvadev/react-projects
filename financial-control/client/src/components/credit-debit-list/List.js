@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Copy } from '@components/icons';
 
-import { Button, Fieldset, Table, Th, Td, Tr, StyledField } from './List.style';
+import { Button, Fieldset, Table, Th, Td, Tr, Thead, Tbody, StyledField } from './List.style';
 
 export function List(props) {
 	const {
@@ -56,11 +56,11 @@ export function List(props) {
 				</Td>
 				{
 					isToShowStatus &&
-					<Td>
+					<Td isToShowStatus>
 						<StyledField name={`${field}[${index}].status`} component="input" readOnly={readOnly} />
 					</Td>
 				}
-				<Td hasButtons>
+				<Td hasButtons isToShowStatus={ isToShowStatus }>
 					<Button
 						type="button"
 						disabled={readOnly}
@@ -87,17 +87,17 @@ export function List(props) {
 		<Fieldset className={className}>
 			<legend>{legend}</legend>
 			<Table>
-				<thead>
+				<Thead>
 					<Tr divideByFour={ isToShowStatus }>
 						<Th>Name</Th>
 						<Th>Value</Th>
 						{isToShowStatus && <Th>Status</Th>}
 						<Th>Actions</Th>
 					</Tr>
-				</thead>
-				<tbody>
+				</Thead>
+				<Tbody>
 					{internalList.map(_renderRows)}
-				</tbody>
+				</Tbody>
 			</Table>
 		</Fieldset>
 	)
