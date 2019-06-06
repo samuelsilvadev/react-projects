@@ -12,7 +12,7 @@ export default function userReducer(state = {}, action = {}) {
         return {
             ...state,
             isLoading: false,
-            users: action.payload,
+            data: action.payload.data,
         }
     }
     
