@@ -13,6 +13,7 @@ export const routes = [
     {
         path: '/users',
         component: UsersList,
+        loadData: UsersList.loadData, 
     },
 ];
 

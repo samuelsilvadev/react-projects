@@ -30,6 +30,18 @@ export class UsersList extends React.PureComponent {
     }
 }
 
+/**
+ * Load data when doing server side rendering.
+ * 
+ * @param {Object} - Redux store.
+ * 
+ * @returns {Promise} - Function that contain a Promise to be
+ * resolved before component be rendered.
+*/
+UsersList.loadData = function loadData(store) {
+    return store.dispatch(fetchUsers());
+};
+
 function mapStateToProps(state) {
     const { users } = state;
 
