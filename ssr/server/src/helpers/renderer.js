@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 
-import Routes from './../client/Routes';
+import { Routes } from './../client/Routes';
 
 export default function renderer(request, store) {
     const context = {};

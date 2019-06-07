@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import rootReducer from './state/reducers/rootReducer';
 
-import Routes from './Routes';
+import { Routes } from './Routes';
 
 const INITIAL_STATE = {};
 
