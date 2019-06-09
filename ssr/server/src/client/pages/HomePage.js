@@ -4,7 +4,7 @@ function _handleClick() {
     console.log('button was clicked');
 }
 
-function Home(props) {
+function HomePage(props) {
     return (
         <div { ...props }>
             <h1>Hey I'm the Home component, with behaviour</h1>
@@ -13,4 +13,4 @@ function Home(props) {
     );
 }
 
-export default Home;
+export default HomePage;

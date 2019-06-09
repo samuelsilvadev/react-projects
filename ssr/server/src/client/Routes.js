@@ -1,24 +1,24 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
 
-import Home from './components/Home';
-import UsersList from './components/UsersList';
+import HomePage from './pages/HomePage';
+import UsersListPage from './pages/UsersListPage';
 
 export const routes = [
     {
         path: '/',
-        component: Home,
+        component: HomePage,
         exact: true,
     },
     {
         path: '/users',
-        component: UsersList,
-        loadData: UsersList.loadData, 
+        component: UsersListPage,
+        loadData: UsersListPage.loadData,
     },
 ];
 
 export function Routes() {
-    return  (
+    return (
         <div>
             { renderRoutes(routes) }
         </div>

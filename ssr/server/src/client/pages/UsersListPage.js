@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchUsers } from '../state/actions/userActions';
 
-export class UsersList extends React.PureComponent {
+export class UsersListPage extends React.PureComponent {
     componentDidMount() {
         this.props.fetchUsers();
     }
@@ -38,7 +38,7 @@ export class UsersList extends React.PureComponent {
  * @returns {Promise} - Function that contain a Promise to be
  * resolved before component be rendered.
 */
-UsersList.loadData = function loadData(store) {
+UsersListPage.loadData = function loadData(store) {
     return store.dispatch(fetchUsers());
 };
 
@@ -50,4 +50,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { fetchUsers })(UsersList);
+export default connect(mapStateToProps, { fetchUsers })(UsersListPage);
