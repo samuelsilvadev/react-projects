@@ -11,7 +11,7 @@ import rootReducer from './state/reducers/rootReducer';
 
 import { Routes } from './Routes';
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = window.__PRELOAD_STATE__ ? window.__PRELOAD_STATE__ : {};
 
 const store = createStore(rootReducer, INITIAL_STATE, applyMiddleware(thunk));
 
