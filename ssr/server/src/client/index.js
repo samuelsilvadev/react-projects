@@ -7,6 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from './state/reducers/rootReducer';
 
@@ -21,7 +22,7 @@ const INITIAL_STATE = window.__PRELOAD_STATE__ || {};
 const store = createStore(
     rootReducer,
     INITIAL_STATE,
-    applyMiddleware(thunk.withExtraArgument(axiosInstance))
+    composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance)))
 );
 
 ReactDOM.hydrate(
