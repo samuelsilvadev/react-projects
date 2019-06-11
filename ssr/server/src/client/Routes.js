@@ -8,6 +8,7 @@ import UsersListPage from './pages/UsersListPage';
 export const routes = [
     {
         component: App,
+        loadData: App.loadData,
         routes: [
             {
                 path: '/',
