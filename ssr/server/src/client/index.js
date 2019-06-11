@@ -16,7 +16,7 @@ const axiosInstance = axios.create({
     baseURL: '/api',
 });
 
-const INITIAL_STATE = window.__PRELOAD_STATE__ ? window.__PRELOAD_STATE__ : {};
+const INITIAL_STATE = window.__PRELOAD_STATE__ || {};
 
 const store = createStore(
     rootReducer,
