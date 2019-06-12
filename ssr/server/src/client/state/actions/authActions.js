@@ -1,16 +1,14 @@
 import * as actionsTypes from './../actionsTypes';
 
+import { actionCreatorFactory } from './actionCreatorFactory';
+
 export function fetchCurrentUser() {
-    return async function (dispatch, getState, api) {
-        dispatch({ type: actionsTypes.FETCH_CURRENT_USER_STARTED });
-
-        try {
-            const response = await api.get('/current_user');
-            const data = response.data;
-
-            dispatch({ type: actionsTypes.FETCH_CURRENT_USER_SUCCESS, payload: { data } });
-        } catch (error) {
-            dispatch({ type: actionsTypes.FETCH_CURRENT_USER_ERROR, payload: { error } });
-        }
-    }
+    return actionCreatorFactory({
+        actionsTypes: {
+            loading: actionsTypes.FETCH_CURRENT_USER_STARTED,
+            success: actionsTypes.FETCH_CURRENT_USER_SUCCESS,
+            error: actionsTypes.FETCH_CURRENT_USER_ERROR,
+        },
+        endPoint: '/current_user',
+    });
 } 
