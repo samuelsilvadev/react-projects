@@ -17,6 +17,7 @@ export function Header(props) {
         <header>
             <Link to="/">Home</Link>
             <Link to="/users">Users</Link>
+            <Link to="/something">Not Found</Link>
             {
                 isLogged &&
                     <Link to="/admins">Admin</Link>
