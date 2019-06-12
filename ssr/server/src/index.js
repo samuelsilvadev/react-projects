@@ -29,7 +29,14 @@ app.get('*', async (req, res) => {
 
     await Promise.all(promises);
 
-    res.send(renderer(req, store));
+    const context = {};
+    const content = renderer(req, store, context);
+
+    if (context.notFound) {
+        res.status(404);
+    }
+
+    res.send(content);
 });
 
 app.listen(3000, () => {
