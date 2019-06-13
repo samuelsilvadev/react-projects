@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchAdmins } from '../state/actions/adminsActions';
+import withUserAuth from './../hocs/withUserAuth';
 
 export class AdminsPage extends React.PureComponent {
     componentDidMount() {
@@ -42,4 +43,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { fetchAdmins })(AdminsPage)
+export default connect(mapStateToProps, { fetchAdmins })(withUserAuth(AdminsPage))
