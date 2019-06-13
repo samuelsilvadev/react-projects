@@ -20,7 +20,7 @@ export function Header(props) {
             <Link to="/something">Not Found</Link>
             {
                 isLogged &&
-                    <Link to="/admins">Admin</Link>
+                    <Link to="/admins">Admins</Link>
             }
             <AuthButton isLogged={ isLogged } />
         </header>
