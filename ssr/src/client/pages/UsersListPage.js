@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import { fetchUsers } from '../state/actions/userActions';
 
@@ -13,6 +14,7 @@ export class UsersListPage extends React.PureComponent {
 
         return (
             <section>
+                { this._renderSeoData() }
                 <h1>Users List</h1>
                 <ul>
                     { users.map(this._renderUserItem) }
@@ -27,6 +29,18 @@ export class UsersListPage extends React.PureComponent {
                 { user.name }
             </li>
         )
+    }
+
+    _renderSeoData() {
+        const { users = [] } = this.props;
+        const helmetTitle = `Users Page - ${users.length} Loaded`;
+
+        return (
+            <Helmet>
+                <title>{ helmetTitle }</title>
+                <meta property="og:title" content={ helmetTitle } />
+            </Helmet>
+        );
     }
 }
 

@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import serialize from 'serialize-javascript';
+import { Helmet } from 'react-helmet';
 
 import { Routes } from './../client/Routes';
 
@@ -15,10 +16,13 @@ export default function renderer(request, store, context) {
         </Provider>
     );
 
+    const helmet = Helmet.renderStatic();
+    
     return `
         <html>
             <head>
-                <title>SSR with React</title>
+                ${ helmet.title.toString() }
+                ${ helmet.meta.toString() }
             </head>
             <body>
                 <div id="root">${content}</div>

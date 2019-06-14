@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import { fetchAdmins } from '../state/actions/adminsActions';
 import withUserAuth from './../hocs/withUserAuth';
@@ -14,6 +15,7 @@ export class AdminsPage extends React.PureComponent {
 
         return (
             <section>
+                { this._renderSeoData() }
                 <h1>Admins List</h1>
                 <ul>
                     { admins.map(this._renderAdminItem) }
@@ -28,6 +30,18 @@ export class AdminsPage extends React.PureComponent {
                 { admin.name }
             </li>
         )
+    }
+
+    _renderSeoData() {
+        const { admins = [] } = this.props;
+        const helmetTitle = `Admins Page - ${admins.length} Loaded`;
+
+        return (
+            <Helmet>
+                <title>{ helmetTitle }</title>
+                <meta property="og:title" content={ helmetTitle } />
+            </Helmet>
+        );
     }
 }
 
