@@ -7,9 +7,13 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import axios from 'axios';
 
+import Album from './Album';
+
 type Props = {};
 type State = {
-    albums: Array<{}>,
+    albums: Array<{
+        title: string,
+    }>,
     error: ?Object,
 };
 
@@ -35,11 +39,18 @@ class AlbumList extends React.Component<Props, State> {
     }
 
     render() {
+        const { albums } = this.state;
+
         return (
             <View>
                 <Text>AlbumList</Text>
+                { albums.map(this._renderAlbum, this) }
             </View>
         );
+    }
+
+    _renderAlbum(albumData) {
+        return <Album key={ albumData.title } { ...albumData } />
     }
 
     _handleSuccessAlbumsLoad(response) {
