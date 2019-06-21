@@ -8,6 +8,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 
 import Card from './card/Card';
 import CardSection from './card/CardSection';
+import Button from './Button';
 
 type Props = {
     title: string,
@@ -32,6 +33,9 @@ function Album(props: Props) {
             </CardSection>
             <CardSection>
                 <Image style={ styles.image } source={ { url: image } } />
+            </CardSection>
+            <CardSection>
+                <Button text="Click me!" onPress={ () => {} }/>
             </CardSection>
         </Card>
     );
