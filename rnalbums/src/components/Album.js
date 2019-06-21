@@ -13,10 +13,11 @@ type Props = {
     title: string,
     artist: string,
     thumbnail_image: string,
+    image: string,
 };
 
 function Album(props: Props) {
-    const { title, artist, thumbnail_image } = props;
+    const { title, artist, thumbnail_image, image } = props;
     
     return (
         <Card>
@@ -28,6 +29,9 @@ function Album(props: Props) {
                     <Text style={ styles.title }>{ title }</Text>
                     <Text>{ artist }</Text>
                 </View>
+            </CardSection>
+            <CardSection>
+                <Image style={ styles.image } source={ { url: image } } />
             </CardSection>
         </Card>
     );
@@ -50,7 +54,12 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize:18,
-    }
+    },
+    image: {
+        height: 300,
+        flex: 1,
+        width: null,
+    },
 });
 
 export default Album;

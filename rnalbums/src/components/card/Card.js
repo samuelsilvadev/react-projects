@@ -7,7 +7,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 type Props = {
-    children: React.Element<any>,
+    children: any,
 }
 
 function Card(props: Props) {
