@@ -4,7 +4,7 @@
  */
 
 import * as React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 
 import Album from './Album';
@@ -45,9 +45,9 @@ class AlbumList extends React.Component<Props, State> {
         const { albums } = this.state;
 
         return (
-            <View>
+            <ScrollView>
                 { albums.map(this._renderAlbum, this) }
-            </View>
+            </ScrollView>
         );
     }
 
