@@ -13,6 +13,8 @@ type Props = {};
 type State = {
     albums: Array<{
         title: string,
+        artist: string,
+        thumbnail_image: string,
     }>,
     error: ?Object,
 };
@@ -43,7 +45,6 @@ class AlbumList extends React.Component<Props, State> {
 
         return (
             <View>
-                <Text>AlbumList</Text>
                 { albums.map(this._renderAlbum, this) }
             </View>
         );
