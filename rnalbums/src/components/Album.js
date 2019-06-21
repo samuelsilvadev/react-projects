@@ -4,7 +4,7 @@
  */
 
 import * as React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Linking, StyleSheet, Text, View } from 'react-native';
 
 import Card from './card/Card';
 import CardSection from './card/CardSection';
@@ -15,10 +15,11 @@ type Props = {
     artist: string,
     thumbnail_image: string,
     image: string,
+    url: string,
 };
 
 function Album(props: Props) {
-    const { title, artist, thumbnail_image, image } = props;
+    const { title, artist, thumbnail_image, image, url } = props;
     
     return (
         <Card>
@@ -35,7 +36,7 @@ function Album(props: Props) {
                 <Image style={ styles.image } source={ { url: image } } />
             </CardSection>
             <CardSection>
-                <Button text="Click me!" onPress={ () => {} }/>
+                <Button text="Buy now" onPress={ () => Linking.openURL(url) }/>
             </CardSection>
         </Card>
     );

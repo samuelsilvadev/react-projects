@@ -16,6 +16,7 @@ type State = {
         artist: string,
         thumbnail_image: string,
         image: string,
+        url: string,
     }>,
     error: ?Object,
 };
