@@ -1,6 +1,4 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
  *
  * @format
  * @flow
@@ -8,8 +6,10 @@
 
 import * as React from 'react';
 import { View } from 'react-native';
+import firebase from 'firebase';
 
 import { Header } from './components/common';
+import LoginForm from './components/LoginForm';
 
 type Props = {};
 
@@ -32,6 +32,7 @@ class App extends React.Component<Props> {
     return (
       <View>
         <Header title="Auth App" />
+        <LoginForm />
       </View>
     );
   }
