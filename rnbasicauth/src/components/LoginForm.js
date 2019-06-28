@@ -8,7 +8,7 @@ import * as React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import firebase from 'firebase';
 
-import { Button, Card, CardSection, Input } from './common';
+import { Button, Card, CardSection, Input, Spinner } from './common';
 
 type Props = {};
 
@@ -16,13 +16,15 @@ type State = {
     email: string,
     password: string,
     error: string,
+    isLoading: boolean,
 };
 
 class LoginForm extends React.Component<Props, State> {
     state = {
         email: '',
         password: '',
-        error: null,
+        error: '',
+        isLoading: false,
     };
 
     render() {
@@ -44,7 +46,7 @@ class LoginForm extends React.Component<Props, State> {
                         secureTextEntry />
                 </CardSection>
                 <CardSection>
-                    <Button text="Login" onPress={ this._handleOnPressButton } />
+                    { this._renderButton() }
                 </CardSection>
                 <Text style={ styles.errorMessage }>
                     { this.state.error }
@@ -53,22 +55,48 @@ class LoginForm extends React.Component<Props, State> {
         );
     }
 
-    _handleOnPressButton = () => {
-        const { email, password, error } = this.state;
+    _renderButton() {
+        if (this.state.isLoading) {
+            return <Spinner size="small" />
+        }
 
-        error && this.setState({ error: '' });
+        return <Button text="Login" onPress={ this._handleOnPressButton } />;
+    }
+
+    _handleOnPressButton = () => {
+        const { email, password } = this.state;
+
+        this.setState({
+            error: '',
+            isLoading: true,
+        });
 
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
+            .then(this._onSignInSuccess)
             .catch(() => {
                 firebase
                     .auth()
                     .createUserWithEmailAndPassword(email, password)
-                    .catch(() => {
-                        this.setState({ error: 'Authentication Failed.' });
-                    })
+                    .then(this._onSignInSuccess)
+                    .catch(this._onSignFail)
             });
+    }
+
+    _onSignInSuccess = () => {
+        this.setState({
+            email: '',
+            password: '',
+            isLoading: false,
+        });
+    }
+
+    _onSignFail = () => {
+        this.setState({
+            error: 'Authentication Failed.',
+            isLoading: false,
+        });
     }
 
     _handleEmailChange = (email) => {
