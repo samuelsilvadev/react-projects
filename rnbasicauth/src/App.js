@@ -5,17 +5,25 @@
  */
 
 import * as React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import firebase from 'firebase';
 
-import { Header } from './components/common';
+import { Header, Button, CardSection, Card, Spinner } from './components/common';
 import LoginForm from './components/LoginForm';
 
 type Props = {};
 
-class App extends React.Component<Props> {
+type State = {
+  isLoggedIn: boolean | null,
+};
+
+class App extends React.Component<Props, State> {
   constructor() {
     super();
+
+    this.state = {
+      isLoggedIn: null,
+    };
 
     firebase.initializeApp({
       apiKey: 'AIzaSyDVNeETygFhLf5djG41XbcGzaal_d-RzKo',
@@ -28,14 +36,47 @@ class App extends React.Component<Props> {
     });
   }
 
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.setState({ isLoggedIn: Boolean(user) });
+    });
+  }
+
   render() {
     return (
-      <View>
+      <View style={ styles.container }>
         <Header title="Auth App" />
-        <LoginForm />
+        { this._renderContent() }
       </View>
     );
   }
+
+  _renderContent() {
+    const { isLoggedIn } = this.state;
+
+    switch (isLoggedIn) {
+      case null:
+        return <Spinner />
+      case true:
+        return (
+          <Card>
+            <CardSection>
+              <Button text="Log Out" />
+            </CardSection>
+          </Card>
+        );
+      case false:
+        return <LoginForm />;
+      default:
+          return null;
+    }
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;
