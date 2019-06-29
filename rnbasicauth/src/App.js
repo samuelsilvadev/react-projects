@@ -61,7 +61,7 @@ class App extends React.Component<Props, State> {
         return (
           <Card>
             <CardSection>
-              <Button text="Log Out" />
+              <Button text="Log Out" onPress={ this._handleSignOut } />
             </CardSection>
           </Card>
         );
@@ -70,6 +70,10 @@ class App extends React.Component<Props, State> {
       default:
           return null;
     }
+  }
+
+  _handleSignOut = () => {
+    firebase.auth().signOut();
   }
 }
 
