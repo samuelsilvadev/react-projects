@@ -1,33 +1,42 @@
 import * as React from 'react';
-import { View, Text } from 'react-native'
+import { FlatList, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
-type Library = {
-    id: Number,
-    title: String,
-    description: String,
-};
+import { ListItem } from './ListItem';
+
+import { Library } from './Types';
 
 type Props = {
-    libraries: Array<Library>,
+	libraries: Array<Library>;
 };
 
-export function LibraryList(props: Props) {
-    
-    return (
-        <View>
-            <Text>Libraries</Text>
-        </View>
-    );
+function _renderItem(library) {
+	return <ListItem library={library.item} />;
 }
 
+function _getKey(library) {
+	return String(library.id);
+}
+
+export function LibraryList(props: Props) {
+	return (
+		<FlatList
+			contentContainerStyle={styles.container}
+			data={props.libraries}
+			renderItem={_renderItem}
+			keyExtractor={_getKey}
+		/>
+	);
+}
+
+const styles = StyleSheet.create({
+	container: {}
+});
+
 function mapStateToProps(state) {
-    return {
-        libraries: state.libraries,
-    }
+	return {
+		libraries: state.libraries
+	};
 }
 
 export default connect(mapStateToProps)(LibraryList);
-
-
-
