@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { connect } from 'react-redux';
+
+import { selectLibrary } from '../state/actions';
 
 import { CardSection } from './CardSection';
 
@@ -7,16 +10,33 @@ import { Library } from './Types';
 
 type Props = {
 	library: Library;
+	selectedLibrary: Number;
+	selectLibrary: Function;
 };
 
-export function ListItem(props: Props) {
-	const { library } = props;
+export class ListItem extends React.Component<Props> {
+	render() {
+		const { library } = this.props;
 
-	return (
-		<CardSection>
-			<Text style={styles.title}>{library.title}</Text>
-		</CardSection>
-	);
+		return (
+			<TouchableWithoutFeedback onPress={this._handleOnPress}>
+				<View>
+					<CardSection>
+						<Text style={styles.title}>{library.title}</Text>
+					</CardSection>
+				</View>
+			</TouchableWithoutFeedback>
+		);
+	}
+
+	_handleOnPress = () => {
+		const {
+			library: { id },
+			selectLibrary
+		} = this.props;
+
+		selectLibrary(id);
+	};
 }
 
 const styles = StyleSheet.create({
@@ -29,4 +49,15 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default ListItem;
+const mapStateToProps = ({ selectedLibraryId }) => ({
+	selectedLibraryId
+});
+
+const mapDispatchToProps = {
+	selectLibrary
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(ListItem);

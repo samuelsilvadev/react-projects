@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
-import { ListItem } from './ListItem';
+import ListItem from './ListItem';
 
 import { Library } from './Types';
 
