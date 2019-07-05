@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { Text, StyleSheet, TouchableWithoutFeedback, View, LayoutAnimation } from 'react-native';
 import { connect } from 'react-redux';
 
 import { selectLibrary } from '../state/actions';
@@ -15,6 +15,10 @@ type Props = {
 };
 
 export class ListItem extends React.Component<Props> {
+	componentWillUpdate() {
+		LayoutAnimation.spring();
+	}
+
 	render() {
 		const { library, expanded } = this.props;
 
