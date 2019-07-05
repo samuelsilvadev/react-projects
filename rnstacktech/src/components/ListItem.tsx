@@ -10,13 +10,13 @@ import { Library } from './Types';
 
 type Props = {
 	library: Library;
-	selectedLibrary: Number;
+	expanded: Boolean;
 	selectLibrary: Function;
 };
 
 export class ListItem extends React.Component<Props> {
 	render() {
-		const { library } = this.props;
+		const { library, expanded } = this.props;
 
 		return (
 			<TouchableWithoutFeedback onPress={this._handleOnPress}>
@@ -24,6 +24,7 @@ export class ListItem extends React.Component<Props> {
 					<CardSection>
 						<Text style={styles.title}>{library.title}</Text>
 					</CardSection>
+					{expanded && <Text style={styles.description}>{library.description}</Text>}
 				</View>
 			</TouchableWithoutFeedback>
 		);
@@ -46,10 +47,17 @@ const styles = StyleSheet.create({
 		paddingTop: 15,
 		paddingBottom: 15,
 		paddingLeft: 15
+	},
+	description: {
+		paddingTop: 15,
+		paddingBottom: 15,
+		paddingLeft: 15,
+		paddingRight: 15
 	}
 });
 
-const mapStateToProps = ({ selectedLibraryId }) => ({
+const mapStateToProps = ({ selectedLibraryId }, ownProps: Props) => ({
+	expanded: selectedLibraryId === ownProps.library.id,
 	selectedLibraryId
 });
 
