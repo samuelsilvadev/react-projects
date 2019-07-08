@@ -3,9 +3,10 @@ import { StyleSheet, View, TextInput, Text } from 'react-native';
 
 type Props = {
 	label: string;
-	placeholder: string;
+	placeholder?: string;
 	value: any;
-	onChangeText: Function;
+	onChangeText?: any;
+	secureTextEntry?: boolean; 
 };
 
 export function Input(props: Props) {

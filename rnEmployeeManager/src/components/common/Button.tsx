@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 type Props = {
 	text: String;
-	onPress: Function;
+	onPress?: any;
 };
 
 export function Button(props: Props) {
@@ -21,18 +21,21 @@ const styles = StyleSheet.create({
 		alignSelf: 'stretch',
 		borderRadius: 5,
 		borderWidth: 1,
-		borderColor: '#fff',
+		borderColor: '#7c4dff',
 		marginLeft: 5,
 		marginRight: 5,
-		marginBottom: 20
+		marginBottom: 20,
+		flex: 1,
 	},
 	text: {
 		alignSelf: 'center',
-		color: '#fff',
+		justifyContent: 'center',
+		color: '#000',
 		fontSize: 16,
 		fontWeight: '600',
 		paddingTop: 10,
 		paddingBottom: 10
+
 	}
 });
 
