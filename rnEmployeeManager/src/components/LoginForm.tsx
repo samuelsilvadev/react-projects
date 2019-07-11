@@ -2,12 +2,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Card, Button, CardSection, Input } from './common';
 
-import { emailChanged, passwordChanged } from './../state/actions';
-import { STATE } from '../state/types';
+import { emailChanged, passwordChanged, login, STATE } from './../state';
 
 export interface LoginFormProps {
 	emailChanged: Function;
 	passwordChanged: Function;
+	login: Function;
 	emailValue: string;
 	passwordValue: string;
 }
@@ -27,7 +27,7 @@ class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
 					<Input label="Password" placeholder="password" value={passwordValue} onChangeText={this._handlePasswordChange} secureTextEntry/>
 				</CardSection>
 				<CardSection>
-					<Button text="Login" />
+					<Button text="Login" onPress={this._handleOnPress} />
 				</CardSection>
 			</Card>
 		);
@@ -44,11 +44,20 @@ class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
 
 		passwordChanged(password);
 	};
+
+	_handleOnPress = () => {
+		const { passwordValue: password, emailValue: email, login } = this.props;
+
+		login({ email, password });
+	}
 }
 
-const mapStateToProps = (state: STATE) => ({
-	emailValue: state.auth.email,
-	passwordValue: state.auth.password,
+const mapStateToProps = ({ auth: { email, password, isLoading, error, user } }: STATE) => ({
+	emailValue: email,
+	passwordValue: password,
+	isLoading,
+	error,
+	user,
 });
 
-export default connect(mapStateToProps, { emailChanged, passwordChanged })(LoginForm);
+export default connect(mapStateToProps, { emailChanged, passwordChanged, login })(LoginForm);
