@@ -1,4 +1,4 @@
-import { Action, EMAIL_CHANGED, PASSWORD_CHANGED, AUTH, LOGIN_USER_SUCCESS, LOGIN_USER_LOADING } from './../types';
+import { Action, EMAIL_CHANGED, PASSWORD_CHANGED, AUTH, LOGIN_USER_SUCCESS, LOGIN_USER_LOADING, LOGIN_USER_ERROR } from './../types';
 
 const INITIAL_STATE = {
 	email: '',
@@ -30,16 +30,16 @@ const authReducer = (state: AUTH = INITIAL_STATE, action: Action) => {
 				...state,
 				isLoading: false,
 				user: action.payload,
+				error: null,
 			}
-		case LOGIN_USER_SUCCESS:
+		case LOGIN_USER_ERROR:
 			return {
 				...state,
 				isLoading: false,
 				error: action.payload,
 			}
-			default:
-				return state;
-
+		default:
+			return state;
 	}
 };
 

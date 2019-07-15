@@ -16,6 +16,21 @@ export const passwordChanged = (text: string): Action => {
 	}
 }
 
+const loginSucess = (dispatch, user) => {
+	dispatch({
+		type: LOGIN_USER_SUCCESS, payload: user
+	});
+}
+
+const createAccount = (dispatch) => ({ email, password }) => {
+	return firebase.auth().createUserWithEmailAndPassword(email, password)
+		.then((data) => {
+			loginSucess(dispatch, data.user);
+		}).catch((err) => {
+			dispatch({ type: LOGIN_USER_ERROR, payload: err })
+		});
+}
+
 export const login = ({ email, password }): Action | Function => {
 	return (dispatch) => {
 
@@ -23,10 +38,10 @@ export const login = ({ email, password }): Action | Function => {
 
 		firebase.auth().signInWithEmailAndPassword(email, password)
 			.then((data) => {
-				dispatch({ type: LOGIN_USER_SUCCESS, payload: data.user });
+				loginSucess(dispatch, data.user);
 			})
-			.catch((err) => {
-				dispatch({ type: LOGIN_USER_ERROR, payload: err });
+			.catch(() => {
+				createAccount(dispatch)({ email, password });
 			})
 	}
 }
