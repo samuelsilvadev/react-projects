@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
+
 import { Card, Button, CardSection, Input, Spinner } from './common';
 
-import { emailChanged, passwordChanged, login, STATE } from './../state';
+import { emailChanged, passwordChanged, login, STATE, User } from './../state';
 
 interface Error {
 	code: string;
@@ -18,9 +20,19 @@ export interface LoginFormProps {
 	passwordValue: string;
 	error: Error;
 	isLoading: boolean;
+	user: User;
 }
 
 class LoginForm extends React.Component<LoginFormProps> {
+	componentDidUpdate(prevProps) {
+		const { isLoading: wasLoading } = prevProps;
+		const { isLoading, error, user } = this.props;
+
+		if(wasLoading && !isLoading && !error && user) {
+			Actions.employeeList();
+		}
+	}
+
 	render() {
 		const { emailValue, passwordValue, isLoading } = this.props;
 

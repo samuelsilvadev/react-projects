@@ -5,18 +5,17 @@ import { Provider } from 'react-redux';
 import { store } from './src/state/store';
 import { initFirebaseHOC } from './src/firebase/initFirebaseHOC';
 
-import LoginForm from './src/components/LoginForm';
+import { Routes } from './src/components/Router';
 
 export default initFirebaseHOC(function App() {
 	return (
 		<Provider store={store}>
-			<View style={styles.container}>
-				<LoginForm />
-			</View>
+			<Routes />
 		</Provider>
 	);
 });
 
+// TODO:  Check if this is still necessary.
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
