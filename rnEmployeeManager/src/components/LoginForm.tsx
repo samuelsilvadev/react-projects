@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { Card, Button, CardSection, Input } from './common';
+import { Card, Button, CardSection, Input, Spinner } from './common';
 
 import { emailChanged, passwordChanged, login, STATE } from './../state';
 
@@ -16,14 +16,13 @@ export interface LoginFormProps {
 	login: Function;
 	emailValue: string;
 	passwordValue: string;
-	error: Error,
+	error: Error;
+	isLoading: boolean;
 }
 
-export interface LoginFormState {}
-
-class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
+class LoginForm extends React.Component<LoginFormProps> {
 	render() {
-		const { emailValue, passwordValue } = this.props; 
+		const { emailValue, passwordValue, isLoading } = this.props;
 
 		return (
 			<Card>
@@ -35,7 +34,11 @@ class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
 				</CardSection>
 				{ this._renderError() }
 				<CardSection>
-					<Button text="Login" onPress={this._handleOnPress} />
+				{
+					isLoading ?
+						<Spinner size="large" /> :
+						<Button text="Login" onPress={this._handleOnPress} />
+				}
 				</CardSection>
 			</Card>
 		);
