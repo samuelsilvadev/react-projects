@@ -13,8 +13,17 @@ export interface AUTH {
 	error: any;
 }
 
+export interface EMPLOYEE_FORM {
+	name: string;
+	phone: string;
+	shift: string;
+	isLoading: boolean;
+	error: any;
+}
+
 export interface STATE {
-	auth: AUTH,
+	auth: AUTH;
+	employeeForm: EMPLOYEE_FORM;
 }
 
 export const EMAIL_CHANGED = '@FORM/EMAIL_CHANGED';
@@ -23,3 +32,5 @@ export const PASSWORD_CHANGED = '@FORM/PASSWORD_CHANGED';
 export const LOGIN_USER_LOADING = '@FORM/LOGIN_USER_LOADING';
 export const LOGIN_USER_ERROR = '@FORM/LOGIN_USER_ERROR';
 export const LOGIN_USER_SUCCESS = '@FORM/LOGIN_USER_SUCCESS';
+
+export const EMPLOYEE_FIELD_UPDATE = '@EMPLOYEE/EMPLOYEE_FIELD_UPDATE';
