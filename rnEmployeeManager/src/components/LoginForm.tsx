@@ -29,7 +29,7 @@ class LoginForm extends React.Component<LoginFormProps> {
 		const { isLoading, error, user } = this.props;
 
 		if(wasLoading && !isLoading && !error && user) {
-			Actions.employeeList();
+			Actions.main();
 		}
 	}
 

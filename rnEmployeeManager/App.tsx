@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './src/state/store';
 import { initFirebaseHOC } from './src/firebase/initFirebaseHOC';
 
-import { Routes } from './src/components/Router';
+import { Routes } from './src/components/Routes';
 
 export default initFirebaseHOC(function App() {
 	return (
