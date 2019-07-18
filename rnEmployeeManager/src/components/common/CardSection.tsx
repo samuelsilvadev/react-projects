@@ -3,10 +3,11 @@ import { View, StyleSheet } from 'react-native';
 
 type Props = {
 	children: any;
+	style?: object;
 };
 
 export function CardSection(props: Props) {
-	return <View style={styles.container}>{props.children}</View>;
+	return <View style={[styles.container, props.style]}>{props.children}</View>;
 }
 
 const styles = StyleSheet.create({
