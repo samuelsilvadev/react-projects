@@ -4,13 +4,14 @@ import { Picker, StyleSheet, Text } from 'react-native';
 
 import { Card, Button, CardSection, Input } from './common';
 
-import { employeeFieldUpdate, STATE } from './../state';
+import { employeeFieldUpdate, employeeCreate, STATE } from './../state';
 
 export interface EmployeeCreateProps {
 	name: string;
 	phone: string;
 	shift: string;
 	employeeFieldUpdate: Function;
+	employeeCreate: Function;
 };
 
 const WEEK_DAYS = [
@@ -55,7 +56,7 @@ class EmployeeCreate extends React.Component<EmployeeCreateProps> {
 					</Picker>
 				</CardSection>
 				<CardSection>
-					<Button text="Create" onPress={ () => console.log({ name, phone, shift }) } />
+					<Button text="Create" onPress={this._handleOnButtonPress} />
 				</CardSection>
 			</Card>
 		);
@@ -69,6 +70,12 @@ class EmployeeCreate extends React.Component<EmployeeCreateProps> {
 		const { employeeFieldUpdate } = this.props;
 
 		employeeFieldUpdate(name, value)
+	}
+
+	_handleOnButtonPress = () => {
+		const { name, phone, shift, employeeCreate } = this.props;
+
+		employeeCreate({ name, phone, shift: shift || WEEK_DAYS[0] })
 	}
 }
 
@@ -95,4 +102,4 @@ const mapStateToProps = ({ employeeForm: { name, phone, shift } }: STATE) => ({
 	shift
 });
 
-export default connect(mapStateToProps, { employeeFieldUpdate })(EmployeeCreate);
+export default connect(mapStateToProps, { employeeFieldUpdate, employeeCreate })(EmployeeCreate);

@@ -1,6 +1,6 @@
 export interface Action {
 	type: string;
-	payload: any;
+	payload?: any;
 };
 
 export interface User {};
@@ -34,3 +34,4 @@ export const LOGIN_USER_ERROR = '@FORM/LOGIN_USER_ERROR';
 export const LOGIN_USER_SUCCESS = '@FORM/LOGIN_USER_SUCCESS';
 
 export const EMPLOYEE_FIELD_UPDATE = '@EMPLOYEE/EMPLOYEE_FIELD_UPDATE';
+export const EMPLOYEE_RESET = '@EMPLOYEE/EMPLOYEE_RESET';
