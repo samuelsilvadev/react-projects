@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 
 import { employeesFetch, STATE } from './../state';
+
+import EmployeeListItem from './EmployeeListItem';
+import { Spinner } from './common';
 
 interface EmployeeListProps {
 	employees: Array<Object>;
@@ -15,13 +18,37 @@ class EmployeeList extends React.Component<EmployeeListProps> {
 	}
 
 	render() {
+		const { employees } = this.props;
+
+		if (employees.length <= 0) {
+			return (
+				<View style={styles.spinnerWrapper}>
+					<Spinner size="large" />
+				</View>
+			);
+		}
+
 		return (
 			<View>
-				<Text>List Item</Text>
+				<FlatList
+					data={employees}
+					renderItem={this._renderItem}
+					keyExtractor={(_, index) => index.toString()}/>
 			</View>
 		);
 	}
+
+	_renderItem = ({ item }) => {
+        return <EmployeeListItem employee={item} />
+	}
 }
+
+const styles = StyleSheet.create({
+	spinnerWrapper: {
+		flex: 1,
+		justifyContent: 'center',
+	}
+});
 
 const mapStateToProps = ({ employees }: STATE) => ({
 	employees: Object.keys(employees).map(key => ({ uid: key, ...employees[key] }))
