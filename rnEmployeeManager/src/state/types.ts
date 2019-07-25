@@ -24,6 +24,7 @@ export interface EMPLOYEE_FORM {
 export interface STATE {
 	auth: AUTH;
 	employeeForm: EMPLOYEE_FORM;
+	employees: Object;
 }
 
 export const EMAIL_CHANGED = '@FORM/EMAIL_CHANGED';
@@ -35,3 +36,4 @@ export const LOGIN_USER_SUCCESS = '@FORM/LOGIN_USER_SUCCESS';
 
 export const EMPLOYEE_FIELD_UPDATE = '@EMPLOYEE/EMPLOYEE_FIELD_UPDATE';
 export const EMPLOYEE_RESET = '@EMPLOYEE/EMPLOYEE_RESET';
+export const EMPLOYEES_FETCH_SUCCESS = '@EMPLOYEE/EMPLOYEES_FETCH_SUCCESS';
