@@ -8,12 +8,13 @@ import { StyleSheet, View } from 'react-native';
 
 type Props = {
 	children: any;
+	style?: Object;
 };
 
 export function Card(props: Props) {
-	const { children } = props;
+	const { children, style } = props;
 
-	return <View style={styles.container}>{children}</View>;
+	return <View style={[styles.container, style]}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
