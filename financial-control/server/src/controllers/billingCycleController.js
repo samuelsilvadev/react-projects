@@ -6,8 +6,7 @@ BillingCycle.updateOptions({ new: true, runValidators: true });
 
 BillingCycle.after('post', errorHandler).after('put', errorHandler);
 
-// eslint-disable-next-line no-unused-vars
-BillingCycle.route('count', (req, res, _next) => {
+BillingCycle.route('count', (req, res) => {
 	BillingCycle.count((error, value) => {
 		if (error) {
 			res.status(500).json({ errors: [error] });
@@ -17,8 +16,7 @@ BillingCycle.route('count', (req, res, _next) => {
 	});
 });
 
-// eslint-disable-next-line no-unused-vars
-BillingCycle.route('summary', (req, res, next) => {
+BillingCycle.route('summary', (req, res) => {
 	BillingCycle.aggregate([{
 		$project: {
 			credit: {
