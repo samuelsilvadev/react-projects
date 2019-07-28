@@ -1,5 +1,5 @@
 const BillingCycle = require('./../models/billingCycle');
-const errorHandler = require('./../middlewares/errorHandler');
+const { errorHandler } = require('./../middlewares/errorHandler');
 
 BillingCycle.methods(['get', 'post', 'put', 'delete']);
 BillingCycle.updateOptions({ new: true, runValidators: true });

@@ -20,4 +20,4 @@ function errorHandler(req, res, next) {
 	}
 }
 
-module.exports = errorHandler;
+module.exports = { errorHandler, parseErrors };
