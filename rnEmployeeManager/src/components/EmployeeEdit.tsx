@@ -2,10 +2,16 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 
-import { Card, Button, CardSection } from './common';
+import { Card, Button, CardSection, Confirm } from './common';
 import EmployeeForm from './EmployeeForm';
 
-import { employeeFieldUpdate, employeeUpdate, employeeReset, STATE } from '../state';
+import {
+	employeeFieldUpdate,
+	employeeUpdate,
+	employeeReset,
+	employeeDelete,
+	STATE
+} from '../state';
 
 interface Employee {
 	uid: string;
@@ -22,12 +28,25 @@ export interface EmployeeEditProps {
 	employeeFieldUpdate: Function;
 	employeeReset: Function;
 	employeeUpdate: Function;
+	employeeDelete: Function;
 	name: string;
 	phone: string;
 	shift: string;
 }
 
-class EmployeeEdit extends React.Component<EmployeeEditProps> {
+interface EmployeeEditState {
+	isConfirmVisible: boolean;
+}
+
+class EmployeeEdit extends React.Component<EmployeeEditProps, EmployeeEditState> {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			isConfirmVisible: false
+		};
+	}
+
 	componentWillMount() {
 		const { employeeFieldUpdate, employee } = this.props;
 
@@ -39,6 +58,8 @@ class EmployeeEdit extends React.Component<EmployeeEditProps> {
 	}
 
 	render() {
+		const { isConfirmVisible } = this.state;
+
 		return (
 			<Card>
 				<EmployeeForm {...this.props} />
@@ -46,6 +67,15 @@ class EmployeeEdit extends React.Component<EmployeeEditProps> {
 					<Button text="Save" onPress={this._handleOnButtonPress} />
 					<Button text="Text Schedule" onPress={this._handleOnTextPress} />
 				</CardSection>
+				<CardSection>
+					<Button text="Fire Emplyee" onPress={this._handleOnToggleFirePress} />
+				</CardSection>
+				<Confirm
+					isVisible={isConfirmVisible}
+					onAccept={this._handleOnAccept}
+					onDecline={this._handleOnToggleFirePress}>
+					Are you sure you want delete this?
+				</Confirm>
 			</Card>
 		);
 	}
@@ -67,6 +97,20 @@ class EmployeeEdit extends React.Component<EmployeeEditProps> {
 
 		Communications.text(phone, `Your upcoming shif is ${shift}`);
 	};
+
+	_handleOnToggleFirePress = () => {
+		this.setState(oldState => ({ isConfirmVisible: !oldState.isConfirmVisible }));
+	};
+
+	_handleOnAccept = () => {
+		const {
+			employee: { uid },
+			employeeDelete
+		} = this.props;
+
+		this._handleOnToggleFirePress();
+		employeeDelete({ uid });
+	};
 }
 
 const mapStateToProps = ({ employeeForm: { name, phone, shift } }: STATE) => ({
@@ -78,7 +122,8 @@ const mapStateToProps = ({ employeeForm: { name, phone, shift } }: STATE) => ({
 const mapDispatchToProps = {
 	employeeFieldUpdate,
 	employeeReset,
-	employeeUpdate
+	employeeUpdate,
+	employeeDelete
 };
 
 export default connect(

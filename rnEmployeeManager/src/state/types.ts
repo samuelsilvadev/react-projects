@@ -1,9 +1,9 @@
 export interface Action {
 	type: string;
 	payload?: any;
-};
+}
 
-export interface User {};
+export interface User {}
 
 export interface AUTH {
 	email: string;
@@ -37,4 +37,3 @@ export const LOGIN_USER_SUCCESS = '@FORM/LOGIN_USER_SUCCESS';
 export const EMPLOYEE_FIELD_UPDATE = '@EMPLOYEE/EMPLOYEE_FIELD_UPDATE';
 export const EMPLOYEE_RESET = '@EMPLOYEE/EMPLOYEE_RESET';
 export const EMPLOYEES_FETCH_SUCCESS = '@EMPLOYEE/EMPLOYEES_FETCH_SUCCESS';
-export const EMPLOYEE_UPDATED = '@EMPLOYEE/EMPLOYEE_UPDATED';
