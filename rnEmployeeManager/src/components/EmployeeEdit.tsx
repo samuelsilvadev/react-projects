@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import Communications from 'react-native-communications';
 
 import { Card, Button, CardSection } from './common';
 import EmployeeForm from './EmployeeForm';
@@ -43,7 +44,7 @@ class EmployeeEdit extends React.Component<EmployeeEditProps> {
 				<EmployeeForm {...this.props} />
 				<CardSection>
 					<Button text="Save" onPress={this._handleOnButtonPress} />
-					<Button text="Delete" onPress={this._handleOnButtonPress} />
+					<Button text="Text Schedule" onPress={this._handleOnTextPress} />
 				</CardSection>
 			</Card>
 		);
@@ -59,6 +60,12 @@ class EmployeeEdit extends React.Component<EmployeeEditProps> {
 		} = this.props;
 
 		employeeUpdate({ name, phone, shift, uid });
+	};
+
+	_handleOnTextPress = () => {
+		const { phone, shift } = this.props;
+
+		Communications.text(phone, `Your upcoming shif is ${shift}`);
 	};
 }
 
