@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { Card, Button, CardSection } from './common';
 import EmployeeForm from './EmployeeForm';
 
-import { employeeFieldUpdate, employeeReset, STATE } from '../state';
+import { employeeFieldUpdate, employeeUpdate, employeeReset, STATE } from '../state';
 
 interface Employee {
+	uid: string;
 	name: string;
 	phone: string;
 	shift: string;
@@ -17,9 +18,9 @@ export interface EmployeeEditProps {
 	 * This prop will came from the route.
 	 */
 	employee: Employee;
-	employeeCreate: Function;
 	employeeFieldUpdate: Function;
 	employeeReset: Function;
+	employeeUpdate: Function;
 	name: string;
 	phone: string;
 	shift: string;
@@ -49,9 +50,15 @@ class EmployeeEdit extends React.Component<EmployeeEditProps> {
 	}
 
 	_handleOnButtonPress = () => {
-		const { name, phone, shift } = this.props;
+		const {
+			name,
+			phone,
+			shift,
+			employee: { uid },
+			employeeUpdate
+		} = this.props;
 
-		console.log({ name, phone, shift });
+		employeeUpdate({ name, phone, shift, uid });
 	};
 }
 
@@ -63,7 +70,8 @@ const mapStateToProps = ({ employeeForm: { name, phone, shift } }: STATE) => ({
 
 const mapDispatchToProps = {
 	employeeFieldUpdate,
-	employeeReset
+	employeeReset,
+	employeeUpdate
 };
 
 export default connect(

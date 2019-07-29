@@ -1,7 +1,13 @@
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 
-import { Action, EMPLOYEE_FIELD_UPDATE, EMPLOYEE_RESET, EMPLOYEES_FETCH_SUCCESS } from '../types';
+import {
+	Action,
+	EMPLOYEE_FIELD_UPDATE,
+	EMPLOYEE_RESET,
+	EMPLOYEES_FETCH_SUCCESS,
+	EMPLOYEE_UPDATED
+} from '../types';
 
 export const employeeFieldUpdate = (name: string, value: string): Action => {
 	return {
@@ -20,6 +26,19 @@ export const employeeCreate = ({ name, phone, shift }): Action | Function => {
 			.push({ name, phone, shift })
 			.then(() => dispatch(employeeReset()))
 			.then(() => Actions.pop());
+	};
+};
+
+export const employeeUpdate = ({ name, phone, shift, uid }) => {
+	const { currentUser } = firebase.auth();
+
+	return dispatch => {
+		firebase
+			.database()
+			.ref(`/users/${currentUser.uid}/employees/${uid}`)
+			.set({ name, phone, shift })
+			.then(() => dispatch({ type: EMPLOYEE_UPDATED }))
+			.then(() => Actions.employeeList({ type: 'reset' }));
 	};
 };
 
