@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-import { dashboardReducer } from './dashboard';
+import { authReducer } from './auth';
 import { billingCycleReducer } from './billing-cycle';
+import { dashboardReducer } from './dashboard';
 
 const rootReducer = combineReducers({
-	dashboard: dashboardReducer,
+	auth: authReducer,
 	billingCycle: billingCycleReducer,
+	dashboard: dashboardReducer,
 	form: formReducer,
 });
 
