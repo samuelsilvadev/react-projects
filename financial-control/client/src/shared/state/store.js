@@ -2,9 +2,12 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import rootReducer from './rootReducer';
+import { middlewares as authMiddlewares } from './auth';
 
 const middlewares = [
-	thunk
+	thunk,
+	authMiddlewares.axiosAuthorizationMiddleware,
+	authMiddlewares.authStorageMiddleware,
 ];
 
 const enableReduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ ?
