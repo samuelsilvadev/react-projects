@@ -6,10 +6,11 @@ import { reduxForm, getFormSyncErrors } from 'redux-form';
 import { actions } from '@shared/state/auth'
 
 import { FORMS_NAMES } from './constants';
+import { setRequiredRule } from './form-rules'
 
 import { WrapperDiv, Form, Label, StyledField, StyledLink, Button, Span } from './Auth.style';
 
-const setRequiredRule = value => typeof value !== 'undefined' ? undefined : 'Field is required';
+// TODO: show errors from server
 
 function SignIn(props) {
 	const { handleSubmit, pristine, submitting, formErrors, valid, dirty, anyTouched } = props;
