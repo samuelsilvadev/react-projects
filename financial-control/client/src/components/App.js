@@ -1,37 +1,42 @@
 import React, { Fragment } from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Header from '@components/header';
+import { Auth } from '@components/auth';
 import { SidebarProvider, SidebarContext } from '@shared/context';
 import Routes from '@shared/routes';
-import store from '@shared/state/store';
 
 import { Main, StyledSidebar, StyledFooter } from './App.style';
 
-export function App() {
+export function App(props) {
+	const { auth } = props;
+
+	if (!auth.user && !auth.validToken) {
+		return <Auth />;
+	}
+
 	return (
-		<Provider store={ store }>
-			<BrowserRouter>
-				<SidebarProvider>
-					<Header />
-					<SidebarContext.Consumer>
-						{
-							({ isOpen }) => (
-								<Fragment>
-									{ isOpen && <StyledSidebar /> }
-									<Main isSidebarOpen={ isOpen }>
-										<Routes />
-									</Main>
-									<StyledFooter isSidebarOpen={ isOpen } />
-								</Fragment>
-							)
-						}
-					</SidebarContext.Consumer>
-				</SidebarProvider>
-			</BrowserRouter>
-		</Provider>
+		<SidebarProvider>
+			<Header />
+			<SidebarContext.Consumer>
+				{
+					({ isOpen }) => (
+						<Fragment>
+							{isOpen && <StyledSidebar />}
+							<Main isSidebarOpen={isOpen}>
+								<Routes />
+							</Main>
+							<StyledFooter isSidebarOpen={isOpen} />
+						</Fragment>
+					)
+				}
+			</SidebarContext.Consumer>
+		</SidebarProvider>
 	);
 }
 
-export default App;
+const mapStateToProps = ({ auth }) => ({
+	auth
+});
+
+export default connect(mapStateToProps)(App);

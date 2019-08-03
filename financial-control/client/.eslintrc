@@ -1,14 +1,10 @@
 {
+	"settings": {
+		"import/resolver": "webpack"
+	},
 	"parser": "babel-eslint",
-	"extends": [
-		"airbnb",
-		"prettier",
-		"prettier/react"
-	],
-	"plugins": [
-		"prettier",
-		"eslint-import-resolver-webpack"
-	],
+	"extends": ["airbnb", "prettier", "prettier/react"],
+	"plugins": ["prettier", "eslint-import-resolver-webpack"],
 	"parserOptions": {
 		"ecmaVersion": 6,
 		"ecmaFeatures": {
@@ -23,18 +19,9 @@
 		"jest": true
 	},
 	"rules": {
-		"indent": [
-			"error",
-			"tab"
-		],
-		"react/jsx-indent": [
-			"error",
-			"tab"
-		],
-		"react/jsx-indent-props": [
-			"error",
-			"tab"
-		],
+		"indent": ["error", "tab"],
+		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": ["error", "tab"],
 		"space-before-function-paren": "off",
 		"arrow-parens": "off",
 		"react/prefer-stateless-function": "warn",
@@ -48,10 +35,7 @@
 		"react/jsx-filename-extension": [
 			1,
 			{
-				"extensions": [
-					".js",
-					".jsx"
-				]
+				"extensions": [".js", ".jsx"]
 			}
 		],
 		"linebreak-style": "off",
@@ -76,10 +60,7 @@
 			"error",
 			{
 				"required": {
-					"some": [
-						"nesting",
-						"id"
-					]
+					"some": ["nesting", "id"]
 				}
 			}
 		],
@@ -87,10 +68,7 @@
 			"error",
 			{
 				"required": {
-					"some": [
-						"nesting",
-						"id"
-					]
+					"some": ["nesting", "id"]
 				}
 			}
 		]
