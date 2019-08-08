@@ -1,17 +1,19 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useCallback, Fragment } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { loadImages } from '../../state/actions';
 
 import './ImagesGrid.css';
 
-const KEY = '5f96323678d05ff0c4eb264ef184556868e303b32a2db88ecbf15746e6f25e02';
-
-function ImagesGrid(props) {
-	const [images, setImages] = useState([]);
+function ImagesGrid() {
+	const dispatch = useDispatch();
+	const images = useSelector((state) => state.images);
+	const isLoading = useSelector((state) => state.loading);
+	const imagesLoadError = useSelector((state) => state.error);
 
 	useEffect(() => {
-		fetch(`https://api.unsplash.com/photos/?client_id=${KEY}&per_page=28`)
-			.then(response => response.json())
-			.then(images => setImages(images));
-	}, []);
+		dispatch(loadImages());
+	}, [dispatch]);
 
 	const renderImage = useCallback((image = {}) => {
 		const { urls, user, id, height, width } = image;
@@ -25,9 +27,16 @@ function ImagesGrid(props) {
 	}, []);
 
 	return (
-		<div className="grid">
-			{images.map(renderImage)}
-		</div>
+		<Fragment>
+			{imagesLoadError && <p className="error">{imagesLoadError}</p>}
+			{
+				images && images.length > 0 &&
+				<div className="grid">
+					{images.map(renderImage)}
+				</div>
+			}
+			{isLoading && <p className="loading">Loading...</p>}
+		</Fragment>
 	);
 }
 
