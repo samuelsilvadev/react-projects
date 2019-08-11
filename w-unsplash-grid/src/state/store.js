@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './reducers';
-import { imagesSagas } from './sagas';
+import rootSaga from './sagas';
 
 const getStore = () => {
 	const sagaMiddleware = createSagaMiddleware();
@@ -14,7 +14,7 @@ const getStore = () => {
 		)
 	);
 
-	sagaMiddleware.run(imagesSagas);
+	sagaMiddleware.run(rootSaga);
 
 	return store
 };
