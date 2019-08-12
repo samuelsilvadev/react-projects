@@ -1,0 +1,10 @@
+.stats {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	color: #fff;
+	font-size: 0.8rem;
+	position: absolute;
+	padding: 5px 18px;
+	right: 10px;
+	top: 10px;
+}
