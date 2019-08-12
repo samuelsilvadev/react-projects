@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { loadImages } from '../../state/actions';
 
+import Stats from '../Stats'
+
 import './ImagesGrid.css';
 
 function ImagesGrid() {
@@ -10,6 +12,7 @@ function ImagesGrid() {
 	const images = useSelector((state) => state.images);
 	const isLoading = useSelector((state) => state.loading);
 	const imagesLoadError = useSelector((state) => state.error);
+	const stats = useSelector((state) => state.stats);
 
 	useEffect(() => {
 		dispatch(loadImages());
@@ -21,10 +24,11 @@ function ImagesGrid() {
 
 		return (
 			<figure key={id} className={`figure figure-${ratio}`}>
+				<Stats stats={stats[id]} />
 				<img className="image" src={urls.small} alt={user.username} />
 			</figure>
 		);
-	}, []);
+	}, [stats]);
 
 	return (
 		<Fragment>
