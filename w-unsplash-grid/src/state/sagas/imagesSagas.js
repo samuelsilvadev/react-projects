@@ -4,7 +4,7 @@ import { IMAGES } from '../types';
 import { setLoadedImages, setLoadImagesError } from '../actions';
 import { fetchImages } from '../../api';
 
-function getPage(state) {
+export function getPage(state) {
 	return state.nextPage;
 }
 
@@ -12,7 +12,7 @@ function* watchImagesLoad() {
 	yield takeEvery(IMAGES.LOAD, handleImageLoadWorkerSaga);
 }
 
-function* handleImageLoadWorkerSaga() {
+export function* handleImageLoadWorkerSaga() {
 	try {
 		const page = yield select(getPage);
 		const images = yield call(fetchImages, page);
