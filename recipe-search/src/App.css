@@ -1,0 +1,16 @@
+.header {
+	align-items: center;
+	background-color: brown;
+	color: #fff;
+	display: flex;
+	height: 100px;
+	justify-content: center;
+	width: 100%;
+}
+
+.main {
+	background-color: #f8f9fa;
+	display: flex;
+	min-height: calc(100vh - 100px);
+	flex-direction: column;
+}
