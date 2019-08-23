@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import Form from './components/Form';
-import RecipesList from './components/RecipesList';
+import { SearchForm, RecipesList } from './components';
 
 import { recipe } from './API/recipe';
 
@@ -25,7 +24,7 @@ function App() {
 				<h1>Recipe Repository</h1>
 			</header>
 			<main className="main">
-				<Form onSubmit={handleOnSubmitRecipeSearch} />
+				<SearchForm onSubmit={handleOnSubmitRecipeSearch} />
 				<RecipesList recipes={recipes} />
 			</main>
 		</div>
