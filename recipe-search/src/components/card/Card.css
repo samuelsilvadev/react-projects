@@ -48,3 +48,10 @@
 	height: 30px;
 	margin: 0 10px 10px;
 }
+
+.card__action--link {
+	align-items: center;
+	display: flex;
+	color: currentColor;
+	text-decoration: none;
+}
