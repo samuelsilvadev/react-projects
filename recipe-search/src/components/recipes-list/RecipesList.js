@@ -10,9 +10,11 @@ const _renderRecipe = (recipe) => (
 			imageSrc={recipe.image_url}
 			title={recipe.title}
 			subtitle={<>Publisher: <span>{recipe.publisher}</span></>}
-			action={{
+			link={{
 				text: 'View recipe',
-				onClick: () => { }
+				to: {
+					pathname: `/recipe/${recipe.recipe_id}`
+				}
 			}}
 		/>
 	</li>
