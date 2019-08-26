@@ -13,7 +13,10 @@ const _renderRecipe = (recipe) => (
 			link={{
 				text: 'View recipe',
 				to: {
-					pathname: `/recipe/${recipe.recipe_id}`
+					pathname: `/recipe/${recipe.recipe_id}`,
+					state: {
+						recipe
+					}
 				}
 			}}
 		/>
