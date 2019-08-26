@@ -7,5 +7,11 @@ export const recipe = {
 		const data = await response.json();
 
 		return data;
+	},
+	getById: async ({ recipeId }) => {
+		const response = await fetch(`${CORS_HANDLER}${API}get?key=${process.env.REACT_APP_API_KEY}&rId=${recipeId}`)
+		const data = await response.json();
+
+		return data;
 	}
 }
