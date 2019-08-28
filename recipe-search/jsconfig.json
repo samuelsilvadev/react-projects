@@ -3,7 +3,8 @@
 		"baseUrl": "src",
 		"paths": {
 			"@api": ["./API/*"],
-			"@components": ["./components"]
+			"@components": ["./components"],
+			"@tests": ["./tests"]
 		}
 	}
 }
