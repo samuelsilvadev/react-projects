@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import './Form.css';
 
 const Form = ({ onSubmit }) => (
-	<form className="search-form" onSubmit={onSubmit}>
-		<input className="search-form__input" type="search" name="recipeName" />
-		<button type="submit" className="search-form__button">Search</button>
+	<form className="search-form" onSubmit={onSubmit} data-test="search-form">
+		<input className="search-form__input" type="search" name="recipeName" data-test="search-form__input" />
+		<button type="submit" className="search-form__button" data-test="search-form__button">Search</button>
 	</form>
 );
 
