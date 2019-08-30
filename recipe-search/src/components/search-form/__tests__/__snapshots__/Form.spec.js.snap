@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Form /> should render correctly 1`] = `ShallowWrapper {}`;
+exports[`<Form /> should render correctly 1`] = `
+<form
+  className="search-form"
+  data-test="search-form"
+>
+  <input
+    className="search-form__input"
+    data-test="search-form__input"
+    name="recipeName"
+    type="search"
+  />
+  <button
+    className="search-form__button"
+    data-test="search-form__button"
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+`;

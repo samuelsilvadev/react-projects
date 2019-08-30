@@ -1,3 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Card /> should render correctly with all props 1`] = `ShallowWrapper {}`;
+exports[`<Card /> should render correctly with all props 1`] = `
+<div
+  className="card"
+>
+  <img
+    alt="Hello"
+    className="card__image"
+    data-test="card__image"
+    src="./something.png"
+  />
+  <h2
+    className="card__title"
+    data-test="card__title"
+  >
+    Hello
+  </h2>
+  <p
+    className="card__subtitle"
+    data-test="card__subtitle"
+  >
+    world
+  </p>
+  <p
+    className="card__description"
+    data-test="card__description"
+  >
+    Loren ipsum is awesome
+  </p>
+  <button
+    className="card__action"
+    data-test="card__button"
+    onClick={[Function]}
+    type="button"
+  >
+    button
+  </button>
+  <Link
+    className="card__action card__action--link"
+    data-test="card__link"
+    to="somewhere.com"
+  >
+    link
+  </Link>
+</div>
+`;
