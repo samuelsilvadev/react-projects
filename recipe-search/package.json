@@ -32,8 +32,14 @@
 	"devDependencies": {
 		"@craco/craco": "^5.4.0",
 		"craco-alias": "^1.0.4",
-		"react-test-renderer": "^16.9.0",
 		"enzyme": "^3.10.0",
-		"enzyme-adapter-react-16": "^1.14.0"
+		"enzyme-adapter-react-16": "^1.14.0",
+		"enzyme-to-json": "^3.4.0",
+		"react-test-renderer": "^16.9.0"
+	},
+	"jest": {
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		]
 	}
 }
