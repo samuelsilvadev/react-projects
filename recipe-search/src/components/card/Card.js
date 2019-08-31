@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 import './Card.css';
 
-export const Card = ({ imageSrc, title, description, subtitle, action, link }) => (
-	<div className="card">
+export const Card = ({ imageSrc, title, description, subtitle, action, link, ...rest }) => (
+	<div className="card" {...rest}>
 		{imageSrc && <img className="card__image" src={imageSrc} alt={title} data-test="card__image" />}
 		{title && <h2 className="card__title" data-test="card__title">{title}</h2>}
 		{subtitle && <p className="card__subtitle" data-test="card__subtitle">{subtitle}</p>}

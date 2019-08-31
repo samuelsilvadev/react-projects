@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeList /> should render correctly when has no recipes 1`] = `
+<ul
+  className="recipe-list"
+  data-test="recipe-list"
+/>
+`;
+
+exports[`<RecipeList /> should render correctly when has recipes 1`] = `
+<ul
+  className="recipe-list"
+  data-test="recipe-list"
+>
+  <li
+    data-test="recipe-list__item"
+    key="123456"
+  >
+    <Card
+      data-test="recipe-list__card"
+      imageSrc="hey.png"
+      link={
+        Object {
+          "text": "View recipe",
+          "to": Object {
+            "pathname": "/recipe/123456",
+            "state": Object {
+              "recipe": Object {
+                "image_url": "hey.png",
+                "publisher": "Yo miesmo",
+                "recipe_id": 123456,
+                "title": "Pasta",
+              },
+            },
+          },
+        }
+      }
+      subtitle={
+        <React.Fragment>
+          Publisher: 
+          <span>
+            Yo miesmo
+          </span>
+        </React.Fragment>
+      }
+      title="Pasta"
+    />
+  </li>
+</ul>
+`;
