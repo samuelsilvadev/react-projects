@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RecipeDetails /> should not render when has no location 1`] = `<RecipeDetails />`;
+
+exports[`<RecipeDetails /> should render correctly when HAS NO state in location 1`] = `
+<RecipeDetails
+  location={
+    Object {
+      "pathname": "recipes/123456",
+    }
+  }
+>
+  <section
+    className="details"
+    data-test="details"
+  >
+    <div
+      className="details__wrapper"
+    >
+      <img
+        className="details__image"
+        data-test="details__image"
+        src="pasta.png"
+      />
+      <h1
+        className="details__title"
+        data-test="details__title"
+      >
+        Pasta
+      </h1>
+      <h2
+        className="details__subtitle"
+        data-test="details__subtitle"
+      >
+        Publisher: 
+        <span>
+          Joao
+        </span>
+      </h2>
+      <p
+        className="details__website"
+        data-test="details__website"
+      >
+        Website:
+        <a
+          data-test="details__website__link"
+          href="joao.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          joao.com
+        </a>
+      </p>
+      <Link
+        className="details__link"
+        data-test="details__link"
+        to="/"
+      >
+        <a
+          className="details__link"
+          data-test="details__link"
+          href="/"
+        >
+          Go home
+        </a>
+      </Link>
+    </div>
+  </section>
+</RecipeDetails>
+`;
+
+exports[`<RecipeDetails /> should render correctly when HAS state in location 1`] = `
+<RecipeDetails
+  location={
+    Object {
+      "pathname": "recipes/123456",
+      "state": Object {
+        "recipe": Object {
+          "image_url": "pasta.png",
+          "publisher": "Joao",
+          "publisher_url": "joao.com",
+          "title": "Pasta",
+        },
+      },
+    }
+  }
+>
+  <section
+    className="details"
+    data-test="details"
+  >
+    <div
+      className="details__wrapper"
+    >
+      <img
+        className="details__image"
+        data-test="details__image"
+        src="pasta.png"
+      />
+      <h1
+        className="details__title"
+        data-test="details__title"
+      >
+        Pasta
+      </h1>
+      <h2
+        className="details__subtitle"
+        data-test="details__subtitle"
+      >
+        Publisher: 
+        <span>
+          Joao
+        </span>
+      </h2>
+      <p
+        className="details__website"
+        data-test="details__website"
+      >
+        Website:
+        <a
+          data-test="details__website__link"
+          href="joao.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          joao.com
+        </a>
+      </p>
+      <Link
+        className="details__link"
+        data-test="details__link"
+        to="/"
+      >
+        <a
+          className="details__link"
+          data-test="details__link"
+          href="/"
+        >
+          Go home
+        </a>
+      </Link>
+    </div>
+  </section>
+</RecipeDetails>
+`;
