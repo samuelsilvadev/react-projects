@@ -6,7 +6,7 @@ import RecipesList from '../RecipesList';
 import { toTestId } from '@tests/utils';
 
 const recipeMock = {
-	recipe_id: 123456,
+	recipe_id: '123456',
 	image_url: 'hey.png',
 	title: 'Pasta',
 	publisher: 'Yo miesmo'

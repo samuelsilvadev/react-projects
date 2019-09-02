@@ -28,7 +28,7 @@ exports[`<RecipeList /> should render correctly when has recipes 1`] = `
               "recipe": Object {
                 "image_url": "hey.png",
                 "publisher": "Yo miesmo",
-                "recipe_id": 123456,
+                "recipe_id": "123456",
                 "title": "Pasta",
               },
             },

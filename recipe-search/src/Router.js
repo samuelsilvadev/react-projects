@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import App from './App';
+import { Recipes } from './Recipes';
 import { RecipeDetails } from './components';
 
 function Router() {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route path="/" component={App} exact />
+				<Route path="/" component={Recipes} exact />
 				<Route path="/recipe/:id" component={RecipeDetails} exact />
 			</Switch>
 		</BrowserRouter>

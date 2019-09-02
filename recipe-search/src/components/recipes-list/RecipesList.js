@@ -33,7 +33,7 @@ const RecipesList = ({ recipes = [] }) => (
 
 RecipesList.propTypes = {
 	recipes: PropTypes.arrayOf(PropTypes.shape({
-		recipe_id: PropTypes.number.isRequired,
+		recipe_id: PropTypes.string.isRequired,
 		image_url: PropTypes.string.isRequired,
 		title: PropTypes.string.isRequired,
 		publisher: PropTypes.string.isRequired
