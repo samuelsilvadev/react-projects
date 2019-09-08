@@ -4,13 +4,13 @@ This project is a copy of [Addison Global - frontend-technical-test](https://git
 
 ## How to install
 
-- `yarn`
-- `yarn start`
+-   `yarn`
+-   `yarn start`
 
 ## Contacts
 
-- samuelsilvawb@gmail.com
-- [twitter](https://twitter.com/samuelsilvadev)
+-   samuelsilvawb@gmail.com
+-   [twitter](https://twitter.com/samuelsilvadev)
 
 ## License
 
