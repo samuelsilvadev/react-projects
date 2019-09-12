@@ -11,7 +11,8 @@
 		"prettier/prettier": "error",
 		"max-len": ["error", 80],
 		"global-require": "off",
-		"import/no-dynamic-require": "off"
+		"import/no-dynamic-require": "off",
+		"import/no-extraneous-dependencies": "off"
 	},
 	"env": {
 		"browser": true,
