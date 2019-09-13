@@ -12,7 +12,8 @@
 		"max-len": ["error", 80],
 		"global-require": "off",
 		"import/no-dynamic-require": "off",
-		"import/no-extraneous-dependencies": "off"
+		"import/no-extraneous-dependencies": "off",
+		"no-underscore-dangle": "off"
 	},
 	"env": {
 		"browser": true,
