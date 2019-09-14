@@ -1,5 +1,7 @@
+@import '../../scss/main.scss';
+
 .header {
-	border-bottom: 2px solid #47525e;
+	border-bottom: 2px solid $tertiary;
 	display: flex;
 	justify-content: flex-end;
 	padding: 10px;
