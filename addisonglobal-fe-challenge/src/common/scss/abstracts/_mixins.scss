@@ -1,0 +1,35 @@
+@mixin for-phone-only {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin for-tablet {
+	@media (min-width: 768px) and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin lte-tablet {
+	@media (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin gte-laptop {
+	@media (min-width: 1025px) {
+		@content;
+	}
+}
+
+@mixin for-laptop {
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		@content;
+	}
+}
+
+@mixin for-desktop {
+	@media (min-width: 1281px) {
+		@content;
+	}
+}
