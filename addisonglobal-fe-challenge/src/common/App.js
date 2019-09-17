@@ -9,9 +9,11 @@ import './App.scss';
 const App = () => (
 	<>
 		<Header />
-		<Switch>
-			<Route exact path="/" component={Home} />
-		</Switch>
+		<main className="main">
+			<Switch>
+				<Route exact path="/" component={Home} />
+			</Switch>
+		</main>
 	</>
 );
 
