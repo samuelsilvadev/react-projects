@@ -50,6 +50,8 @@ server
 									? `<script src="${assets.client.js}" defer></script>`
 									: `<script src="${assets.client.js}" defer crossorigin></script>`
 							}
+
+							<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 						</head>
 						<body>
 							<div id="root">${markup}</div>

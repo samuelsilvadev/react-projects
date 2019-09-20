@@ -1,0 +1,9 @@
+@import '../scss/main.scss';
+
+.home {
+	margin-top: 30px;
+
+	&__title {
+		@include hide-text;
+	}
+}
