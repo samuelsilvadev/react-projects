@@ -11,7 +11,7 @@ export const Events = ({ fetchEvents, events }) => {
 		fetchEvents();
 	}, []);
 
-	return events.map((event, index) => <Event key={index} {...event} />);
+	return events.map((event) => <Event key={event.id} {...event} />);
 };
 
 Events.propTypes = {

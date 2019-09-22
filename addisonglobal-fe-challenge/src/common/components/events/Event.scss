@@ -14,4 +14,13 @@
 		text-align: center;
 		padding: 23px 0;
 	}
+
+	&__market-wrapper {
+		list-style: none;
+	}
+
+	&__market__item {
+		border-top: 1px solid $fifth;
+		padding: 10px;
+	}
 }
