@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Event /> should not render when has no \`markets\` 1`] = `null`;
+
+exports[`<Event /> should render correctly with a event 1`] = `
+<section
+  class="event"
+>
+  <h3
+    class="event__title"
+  >
+    Brazil x Germany
+  </h3>
+  <ul
+    class="event__market-wrapper"
+  >
+    <li
+      class="event__market__item"
+    >
+      <section>
+        <h4
+          class="market__title"
+        >
+          One
+        </h4>
+      </section>
+    </li>
+  </ul>
+</section>
+`;
