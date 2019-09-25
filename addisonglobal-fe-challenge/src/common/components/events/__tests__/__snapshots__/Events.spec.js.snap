@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Events /> Connected Events should render correctly getting data from store 1`] = `
+<section
+  class="event"
+>
+  <h3
+    class="event__title"
+  >
+    Real Madrid vs Barcelona
+  </h3>
+  <ul
+    class="event__market-wrapper"
+  >
+    <li
+      class="event__market__item"
+    >
+      <section>
+        <h4
+          class="market__title"
+        >
+          Team to Win
+        </h4>
+        <button
+          type="button"
+        >
+          Real Madrid
+        </button>
+        <button
+          type="button"
+        >
+          Barcelona
+        </button>
+      </section>
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`<Events /> Unconnected Events Component should render a list of events correctly 1`] = `
+<section
+  class="event"
+>
+  <h3
+    class="event__title"
+  >
+    Rick and Morty
+  </h3>
+  <ul
+    class="event__market-wrapper"
+  >
+    <li
+      class="event__market__item"
+    >
+      <section>
+        <h4
+          class="market__title"
+        >
+          first trip to mars
+        </h4>
+      </section>
+    </li>
+    <li
+      class="event__market__item"
+    >
+      <section>
+        <h4
+          class="market__title"
+        >
+          first robot
+        </h4>
+      </section>
+    </li>
+  </ul>
+</section>
+`;
