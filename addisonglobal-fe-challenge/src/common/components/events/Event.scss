@@ -1,7 +1,7 @@
 @import '../../scss/main.scss';
 
 .event {
-	border: 1px solid $fifth;
+	border: 2px solid $fifth;
 
 	&:not(:last-of-type) {
 		margin-bottom: 20px;
@@ -20,7 +20,7 @@
 	}
 
 	&__market__item {
-		border-top: 1px solid $fifth;
+		border-top: 2px solid $fifth;
 		padding: 10px;
 	}
 }

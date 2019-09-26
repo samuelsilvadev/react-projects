@@ -17,12 +17,17 @@ exports[`<Event /> should render correctly with a event 1`] = `
     <li
       class="event__market__item"
     >
-      <section>
+      <section
+        class="market"
+      >
         <h4
           class="market__title"
         >
           One
         </h4>
+        <div
+          class="market__selections-wrapper"
+        />
       </section>
     </li>
   </ul>

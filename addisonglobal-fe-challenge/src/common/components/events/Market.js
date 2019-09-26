@@ -4,16 +4,19 @@ import PropTypes from 'prop-types';
 import './Market.scss';
 
 const renderButton = (selection) => (
-	<button key={selection.id} type="button">
-		{selection.name}
+	<button className="market__btn" key={selection.id} type="button">
+		<span>{selection.name}</span>
+		<span>{selection.price}</span>
 	</button>
 );
 
 function Market({ name, selections }) {
 	return (
-		<section>
+		<section className="market">
 			<h4 className="market__title">{name}</h4>
-			{selections.map(renderButton)}
+			<div className="market__selections-wrapper">
+				{selections.map(renderButton)}
+			</div>
 		</section>
 	);
 }
