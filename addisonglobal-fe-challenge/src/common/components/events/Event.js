@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Event.scss';
 
-import Market from './Market';
+import Market from '../market/Market';
 
 const renderMarket = (market) => (
 	<li className="event__market__item" key={market.id}>
