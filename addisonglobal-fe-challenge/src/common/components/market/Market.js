@@ -10,7 +10,7 @@ const renderButton = (selection) => (
 	</button>
 );
 
-function Market({ name, selections }) {
+const Market = ({ name, selections }) => {
 	return (
 		<section className="market">
 			<h4 className="market__title">{name}</h4>
@@ -19,7 +19,7 @@ function Market({ name, selections }) {
 			</div>
 		</section>
 	);
-}
+};
 
 Market.propTypes = {
 	name: PropTypes.string.isRequired,
