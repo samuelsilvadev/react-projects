@@ -1,0 +1,42 @@
+@import '../../scss/main.scss';
+
+.betSlip {
+	background-color: $white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 80vw;
+	transform: translateX(100%);
+	transition: transform 250ms ease;
+
+	&::before {
+		content: '';
+		background-color: transparent;
+		transition: background-color 300ms linear 250ms;
+	}
+
+	&--open {
+		transform: translateY(0);
+
+		&::before {
+			top: 0;
+			left: -20vw;
+			position: absolute;
+			background-color: $primaryA58;
+			height: 100vh;
+			width: 20vw;
+		}
+	}
+
+	&__button {
+		padding: 10px;
+		margin-left: auto;
+		display: block;
+	}
+
+	&__close-icon {
+		height: 3em;
+		width: 3em;
+	}
+}
