@@ -3,6 +3,14 @@ import { render } from '@testing-library/react';
 
 import Event from '../Event';
 
+jest.mock('../../../contexts/AsideContext', () => ({
+	useAsideContext() {
+		return {
+			handleOpen: () => {}
+		};
+	}
+}));
+
 describe('<Event />', () => {
 	it('should render correctly with a event', () => {
 		const props = {

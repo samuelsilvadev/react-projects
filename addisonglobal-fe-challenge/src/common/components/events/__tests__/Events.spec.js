@@ -10,6 +10,14 @@ jest.mock('../../../store/actions/eventsActions', () => ({
 	fetchEvents: () => ({ type: 'GET_EVENTS' })
 }));
 
+jest.mock('../../../contexts/AsideContext', () => ({
+	useAsideContext() {
+		return {
+			handleOpen: () => {}
+		};
+	}
+}));
+
 describe('<Events />', () => {
 	describe('Unconnected Events Component', () => {
 		it('should call `fetchEvents` after components mount', () => {

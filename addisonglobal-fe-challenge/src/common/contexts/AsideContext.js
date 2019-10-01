@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 
 const AsideContext = React.createContext();
 
-export const ContextProvider = (props) => {
+export const AsideContextProvider = (props) => {
 	const [isAsideVisible, setAsideVisible] = useState(false);
 
 	const handleOpen = () => {
@@ -29,9 +29,9 @@ export const useAsideContext = () => {
 export function withAsideContext(Component) {
 	function WithAsideContext(props) {
 		return (
-			<ContextProvider>
+			<AsideContextProvider>
 				<Component {...props} />
-			</ContextProvider>
+			</AsideContextProvider>
 		);
 	}
 

@@ -3,6 +3,8 @@ import { render } from '@testing-library/react';
 
 import Market from '../Market';
 
+import { AsideContextProvider } from '../../../contexts/AsideContext';
+
 describe('<Market />', () => {
 	it('should render correctly with all props', () => {
 		const props = {
@@ -15,7 +17,11 @@ describe('<Market />', () => {
 				}
 			]
 		};
-		const { container, queryByText } = render(<Market {...props} />);
+		const { container, queryByText } = render(
+			<AsideContextProvider>
+				<Market {...props} />
+			</AsideContextProvider>
+		);
 
 		expect(queryByText(props.name)).toBeVisible();
 		expect(queryByText(props.selections[0].name)).toBeVisible();
