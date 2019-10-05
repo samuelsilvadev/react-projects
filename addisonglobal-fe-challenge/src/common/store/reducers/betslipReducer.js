@@ -1,11 +1,17 @@
 import { BETSLIP } from '../types/betslipTypes';
 
-const betslipReducer = (state = [], action) => {
+const betslipReducer = (state = {}, action) => {
 	switch (action.type) {
 		case BETSLIP.ADD:
-			return [...state, action.payload.bet];
-		case BETSLIP.REMOVE:
-			return state.filter((bet) => bet.id !== action.payload.bet.id);
+			return { ...state, [action.payload.bet.id]: action.payload.bet };
+		case BETSLIP.REMOVE: {
+			const {
+				[action.payload.bet.id]: betToRemove,
+				...remainingBets
+			} = state;
+
+			return remainingBets;
+		}
 		default:
 			return state;
 	}

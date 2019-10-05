@@ -17,14 +17,14 @@ describe('Betslip Reducer', () => {
 			}
 		};
 
-		const newState = betslipReducer([], betAction);
+		const newState = betslipReducer({}, betAction);
 
-		expect(newState).toEqual([
-			{
+		expect(newState).toEqual({
+			1: {
 				id: '1',
 				name: 'Madasgacar'
 			}
-		]);
+		});
 	});
 
 	it('should remove a bet correctly', () => {
@@ -37,23 +37,23 @@ describe('Betslip Reducer', () => {
 			}
 		};
 
-		const INITIAL_STATE = [
-			{
+		const INITIAL_STATE = {
+			1: {
 				id: '1'
 			}
-		];
+		};
 
 		const newState = betslipReducer(INITIAL_STATE, betAction);
 
-		expect(newState).toEqual([]);
+		expect(newState).toEqual({});
 	});
 
 	it('should ignore non related actions and just return the state', () => {
-		const INITIAL_STATE = [
-			{
+		const INITIAL_STATE = {
+			1: {
 				id: '1'
 			}
-		];
+		};
 
 		const action = {
 			type: 'UNKNOWN'
