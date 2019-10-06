@@ -29,7 +29,7 @@
 		transition-property: color, background-color;
 		transition-duration: 200ms;
 
-		&:hover {
+		&--active {
 			background: $limegreen;
 			color: white;
 		}
