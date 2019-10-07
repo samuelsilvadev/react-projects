@@ -13,7 +13,7 @@ exports[`<Market /> should render correctly with all props 1`] = `
     class="market__selections-wrapper"
   >
     <button
-      class="market__btn"
+      class="market__btn "
       type="button"
     >
       <span>

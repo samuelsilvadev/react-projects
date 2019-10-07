@@ -18,6 +18,8 @@ jest.mock('../../../contexts/AsideContext', () => ({
 	}
 }));
 
+jest.mock('../../market/Market', () => () => null);
+
 describe('<Events />', () => {
 	describe('Unconnected Events Component', () => {
 		it('should call `fetchEvents` after components mount', () => {
@@ -41,10 +43,6 @@ describe('<Events />', () => {
 							{
 								id: 1,
 								name: 'first trip to mars'
-							},
-							{
-								id: 2,
-								name: 'first robot'
 							}
 						]
 					}
@@ -54,8 +52,6 @@ describe('<Events />', () => {
 			const { container, queryByText } = render(<Events {...props} />);
 
 			expect(queryByText('Rick and Morty')).toBeInTheDocument();
-			expect(queryByText('first trip to mars')).toBeVisible();
-			expect(queryByText('first robot')).toBeVisible();
 			expect(container.firstChild).toMatchSnapshot();
 		});
 	});
@@ -69,7 +65,6 @@ describe('<Events />', () => {
 			})(<ConnectedEvents />);
 
 			expect(queryByText('Real Madrid vs Barcelona')).toBeInTheDocument();
-			expect(queryByText('Team to Win')).toBeVisible();
 			expect(container.firstChild).toMatchSnapshot();
 		});
 	});

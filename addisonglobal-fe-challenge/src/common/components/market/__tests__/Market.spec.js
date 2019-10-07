@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Market from '../Market';
+import { Market } from '../Market';
 
 import { AsideContextProvider } from '../../../contexts/AsideContext';
 
@@ -15,7 +15,9 @@ describe('<Market />', () => {
 					name: 'Messi',
 					price: 1.3
 				}
-			]
+			],
+			addBet: () => {},
+			removeBet: () => {}
 		};
 		const { container, queryByText } = render(
 			<AsideContextProvider>

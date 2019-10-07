@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Event /> should not break if market be \`undefined\` 1`] = `null`;
+
 exports[`<Event /> should not render when has no \`markets\` 1`] = `null`;
 
 exports[`<Event /> should render correctly with a event 1`] = `
@@ -16,20 +18,7 @@ exports[`<Event /> should render correctly with a event 1`] = `
   >
     <li
       class="event__market__item"
-    >
-      <section
-        class="market"
-      >
-        <h4
-          class="market__title"
-        >
-          One
-        </h4>
-        <div
-          class="market__selections-wrapper"
-        />
-      </section>
-    </li>
+    />
   </ul>
 </section>
 `;

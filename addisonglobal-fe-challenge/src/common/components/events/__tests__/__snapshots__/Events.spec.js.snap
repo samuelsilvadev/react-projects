@@ -14,43 +14,7 @@ exports[`<Events /> Connected Events should render correctly getting data from s
   >
     <li
       class="event__market__item"
-    >
-      <section
-        class="market"
-      >
-        <h4
-          class="market__title"
-        >
-          Team to Win
-        </h4>
-        <div
-          class="market__selections-wrapper"
-        >
-          <button
-            class="market__btn"
-            type="button"
-          >
-            <span>
-              Real Madrid
-            </span>
-            <span>
-              1.23
-            </span>
-          </button>
-          <button
-            class="market__btn"
-            type="button"
-          >
-            <span>
-              Barcelona
-            </span>
-            <span>
-              2.05
-            </span>
-          </button>
-        </div>
-      </section>
-    </li>
+    />
   </ul>
 </section>
 `;
@@ -69,36 +33,7 @@ exports[`<Events /> Unconnected Events Component should render a list of events 
   >
     <li
       class="event__market__item"
-    >
-      <section
-        class="market"
-      >
-        <h4
-          class="market__title"
-        >
-          first trip to mars
-        </h4>
-        <div
-          class="market__selections-wrapper"
-        />
-      </section>
-    </li>
-    <li
-      class="event__market__item"
-    >
-      <section
-        class="market"
-      >
-        <h4
-          class="market__title"
-        >
-          first robot
-        </h4>
-        <div
-          class="market__selections-wrapper"
-        />
-      </section>
-    </li>
+    />
   </ul>
 </section>
 `;

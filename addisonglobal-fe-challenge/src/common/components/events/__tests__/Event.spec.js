@@ -11,6 +11,8 @@ jest.mock('../../../contexts/AsideContext', () => ({
 	}
 }));
 
+jest.mock('../../market/Market', () => () => null);
+
 describe('<Event />', () => {
 	it('should render correctly with a event', () => {
 		const props = {
@@ -25,7 +27,6 @@ describe('<Event />', () => {
 		const { container, queryByText } = render(<Event {...props} />);
 
 		expect(queryByText(props.name)).toBeVisible();
-		expect(queryByText('One')).toBeVisible();
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
@@ -33,6 +34,17 @@ describe('<Event />', () => {
 		const props = {
 			name: 'Spain x Belgium',
 			markets: []
+		};
+		const { container, queryByText } = render(<Event {...props} />);
+
+		expect(queryByText(props.name)).not.toBeInTheDocument();
+		expect(container.firstChild).toMatchSnapshot();
+	});
+
+	it('should not break if market be `undefined`', () => {
+		const props = {
+			name: 'Spain x Belgium 2',
+			markets: undefined
 		};
 		const { container, queryByText } = render(<Event {...props} />);
 
