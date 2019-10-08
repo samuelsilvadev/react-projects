@@ -19,11 +19,7 @@ const App = () => {
 				<Switch>
 					<Route exact path="/" component={Home} />
 				</Switch>
-				<BetSlip
-					onRemove={() => {}}
-					open={isAsideVisible}
-					onClose={handleClose}
-				/>
+				<BetSlip open={isAsideVisible} onClose={handleClose} />
 			</main>
 		</>
 	);

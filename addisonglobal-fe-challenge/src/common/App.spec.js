@@ -4,9 +4,10 @@ import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
 jest.mock('./pages', () => ({ Home: () => null }));
+jest.mock('./components/betslip', () => () => <aside>BetSlip</aside>);
 
 describe('<App />', () => {
-	test('renders without exploding', () => {
+	it('renders without exploding', () => {
 		const div = document.createElement('div');
 		ReactDOM.render(
 			<MemoryRouter>
