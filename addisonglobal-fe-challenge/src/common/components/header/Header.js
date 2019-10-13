@@ -8,7 +8,11 @@ import './Header.scss';
 const Header = ({ onAsideOpen }) => {
 	return (
 		<header className="header">
-			<button type="button" onClick={onAsideOpen}>
+			<button
+				className="header__button"
+				type="button"
+				onClick={onAsideOpen}
+			>
 				<BurgerIcon className="header__burger" />
 			</button>
 		</header>

@@ -13,3 +13,10 @@ body {
 .main {
 	padding: 0 15px;
 }
+
+.container {
+	width: 100%;
+	max-width: 375px;
+	margin: auto;
+	transform: translate3d(0, 0, 0);
+}

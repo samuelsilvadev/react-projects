@@ -13,7 +13,7 @@ const App = () => {
 	const { handleOpen, handleClose, isAsideVisible } = useAsideContext();
 
 	return (
-		<>
+		<div className="container">
 			<Header onAsideOpen={handleOpen} />
 			<main className="main">
 				<Switch>
@@ -21,7 +21,7 @@ const App = () => {
 				</Switch>
 				<BetSlip open={isAsideVisible} onClose={handleClose} />
 			</main>
-		</>
+		</div>
 	);
 };
 

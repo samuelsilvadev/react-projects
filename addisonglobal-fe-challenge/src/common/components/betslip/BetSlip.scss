@@ -11,10 +11,12 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	height: 100vh;
-	width: 80vw;
+	height: 100%;
+	width: 80%;
 	transform: translateX(100%);
-	transition: transform 250ms ease;
+	transition: transform 250ms ease, opacity 200ms linear;
+	opacity: 0;
+	pointer-events: none;
 
 	&::before {
 		content: '';
@@ -24,14 +26,16 @@
 
 	&--open {
 		transform: translateY(0);
+		opacity: 1;
+		pointer-events: all;
 
 		&::before {
 			top: 0;
-			left: -20vw;
-			position: absolute;
+			left: -25%;
+			position: fixed;
 			background-color: $primaryA58;
-			height: 100vh;
-			width: 20vw;
+			height: 100%;
+			width: 25%;
 		}
 	}
 
@@ -39,6 +43,8 @@
 		padding: 10px;
 		margin-left: auto;
 		display: block;
+		background: none;
+		border: none;
 	}
 
 	&__close-icon {
@@ -47,12 +53,18 @@
 	}
 
 	&__list {
-		height: calc(100vh - 85px);
+		height: calc(100% - 85px);
 		margin-top: 28px;
 		list-style: none;
 		padding: 0 70.75px 0 52.5px;
 		overflow: scroll;
 		width: 100%;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	&__item {
