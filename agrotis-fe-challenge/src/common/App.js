@@ -1,13 +1,26 @@
 import React from 'react';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
+import styled from 'styled-components';
+import { Route, Switch } from 'react-router-dom';
+
+import { Header, HEADER_HEIGHT } from './components';
 import Home from './pages/Home';
-import './App.css';
+import { GlobalStyle } from './Global.style';
+
+const Main = styled.main`
+	background-color: #ecf0f1;
+	min-height: calc(100vh - ${HEADER_HEIGHT});
+`;
 
 const App = () => (
-	<Switch>
-		<Route exact path="/" component={Home} />
-	</Switch>
+	<>
+		<GlobalStyle />
+		<Header />
+		<Main>
+			<Switch>
+				<Route exact path="/" component={Home} />
+			</Switch>
+		</Main>
+	</>
 );
 
 export default App;
