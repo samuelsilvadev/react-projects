@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render correctly 1`] = `
+<header
+  class="sc-bdVaJa hUjRbq"
+>
+  <img
+    alt="Brand from Agrotis"
+    class="sc-bwzfXH dvVBfE"
+    src="agrotis.png"
+  />
+</header>
+`;
