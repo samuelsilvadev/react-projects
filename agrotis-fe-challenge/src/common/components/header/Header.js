@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
 `;
 
 const Img = styled.img`
-	margin-left: 5rem;
+	margin-left: 3rem;
 	width: 12rem;
 `;
 

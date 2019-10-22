@@ -9,6 +9,7 @@ import { GlobalStyle } from './Global.style';
 const Main = styled.main`
 	background-color: #ecf0f1;
 	min-height: calc(100vh - ${HEADER_HEIGHT});
+	padding: 2rem 4rem;
 `;
 
 const App = () => (
