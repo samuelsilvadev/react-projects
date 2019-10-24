@@ -1,14 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { MagnifierGlass } from '../components';
+import { gteSmallMedia } from '../media.style';
+
 const TopBarDiv = styled.div`
 	align-items: center;
 	background-color: #004d40;
 	color: #fff;
 	display: flex;
-	height: 7rem;
-	justify-content: space-between;
-	padding: 0 4rem;
+	flex-direction: column;
+	height: 12rem;
+	justify-content: space-around;
+	padding: 0 2.5rem;
+
+	${gteSmallMedia} {
+		height: 7rem;
+		flex-direction: row;
+		justify-content: space-between;
+	}
 `;
 
 const ContentDiv = styled.div`
@@ -17,14 +27,58 @@ const ContentDiv = styled.div`
 	height: 70vh;
 `;
 
+const Form = styled.form`
+	display: flex;
+	height: 4rem;
+	width: 100%;
+
+	${gteSmallMedia} {
+		width: 32rem;
+	}
+`;
+
+const Input = styled.input`
+	border: none;
+	font-size: 1.6rem;
+	height: 100%;
+	padding-left: 0.5rem;
+	width: 100%;
+	order: 1;
+`;
+
+const Button = styled.button`
+	background: #fff;
+	border: none;
+	cursor: pointer;
+	height: 100%;
+	width: 5rem;
+`;
+
+const StyledMagnifierGlass = styled(MagnifierGlass)`
+	padding: 1rem;
+	height: 100%;
+	width: 100%;
+`;
+
 function Home() {
+	const handleSubmit = (event) => {
+		event.preventDefault();
+	};
+
 	return (
 		<section>
 			<TopBarDiv>
 				<h1>Document State</h1>
-				<form>
-					<input type="search" name="searchByName" />
-				</form>
+				<Form onSubmit={handleSubmit}>
+					<Input
+						type="search"
+						name="searchByName"
+						placeholder="Search by name"
+					/>
+					<Button aria-label="Search">
+						<StyledMagnifierGlass />
+					</Button>
+				</Form>
 			</TopBarDiv>
 			<ContentDiv />
 		</section>
