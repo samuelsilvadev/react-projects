@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { MagnifierGlass } from '../components';
+import { MagnifierGlass, DocumentList } from '../components';
 import { gteSmallMedia } from '../media.style';
+
+import * as mockData from './home.data';
 
 const TopBarDiv = styled.div`
 	align-items: center;
@@ -80,7 +82,9 @@ function Home() {
 					</Button>
 				</Form>
 			</TopBarDiv>
-			<ContentDiv />
+			<ContentDiv>
+				<DocumentList documents={mockData.documentList} />
+			</ContentDiv>
 		</section>
 	);
 }
