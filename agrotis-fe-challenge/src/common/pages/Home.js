@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { MagnifierGlass, DocumentList } from '../components';
+import { MagnifierGlass, DocumentList, LoadMoreButton } from '../components';
 import { gteSmallMedia } from '../media.style';
 
 import * as mockData from './home.data';
@@ -24,8 +24,11 @@ const TopBarDiv = styled.div`
 `;
 
 const ContentDiv = styled.div`
+	align-items: center;
 	background-color: #fff;
 	box-shadow: -1px 0 0.5rem 0 #ecf0f1;
+	display: flex;
+	flex-direction: column;
 	height: 70vh;
 `;
 
@@ -84,6 +87,17 @@ function Home() {
 			</TopBarDiv>
 			<ContentDiv>
 				<DocumentList documents={mockData.documentList} />
+				{
+					// - initialCount is the amount of loaded documents
+					// - maxCount is the amount of documents that
+					// need to be loaded.
+					// - after load everything we need to hide the
+					// LoadMoreButton
+				}
+				<LoadMoreButton
+					initialCount={mockData.documentList.length}
+					maxCount={10}
+				/>
 			</ContentDiv>
 		</section>
 	);
