@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { MagnifierGlass, DocumentList, LoadMoreButton } from '../components';
+import {
+	MagnifierGlass,
+	Plus,
+	DocumentList,
+	LoadMoreButton
+} from '../components';
 import { gteSmallMedia } from '../media.style';
 
 import * as mockData from './home.data';
@@ -30,6 +35,7 @@ const ContentDiv = styled.div`
 	display: flex;
 	flex-direction: column;
 	height: 70vh;
+	position: relative;
 `;
 
 const Form = styled.form`
@@ -65,6 +71,26 @@ const StyledMagnifierGlass = styled(MagnifierGlass)`
 	width: 100%;
 `;
 
+const StyledPlusIcon = styled(Plus)`
+	fill: #fff;
+	padding: 1.3rem;
+	height: 100%;
+	width: 100%;
+`;
+
+const NewRegistryButton = styled.button`
+	background-color: #b45f04;
+	border: none;
+	border-radius: 100%;
+	bottom: 0;
+	cursor: pointer;
+	height: 5rem;
+	right: 2rem;
+	position: absolute;
+	transform: translateY(50%);
+	width: 5rem;
+`;
+
 function Home() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -98,6 +124,9 @@ function Home() {
 					initialCount={mockData.documentList.length}
 					maxCount={10}
 				/>
+				<NewRegistryButton aria-label="Add new document">
+					<StyledPlusIcon />
+				</NewRegistryButton>
 			</ContentDiv>
 		</section>
 	);
