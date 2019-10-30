@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DocumentList /> should not render if has no \`documents\` prop 1`] = `<div />`;
+
+exports[`<DocumentList /> should render correctly when has \`documents\` prop 1`] = `
+<div>
+  <ul
+    class="sc-bdVaJa gNTQhD"
+    data-test="documentList"
+  >
+    <li
+      class="sc-bwzfXH fyZOft"
+    >
+      <div
+        class="sc-htpNat gkdNxb"
+        width="35rem"
+      >
+        <span
+          class="sc-bxivhb csUzPq"
+        >
+          Name: 
+        </span>
+        <span
+          class="sc-ifAKCX fnqLfI"
+        >
+          Document 1
+        </span>
+      </div>
+      <div
+        class="sc-htpNat gsmuIY"
+      >
+        <span
+          class="sc-bxivhb csUzPq"
+        >
+          Description: 
+        </span>
+        <span
+          class="sc-ifAKCX fnqLfI"
+        >
+          Description 1
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

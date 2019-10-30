@@ -42,6 +42,10 @@ const StrongSpan = styled.span`
 function DocumentList(props) {
 	const { documents = [] } = props;
 
+	if (!documents.length) {
+		return null;
+	}
+
 	const renderListItem = (document, key) => {
 		const { name, description } = document;
 
@@ -59,7 +63,7 @@ function DocumentList(props) {
 		);
 	};
 
-	return <Ul>{documents.map(renderListItem)}</Ul>;
+	return <Ul data-test="documentList">{documents.map(renderListItem)}</Ul>;
 }
 
 DocumentList.propTypes = {
