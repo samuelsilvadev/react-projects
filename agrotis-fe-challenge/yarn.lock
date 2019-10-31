@@ -1109,7 +1109,7 @@ acorn-globals@^4.1.0:
     acorn "^6.0.1"
     acorn-walk "^6.0.1"
 
-acorn-jsx@^5.1.0:
+acorn-jsx@^5.0.2, acorn-jsx@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.1.0.tgz#294adb71b57398b0680015f0a38c563ee1db5384"
   integrity sha512-tMUqwBWfLFbJbizRmEcWSLw6HnFzfdJs2sOJEOwwtVPMoH/0Ay+E703oZz78VSXZiiDcZrQ5XKjPIUQixhmgVw==
@@ -7807,6 +7807,14 @@ react@^16.11.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
+
+reactime@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/reactime/-/reactime-3.0.2.tgz#a16dd72647e9e4d256e130f567c5d5ec5f60f325"
+  integrity sha512-LRSnHikVQsGSrOVEksDUmduD4KjUnyU771y/OFMJf6dHPLn58DY92xA1fXPT0fimk3e20r0QyR7jpuWSlw+qHQ==
+  dependencies:
+    acorn "^7.1.0"
+    acorn-jsx "^5.0.2"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
