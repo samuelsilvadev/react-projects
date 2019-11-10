@@ -4,3 +4,4 @@ export { default as LoadMoreButton } from './load-more-button/LoadMoreButton';
 
 export { default as MagnifierGlass } from './icons/MagnifierGlass';
 export { default as Plus } from './icons/Plus';
+export { default as ArrowRight } from './icons/ArrowRight';
