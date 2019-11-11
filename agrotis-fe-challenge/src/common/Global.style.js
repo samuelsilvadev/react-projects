@@ -15,4 +15,8 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: 'Roboto', sans-serif;
 		font-size: 1.6rem;
 	}
+
+	button {
+		cursor: pointer;
+	}
 `;
