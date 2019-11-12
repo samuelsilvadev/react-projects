@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import {
@@ -7,36 +8,10 @@ import {
 	DocumentList,
 	LoadMoreButton
 } from '../components';
+import { TopBarDiv, ContentDiv } from './Template';
 import { gteSmallMedia } from '../media.style';
 
 import * as mockData from './home.data';
-
-const TopBarDiv = styled.div`
-	align-items: center;
-	background-color: #004d40;
-	color: #fff;
-	display: flex;
-	flex-direction: column;
-	height: 12rem;
-	justify-content: space-around;
-	padding: 0 2.5rem;
-
-	${gteSmallMedia} {
-		height: 7rem;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-`;
-
-const ContentDiv = styled.div`
-	align-items: center;
-	background-color: #fff;
-	box-shadow: -1px 0 0.5rem 0 #ecf0f1;
-	display: flex;
-	flex-direction: column;
-	height: 70vh;
-	position: relative;
-`;
 
 const Form = styled.form`
 	display: flex;
@@ -91,9 +66,13 @@ const NewRegistryButton = styled.button`
 	width: 5rem;
 `;
 
-function Home() {
+function Home(props) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
+	};
+
+	const handleNewRegisterClick = () => {
+		props.history.push('register');
 	};
 
 	return (
@@ -124,12 +103,21 @@ function Home() {
 					initialCount={mockData.documentList.length}
 					maxCount={10}
 				/>
-				<NewRegistryButton aria-label="Add new document">
+				<NewRegistryButton
+					onClick={handleNewRegisterClick}
+					aria-label="Add new document"
+				>
 					<StyledPlusIcon />
 				</NewRegistryButton>
 			</ContentDiv>
 		</section>
 	);
 }
+
+Home.propTypes = {
+	history: PropTypes.shape({
+		push: PropTypes.func
+	})
+};
 
 export default Home;
