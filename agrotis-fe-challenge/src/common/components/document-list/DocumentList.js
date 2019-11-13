@@ -6,7 +6,7 @@ import { gteSmallMedia } from '../../media.style';
 
 const Ul = styled.ul`
 	list-style: none;
-	padding: 2rem;
+	padding: 2rem 0;
 	width: 100%;
 `;
 

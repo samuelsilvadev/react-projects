@@ -27,4 +27,5 @@ export const ContentDiv = styled.div`
 	flex-direction: column;
 	height: 70vh;
 	position: relative;
+	padding: 0 2.5rem;
 `;
