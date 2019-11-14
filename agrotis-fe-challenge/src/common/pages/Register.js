@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { ArrowRight } from '../components';
+import { ArrowRight, DocumentForm } from '../components';
 import { TopBarDiv, ContentDiv } from './Template';
 
 const StyledArrowRight = styled(ArrowRight)`
@@ -34,6 +34,10 @@ const Div = styled.div`
 	display: flex;
 `;
 
+const StyledDocumentForm = styled(DocumentForm)`
+	margin-top: 3rem;
+`;
+
 function Register(props) {
 	const handleClickBack = () => {
 		props.history.push('/');
@@ -56,7 +60,9 @@ function Register(props) {
 					<SaveButton>Save</SaveButton>
 				</Div>
 			</TopBarDiv>
-			<ContentDiv />
+			<ContentDiv>
+				<StyledDocumentForm />
+			</ContentDiv>
 		</section>
 	);
 }
