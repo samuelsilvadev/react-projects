@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useReducer, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 import { gteSmallMedia } from '../../media.style';
 
-const Form = styled.form`
+const StyledForm = styled(Form)`
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(2, auto);
 	grid-gap: 4rem;
+	position: relative;
 	width: 100%;
 
 	${gteSmallMedia} {
 		grid-template-columns: 20% calc(80% - 4rem);
 		grid-template-rows: auto;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 `;
 
@@ -23,14 +32,11 @@ const Div = styled.div`
 `;
 
 const Span = styled.span`
-	bottom: 0;
-	position: absolute;
-	right: 0;
-	transform: translateY(130%);
-	font-size: 1.4rem;
+	font-size: 1.2rem;
+	text-align: right;
 `;
 
-const Input = styled.input`
+const StyledField = styled(Field)`
 	border: none;
 	border-bottom: 0.1rem solid #e6dcdc;
 	height: 3rem;
@@ -42,21 +48,99 @@ const Label = styled.label`
 	color: #797474;
 `;
 
+const ErrorSpan = styled.span`
+	color: #fd0431;
+	font-size: 1.2rem;
+`;
+
+const FlexSpan = styled.span`
+	display: flex;
+`;
+
+const AdditionalInfoDiv = styled.div`
+	align-items: flex-start;
+	display: grid;
+	grid-template-columns: 80% 20%;
+	grid-template-rows: auto;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	transform: translateY(calc(100% + 0.5rem));
+	width: 100%;
+`;
+
+const INITIAL_VALUES = {
+	name: '',
+	description: ''
+};
+
+const REQUIRED_MESSAGE = 'Field is required';
+
+const VALIDATION_SCHEME = Yup.object().shape({
+	name: Yup.string()
+		.max(20)
+		.required(REQUIRED_MESSAGE),
+	description: Yup.string()
+		.max(240)
+		.required(REQUIRED_MESSAGE)
+});
+
+const CustomErrorMessage = ({ name }) => (
+	<FlexSpan>
+		<ErrorMessage name={name}>
+			{(message) => <ErrorSpan>{message}</ErrorSpan>}
+		</ErrorMessage>
+	</FlexSpan>
+);
+
+CustomErrorMessage.propTypes = {
+	name: PropTypes.string.isRequired
+};
+
 function DocumentForm(props) {
+	const { onSubmit, formId, ...remainingProps } = props;
+
 	return (
-		<Form {...props}>
-			<Div>
-				<Label htmlFor="name">Name</Label>
-				<Input id="name" type="text" />
-				<Span>0/20</Span>
-			</Div>
-			<Div>
-				<Label htmlFor="description">Description</Label>
-				<Input id="description" type="text" />
-				<Span>0/240</Span>
-			</Div>
-		</Form>
+		<Formik
+			validationSchema={VALIDATION_SCHEME}
+			initialValues={INITIAL_VALUES}
+			onSubmit={onSubmit}
+		>
+			{({ isSubmitting, values: { name, description } }) => (
+				<StyledForm
+					id={formId}
+					disabled={isSubmitting}
+					{...remainingProps}
+				>
+					<Div>
+						<Label htmlFor="name">Name</Label>
+						<StyledField id="name" type="text" name="name" />
+						<AdditionalInfoDiv>
+							<CustomErrorMessage name="name" />
+							<Span>{name.length}/20</Span>
+						</AdditionalInfoDiv>
+					</Div>
+					<Div>
+						<Label htmlFor="description">Description</Label>
+						<StyledField
+							id="description"
+							type="text"
+							name="description"
+						/>
+						<AdditionalInfoDiv>
+							<CustomErrorMessage name="description" />
+							<Span>{description.length}/240</Span>
+						</AdditionalInfoDiv>
+					</Div>
+				</StyledForm>
+			)}
+		</Formik>
 	);
 }
+
+DocumentForm.propTypes = {
+	onSubmit: PropTypes.func.isRequired,
+	formId: PropTypes.string.isRequired
+};
 
 export default DocumentForm;

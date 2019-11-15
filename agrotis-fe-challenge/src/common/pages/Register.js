@@ -38,9 +38,19 @@ const StyledDocumentForm = styled(DocumentForm)`
 	margin-top: 3rem;
 `;
 
+const FORM_ID = 'register-form';
+
 function Register(props) {
 	const handleClickBack = () => {
 		props.history.push('/');
+	};
+
+	const handleOnSubmit = (values, actions) => {
+		console.log('submitting', values);
+		setTimeout(() => {
+			console.log('submitted');
+			actions.setSubmitting(false);
+		}, 2000);
 	};
 
 	return (
@@ -57,11 +67,16 @@ function Register(props) {
 				</Div>
 				<Div>
 					<Button onClick={handleClickBack}>Back</Button>
-					<SaveButton>Save</SaveButton>
+					<SaveButton form={FORM_ID} type="submit">
+						Save
+					</SaveButton>
 				</Div>
 			</TopBarDiv>
 			<ContentDiv>
-				<StyledDocumentForm />
+				<StyledDocumentForm
+					formId={FORM_ID}
+					onSubmit={handleOnSubmit}
+				/>
 			</ContentDiv>
 		</section>
 	);
