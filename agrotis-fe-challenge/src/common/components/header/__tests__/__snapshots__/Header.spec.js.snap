@@ -2,11 +2,11 @@
 
 exports[`<Header /> should render correctly 1`] = `
 <header
-  class="sc-bdVaJa hUjRbq"
+  class="sc-bdVaJa eKWVDX"
 >
   <img
     alt="Brand from Agrotis"
-    class="sc-bwzfXH dvVBfE"
+    class="sc-bwzfXH hoNFxY"
     src="agrotis.png"
   />
 </header>

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DocumentForm /> should render correctly 1`] = `
+<form
+  action="#"
+  class="sc-bdVaJa ftPchg"
+  data-test="documentForm"
+  id="formId"
+>
+  <div
+    class="sc-bwzfXH euQDPo"
+  >
+    <label
+      class="sc-ifAKCX cTYuJL"
+      for="name"
+    >
+      Name
+    </label>
+    <input
+      class="sc-bxivhb bLeuva"
+      id="name"
+      name="name"
+      type="text"
+      value=""
+    />
+    <div
+      class="sc-gzVnrw KEjbu"
+    >
+      <span
+        class="sc-bZQynM eolWxC"
+      />
+      <span
+        class="sc-htpNat dVZjJi"
+      >
+        0
+        /20
+      </span>
+    </div>
+  </div>
+  <div
+    class="sc-bwzfXH euQDPo"
+  >
+    <label
+      class="sc-ifAKCX cTYuJL"
+      for="description"
+    >
+      Description
+    </label>
+    <input
+      class="sc-bxivhb bLeuva"
+      id="description"
+      name="description"
+      type="text"
+      value=""
+    />
+    <div
+      class="sc-gzVnrw KEjbu"
+    >
+      <span
+        class="sc-bZQynM eolWxC"
+      />
+      <span
+        class="sc-htpNat dVZjJi"
+      >
+        0
+        /240
+      </span>
+    </div>
+  </div>
+</form>
+`;

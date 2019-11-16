@@ -74,7 +74,7 @@ const INITIAL_VALUES = {
 	description: ''
 };
 
-const REQUIRED_MESSAGE = 'Field is required';
+export const REQUIRED_MESSAGE = 'Field is required';
 
 const VALIDATION_SCHEME = Yup.object().shape({
 	name: Yup.string()
@@ -110,6 +110,7 @@ function DocumentForm(props) {
 				<StyledForm
 					id={formId}
 					disabled={isSubmitting}
+					data-test="documentForm"
 					{...remainingProps}
 				>
 					<Div>

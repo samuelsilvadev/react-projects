@@ -5,7 +5,7 @@ exports[`<DocumentList /> should not render if has no \`documents\` prop 1`] = `
 exports[`<DocumentList /> should render correctly when has \`documents\` prop 1`] = `
 <div>
   <ul
-    class="sc-bdVaJa gNTQhD"
+    class="sc-bdVaJa kTwQqp"
     data-test="documentList"
   >
     <li
