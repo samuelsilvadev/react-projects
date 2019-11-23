@@ -9,7 +9,7 @@ const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const server = express();
 
-const getMarkup = ({ styleTags, markup }) => `
+const getMarkup = ({ styleTags = '', markup = '' }) => `
 	<!doctype html>
 		<html lang="">
 			<head>
@@ -19,15 +19,15 @@ const getMarkup = ({ styleTags, markup }) => `
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 				${
-					assets.client.css
-						? `<link rel="stylesheet" href="${assets.client.css}">`
-						: ''
-				}
+	assets.client.css
+		? `<link rel="stylesheet" href="${assets.client.css}">`
+		: ''
+	}
 				${
-					process.env.NODE_ENV === 'production'
-						? `<script src="${assets.client.js}" defer></script>`
-						: `<script src="${assets.client.js}" defer crossorigin></script>`
-				}
+	process.env.NODE_ENV === 'production'
+		? `<script src="${assets.client.js}" defer></script>`
+		: `<script src="${assets.client.js}" defer crossorigin></script>`
+	}
 				${styleTags}
 			</head>
 			<body>
@@ -40,15 +40,15 @@ server
 	.use(express.static(process.env.RAZZLE_PUBLIC_DIR))
 	.get('/*', (req, res) => {
 		const sheet = new ServerStyleSheet();
-		const appMarkup = sheet.collectStyles(<App />);
-		const styleTags = sheet.getStyleTags();
-
 		const context = {};
 		const markup = renderToString(
-			<StaticRouter context={context} location={req.url}>
-				{appMarkup}
-			</StaticRouter>
+			sheet.collectStyles(
+				<StaticRouter context={context} location={req.url}>
+					<App />
+				</StaticRouter>
+			)
 		);
+		const styleTags = sheet.getStyleTags();
 
 		if (context.url) {
 			res.redirect(context.url);
