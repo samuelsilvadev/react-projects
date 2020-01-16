@@ -21,6 +21,7 @@ const Home = () => (
 						--pale-grey: #f0f4f8;
 						--metallic-blue: #486581;
 						--greeny-blue: #3ebd93;
+						--dark-blue-green: #014d40;
 					}
 
 					body {
