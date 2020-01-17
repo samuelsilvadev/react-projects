@@ -8,34 +8,35 @@ const Home = () => (
 	<div>
 		<Head>
 			<title>Pokedex</title>
-			<link rel="icon" href="/favicon.ico" />
-			<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"></link>
+			<link rel='icon' href='/favicon.ico' />
+			<link
+				href='https://fonts.googleapis.com/css?family=Lato&display=swap'
+				rel='stylesheet'
+			></link>
 		</Head>
 		<style jsx global>
-			{
-				`
-				${normalizeStyles}
-					:root {
-						--light-sky-blue: #d9e2ec;
-						--white: #fff;
-						--pale-grey: #f0f4f8;
-						--metallic-blue: #486581;
-						--greeny-blue: #3ebd93;
-						--dark-blue-green: #014d40;
-					}
+			{`
+				${normalizeStyles} :root {
+					--light-sky-blue: #d9e2ec;
+					--white: #fff;
+					--pale-grey: #f0f4f8;
+					--metallic-blue: #486581;
+					--greeny-blue: #3ebd93;
+					--dark-blue-green: #014d40;
+					--dark-grey-blue: #334e68;
+					--seaweed-green: #35b378;
+				}
 
-					body {
-						background-color: var(--pale-grey);
-					}
+				body {
+					background-color: var(--pale-grey);
+				}
 
-					ul {
-						list-style: none;
-						margin: 0;
-						padding: 0;
-					}
-				`
-			}
-
+				ul {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+			`}
 		</style>
 		<Header />
 	</div>
