@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import css from 'styled-jsx/css';
 
 import SearchInput from './SearchInput';
@@ -65,7 +66,7 @@ const Header = () => (
 					margin-right: 18px;
 				}
 
-				a {
+				.link {
 					font-family: Lato;
 					font-size: 16px;
 					line-height: normal;
@@ -74,7 +75,7 @@ const Header = () => (
 					text-decoration: none;
 				}
 
-				li.active a {
+				li.active .link {
 					background-color: var(--greeny-blue);
 					color: var(--white);
 					padding: 1px 7px 3px;
@@ -121,10 +122,14 @@ const Header = () => (
 				<h1>Pokedex</h1>
 				<ul>
 					<li className='active'>
-						<a href='#'>Explorer</a>
+						<Link href='/'>
+							<a className='link'>Explorer</a>
+						</Link>
 					</li>
 					<li>
-						<a href='#'>Favorites</a>
+						<Link href='/favorites'>
+							<a className='link'>Favorites</a>
+						</Link>
 					</li>
 				</ul>
 				<Search
