@@ -1,0 +1,33 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: violet;
+  margin: 0;
+}
+
+.main {
+  background-color: yellowgreen;
+  max-width: 800px;
+  margin: 0 auto;
+  /* height: 50%; */
+  /* overflow-y: scroll; */
+}
+
+.article__header {
+  background-color: tomato;
+  font-size: 30px;
+  font-weight: bold;
+  height: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+  vertical-align: center;
+  line-height: 100px;
+}
+
+.article__content {
+  padding: 0 50px;
+}

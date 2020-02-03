@@ -1,0 +1,24 @@
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.sticky__wrapper {
+  position: relative;
+}
+
+.sticky__top__sentinel, .sticky__bottom__sentinel {
+  background-color: yellow;
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.sticky__top__sentinel {
+  top: -20px;
+}
+
+.sticky__bottom__sentinel {
+  bottom: 0;
+}
