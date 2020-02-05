@@ -9,12 +9,25 @@ body {
   margin: 0;
 }
 
+.title {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 800px;
+  width: 100%;
+}
+
 .main {
   background-color: yellowgreen;
   max-width: 800px;
   margin: 0 auto;
-  /* height: 50%; */
-  /* overflow-y: scroll; */
+  height: 50%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+}
+
+.main::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 .article__header {
