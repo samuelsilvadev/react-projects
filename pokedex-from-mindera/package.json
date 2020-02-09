@@ -1,27 +1,29 @@
 {
-  "name": "pokedex-from-mindera",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "next": "9.1.6",
-    "normalize.css": "^8.0.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@storybook/addon-actions": "^5.3.17",
-    "@storybook/addon-links": "^5.3.17",
-    "@storybook/addons": "^5.3.17",
-    "@storybook/react": "^5.3.17",
-    "babel-loader": "^8.1.0",
-    "prop-types": "^15.7.2"
-  }
+	"name": "pokedex-from-mindera",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
+	},
+	"dependencies": {
+		"next": "9.2.2",
+		"normalize.css": "^8.0.1",
+		"react": "16.12.0",
+		"react-dom": "16.12.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@storybook/addon-actions": "^5.3.17",
+		"@storybook/addon-links": "^5.3.17",
+		"@storybook/addons": "^5.3.17",
+		"@storybook/react": "^5.3.17",
+		"babel-loader": "^8.1.0",
+		"css-loader": "^3.4.2",
+		"prop-types": "^15.7.2",
+		"style-loader": "^1.1.3"
+	}
 }
