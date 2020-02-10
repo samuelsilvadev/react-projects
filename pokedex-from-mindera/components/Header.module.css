@@ -1,0 +1,88 @@
+.header {
+	box-shadow: 0 0 2px 0 var(--light-sky-blue);
+	border-top: 5px solid var(--seaweed-green);
+	background-color: var(--white);
+	height: 55px;
+}
+
+.header nav,
+.header ul {
+	display: flex;
+}
+
+.header nav {
+	align-items: center;
+	height: 100%;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.header li:not(:last-child) {
+	margin-right: 22px;
+}
+
+.header li.active:not(:last-child) {
+	margin-right: 18px;
+}
+
+.link {
+	font-family: Lato;
+	font-size: 16px;
+	line-height: normal;
+	letter-spacing: 0.13px;
+	color: var(--metallic-blue);
+	text-decoration: none;
+}
+
+.header li.active .link {
+	background-color: var(--greeny-blue);
+	color: var(--white);
+	padding: 1px 7px 3px;
+}
+
+.header h1 {
+	display: none;
+	font-family: Lato;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: normal;
+	letter-spacing: 0.2px;
+	color: var(--dark-blue-green);
+	margin: 0;
+}
+
+.searchIcon {
+	display: block;
+}
+
+.searchInput {
+	display: none;
+}
+
+@media (min-width: 991px) {
+	.header {
+		height: 69px;
+	}
+
+	.header h1 {
+		display: block;
+		margin-right: 32px;
+	}
+
+	.header nav {
+		padding: 0 40px;
+		justify-content: flex-start;
+	}
+
+	.searchIcon {
+		display: none;
+	}
+
+	.pokeballIcon {
+		margin-right: 8px;
+	}
+
+	.searchInput {
+		display: flex;
+	}
+}
