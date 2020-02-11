@@ -2,9 +2,9 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@components": ["./components"],
-			"@styles": ["./styles"],
-			"@icons": ["./icons"]
+			"@components/*": ["./components/*"],
+			"@styles/*": ["./styles/*"],
+			"@icons/*": ["./icons/*"]
 		}
 	},
 	"include": ["./.storybook", "./stories"]
