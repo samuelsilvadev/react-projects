@@ -12,6 +12,14 @@ const styles = `
         --seaweed-green: #35b378;
         --dark-slate-blue: #102a43;
         --greyish-blue: #627d98;
+        --dark-sky-blue: #4098d7;
+        --royal: #0b1d96;
+        --light-purple: #a368fc;
+        --brick: #ba2525;
+        --sap-green: #63921a;
+        --greeny-blue: #3ebd93;
+        --dark-sea-green: #0c6b58;
+        --macaroni-and-cheese: #f0b429;
     }
 `;
 

@@ -1,0 +1,49 @@
+.tag {
+	align-items: center;
+	border-radius: 4px;
+	color: var(--white);
+	display: inline-flex;
+	font-family: Lato;
+	font-size: 8px;
+	font-weight: normal;
+	justify-content: center;
+	height: 16px;
+	line-height: normal;
+	letter-spacing: 0.16px;
+	min-width: 54px;
+	text-transform: uppercase;
+	opacity: 0.8;
+}
+
+.gray {
+	background-color: var(--greyish-blue);
+}
+
+.red {
+	background-color: var(--brick);
+}
+
+.royal {
+	background-color: var(--royal);
+}
+
+.green {
+	background-color: var(--sap-green);
+}
+
+.purple {
+	background-color: var(--light-purple);
+}
+
+.blue {
+	background-color: var(--dark-sky-blue);
+}
+
+@media (min-width: 991px) {
+	.tag {
+		font-size: 10px;
+		letter-spacing: 0.2px;
+		min-width: 77px;
+		height: 22px;
+	}
+}

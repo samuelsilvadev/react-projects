@@ -1,7 +1,7 @@
-import { Welcome } from './Welcome.stories';
+import { PokemonCardStory } from './PokemonCard.stories';
 
 export default {
 	title: 'Components'
 };
 
-export { Welcome };
+export { PokemonCardStory };
