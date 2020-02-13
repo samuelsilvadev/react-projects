@@ -8,8 +8,6 @@ const getKindClassName = kind => styles[kind];
 const Tag = ({ text, kind = 'gray' }) => {
 	const kindClassName = getKindClassName(kind);
 
-	console.log('Tag -> kindClassName', kindClassName);
-
 	return <span className={`${styles.tag} ${kindClassName}`}>{text}</span>;
 };
 

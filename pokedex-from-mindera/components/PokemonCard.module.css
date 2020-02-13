@@ -65,10 +65,18 @@
 	margin-right: 8px;
 }
 
-.card__icon {
+.card__favorite-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
 	position: absolute;
+	padding: 0;
 	right: 14px;
 	top: 14px;
+}
+
+.card__icon--active > path {
+	fill: var(--dark-sea-green);
 }
 
 @media (min-width: 991px) {

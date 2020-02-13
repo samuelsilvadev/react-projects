@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Heart } from '@icons';
@@ -12,10 +12,24 @@ const renderTag = ({ text, kind }) => {
 };
 
 const PokemonCard = ({ sources, title, number, tags = [] }) => {
+	const [isFavorite, setFavorite] = useState(false);
+	const onFavorite = () => {
+		setFavorite(!isFavorite);
+	};
+
 	return (
 		<article className={styles.card}>
 			<picture className={styles.card__image}>
-				<Heart className={styles.card__icon} />
+				<button
+					className={styles['card__favorite-btn']}
+					type='button'
+					onClick={onFavorite}
+				>
+					<Heart
+						className={`${styles.card__icon} ${isFavorite &&
+							styles['card__icon--active']}`}
+					/>
+				</button>
 				{typeof sources === 'string' && <img src={sources} />}
 			</picture>
 			<h2 className={styles.card__title}>{title}</h2>
