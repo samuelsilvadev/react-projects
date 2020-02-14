@@ -69,6 +69,7 @@
 	background: none;
 	border: none;
 	cursor: pointer;
+	display: flex;
 	position: absolute;
 	padding: 0;
 	right: 14px;
