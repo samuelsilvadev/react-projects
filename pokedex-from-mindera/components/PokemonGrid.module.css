@@ -3,6 +3,8 @@
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 10px;
 	row-gap: 25px;
+	max-width: 290px;
+	margin: auto;
 }
 
 @media (min-width: 991px) {
@@ -10,5 +12,6 @@
 		grid-template-columns: repeat(3, 1fr);
 		column-gap: 40px;
 		row-gap: 50px;
+		max-width: 680px;
 	}
 }

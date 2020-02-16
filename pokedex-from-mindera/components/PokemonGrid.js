@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import PokemonCard from './PokemonCard';
 
-import styles from './PokemonGrid.modules.css';
+import styles from './PokemonGrid.module.css';
 
 export const PokemonGrid = ({ pokemons = [] }) => {
 	return (
