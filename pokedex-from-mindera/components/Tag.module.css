@@ -39,6 +39,10 @@
 	background-color: var(--dark-sky-blue);
 }
 
+.yellow {
+	background-color: var(--macaroni-and-cheese);
+}
+
 @media (min-width: 991px) {
 	.tag {
 		font-size: 10px;

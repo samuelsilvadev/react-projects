@@ -13,7 +13,15 @@ const Tag = ({ text, kind = 'gray' }) => {
 
 Tag.propTypes = {
 	text: PropTypes.string.isRequired,
-	kind: PropTypes.oneOf(['green', 'purple', 'red', 'royal', 'blue'])
+	kind: PropTypes.oneOf([
+		'green',
+		'purple',
+		'red',
+		'royal',
+		'blue',
+		'gray',
+		'yellow'
+	])
 };
 
 export default Tag;
