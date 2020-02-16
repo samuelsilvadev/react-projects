@@ -43,7 +43,9 @@ PokemonCard.propTypes = {
 	sources: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 	title: PropTypes.string,
 	number: PropTypes.string,
-	tags: PropTypes.arrayOf({ text: PropTypes.string, kind: PropTypes.string })
+	tags: PropTypes.arrayOf(
+		PropTypes.shape({ text: PropTypes.string, kind: PropTypes.string })
+	)
 };
 
 export default PokemonCard;
