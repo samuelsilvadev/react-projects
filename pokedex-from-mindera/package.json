@@ -10,6 +10,7 @@
 		"build-storybook": "build-storybook"
 	},
 	"dependencies": {
+		"isomorphic-unfetch": "^3.0.0",
 		"next": "9.2.2",
 		"normalize.css": "^8.0.1",
 		"react": "16.12.0",
