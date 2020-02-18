@@ -1,7 +1,7 @@
 import React from 'react';
-import PokemonGrid from '@components/PokemonGrid';
 
-import pokemonService from './services/pokemon';
+import PokemonGrid from '@components/PokemonGrid';
+import pokemonService from '@services/pokemon';
 
 const Home = props => {
 	const { pokemons = [] } = props;

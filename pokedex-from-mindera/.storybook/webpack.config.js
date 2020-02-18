@@ -3,9 +3,10 @@ const path = require('path');
 module.exports = {
 	resolve: {
 		alias: {
-			'@components': path.resolve(__dirname, '../components'),
-			'@icons': path.resolve(__dirname, '../icons'),
-			'@styles': path.resolve(__dirname, '../styles')
+			'@components': path.resolve(__dirname, '../pages/components'),
+			'@services': path.resolve(__dirname, '../pages/services'),
+			'@icons': path.resolve(__dirname, '../pages/icons'),
+			'@styles': path.resolve(__dirname, '../pages/styles')
 		},
 		extensions: ['.js']
 	},
