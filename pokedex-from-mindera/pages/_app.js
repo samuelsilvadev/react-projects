@@ -1,10 +1,32 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, createContext, useState } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
 import Header from '@components/Header';
 
 import './app.css';
+
+export const ApiContext = createContext({});
+
+const ApiContextProvider = (props) => {
+	const [pokemons, setPokemons] = useState([]);
+
+	return (
+		<ApiContext.Provider
+			value={{ data: { pokemons }, actions: { setPokemons } }}
+			{...props}
+		/>
+	);
+};
+
+ApiContextProvider.getInitialProps = (context) => {
+	console.log(
+		'ApiContextProvider.getInitialProps -> ApiContextProvider',
+		context
+	);
+
+	return {};
+};
 
 class CustomApp extends App {
 	render() {
@@ -22,7 +44,13 @@ class CustomApp extends App {
 				</Head>
 				<Header />
 				<main>
-					<Component {...pageProps} />
+					<ApiContextProvider>
+						<ApiContext.Consumer>
+							{(state) => (
+								<Component {...pageProps} state={state} />
+							)}
+						</ApiContext.Consumer>
+					</ApiContextProvider>
 				</main>
 			</Fragment>
 		);
