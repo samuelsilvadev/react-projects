@@ -3,9 +3,14 @@ import React, { useEffect } from 'react';
 import PokemonGrid from '@components/PokemonGrid';
 import pokemonService from '@services/pokemon';
 
-const Home = props => {
+import { __GLOBAL_API_CONTEXT__ } from './_app';
+
+const Home = (props) => {
 	const { pokemons = [], state } = props;
 
+	// this should not happen every new render
+	// we need to find a way to set on state only when it's really
+	// different
 	useEffect(() => {
 		if (pokemons.length > 0) {
 			state.actions.setPokemons(pokemons);
@@ -16,9 +21,15 @@ const Home = props => {
 };
 
 Home.getInitialProps = () => {
-	return pokemonService.getAllPokemons().then(pokemons => ({
-		pokemons
-	}));
+	if (!__GLOBAL_API_CONTEXT__ || !__GLOBAL_API_CONTEXT__.data.pokemons) {
+		return pokemonService.getAllPokemons().then((pokemons) => ({
+			pokemons,
+		}));
+	}
+
+	return {
+		pokemons: __GLOBAL_API_CONTEXT__.data.pokemons,
+	};
 };
 
 export default Home;

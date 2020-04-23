@@ -5,11 +5,18 @@ import Head from 'next/head';
 import Header from '@components/Header';
 
 import './app.css';
+import { useEffect } from 'react';
+
+export let __GLOBAL_API_CONTEXT__ = undefined;
 
 export const ApiContext = createContext({});
 
 const ApiContextProvider = (props) => {
 	const [pokemons, setPokemons] = useState([]);
+
+	useEffect(() => {
+		__GLOBAL_API_CONTEXT__ = { data: { pokemons } };
+	}, [pokemons]);
 
 	return (
 		<ApiContext.Provider
@@ -19,18 +26,9 @@ const ApiContextProvider = (props) => {
 	);
 };
 
-ApiContextProvider.getInitialProps = (context) => {
-	console.log(
-		'ApiContextProvider.getInitialProps -> ApiContextProvider',
-		context
-	);
-
-	return {};
-};
-
 class CustomApp extends App {
 	render() {
-		const { Component, pageProps } = this.props;
+		const { Component, pageProps, data } = this.props;
 
 		return (
 			<Fragment>
@@ -47,7 +45,11 @@ class CustomApp extends App {
 					<ApiContextProvider>
 						<ApiContext.Consumer>
 							{(state) => (
-								<Component {...pageProps} state={state} />
+								<Component
+									{...pageProps}
+									data={data}
+									state={state}
+								/>
 							)}
 						</ApiContext.Consumer>
 					</ApiContextProvider>
