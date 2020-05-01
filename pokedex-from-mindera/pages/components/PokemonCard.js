@@ -11,10 +11,26 @@ const renderTag = ({ text, kind }) => {
 	return <Tag text={text} kind={kind} key={text} />;
 };
 
-const PokemonCard = ({ sources, title, number, tags = [] }) => {
-	const [isFavorite, setFavorite] = useState(false);
-	const onFavorite = () => {
+const PokemonCard = ({
+	sources,
+	title,
+	number,
+	tags = [],
+	onFavorite,
+	isFavorite: isFavoriteProp = false,
+}) => {
+	const [isFavorite, setFavorite] = useState(isFavoriteProp);
+
+	const handleOnClickOnFavorite = () => {
 		setFavorite(!isFavorite);
+		onFavorite &&
+			onFavorite({
+				number,
+				sources,
+				title,
+				tags,
+				isFavorite,
+			});
 	};
 
 	return (
@@ -23,11 +39,12 @@ const PokemonCard = ({ sources, title, number, tags = [] }) => {
 				<button
 					className={styles['card__favorite-btn']}
 					type='button'
-					onClick={onFavorite}
+					onClick={handleOnClickOnFavorite}
 				>
 					<Heart
-						className={`${styles.card__icon} ${isFavorite &&
-							styles['card__icon--active']}`}
+						className={`${styles.card__icon} ${
+							isFavorite && styles['card__icon--active']
+						}`}
 					/>
 				</button>
 				{typeof sources === 'string' && <img src={sources} />}
@@ -45,7 +62,9 @@ PokemonCard.propTypes = {
 	number: PropTypes.string,
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({ text: PropTypes.string, kind: PropTypes.string })
-	)
+	),
+	onFavorite: PropTypes.func,
+	isFavorite: PropTypes.bool,
 };
 
 export default PokemonCard;
