@@ -2,10 +2,10 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@components/*": ["./pages/components/*"],
-			"@services/*": ["./pages/services/*"],
-			"@styles/*": ["./pages/styles/*"],
-			"@icons/*": ["./pages/icons/*"]
+			"@components/*": ["./src/components/*"],
+			"@services/*": ["./src/services/*"],
+			"@styles/*": ["./src/styles/*"],
+			"@icons/*": ["./src/icons/*"]
 		}
 	},
 	"include": ["./.storybook", "./stories"]

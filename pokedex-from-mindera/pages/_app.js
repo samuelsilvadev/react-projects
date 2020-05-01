@@ -1,11 +1,10 @@
-import React, { Fragment, createContext, useState } from 'react';
+import React, { Fragment, createContext, useState, useEffect } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
 import Header from '@components/Header';
 
-import './app.css';
-import { useEffect } from 'react';
+import '@styles/app.css';
 
 export let __GLOBAL_API_CONTEXT__ = undefined;
 

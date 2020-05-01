@@ -4,21 +4,18 @@ module.exports = {
 	webpack: (config, options) => {
 		config.resolve.alias['@components'] = path.resolve(
 			__dirname,
-			'./pages/components'
+			'./src/components'
 		);
 		config.resolve.alias['@services'] = path.resolve(
 			__dirname,
-			'./pages/services'
+			'./src/services'
 		);
-		config.resolve.alias['@icons'] = path.resolve(
-			__dirname,
-			'./pages/icons'
-		);
+		config.resolve.alias['@icons'] = path.resolve(__dirname, './src/icons');
 		config.resolve.alias['@styles'] = path.resolve(
 			__dirname,
-			'./pages/styles'
+			'./src/styles'
 		);
 
 		return config;
-	}
+	},
 };
