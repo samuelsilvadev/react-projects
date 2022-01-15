@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "highlight.js": "^9.13.1",
-    "marked": "^0.6.0",
+    "marked": "^4.0.10",
     "node-uuid": "^1.4.8",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
